@@ -113,6 +113,10 @@ The [public-flow analysis](docs/public-init-flow.md) places the matching 484-byt
 
 The [payload-role analysis](docs/payload-roles.md) distinguishes the 485-byte init frame from a 1765-byte public write-enable frame also found in a separate Dell descriptor. They share a prefix and block alignment, which do not establish purpose or cryptography. An optional offline inventory includes the write-enable literals; internal payload protection remains unverified.
 
+## Vendor documentation scope
+
+The [primary-document review](docs/vendor-security-context.md) separates transport protection, opaque initialization payloads and partition-table signatures. HP documents patch protection for the related VFS495 family; a Synaptics VFS75xx advisory concerns external-flash partition tables. Neither establishes the 00a6 payload format or confirms a vulnerability on the participant’s hardware.
+
 ## Licensing
 
 Project-authored code and documentation are licensed under **LGPL-2.1-or-later**; see [LICENSE](LICENSE). This matches the inspected upstream VFS7552 driver's license. Third-party materials retain their own terms. The Dell package and its INF are not redistributed. No upstream driver code has been copied into this project.

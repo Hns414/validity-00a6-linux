@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "method": "primary-vendor-document-review",
+  "review_date": "2026-11-16",
+  "sources": [
+    {
+      "publisher": "HP",
+      "title": "HP Client Security Technical Whitepaper",
+      "url": "https://h10032.www1.hp.com/ctg/Manual/c04016447.pdf",
+      "page_printed": 18,
+      "scope": "VFS495 / VFS-RSA firmware patches",
+      "claims_paraphrased": [
+        "Vendor describes AES-CBC-256 encryption and RSA-2048 signatures for firmware patches",
+        "Sensor firmware checks patch signature before acceptance"
+      ],
+      "target_00a6_applicability_established": false
+    },
+    {
+      "publisher": "Synaptics",
+      "title": "Synaptics VFS75xx Fingerprint Sensors Equipped with External Flash",
+      "date": "2020-07-14",
+      "url": "https://www.synaptics.com/sites/default/files/fingerprint-sensor-VFS7500-security-brief-2020-07-14.pdf",
+      "pages": [
+        1,
+        2
+      ],
+      "scope": "VFS75xx with external flash; partition table validation",
+      "cve_reference": "CVE-2019-18618",
+      "claims_paraphrased": [
+        "Vendor describes unverified partition-table injection and a driver-delivered fix enforcing signed tables",
+        "Published table distinguishes affected/fixed driver versions"
+      ],
+      "target_00a6_vulnerability_confirmed": false,
+      "target_external_flash_presence_confirmed": false,
+      "inspected_driver_exact_branch_in_table": false
+    }
+  ],
+  "distinctions": [
+    "Transport record protection",
+    "Initialization patch or capsule protection",
+    "Partition-table signature validation"
+  ],
+  "payload_body_decoded": false,
+  "payload_cipher_identified_for_00a6": false,
+  "new_hardware_operation_enabled": false
+}

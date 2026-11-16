@@ -42,3 +42,7 @@ python3 tools/compare_init_blobs.py /path/to/libfprint /path/to/Validity91 /path
 O código só seleciona atribuições literais permitidas, rejeitando expressões dinâmicas e duplicação. Não importa módulos upstream, não escreve payloads e não acessa USB. A execução padrão foi novamente comparada ao inventário schema 1 publicado e permaneceu idêntica.
 
 Dois testes adicionais verificam inclusão somente por opção e rejeição de inicializadores inválidos/dinâmicos/duplicados. `make test` passou com 67 testes sem skips. O probe ativo não mudou. Não há teste de hardware ou com dedo nesta etapa; a próxima análise deve buscar uma interpretação do formato ancorada no consumidor do dispositivo ou em documentação primária, distinguindo isso da criptografia do transporte.
+
+## Documentação primária complementar
+
+A [revisão de documentos dos fabricantes](vendor-security-context.md) registra proteção de patches para VFS495 e assinatura de partições para o escopo VFS75xx com flash externa, sem transferir essas conclusões ao formato do 00a6. A proteção interna continua pendente.

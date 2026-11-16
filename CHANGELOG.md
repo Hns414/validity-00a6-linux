@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.23.0-research — 2026-11-16
+
+- Documentação primária HP e Synaptics revisada com páginas e escopos explícitos.
+- Proteção de transporte, patch/init e assinatura de partições distinguidas.
+- Formato/cifra do payload 00a6 e aplicabilidade do boletim ao participante não estabelecidos.
+- Somente documentação/evidência; base anterior de 67 testes, sem nova execução ou operação USB.
+
 ## 0.22.0-research — 2026-11-16
 
 - Init de 485 bytes separado do write-enable de 1765 bytes, apesar de prefixo/alinhamento comuns.

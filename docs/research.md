@@ -219,3 +219,9 @@ Verificador original agora reproduz a comparação integral sob hash/commit fixa
 A [análise de papéis](payload-roles.md) distingue init e write-enable nas quatro famílias públicas. Na família 90, a entrada Dell 57 coincide com os 1764 argumentos de write-enable, máscara 0x10008, enquanto a entrada 55 tem 484 argumentos e máscara 0x4000. Prefixo igual e alinhamento não identificam finalidade/proteção.
 
 Inventário ampliado opcional, sem executar fonte ou payload; padrão schema 1 reproduzido integralmente. Dois testes novos, 67 aprovados. As rotinas TLS encontradas não estabelecem decoder do corpo de inicialização; nenhuma proteção interna ou operação de hardware foi validada nesta etapa.
+
+## Documentos primários de proteção
+
+A [revisão HP/Synaptics](vendor-security-context.md) encontrou descrição de patches cifrados/assinados para VFS495 e boletim VFS75xx sobre validação de partições em sensores com flash externa. Os escopos são distintos e não demonstram o formato do bloco de 484 argumentos ou incidência da falha no participante.
+
+Nenhum consumidor público do corpo foi localizado nesta busca. O resultado é uma delimitação de hipóteses, sem decoder ou novo comando. Etapa documental, sem repetir a suíte de 67 testes ou hardware.

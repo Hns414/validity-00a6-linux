@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.42.0-research — 2026-11-16
+
+- Callback de 0x75 ligado a dois DWORDs de corpo após status comum; validação de tamanho necessária.
+- Normalização e tabela de 379 registros delimitadas antes do resultado de tipo interno.
+- Exemplos estáticos distinguidos de identificação real do participante.
+- Somente documentação/evidência; sem novo comando no probe.
+
 ## 0.41.0-research — 2026-11-16
 
 - Produtor do identificador interno ligado à hipótese por produto e à consulta interna 0x35.

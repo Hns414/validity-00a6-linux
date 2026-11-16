@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "method": "manual-static-query75-callback-and-mapper-with-checked-instructions-and-table",
+  "dll_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "callback": {
+    "rva": "0x5a710",
+    "installed_by_rva": "0x54b79",
+    "body_word0_offset": 0,
+    "body_word1_offset": 4,
+    "word_bytes": 4,
+    "endianness": "little-endian",
+    "minimum_accessed_body_bytes": 8,
+    "length_guard_visible_in_callback": false
+  },
+  "mapper": {
+    "rva": "0x63f80",
+    "table_rva": "0x116800",
+    "record_count": 379,
+    "record_bytes": 28,
+    "key_field": 0,
+    "result_field": 2,
+    "match_value_field": 4,
+    "match_mask_field": 6,
+    "checked_example_records": [
+      {
+        "index": 138,
+        "key": "0x83",
+        "mapped_type": "0xed",
+        "match_value": 1,
+        "match_mask": "0xff"
+      },
+      {
+        "index": 139,
+        "key": "0x83",
+        "mapped_type": "0xed",
+        "match_value": 2,
+        "match_mask": "0xff"
+      },
+      {
+        "index": 140,
+        "key": "0x83",
+        "mapped_type": "0xed",
+        "match_value": 3,
+        "match_mask": "0xff"
+      }
+    ]
+  },
+  "normalization": {
+    "input": "0x0049000c",
+    "output": "0x00830003",
+    "input_measured_on_participant": false
+  },
+  "checked_call_edges": [
+    {
+      "call_rva": "0x5f173",
+      "target_rva": "0x63f80"
+    },
+    {
+      "call_rva": "0x63fea",
+      "target_rva": "0x5dfd0"
+    }
+  ],
+  "second_word_semantics_verified": false,
+  "full_mapping_semantics_verified": false,
+  "usb_transfer_performed": false
+}

@@ -166,3 +166,5 @@ O [produtor do descritor de programa](docs/program-descriptor-selection.md) foi 
 A [classificação de produto da ROM](docs/product-context-class.md) liga condicionalmente o produto relatado 0x30 à classe de contexto 1; tipo interno ainda pendente.
 
 O [produtor do tipo interno](docs/internal-type-seed-and-query.md) foi ligado a uma hipótese por produto e à consulta candidata 0x75; valor real ainda não confirmado.
+
+O [callback e mapeamento de 0x75](docs/query75-callback-mapping.md) separa corpo, normalização e consulta de tabela; tipo real ainda não confirmado.

@@ -37,3 +37,5 @@ A descoberta transforma a lacuna “origem desconhecida do campo +0x128” em um
 Sete destinos de chamadas, o slot do handler, o candidato 0xdb e o argumento 0x75 foram conferidos no binário fixado. Ramos e papéis continuam análise manual, sem identificação em runtime. Somente documentos/evidência: mantém a base de **91 testes aprovados na v0.37**, sem nova execução da suíte.
 
 Ainda não há programa final de captura estabelecido, novo teste de hardware ou teste com dedo.
+
+A [continuação do callback](query75-callback-mapping.md) identifica dois DWORDs de corpo e a tabela de normalização/mapeamento, sem habilitar coleta.

@@ -1,0 +1,281 @@
+{
+  "arrays": {
+    "VFS7552_NORMAL_REPLY": {
+      "length": 2,
+      "sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7"
+    },
+    "interrupt_dont_ask": {
+      "length": 5,
+      "sha256": "a665e6b115dd56fd3e0c89be631e6eda8e9666b822e0bd7026bf0822c4bbc68f"
+    },
+    "interrupt_ok": {
+      "length": 5,
+      "sha256": "8855508aade16ec573d21e6a485dfd0a7624085c1a14b5ecdd6485de0c6839a4"
+    },
+    "interrupt_ready": {
+      "length": 5,
+      "sha256": "1c61479b2c17646c756a7772d4060addad621beb2d60b1e6c0ff4b20060a13fd"
+    },
+    "vfs7552_cmd_01": {
+      "length": 1,
+      "sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a"
+    },
+    "vfs7552_cmd_01_recv": {
+      "length": 38,
+      "sha256": "17c2689abd198fa62c41c564f37ca575efdbf1c7d882676917cc15ae4782017b"
+    },
+    "vfs7552_cmd_04": {
+      "length": 1,
+      "sha256": "e52d9c508c502347344d8c07ad91cbd6068afc75ff6292f062a09ca381c89e71"
+    },
+    "vfs7552_cmd_19": {
+      "length": 1,
+      "sha256": "68aa2e2ee5dff96e3355e6c7ee373e3d6a4e17f75f9518d843709c0c9bc3e3d4"
+    },
+    "vfs7552_cmd_19_recv": {
+      "length": 68,
+      "sha256": "6f5953988167be0c633ee6c0a0939a09e6dfd46f46f0479c46a8396d36d28441"
+    },
+    "vfs7552_cmd_52": {
+      "length": 1,
+      "sha256": "8c2574892063f995fdf756bce07f46c1a5193e54cd52837ed91e32008ccf41ac"
+    },
+    "vfs7552_image_start": {
+      "length": 13725,
+      "sha256": "a03374b628441103c40461e532afa5df9e7c2652f26fead58544cc6b6feb32cf"
+    },
+    "vfs7552_image_start_resp": {
+      "length": 1962,
+      "sha256": "bbdc2486885a64969961de30dd9a996eb6005a5ee208b78701e1b605f8275ec6"
+    },
+    "vfs7552_init_00": {
+      "length": 501,
+      "sha256": "c0ce06740d8c9b836b0d52de2167404ba0b117d0423a278d9fce4b3742e686ee"
+    },
+    "vfs7552_init_01": {
+      "length": 10,
+      "sha256": "14c64b4f7828f3a3bf933ce3fd62a187c8a8a19165058981864af077c3aea904"
+    },
+    "vfs7552_init_02": {
+      "length": 6,
+      "sha256": "8d2946b1b366e865527e13fc679d3c6cc4d1b67f9381a098f15f382c1bfb3156"
+    },
+    "vfs7552_init_02_recv": {
+      "length": 6,
+      "sha256": "2cf388ede64c90b028c7faafe542e28ffc97a69432d15c87c43c8eb108897acd"
+    },
+    "vfs7552_init_03": {
+      "length": 1,
+      "sha256": "0bfe935e70c321c7ca3afc75ce0d0ca2f98b5422e008bb31c00c6d7f1f1c0ad6"
+    },
+    "vfs7552_init_03_recv": {
+      "length": 10,
+      "sha256": "07ebf87a1baae515cc590423428eb3150c02f070ebcdfff2a3eb25632dc7467c"
+    },
+    "vfs7552_init_04": {
+      "length": 6677,
+      "sha256": "477d0e7dd70db24b71b2902ed56029f296f9dd318ee3e2a03f44416d5d671789"
+    },
+    "vfs7552_is_image_ready": {
+      "length": 5,
+      "sha256": "17c996ae257a995448d8c9c9d138138d6a986fc389087bb1520b65bbdc4aad97"
+    },
+    "vfs7552_is_image_ready_resp_finger_off": {
+      "length": 6,
+      "sha256": "27714442c16154cf669cbba2e1e5c0e9484cbef37a88ec425dff875076fc0759"
+    },
+    "vfs7552_is_image_ready_resp_not_ready": {
+      "length": 6,
+      "sha256": "36c159d76b52e03e496363607c5940227f62f4e048df344b050159bc97bba3d7"
+    },
+    "vfs7552_is_image_ready_resp_ready": {
+      "length": 6,
+      "sha256": "b0f66adc83641586656866813fd9dd0b8ebb63796075661ba45d1aa8089e1d44"
+    },
+    "vfs7552_read_image_chunk": {
+      "length": 5,
+      "sha256": "2e9cc076f72a571e190c858f18faf4cb30221e607401f51a86970f098f282043"
+    }
+  },
+  "notice": "Macro names and declared sizes do not prove runtime validation; see docs/protocol.md.",
+  "schema_version": 1,
+  "scope": "offline-static-inventory-not-device-validation",
+  "sequences": {
+    "vfs7552_data_ready_query": [
+      {
+        "array": "vfs7552_is_image_ready",
+        "endpoint_symbol": "VFS7552_OUT_ENDPOINT",
+        "macro": "SEND",
+        "send_bytes": 5
+      },
+      {
+        "declared_expected_bytes": 6,
+        "endpoint_symbol": "VFS7552_IN_ENDPOINT",
+        "expected_array": "vfs7552_is_image_ready_resp_ready",
+        "macro": "RECV_CHECK_SIZE",
+        "receive_capacity": 64
+      }
+    ],
+    "vfs7552_initialization": [
+      {
+        "array": "vfs7552_cmd_01",
+        "endpoint_symbol": "VFS7552_OUT_ENDPOINT",
+        "macro": "SEND",
+        "send_bytes": 1
+      },
+      {
+        "declared_expected_bytes": 38,
+        "endpoint_symbol": "VFS7552_IN_ENDPOINT",
+        "expected_array": "vfs7552_cmd_01_recv",
+        "macro": "RECV_CHECK_SIZE",
+        "receive_capacity": 64
+      },
+      {
+        "array": "vfs7552_cmd_19",
+        "endpoint_symbol": "VFS7552_OUT_ENDPOINT",
+        "macro": "SEND",
+        "send_bytes": 1
+      },
+      {
+        "declared_expected_bytes": 68,
+        "endpoint_symbol": "VFS7552_IN_ENDPOINT",
+        "expected_array": "vfs7552_cmd_19_recv",
+        "macro": "RECV_CHECK_SIZE",
+        "receive_capacity": 128
+      },
+      {
+        "array": "vfs7552_init_00",
+        "endpoint_symbol": "VFS7552_OUT_ENDPOINT",
+        "macro": "SEND",
+        "send_bytes": 501
+      },
+      {
+        "declared_expected_bytes": 2,
+        "endpoint_symbol": "VFS7552_IN_ENDPOINT",
+        "expected_array": "VFS7552_NORMAL_REPLY",
+        "macro": "RECV_CHECK",
+        "receive_capacity": 64
+      },
+      {
+        "array": "vfs7552_init_01",
+        "endpoint_symbol": "VFS7552_OUT_ENDPOINT",
+        "macro": "SEND",
+        "send_bytes": 10
+      },
+      {
+        "declared_expected_bytes": 2,
+        "endpoint_symbol": "VFS7552_IN_ENDPOINT",
+        "expected_array": "VFS7552_NORMAL_REPLY",
+        "macro": "RECV_CHECK",
+        "receive_capacity": 64
+      },
+      {
+        "array": "vfs7552_init_02",
+        "endpoint_symbol": "VFS7552_OUT_ENDPOINT",
+        "macro": "SEND",
+        "send_bytes": 6
+      },
+      {
+        "declared_expected_bytes": 6,
+        "endpoint_symbol": "VFS7552_IN_ENDPOINT",
+        "expected_array": "vfs7552_init_02_recv",
+        "macro": "RECV_CHECK",
+        "receive_capacity": 64
+      },
+      {
+        "array": "vfs7552_init_03",
+        "endpoint_symbol": "VFS7552_OUT_ENDPOINT",
+        "macro": "SEND",
+        "send_bytes": 1
+      },
+      {
+        "declared_expected_bytes": 10,
+        "endpoint_symbol": "VFS7552_IN_ENDPOINT",
+        "expected_array": "vfs7552_init_03_recv",
+        "macro": "RECV_CHECK_SIZE",
+        "receive_capacity": 64
+      },
+      {
+        "array": "vfs7552_init_04",
+        "endpoint_symbol": "VFS7552_OUT_ENDPOINT",
+        "macro": "SEND",
+        "send_bytes": 6677
+      },
+      {
+        "declared_expected_bytes": 2,
+        "endpoint_symbol": "VFS7552_IN_ENDPOINT",
+        "expected_array": "VFS7552_NORMAL_REPLY",
+        "macro": "RECV_CHECK",
+        "receive_capacity": 64
+      }
+    ],
+    "vfs7552_initiate_capture": [
+      {
+        "array": "vfs7552_image_start",
+        "endpoint_symbol": "VFS7552_OUT_ENDPOINT",
+        "macro": "SEND",
+        "send_bytes": 13725
+      },
+      {
+        "declared_expected_bytes": 1962,
+        "endpoint_symbol": "VFS7552_IN_ENDPOINT",
+        "expected_array": "vfs7552_image_start_resp",
+        "macro": "RECV_CHECK_SIZE",
+        "receive_capacity": 2048
+      }
+    ],
+    "vfs7552_request_chunk": [
+      {
+        "array": "vfs7552_read_image_chunk",
+        "endpoint_symbol": "VFS7552_OUT_ENDPOINT",
+        "macro": "SEND",
+        "send_bytes": 5
+      }
+    ],
+    "vfs7552_stop_capture": [
+      {
+        "array": "vfs7552_cmd_04",
+        "endpoint_symbol": "VFS7552_OUT_ENDPOINT",
+        "macro": "SEND",
+        "send_bytes": 1
+      },
+      {
+        "declared_expected_bytes": 2,
+        "endpoint_symbol": "VFS7552_IN_ENDPOINT",
+        "expected_array": "VFS7552_NORMAL_REPLY",
+        "macro": "RECV_CHECK",
+        "receive_capacity": 64
+      },
+      {
+        "array": "vfs7552_cmd_52",
+        "endpoint_symbol": "VFS7552_OUT_ENDPOINT",
+        "macro": "SEND",
+        "send_bytes": 1
+      },
+      {
+        "declared_expected_bytes": 2,
+        "endpoint_symbol": "VFS7552_IN_ENDPOINT",
+        "expected_array": "VFS7552_NORMAL_REPLY",
+        "macro": "RECV_CHECK",
+        "receive_capacity": 64
+      }
+    ],
+    "vfs7552_wait_finger_init": [
+      {
+        "declared_expected_bytes": 5,
+        "endpoint_symbol": "VFS7552_INTERRUPT_ENDPOINT",
+        "expected_array": "interrupt_ok",
+        "macro": "RECV_CHECK_SIZE",
+        "receive_capacity": 8
+      }
+    ]
+  },
+  "upstream": {
+    "commit": "8b6e4e39bee58de2774222e3730269def470b157",
+    "files": {
+      "libfprint/drivers/vfs7552.c": "193c9421bd89273142cb6a3dae8c4c2dd49f26b627833b5a80d46368f7ae16e3",
+      "libfprint/drivers/vfs7552_proto.h": "ead414ff71578bee4f8157b0d09784257fe67fe7f67ee89282bee0377041cc27"
+    },
+    "url": "https://gitlab.freedesktop.org/libfprint/libfprint"
+  }
+}

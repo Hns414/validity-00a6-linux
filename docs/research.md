@@ -2,7 +2,9 @@
 
 Consulta inicial: 2026-11-16. Os dois documentos entregues pelo usuário foram lidos integralmente como contexto histórico; comandos sugeridos neles não equivalem a resultados executados.
 
-## Registro de fontes
+Estado atual: identidade e descritores em M1 confirmados; análise estática do protocolo em M2 disponível em [protocol.md](protocol.md). O [plano do próximo experimento](lab.md) ainda não foi executado. As seções iniciais abaixo preservam o histórico de M0; as atualizações posteriores registram o que foi resolvido.
+
+## Registro de fontes — histórico de M0
 
 | Fonte | Resultado | Limite |
 | --- | --- | --- |
@@ -71,3 +73,11 @@ Consultada pela API oficial GitLab: estado opened, merged_at nulo, SHA `5db7da90
 ### Próximo marco
 
 Preparar uma matriz de mensagens do VFS7552 upstream (efeito, entradas, respostas, timeout, cancelamento e possível persistência), avaliar os blocos de inicialização e procurar evidências públicas específicas do 00a6. Somente depois definir um experimento ativo mínimo com plano de recuperação. M1 estabelece identidade comercial e descritores; não comprova protocolo nem reconhecimento biométrico.
+
+## Atualização M2 — análise offline em 2026-11-16
+
+Inventário reproduzível implementado: 24 arrays e seis sequências do driver upstream, com tamanhos calculados e hashes. A [matriz do protocolo](protocol.md) separa capacidade de recepção, tamanho de exemplo e validação realmente executada. Foram examinados o executor de transferências, inicialização, captura, parada e cancelamento no commit fixado.
+
+A análise confirma que simplesmente adicionar o ID do 00a6 já acionaria reset e envio de blocos cuja aplicabilidade não conhecemos. O [experimento E1](lab.md) foi especificado como consulta isolada candidata, sem implementação ou execução ativa nesta etapa. O ambiente recuperável e a semântica específica do 00a6 permanecem pendentes; M2 continua parcial.
+
+Validação desta etapa: 14 testes offline aprovados; inventário regenerado a partir dos objetos Git e comparado com o arquivo versionado. Não houve instalação de driver, alteração de PAM, acesso a dados biométricos ou transferências USB.

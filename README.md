@@ -15,7 +15,7 @@ Identify the hardware and protocol, evaluate existing drivers, then pursue a use
 - The pinned libfprint source explicitly lists 138a:00a6 as known unsupported. Its VFS7552 driver registers 138a:0091 only.
 - Endpoint addresses overlap with that driver, but no protocol compatibility or functional support has been established.
 
-See [hardware](docs/hardware.md), [research and sources](docs/research.md), [milestones](docs/roadmap.md), and [test plan](tests/README.md). Working documentation is in Portuguese; this public overview is in English.
+See [hardware](docs/hardware.md), [research and sources](docs/research.md), [protocol analysis](docs/protocol.md), [lab and proposed experiment](docs/lab.md), [milestones](docs/roadmap.md), and [test plan](tests/README.md). Working documentation is in Portuguese; this public overview is in English.
 
 ## Getting started
 
@@ -33,7 +33,13 @@ Read [CONTRIBUTING](CONTRIBUTING.md) and [SECURITY](SECURITY.md). Keep biometric
 
 Run `python3 tools/collect_usb_metadata.py` without sudo. It reads cached sysfs fields and emits JSON to stdout; it does not open USB devices, reset them or send protocol commands. Output excludes serials, string descriptors and topology paths. Review it before sharing. No device returns status 1; inaccessible or malformed metadata returns status 2.
 
-Run offline checks with `python3 -m unittest discover -s tests -v`.
+## Offline protocol research
+
+`python3 tools/analyze_vfs7552.py /path/to/libfprint` inventories arrays and action sequences from a pinned Git commit in an existing local upstream checkout. It outputs lengths, hashes and sequence metadata; it never executes C or communicates with the sensor. See the [reproducible inventory](docs/evidence/vfs7552-static-inventory.json) and [limitations](docs/protocol.md).
+
+The upstream open path resets USB and sends opaque initialization blocks. Its receive macros, endpoint transfer types and cancellation behavior need review before porting. No active probe has been implemented or run.
+
+Run offline checks with `python3 -m unittest discover -s tests -v`. The current suite has 14 tests for metadata privacy and source inventory parsing; it does not validate biometric support.
 
 ## Licensing
 

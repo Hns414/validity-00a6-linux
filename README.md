@@ -125,6 +125,10 @@ The [handler/completion analysis](docs/init-completion.md) distinguishes copied 
 
 The [capture groundwork](docs/capture-foundation.md) locates Dell diagnostic anchors for starting capture and waiting for a finger. An original offline inspector validates a strict candidate chunk shape from the 0091 reference and returns only counts, without copying pixels. The format is unverified on 00a6 and no capture command is enabled.
 
+## Finger-wait route research
+
+The [WaitForFinger analysis](docs/wait-finger-route.md) connects one status-query branch to an internal handler that constructs 0x77 and separates it from host event registration/waiting. State meanings and event endpoint mapping remain unverified; no query or finger-detection experiment was enabled.
+
 ## Licensing
 
 Project-authored code and documentation are licensed under **LGPL-2.1-or-later**; see [LICENSE](LICENSE). This matches the inspected upstream VFS7552 driver's license. Third-party materials retain their own terms. The Dell package and its INF are not redistributed. No upstream driver code has been copied into this project.

@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.26.0-research — 2026-11-16
+
+- Ramo GetWOFStatus ligado à requisição interna 0x30 e construção de comando 0x77.
+- Callback/campos e remapeamento de estados documentados sem rotular presença de dedo.
+- Caminho separado de eventos/callback e espera do host delimitado; endpoint inferior pendente.
+- Onze destinos de chamadas e slot de dispatch conferidos. Somente documentação/evidência; probe inalterado.
+
 ## 0.25.0-research — 2026-11-16
 
 - Anchors de Start/WaitForFinger/forceFingerUp localizados, com limites de interpretação explícitos.

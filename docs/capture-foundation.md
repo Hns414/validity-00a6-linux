@@ -43,3 +43,7 @@ O teste nativo usa somente bytes sintéticos. Percorre blocos de uma a 112 linha
 Ainda falta ligar a inicialização ao caminho de captura real: configuração do sensor, armamento, eventos, leitura limitada e parada/cancelamento. Os anchors acima orientam essa investigação. Só então um experimento de toque/captura terá um resultado interpretável.
 
 Nenhuma imagem ou amostra biométrica foi recebida, gerada ou publicada nesta etapa. Não há teste com dedo solicitado agora. O próximo trabalho é rastrear os comandos/eventos a partir de WaitForFinger e Start, mantendo separadas detecção de toque, captura e cadastro/comparação.
+
+## Avanço no caminho de espera
+
+A [análise seguinte](wait-finger-route.md) liga um ramo de consulta a 0x77 e distingue a cadeia de eventos do host. Os estados, endpoints e preparação da detecção ainda não foram validados no 00a6. Nenhum comando de captura foi ativado.

@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "method": "manual-static-branch-and-dispatch-analysis-with-selected-call-checks",
+  "dll_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "wait_for_finger_rva": "0x14ce0",
+  "query_path": {
+    "diagnostic_helper_rva": "0x11318",
+    "wrapper_rva": "0x46b70",
+    "internal_request": "0x30",
+    "dispatch_slot_rva": "0x1164c0",
+    "handler_rva": "0x81dc0",
+    "constructed_opcode": "0x77",
+    "initial_frame_length": 1,
+    "initial_receive_capacity": 10,
+    "completion_rva": "0x5a4a0",
+    "body_fields_read": [
+      1,
+      2
+    ],
+    "first_field_map_in_wrapper": {
+      "0": 0,
+      "1": 2,
+      "2": 1
+    }
+  },
+  "event_path": {
+    "query_helper_rva": "0x5f7e0",
+    "internal_request": "0x938ae038",
+    "registration_wrapper_rva": "0x5c3a0",
+    "callback_rva": "0x48dd0",
+    "lower_callback_rva": "0x64a90",
+    "registration_call_target": "0xe7520",
+    "wait_call_rva": "0x14f2a",
+    "wait_iat_rva": "0x1102e0",
+    "wait_import": "WaitForSingleObject",
+    "timeout_argument": "0xffffffff",
+    "usb_endpoint_mapping_verified": false
+  },
+  "checked_call_edges": [
+    {
+      "rva": "0x15324",
+      "target": "0x11318",
+      "relative_target_checked": true
+    },
+    {
+      "rva": "0x1136f",
+      "target": "0x46b70",
+      "relative_target_checked": true
+    },
+    {
+      "rva": "0x46c36",
+      "target": "0x55620",
+      "relative_target_checked": true
+    },
+    {
+      "rva": "0x55786",
+      "target": "0x5a820",
+      "relative_target_checked": true
+    },
+    {
+      "rva": "0x81e1b",
+      "target": "0x83220",
+      "relative_target_checked": true
+    },
+    {
+      "rva": "0x81e73",
+      "target": "0x7b110",
+      "relative_target_checked": true
+    },
+    {
+      "rva": "0x15105",
+      "target": "0x44e10",
+      "relative_target_checked": true
+    },
+    {
+      "rva": "0x44f18",
+      "target": "0x5f7e0",
+      "relative_target_checked": true
+    },
+    {
+      "rva": "0x5f878",
+      "target": "0xe6e50",
+      "relative_target_checked": true
+    },
+    {
+      "rva": "0x48cf7",
+      "target": "0x5c3a0",
+      "relative_target_checked": true
+    },
+    {
+      "rva": "0x5c427",
+      "target": "0xe7520",
+      "relative_target_checked": true
+    }
+  ],
+  "polling_retry_observation": {
+    "internal_status": "0xd1",
+    "elapsed_threshold": 500,
+    "elapsed_unit_verified": false,
+    "pause_argument": 5,
+    "pause_unit_verified": false,
+    "device_status_0401_known_translation": true
+  },
+  "runtime_observed": false,
+  "finger_present_state_labels_verified": false,
+  "new_hardware_command_enabled": false
+}

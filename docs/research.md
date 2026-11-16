@@ -237,3 +237,9 @@ O handler copia argumentos opacos para o frame; não contém decoder do corpo no
 A [nova base](capture-foundation.md) localiza anchors de diagnóstico Dell relacionados a iniciar captura, aguardar dedo e forçar retirada; os nomes ainda não provam os comandos reais. A referência 0091 fornece geometria e formato candidato de blocos, não validados para 00a6.
 
 Componente C original inspeciona somente contagens, sem cópia de pixels e sem link no probe. O teste sintético cobre limites, linhas parciais, status e ausência de influência do corpo na saída; 68 testes e ASan/UBSan passaram, sem detecção de leaks. Próximo trabalho no caminho de comandos/eventos, ainda sem teste com dedo.
+
+## Ramo de estado e caminho de eventos em WaitForFinger
+
+A [análise de rotas](wait-finger-route.md) liga GetWOFStatus à requisição interna 0x30, handler 0x81dc0 e montagem 0x77. O callback lê dois campos e o wrapper remapeia estados 0/1/2, ainda sem rótulos de presença validados. A espera por evento usa objeto do host e uma cadeia distinta de callbacks; endpoint inferior permanece pendente.
+
+Onze destinos de chamadas e ponteiro de dispatch foram conferidos. Os números internos não são opcodes USB; unidades dos wrappers de polling ainda não foram demonstradas. Documentação/evidência apenas, sem nova execução da base de 68 testes ou experimento com dedo.

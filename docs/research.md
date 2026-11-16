@@ -263,3 +263,5 @@ A [origem do parâmetro de preparação](start-parameter-origin.md) foi ligada a
 A [atribuição de modo e seleção no ramo 0x80](start-mode-assignment.md) revela sobrescrita local para 3 e preferência condicional pela entrada 53 de 6676 argumentos.
 
 O [caminho posterior à preparação](post-preparation-request9.md) alcança a requisição interna 9 e um builder de opcode 0x02; argumentos e resposta ainda pendentes.
+
+O [layout candidato de 0x02](command02-layout.md) possui modelo original offline de tamanhos; suíte ampliada para 79 testes. Sem captura habilitada.

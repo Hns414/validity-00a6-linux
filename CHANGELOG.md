@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.35.0-research — 2026-11-16
+
+- Cabeçalho candidato de 0x02 e concatenação de nós delimitados; regra de quatro zeros quando total inicial é múltiplo de 64.
+- Modelo original offline de tamanhos e campos neutros, sem payload ou USB.
+- Seis testes novos; 79 aprovados sem skips. Probe ativo inalterado.
+
 ## 0.34.0-research — 2026-11-16
 
 - Caminho posterior à preparação ligado à requisição interna 9 e ao builder de opcode 0x02.

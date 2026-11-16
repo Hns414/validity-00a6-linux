@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "method": "manual-static-builder-layout-with-checked-call-targets",
+  "dll_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "checked_call_edges": [
+    {
+      "call_rva": "0x7d874",
+      "target_rva": "0xd6530"
+    },
+    {
+      "call_rva": "0x7d883",
+      "target_rva": "0xd6530"
+    },
+    {
+      "call_rva": "0x7d8a3",
+      "target_rva": "0xd54b0"
+    },
+    {
+      "call_rva": "0x7d941",
+      "target_rva": "0xd54b0"
+    },
+    {
+      "call_rva": "0x7d9a1",
+      "target_rva": "0xd54b0"
+    }
+  ],
+  "candidate_layout": {
+    "opcode": 2,
+    "header_bytes": 5,
+    "first_word_source": "builder input +0x0c",
+    "second_word_source": "builder input +0x00",
+    "word_encoding": "little-endian",
+    "tail": "concatenation of node buffers in list order",
+    "node_length_field": "0x12",
+    "node_buffer_field": "0x18",
+    "padding_condition": "initial total divisible by 64",
+    "padding_bytes": 4,
+    "padding_value": 0
+  },
+  "public_reference": {
+    "commit": "a6bbc21dce7b8b3c3cd92378a0b2579a2fb45920",
+    "path": "validitysensor/sensor.py",
+    "function": "build_cmd_02",
+    "same_header_shape": true,
+    "target_semantic_fields_verified": false
+  },
+  "model_analysis_limit_bytes": 65536,
+  "sensor_limit_verified": false,
+  "hardware_validated": false,
+  "usb_transfer_performed": false
+}

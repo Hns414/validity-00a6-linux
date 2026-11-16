@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.21.0-research — 2026-11-16
+
+- Fluxo público do bloco de 484 argumentos documentado: consultas, seleção por ID e caminho clean-slate vazio da família 90.
+- Ordem nominal de TLS separada do ramo prévio de provisionamento; diferenças com preparação Dell explícitas.
+- Verificador offline restrito ao hash da DLL reproduz comparação integral sem exportar payload.
+- Seis testes novos; 65 aprovados. Probe ativo inalterado, sem nova operação de hardware.
+
 ## 0.20.0-research — 2026-11-16
 
 - Referência pública associa 0x1a a call_cleanups após operações de flash; efeitos no 00a6 não demonstrados.

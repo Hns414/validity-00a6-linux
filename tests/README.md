@@ -83,3 +83,7 @@ Esses testes verificam nosso parser e simulações de transporte. Não verificam
 ## Resumo de discriminante E1
 
 O teste nativo de ROM verifica o decoder de um bit para todos os valores possíveis, dados não permitidos, comprimentos e erros. A libusb simulada cobre schema 4, ambos os ramos e outro major, envio único E1 e recusa de respostas/falhas. Não há sensor na suíte.
+
+## Verificador do frame de 485 bytes
+
+`test_init_484.py` usa arquivo/intervalos sintéticos para verificar correspondência integral, divergência no último byte, campos e ligações, limites PE e truncamento. Não carrega DLL ou acessa USB. O verificador da CLI exige hash e tamanho conhecidos antes da inspeção; o resultado real da comparação é somente metadado.

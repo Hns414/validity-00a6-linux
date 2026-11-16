@@ -207,3 +207,9 @@ A limpeza posterior zera campos da versão/cache do host, inclusive quando a con
 A [análise de cleanup/status](cleanup-status.md) localizou call_cleanups no python-validity fixado, com envio 0x1a e aceitação especial de 0x0491. A tabela estática Dell traduz 0x0491 em zero e 0x0401 em 0xd1. Isso distingue os códigos internos aceitos pelo consumidor dos status brutos, sem provar efeito do comando no 00a6.
 
 Os gatilhos do mesmo contexto podem vir da resposta de versão ou de atualizações locais de cache; foram registrados pontos observados, sem alegar cobertura exaustiva. Nenhuma alteração de código executável, teste de hardware ou nova execução da suíte nesta etapa documental.
+
+## Fluxo público e verificador de 484 argumentos
+
+A [inspeção upstream](public-init-flow.md) documenta send_init, dispatcher por ID e retorno local para o clean-slate vazio de blobs_90. O bloco é enviado diretamente por Usb.cmd; a abertura TLS explícita de open_common vem depois, mas init_flash tem ramo anterior de provisionamento e TLS. Nenhuma dessas rotinas foi executada.
+
+Verificador original agora reproduz a comparação integral sob hash/commit fixados, com leitura limitada e saída de metadados. Seis testes novos, 65 aprovados sem skips. Identidade e posição no fluxo não decodificam o payload; probe ativo e hardware inalterados.

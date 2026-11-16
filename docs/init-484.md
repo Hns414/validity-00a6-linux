@@ -36,3 +36,7 @@ O nome de família “90” é localização da referência pública, não prova
 Esta etapa registra o relato e a comparação offline; não altera código executável. Os 59 testes e a compilação foram relatados pelo participante para v0.16 e já haviam passado no desenvolvimento. Não houve nova execução da suíte para estas alterações documentais.
 
 Não é necessário repetir o teste. O próximo trabalho volta à análise dos filtros restantes e do caminho consumidor do bloco de 484 bytes, inclusive sua relação com os parâmetros diferentes do registro. Nenhum executor de inicialização foi habilitado.
+
+## Reprodução por ferramenta
+
+A [análise do fluxo público](public-init-flow.md) inclui agora um verificador offline original, limitado ao hash da DLL e ao commit público fixado. Ele reproduz a comparação sem exportar bytes; não habilita inicialização.

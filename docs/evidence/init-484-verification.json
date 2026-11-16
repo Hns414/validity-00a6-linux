@@ -1,0 +1,15 @@
+{
+  "arguments_length": 484,
+  "arguments_sha256": "7071967a90f5a5ad82e206bdb5ab7aefdfb231cb106ea89dcbd11a64381f7bb1",
+  "dll_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "equals_public_init_hardcoded": true,
+  "frame_length": 485,
+  "frame_sha256": "854b90943a8b865ca237b686112381d15460f715c88147ff6d83d7b8d264b1db",
+  "full_selection_evaluated": false,
+  "hardware_execution_enabled": false,
+  "method": "offline-known-484-byte-descriptor-comparison",
+  "public_reference_commit": "a6bbc21dce7b8b3c3cd92378a0b2579a2fb45920",
+  "record_rva": "0x13d490",
+  "schema_version": 1,
+  "table_index": 55
+}

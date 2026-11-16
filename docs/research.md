@@ -253,3 +253,5 @@ O cache local explica a consulta 0x938ae038; cancelamento 0x938ae064 pode chegar
 O [rastreamento do registro de eventos](event-registration.md) distingue tipos do host, conclusão e seletores do cache; armamento do sensor ainda pendente.
 
 A [preparação de Start](start-preparation.md) alcança o seletor com máscara 0x400000; seleção e efeitos ainda pendentes.
+
+A [seleção condicional de Start](start-selection.md) deixa a entrada 52 sob premissas explícitas; inclui máscara excluída e limitações do cache.

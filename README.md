@@ -142,3 +142,5 @@ Independent project, unaffiliated with Dell, Validity or Synaptics.
 O [rastreamento do registro de eventos](docs/event-registration.md) distingue tipos do host, conclusão e seletores do cache; armamento do sensor ainda pendente.
 
 A [preparação de Start](docs/start-preparation.md) alcança o seletor com máscara 0x400000; seleção e efeitos ainda pendentes.
+
+A [seleção condicional de Start](docs/start-selection.md) deixa a entrada 52 sob premissas explícitas; inclui máscara excluída e limitações do cache.

@@ -28,3 +28,5 @@ A versão 6.7 previamente informada pelo participante torna esses registros rele
 Quatro destinos de chamadas foram verificados diretamente no binário fixado; a tabela foi lida usando o mapeamento de seções PE. A interpretação dos ramos permanece manual. Esta etapa altera somente documentação e evidência; mantém a base de 73 testes aprovados na v0.27, sem nova execução da suíte.
 
 O ramo mostra uma preparação dependente de contexto além do registro de eventos no host. Ainda faltam a seleção integral, o papel dos blocos, os demais caminhos de 0x47430 e a ligação com eventos reais. Não há novo comando habilitado nem teste com dedo nesta etapa.
+
+A [continuação da seleção](start-selection.md) identifica 0x22020 como máscara excluída e distingue as duas entradas pelo discriminante, sob premissas explícitas.

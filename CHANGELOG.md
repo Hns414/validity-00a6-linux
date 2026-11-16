@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.30.0-research — 2026-11-16
+
+- Preparação de Start reduzida condicionalmente à entrada 52 com discriminante 2; gate/contexto ainda não observados.
+- Valor 0x22020 identificado como máscara excluída; parâmetro do seletor é zero.
+- Blocos candidatos de mesmo tamanho confirmados diferentes; consumidor pode concluir via cache sem envio.
+- Somente documentação/evidência, sem novo comando no probe.
+
 ## 0.29.0-research — 2026-11-16
 
 - Ramo de preparação de Start ligado ao seletor com máscara 0x400000 e parâmetro 0x22020.

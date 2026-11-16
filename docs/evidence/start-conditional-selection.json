@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "method": "conditional-table-filtering-and-manual-argument-trace",
+  "dll_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "assumptions": {
+    "firmware_major": 6,
+    "firmware_minor": 7,
+    "build": 164,
+    "discriminator": 2,
+    "required_mask": "0x400000",
+    "excluded_mask": "0x22020",
+    "selector_caller_parameter": 0,
+    "internal_gate_byte_0a": 1
+  },
+  "filter_stages": [
+    {
+      "filter": "required_mask",
+      "remaining_table_indices": [
+        15,
+        24,
+        28,
+        32,
+        39,
+        46,
+        52,
+        59,
+        62,
+        66,
+        72
+      ]
+    },
+    {
+      "filter": "excluded_mask",
+      "remaining_table_indices": [
+        15,
+        24,
+        28,
+        32,
+        39,
+        46,
+        52,
+        59,
+        62,
+        66,
+        72
+      ]
+    },
+    {
+      "filter": "major_minor_build",
+      "remaining_table_indices": [
+        15,
+        52
+      ]
+    },
+    {
+      "filter": "caller_parameter",
+      "remaining_table_indices": [
+        15,
+        52
+      ]
+    },
+    {
+      "filter": "discriminator",
+      "remaining_table_indices": [
+        52
+      ]
+    }
+  ],
+  "remaining_candidate": {
+    "table_index": 52,
+    "record_rva": "0x13d3a0",
+    "arguments_bytes": 12100,
+    "record_mask": "0x400080",
+    "field_20": 18,
+    "wildcard_fields": [
+      "0x1c",
+      "0x38",
+      "0x40"
+    ],
+    "required_gate_field_3c": 1
+  },
+  "same_length_candidates_have_equal_arguments": false,
+  "checked_call_edges": [
+    {
+      "call_rva": "0x5edc4",
+      "target_rva": "0x5ede0"
+    },
+    {
+      "call_rva": "0x5ef20",
+      "target_rva": "0x8fb20"
+    },
+    {
+      "call_rva": "0x5f002",
+      "target_rva": "0x62ad0"
+    },
+    {
+      "call_rva": "0x62b1e",
+      "target_rva": "0x63f00"
+    }
+  ],
+  "record_mask_classifier_result": 0,
+  "runtime_selection_observed": false,
+  "payload_effects_verified": false,
+  "usb_transfer_performed": false
+}

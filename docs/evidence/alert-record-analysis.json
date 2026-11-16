@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "method": "manual-static-analysis-compared-with-RFC5246",
+  "dll_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "alert_candidate": {
+    "builder_rva": "0x771e0",
+    "caller_rva": "0x757af",
+    "caller_description_argument": 0,
+    "level_default": 1,
+    "fatal_descriptions": [
+      10,
+      20,
+      40,
+      47
+    ],
+    "payload_offsets": [
+      "0x15",
+      "0x16"
+    ],
+    "record_call_rva": "0x7728b",
+    "record_type": 21,
+    "length_argument": 7
+  },
+  "record_header": {
+    "builder_rva": "0x763f0",
+    "type_store_rva": "0x766f9",
+    "version_stores": [
+      "0x76703",
+      "0x7670f"
+    ],
+    "version": [
+      3,
+      3
+    ],
+    "length_writer_call_rva": "0x76739",
+    "big_endian_writer_rva": "0x794a0",
+    "length_width": 2
+  },
+  "additional_application_transform_checks": {
+    "routine_rva": "0x773a0",
+    "mode_equals_ff_rva": "0x773cf",
+    "flags_field_offset": "0x128",
+    "required_bit": 2,
+    "flags_test_rva": "0x773e6",
+    "rejection_code": "0xcc",
+    "maximum_input_length": 65536,
+    "input_length_compare_rva": "0x7740e"
+  },
+  "callers_of_sender_observed": [
+    {
+      "rva": "0x74c56",
+      "enclosing_routine": "0x74bb0",
+      "conditions": [
+        "auxiliary context exists",
+        "field +0x4e0 equals zero",
+        "second argument equals one"
+      ],
+      "subsequent_cleanup_call": "0x74c6b"
+    },
+    {
+      "rva": "0x74ec7",
+      "enclosing_routine": "0x74e90",
+      "conditions": [
+        "helper 0x74c90 returns nonzero",
+        "second argument is nonzero"
+      ],
+      "subsequent_context_reinit_call": "0x74f17"
+    }
+  ],
+  "references": [
+    "https://www.rfc-editor.org/rfc/rfc5246.html#section-6.2.1",
+    "https://www.rfc-editor.org/rfc/rfc5246.html#section-7.2",
+    "https://github.com/uunicorn/python-validity/blob/a6bbc21dce7b8b3c3cd92378a0b2579a2fb45920/validitysensor/tls.py"
+  ],
+  "interpretation": "The internal buffer path is consistent with TLS alerts, including warning/close_notify for argument zero; it does not decode init_00.",
+  "limits": [
+    "Manual coordinate analysis, not runtime observation or machine-verified equivalence",
+    "No cipher suite, key material or successful handshake established for 00a6",
+    "No claim of complete TLS conformance",
+    "No new USB operation or executable code change"
+  ]
+}

@@ -159,3 +159,9 @@ A [análise dos predicados](transport-context.md) delimita a tentativa de transf
 A flag é zerada em 0x754dd no contexto do host e marcada em 0x75891 após a cópia de um buffer interno, antes da chamada de transporte em 0x758c2. Isso não estabelece semântica de sessão ou reset do dispositivo. Os 13 blobs públicos não vazios inventariados têm comprimento menos cinco divisível por 16; o alinhamento não identifica cifra nem efeitos internos.
 
 Etapa somente documental, com evidência estática manual; código e base de 52 testes de v0.11 inalterados, sem nova execução da suíte. Próximo trabalho: chamadores e produção do buffer interno, ainda offline.
+
+## Buffer interno e candidato a alerta TLS
+
+O [rastreio de 0x771e0](alert-records.md) encontrou nível/descrição de dois bytes, tipo 0x15 e cabeçalho 03 03 com comprimento big endian. A comparação com a RFC 5246 sustenta a interpretação de alerta, incluindo close_notify quando o argumento é zero. Os chamadores aparecem em caminhos de liberação/reinicialização do contexto do host. Esta interpretação não decodifica init_00 nem comprova sessão TLS no leitor.
+
+Dentro de 0x773a0, o modo 0xff e o bit 0x02 de +0x128 são requisitos adicionais; os predicados da etapa anterior delimitavam somente a tentativa. O registro de evidência permanece manual. Nenhuma alteração de código, execução adicional da suíte ou operação USB nesta etapa.

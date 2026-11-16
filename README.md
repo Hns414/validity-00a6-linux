@@ -73,6 +73,10 @@ The [static transport analysis](docs/transport-and-status.md) now connects a ven
 
 The [context analysis](docs/transport-context.md) documents the observed guards before buffer transformation, two internal flag writes and a separate receive-capacity adjustment. These static conditions do not establish the runtime state of the 00a6 or the effects of init_00. This documentation-only stage adds no hardware operation.
 
+## Internal alert record path
+
+The [internal buffer analysis](docs/alert-records.md) finds a path consistent with TLS alerts, including close_notify, and documents an additional application-record guard. This separates a connection-signaling buffer from the opaque init payload; it does not establish a working TLS session on the 00a6.
+
 ## Licensing
 
 Project-authored code and documentation are licensed under **LGPL-2.1-or-later**; see [LICENSE](LICENSE). This matches the inspected upstream VFS7552 driver's license. Third-party materials retain their own terms. The Dell package and its INF are not redistributed. No upstream driver code has been copied into this project.

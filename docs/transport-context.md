@@ -44,3 +44,7 @@ A observação é somente aritmética. As entradas vêm de famílias relacionada
 O [registro estruturado](evidence/transport-context-analysis.json) publica coordenadas, condições e comprimentos, sem bytes proprietários ou disassembly integral. As condições foram conferidas manualmente nas instruções; o JSON não é prova automática de equivalência. Esta versão altera apenas documentação e evidência. O código e a suíte permanecem na base de 52 testes validada em v0.11.0-research; não houve nova execução da suíte nesta etapa.
 
 A próxima investigação deve seguir os chamadores das rotinas de contexto e a origem dos dados produzidos por 0x771e0, distinguindo construção no host de operações executadas pelo sensor. Continuam pendentes o contexto efetivamente selecionado para o 00a6, os efeitos internos de init_00 e um procedimento de recuperação validado. Nenhum novo teste de hardware é solicitado; E1/E2 não precisam ser repetidos para esta análise.
+
+## Refinamento posterior
+
+O [rastreio do buffer interno](alert-records.md) identifica um caminho compatível com alertas TLS, distinto do conteúdo de init_00. Também registra o teste adicional do bit 0x02 em +0x128 dentro de 0x773a0: os predicados acima são condições para tentar a transformação, sem garantir sucesso.

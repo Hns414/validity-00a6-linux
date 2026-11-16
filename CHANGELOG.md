@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.13.0-research — 2026-11-16
+
+- Buffer interno rastreado a construtor compatível com alertas TLS; comparação explícita com RFC 5246.
+- Cabeçalho tipo/03 03/comprimento big endian e dois chamadores documentados.
+- Condição adicional do bit 0x02 em +0x128 delimita sucesso da transformação de dados de aplicação.
+- Caminho de alertas separado do conteúdo opaco de init_00; sem negociação ou cifra validada no 00a6.
+- Somente documentação/evidência; base anterior de 52 testes, sem nova execução ou operação USB.
+
 ## 0.12.0-research — 2026-11-16
 
 - Predicados estáticos da transformação delimitados por contexto, estado, modo e flag interna.

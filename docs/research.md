@@ -151,3 +151,11 @@ A [análise estática](transport-and-status.md) localizou a instalação do call
 Essa cadeia é um caminho implementado na DLL, sem trace ou avaliação do contexto real do participante. PipeID é consultado dinamicamente e há transformações condicionais anteriores. O efeito do payload permanece desconhecido. O [registro de análise](evidence/transport-route-analysis.json) é manual e não é validado pela suíte como prova de equivalência de disassembly.
 
 Foi implementado um parser C original de status cleartext, compartilhado por E1/E2, mantendo schemas e comandos anteriores. Respostas curtas são recusadas; status não zero não é confundido com erro de parsing ou sucesso biométrico. O novo teste e ASan/UBSan passaram; 52 testes no total. Nenhuma operação ativa foi adicionada ou executada nesta etapa.
+
+## Condições do contexto de transporte
+
+A [análise dos predicados](transport-context.md) delimita a tentativa de transformação em 0x747e0: contexto auxiliar presente, byte +0x4e8 igual a 7, DWORD +0x100 igual a 0xff e DWORD +0x4e0 zerado, além de ponteiros válidos. O aumento de 69 na capacidade de recepção precede parte desses testes e não prova transformação do envio.
+
+A flag é zerada em 0x754dd no contexto do host e marcada em 0x75891 após a cópia de um buffer interno, antes da chamada de transporte em 0x758c2. Isso não estabelece semântica de sessão ou reset do dispositivo. Os 13 blobs públicos não vazios inventariados têm comprimento menos cinco divisível por 16; o alinhamento não identifica cifra nem efeitos internos.
+
+Etapa somente documental, com evidência estática manual; código e base de 52 testes de v0.11 inalterados, sem nova execução da suíte. Próximo trabalho: chamadores e produção do buffer interno, ainda offline.

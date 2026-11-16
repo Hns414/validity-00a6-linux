@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.12.0-research — 2026-11-16
+
+- Predicados estáticos da transformação delimitados por contexto, estado, modo e flag interna.
+- Aumento de capacidade de recepção separado de substituição do buffer de envio.
+- Duas escritas na flag e encaminhamento de buffer interno documentados, sem atribuir semântica de sessão.
+- Alinhamento dos 13 blobs públicos não vazios registrado como aritmética, sem identificar cifra ou efeitos.
+- Somente documentação/evidência; base de 52 testes de v0.11 mantida, sem nova execução. Nenhum comando adicional habilitado.
+
 ## 0.11.0-research — 2026-11-16
 
 - Cadeia estática da requisição do fornecedor ligada aos wrappers WinUsb_WritePipe/ReadPipe.

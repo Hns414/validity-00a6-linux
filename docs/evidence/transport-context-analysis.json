@@ -1,0 +1,148 @@
+{
+  "schema_version": 1,
+  "analysis_method": "manual-static-branch-analysis-and-public-length-arithmetic",
+  "dll_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "transform_helper_rva": "0x747e0",
+  "conditions_before_transform_attempt": [
+    {
+      "observation": "auxiliary context exists",
+      "load_rva": "0x74869",
+      "context_field_offset": "0x50"
+    },
+    {
+      "observation": "internal byte state equals 7",
+      "comparison_rva": "0x748b9",
+      "auxiliary_field_offset": "0x4e8"
+    },
+    {
+      "observation": "internal mode field equals 0xff",
+      "comparison_rva": "0x748dc",
+      "auxiliary_field_offset": "0x100"
+    },
+    {
+      "observation": "internal field equals zero; nonzero skips this transform attempt",
+      "comparison_rva": "0x74906",
+      "auxiliary_field_offset": "0x4e0"
+    }
+  ],
+  "transform_attempt": {
+    "call_rva": "0x74962",
+    "target_rva": "0x773a0",
+    "record_type_argument": "0x17",
+    "record_builder_call_rva": "0x774c2",
+    "record_builder_rva": "0x763f0"
+  },
+  "guard_rvas": [
+    "0x74878",
+    "0x748bc",
+    "0x748e6",
+    "0x7490d"
+  ],
+  "flag_writes_observed": [
+    {
+      "rva": "0x754dd",
+      "value": 0,
+      "context": "host auxiliary structure initialization/reset path in routine 0x753f0; not a device reset proof"
+    },
+    {
+      "rva": "0x75891",
+      "value": 1,
+      "context": "routine 0x75700 copies auxiliary buffer +0x130 using length +0x12c, sets field, then calls transport 0x7b110 at 0x758c2",
+      "transport_call_rva": "0x758c2"
+    }
+  ],
+  "receive_capacity_adjustment": {
+    "rva": "0x748a2",
+    "added_bytes": 69,
+    "limit": "This arithmetic precedes some guards and is not proof of outbound transformation."
+  },
+  "public_blob_shapes": [
+    {
+      "reference": "libfprint/init_00",
+      "length": 501,
+      "bytes_after_five_byte_prefix": 496,
+      "multiple_of_16_after_prefix": true
+    },
+    {
+      "reference": "libfprint/init_04",
+      "length": 6677,
+      "bytes_after_five_byte_prefix": 6672,
+      "multiple_of_16_after_prefix": true
+    },
+    {
+      "reference": "python-validity/90/init_hardcoded",
+      "length": 485,
+      "bytes_after_five_byte_prefix": 480,
+      "multiple_of_16_after_prefix": true
+    },
+    {
+      "reference": "python-validity/90/reset_blob",
+      "length": 11493,
+      "bytes_after_five_byte_prefix": 11488,
+      "multiple_of_16_after_prefix": true
+    },
+    {
+      "reference": "python-validity/97/init_hardcoded",
+      "length": 581,
+      "bytes_after_five_byte_prefix": 576,
+      "multiple_of_16_after_prefix": true
+    },
+    {
+      "reference": "python-validity/97/init_hardcoded_clean_slate",
+      "length": 741,
+      "bytes_after_five_byte_prefix": 736,
+      "multiple_of_16_after_prefix": true
+    },
+    {
+      "reference": "python-validity/97/reset_blob",
+      "length": 12037,
+      "bytes_after_five_byte_prefix": 12032,
+      "multiple_of_16_after_prefix": true
+    },
+    {
+      "reference": "python-validity/9a/init_hardcoded",
+      "length": 581,
+      "bytes_after_five_byte_prefix": 576,
+      "multiple_of_16_after_prefix": true
+    },
+    {
+      "reference": "python-validity/9a/init_hardcoded_clean_slate",
+      "length": 741,
+      "bytes_after_five_byte_prefix": 736,
+      "multiple_of_16_after_prefix": true
+    },
+    {
+      "reference": "python-validity/9a/reset_blob",
+      "length": 12037,
+      "bytes_after_five_byte_prefix": 12032,
+      "multiple_of_16_after_prefix": true
+    },
+    {
+      "reference": "python-validity/9d/init_hardcoded",
+      "length": 581,
+      "bytes_after_five_byte_prefix": 576,
+      "multiple_of_16_after_prefix": true
+    },
+    {
+      "reference": "python-validity/9d/init_hardcoded_clean_slate",
+      "length": 741,
+      "bytes_after_five_byte_prefix": 736,
+      "multiple_of_16_after_prefix": true
+    },
+    {
+      "reference": "python-validity/9d/reset_blob",
+      "length": 12037,
+      "bytes_after_five_byte_prefix": 12032,
+      "multiple_of_16_after_prefix": true
+    }
+  ],
+  "runtime_state_measured": false,
+  "inner_payload_decoded": false,
+  "hardware_execution_enabled": false,
+  "limits": [
+    "Branch interpretation is manual, not machine-verified equivalence",
+    "Flag setter high-level semantics and current state unresolved",
+    "Block-size alignment does not establish encryption, cipher or device-side operations"
+  ],
+  "source_metadata": "Public blob lengths inherited from docs/evidence/init-blob-comparison.json; DLL coordinates relative to ImageBase 0x180000000."
+}

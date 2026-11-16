@@ -62,3 +62,7 @@ A etapa v0.10.0-research contém um encoder C testado somente com argumentos sin
 ## Transporte e status em v0.11.0-research
 
 O rastreamento estático chegou aos wrappers WinUSB e ao callback de resposta. Isso não é uma execução de DLL nem captura de tráfego. As consultas existentes agora usam uma função comum de parsing de status, testada com bytes sintéticos, mantendo os mesmos schemas. Nenhum comando adicional está habilitado; não repetir E1/E2 para validar uma análise estática.
+
+## Contexto em v0.12.0-research
+
+Os predicados de transformação e duas escritas na flag interna foram registrados por análise estática. Não foi medido o contexto do leitor nem decodificado o conteúdo de inicialização. Esta etapa altera somente documentos; não requer compilação ou repetição dos testes E1/E2 pelo participante.

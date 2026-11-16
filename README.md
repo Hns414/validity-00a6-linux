@@ -69,6 +69,10 @@ The [framing analysis](docs/init-framing.md) traced internal request 7 to a hand
 
 The [static transport analysis](docs/transport-and-status.md) now connects a vendor request to the WinUSB write/read wrappers and identifies the response callback. Context-dependent transformations and payload effects remain unresolved. An original status-header parser is shared by E1/E2 without changing their public schemas or adding commands. The init frame encoder is still offline-only.
 
+## Transport context conditions
+
+The [context analysis](docs/transport-context.md) documents the observed guards before buffer transformation, two internal flag writes and a separate receive-capacity adjustment. These static conditions do not establish the runtime state of the 00a6 or the effects of init_00. This documentation-only stage adds no hardware operation.
+
 ## Licensing
 
 Project-authored code and documentation are licensed under **LGPL-2.1-or-later**; see [LICENSE](LICENSE). This matches the inspected upstream VFS7552 driver's license. Third-party materials retain their own terms. The Dell package and its INF are not redistributed. No upstream driver code has been copied into this project.

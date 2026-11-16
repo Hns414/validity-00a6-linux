@@ -55,3 +55,9 @@ Não implementar execução de init_00/init_04 nesta etapa. Para avançar, ainda
 4. Evidência de recuperação aplicável às operações identificadas.
 
 O trabalho pode continuar offline nas fontes do driver e na documentação do protocolo. Não é necessário repetir E1/E2, instalar Windows ou coletar impressões digitais para concluir essa análise. Um trace compatível só será considerado se houver procedimento específico que evite captura biométrica e mantenha dados brutos privados; não é uma solicitação para capturar tráfego agora.
+
+## Continuação: envelope e driver Dell
+
+A [análise estática Dell](dell-static-analysis.md) acrescenta uma declaração do mantenedor sobre provável código executado no sensor, busca de correspondência literal nos arquivos do pacote e pontos candidatos para seguir o fluxo de dados da DLL. A hipótese de código não é uma especificação confirmada do envelope. Nenhum bloco foi executado e o formato interno permanece em aberto.
+
+A investigação ampliada encontrou também os 500 bytes de init_00 sem opcode no driver Dell do 00a6, integralmente. Isso avança a proveniência além da comparação entre projetos, mas não resolve a semântica do envelope nem permite supor que o bloco seja seguro para qualquer estado do sensor. As coordenadas e os limites estão em dell-static-analysis.md.

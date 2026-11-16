@@ -1,0 +1,73 @@
+{
+  "files": [
+    {
+      "diagnostic_string_anchors": [
+        {
+          "label": "CBiometricDevice::deviceInit",
+          "string_rva": "0x111600",
+          "string_va": "0x180111600"
+        },
+        {
+          "label": "CeivMode::SetPayloadData",
+          "string_rva": "0x112d80",
+          "string_va": "0x180112d80"
+        },
+        {
+          "label": "CeivMode::GetPayloadData",
+          "string_rva": "0x112da0",
+          "string_va": "0x180112da0"
+        }
+      ],
+      "exact_literal_occurrences": {
+        "shared_envelope_prefix": 0,
+        "vfs7552_init_00": 0,
+        "vfs7552_init_00_after_five_byte_prefix": 1,
+        "vfs7552_init_00_without_opcode": 1,
+        "vfs7552_init_04": 0,
+        "vfs7552_init_04_after_five_byte_prefix": 0,
+        "vfs7552_init_04_without_opcode": 0
+      },
+      "file_name": "synaWudfBioUsb.dll",
+      "format": "PE32+ AMD64",
+      "image_base": "0x180000000",
+      "matched_literal_locations": [
+        {
+          "file_offset": "0x15e550",
+          "length": 500,
+          "reference_name": "vfs7552_init_00_without_opcode",
+          "rva": "0x15f550"
+        },
+        {
+          "file_offset": "0x15e554",
+          "length": 496,
+          "reference_name": "vfs7552_init_00_after_five_byte_prefix",
+          "rva": "0x15f554"
+        }
+      ],
+      "sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+      "size": 2296920
+    },
+    {
+      "diagnostic_string_anchors": [],
+      "exact_literal_occurrences": {
+        "shared_envelope_prefix": 0,
+        "vfs7552_init_00": 0,
+        "vfs7552_init_00_after_five_byte_prefix": 0,
+        "vfs7552_init_00_without_opcode": 0,
+        "vfs7552_init_04": 0,
+        "vfs7552_init_04_after_five_byte_prefix": 0,
+        "vfs7552_init_04_without_opcode": 0
+      },
+      "file_name": "synaBscAdapter.dll",
+      "format": "PE32+ AMD64",
+      "image_base": "0x180000000",
+      "matched_literal_locations": [],
+      "sha256": "6a78cf2370219beb9115c32720a856d3c9089e6fdd66a19430ca1711f2dca53f",
+      "size": 358504
+    }
+  ],
+  "limit": "No exact contiguous match does not prove absence of generated or transformed payloads.",
+  "method": "static-read-only-no-code-execution",
+  "schema_version": 1,
+  "upstream_reference_commit": "8b6e4e39bee58de2774222e3730269def470b157"
+}

@@ -78,3 +78,7 @@ O participante já relatou resposta de 38 bytes e os quatro campos candidatos. N
 ## Após o resultado E2
 
 O participante já retornou E2 com 68 bytes e os indicadores esperados. Não repetir E1/E2 por rotina. A versão v0.7.0-research acrescenta somente investigação e ferramentas offline, sem novo comando para o sensor. O próximo envio dependerá de compreender os blocos de inicialização; por enquanto, nenhuma execução adicional é solicitada.
+
+## Etapa v0.8.0-research
+
+A suíte atual contém 44 testes. Esta etapa adiciona análise estática de arquivos PE e não pede execução de opções ativas no sensor. E1 e E2 já têm resultados registrados; aguarde um experimento definido a partir da investigação do envelope.

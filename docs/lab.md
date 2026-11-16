@@ -50,3 +50,7 @@ O resumo E1 do participante mostrou coincidência dos quatro campos candidatos c
 ## Situação após E2
 
 O participante confirmou a troca de transporte de E2 pelos indicadores publicados. A próxima etapa não requer novo comando de hardware: a análise de [init_00 e init_04](init-blobs.md) permanece offline. Não executar o driver upstream com o ID alterado, pois isso enviaria esses blocos automaticamente. As ferramentas ativas deste projeto continuam limitadas às opções explícitas E1/E2 já documentadas.
+
+## Limite da execução de código proprietário
+
+Nesta fase, DLLs são somente dados para inspeção estática. O sandbox de terceiros não foi executado porque não estabelece isolamento em relação ao sensor e pode disparar alterações persistentes. A [análise do driver Dell](dell-static-analysis.md) registra essa distinção e os pontos candidatos para continuar offline. Nenhum ambiente de execução de DLL com USB simulado foi preparado ou validado.

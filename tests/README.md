@@ -53,3 +53,9 @@ Treze cenários E2 simulados foram executados com ASan/UBSan e ASAN_OPTIONS=dete
 Sete testes adicionais (37 no total) verificam extração de literais sem executar o Python upstream, tratamento de whitespace inclusive entre nibbles usado por unhex, rejeição de expressões/dados inválidos/definições duplicadas, ordem e flag optional das mensagens e distinção entre prefixo comum e igualdade integral. O comparador usa ast para ler sintaxe; não usa eval nem importa módulos de terceiros.
 
 A comparação real foi regenerada dos objetos Git fixados de três repositórios e coincide com o JSON versionado. O resultado só descreve igualdade, tamanhos, hashes e flags declaradas. Não valida semântica de comandos ou segurança de sua execução. Nenhuma nova transferência USB foi realizada nesta etapa.
+
+## Survey PE somente leitura
+
+Sete testes adicionais (43 no total) usam arquivos PE32+ inteiramente sintéticos para verificar estrutura/seção, mapeamento de RVA, recusa de cabeçalhos truncados, arquitetura incorreta, seções fora do arquivo e anchors sem mapeamento inequívoco. A busca literal verifica correspondência contígua e não infere semântica a partir de um prefixo. Um teste adicional verifica que o payload armazenado sem o opcode é encontrado mesmo quando o comando completo não está presente. Nenhum teste carrega DLL ou utiliza binário proprietário como fixture.
+
+O relatório real foi regenerado a partir das duas DLLs privadas do pacote Dell e comparado ao JSON versionado; são idênticos. Não houve execução de código Windows ou acesso ao sensor.

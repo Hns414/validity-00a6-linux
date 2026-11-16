@@ -39,7 +39,7 @@ Run `python3 tools/collect_usb_metadata.py` without sudo. It reads cached sysfs 
 
 The upstream open path resets USB and sends opaque initialization blocks. Its receive macros, endpoint transfer types and cancellation behavior need review before porting. An experimental single-query probe is now implemented and tested against a USB simulator. The participant reported a 38-byte reply from the target sensor; four candidate metadata fields have since been reported and match the selected upstream example fields; no raw reply has been inspected. See the [first hardware test](docs/first-hardware-test.md) before running it.
 
-Run offline checks with `python3 -m unittest discover -s tests -v`. The current suite has 37 tests for metadata privacy, source inventory parsing and a simulated libusb transport. Probe simulation requires a C compiler, pkg-config and libusb development headers; those tests are explicitly skipped if unavailable. No tests validate biometric support.
+Run offline checks with `python3 -m unittest discover -s tests -v`. The current suite has 44 tests for metadata privacy, source inventory parsing and a simulated libusb transport. Probe simulation requires a C compiler, pkg-config and libusb development headers; those tests are explicitly skipped if unavailable. No tests validate biometric support.
 
 ## Experimental hardware probe
 
@@ -52,6 +52,10 @@ Build with `make probe` (C compiler, make, pkg-config and libusb-1.0 development
 ## Initialization research
 
 The [init_00 analysis](docs/init-blobs.md) traces the 501-byte upstream block to an identical Validity91 literal. Its short prefix also occurs in unrelated initialization and reset blobs; that prefix does not establish safe semantics. No tool sends init_00 or init_04 in this project. A [reproducible offline comparator](tools/compare_init_blobs.py) exports only public-source hashes, lengths and comparison metadata, not payloads.
+
+## Vendor driver analysis
+
+A [read-only PE survey](docs/dell-static-analysis.md) now records hashes, exact-match searches and selected diagnostic anchors in the Dell DLLs. It found the exact 500-byte init_00 arguments in the official Dell DLL, stored without the leading opcode. It does not execute vendor code or access USB. The internal init envelope remains unresolved; the published Windows-driver sandbox can alter sensor provisioning and has not been run. No new hardware test is requested for this stage.
 
 ## Licensing
 

@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.8.0-research — 2026-11-16
+
+- Análise estática Dell: init_00 sem opcode (500 bytes) encontrado integralmente na DLL principal; blocos completos ausentes na busca contígua e três anchors candidatos localizados.
+- Survey PE reproduzível sem carregar DLLs, extrair payloads ou acessar USB.
+- Avaliação do mantenedor sobre a natureza dos blobs e limites do sandbox de terceiros documentados com fontes.
+- Sete testes adicionais; 43 no total. Envelope ainda não decodificado e nenhum novo teste de hardware.
+
 ## 0.7.0-research — 2026-11-16
 
 - Resultado E2 do participante registrado: 68 bytes, prefixo candidato zero e tamanho coincidente com referência.

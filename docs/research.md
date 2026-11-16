@@ -225,3 +225,9 @@ Inventário ampliado opcional, sem executar fonte ou payload; padrão schema 1 r
 A [revisão HP/Synaptics](vendor-security-context.md) encontrou descrição de patches cifrados/assinados para VFS495 e boletim VFS75xx sobre validação de partições em sensores com flash externa. Os escopos são distintos e não demonstram o formato do bloco de 484 argumentos ou incidência da falha no participante.
 
 Nenhum consumidor público do corpo foi localizado nesta busca. O resultado é uma delimitação de hipóteses, sem decoder ou novo comando. Etapa documental, sem repetir a suíte de 67 testes ou hardware.
+
+## Capacidade de recepção e conclusão do init
+
+A [análise do handler/callback](init-completion.md) liga 2 + 0x20 à capacidade inicial de recepção em descritor passado por referência ao transporte. O callback de conclusão armazena status traduzido e sinaliza espera, sem ler o corpo. Nenhum tamanho exato de resposta ou efeito de patch foi demonstrado por isso.
+
+O handler copia argumentos opacos para o frame; não contém decoder do corpo no trecho examinado. Limite local da análise, sem afirmar ausência global de parser na DLL. Somente documentação/evidência, sem novos testes ou comando ativo.

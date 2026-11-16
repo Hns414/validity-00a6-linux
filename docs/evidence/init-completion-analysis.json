@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "analysis_method": "manual-static-dataflow-with-selected-call-and-immediate-checks",
+  "dll_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "handler_rva": "0x7e540",
+  "outgoing": {
+    "opcode": "0x06",
+    "length_increment_rva": "0x7e5c2",
+    "argument_copy_call_rva": "0x7e603",
+    "argument_interpretation_in_this_handler_observed": false
+  },
+  "receive_capacity": {
+    "initial_value": 2,
+    "initial_store_rva": "0x7e608",
+    "addition": 32,
+    "addition_rva": "0x7e614",
+    "initial_total": 34,
+    "transport_call_rva": "0x7e64e",
+    "descriptor_initialization_rva": "0x7b14e",
+    "may_be_adjusted_by_transport_context": true,
+    "exact_reply_length_established": false
+  },
+  "completion": {
+    "rva": "0x56cd0",
+    "translated_status_store_rva": "0x56d23",
+    "signal_call_rva": "0x56d36",
+    "reply_payload_interpreted_in_this_callback": false
+  },
+  "limits": [
+    "Only the identified host handler and callback were inspected for payload interpretation",
+    "No global claim that the DLL never parses any patch data",
+    "No device-side consumer or firmware decoder identified",
+    "Status/transport completion does not prove patch effects or capture readiness"
+  ],
+  "new_hardware_command_enabled": false
+}

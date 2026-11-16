@@ -117,6 +117,10 @@ The [payload-role analysis](docs/payload-roles.md) distinguishes the 485-byte in
 
 The [primary-document review](docs/vendor-security-context.md) separates transport protection, opaque initialization payloads and partition-table signatures. HP documents patch protection for the related VFS495 family; a Synaptics VFS75xx advisory concerns external-flash partition tables. Neither establishes the 00a6 payload format or confirms a vulnerability on the participant’s hardware.
 
+## Initialization completion contract
+
+The [handler/completion analysis](docs/init-completion.md) distinguishes copied patch arguments, an initial receive capacity of 34 bytes and a callback that stores translated status without parsing the reply body. These facts do not establish exact reply length, patch effects or capture readiness.
+
 ## Licensing
 
 Project-authored code and documentation are licensed under **LGPL-2.1-or-later**; see [LICENSE](LICENSE). This matches the inspected upstream VFS7552 driver's license. Third-party materials retain their own terms. The Dell package and its INF are not redistributed. No upstream driver code has been copied into this project.

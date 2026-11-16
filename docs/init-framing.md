@@ -58,3 +58,7 @@ Determinar as condições de contexto que escolhem transformação ou passagem d
 ## Ampliação para o ramo de 484 argumentos
 
 Em v0.18 o encoder offline passou a aceitar também 484 argumentos, além dos 500 originais. O [rastreio do consumidor](init-484-selection.md) delimita as condições para esse ramo. Os contratos de falha sem alteração e sobreposição continuam testados; nenhum dos tamanhos é enviado pelo probe.
+
+## Recepção e conclusão delimitadas
+
+A [análise posterior](init-completion.md) identifica o argumento 0x22 como capacidade inicial de recepção, sujeita ao contexto do transporte. O callback guarda status traduzido sem interpretar o corpo. Não tomar capacidade por tamanho exato ou conclusão por prova de efeito do payload.

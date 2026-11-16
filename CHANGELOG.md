@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.24.0-research — 2026-11-16
+
+- Handler de init delimitado como montagem/cópia, sem interpretação do corpo naquele trecho.
+- Valor 0x22 ligado à capacidade inicial de recepção, sem assumir tamanho exato de resposta.
+- Callback de conclusão identificado como armazenamento de status traduzido/sinalização, sem parsing do corpo.
+- Somente documentos/evidência; base anterior de 67 testes, sem nova execução ou comando USB.
+
 ## 0.23.0-research — 2026-11-16
 
 - Documentação primária HP e Synaptics revisada com páginas e escopos explícitos.

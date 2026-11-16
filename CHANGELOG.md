@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.44.0-research — 2026-11-16
+
+- Ordem condicional de preparação de transporte antes da identificação 0x75 delimitada.
+- Atalho de contexto +0x100=0xff separado dos predicados adicionais de transformação.
+- Destino do estado 7 conferido; sem concluir transporte sempre em claro ou sempre TLS.
+- Somente documentação/evidência, sem novo comando no probe.
+
 ## 0.43.0-research — 2026-11-16
 
 - Corrigida inversão na interpretação: mapper de 0x75 usa o segundo DWORD do corpo, conforme ponteiros de saída.

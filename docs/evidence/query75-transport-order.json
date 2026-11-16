@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "method": "manual-static-open-order-and-context-readiness-with-checked-calls-dispatch",
+  "dll_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "checked_call_edges": [
+    {
+      "call_rva": "0x65579",
+      "target_rva": "0x746c0"
+    },
+    {
+      "call_rva": "0x65596",
+      "target_rva": "0x74bb0"
+    },
+    {
+      "call_rva": "0x7472f",
+      "target_rva": "0x74c90"
+    },
+    {
+      "call_rva": "0x74757",
+      "target_rva": "0x79500"
+    },
+    {
+      "call_rva": "0x6575d",
+      "target_rva": "0x62eb0"
+    },
+    {
+      "call_rva": "0x826c3",
+      "target_rva": "0x7b110"
+    }
+  ],
+  "opening": {
+    "context_setup_call_rva": "0x65579",
+    "setup_has_outer_conditional": true,
+    "setup_error_cleanup_call_rva": "0x65596",
+    "type_identification_call_rva": "0x6575d"
+  },
+  "readiness_helper": {
+    "rva": "0x74c90",
+    "aux_context_field": "0x50",
+    "ready_field": "0x100",
+    "ready_value": "0xff",
+    "does_not_establish_transform_state_7": true
+  },
+  "state_machine": {
+    "rva": "0x79500",
+    "state_field": "0x4e8",
+    "dispatch_table_rva": "0x7a770",
+    "state7_target_rva": "0x7a583",
+    "completion_output_store_rva": "0x7a67e"
+  },
+  "transform_predicates_previously_traced": {
+    "aux_present": true,
+    "state_4e8": 7,
+    "mode_100": "0xff",
+    "flag_4e0": 0,
+    "additional_flag_128_bit_02_required_in_transform": true
+  },
+  "participant_transport_state_observed": false,
+  "cleartext_query75_before_init_support_verified": false,
+  "program_table_registration_resolved": false,
+  "usb_transfer_performed": false
+}

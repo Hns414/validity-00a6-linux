@@ -36,3 +36,5 @@ Não executar `open_common` como teste de identificação: seus passos anteriore
 Agora há concordância estrutural entre a DLL e o perfil público para o par de identificadores no segundo DWORD. Falta confirmar o estado de transporte aplicável ao participante, a resposta real e a seleção completa do programa. Isso ainda não habilita uma consulta ativa nova.
 
 Foram conferidas as instruções dos argumentos de saída e das leituras no wrapper. Os três fontes públicos foram conferidos localmente contra o commit fixado, sem importar módulos. Somente documentos/evidência; mantém a base de **91 testes aprovados na v0.37**, sem nova execução necessária. Não houve teste com dedo ou envio USB.
+
+A [continuação do transporte Dell](query75-transport-order.md) delimita a preparação anterior à identificação e o atalho por contexto existente, sem concluir transporte universal.

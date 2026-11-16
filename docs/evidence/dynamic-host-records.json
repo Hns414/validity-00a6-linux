@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "method": "manual-static-host-list-and-callback-audit-with-checked-call-edges",
+  "dll_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "checked_call_edges": [
+    {
+      "call_rva": "0x92365",
+      "target_rva": "0xe5c00"
+    },
+    {
+      "call_rva": "0x924c0",
+      "target_rva": "0xe5c00"
+    },
+    {
+      "call_rva": "0xe5cab",
+      "target_rva": "0xe6580"
+    },
+    {
+      "call_rva": "0x92ca8",
+      "target_rva": "0xd54b0"
+    }
+  ],
+  "host_lookup": {
+    "function_rva": "0xe6580",
+    "key_word_offset": "0x14",
+    "result_length_dword_offset": "0x18",
+    "result_pointer_offset": "0x20",
+    "missing_status": "0x76"
+  },
+  "dynamic_walk": {
+    "size_indices_inclusive": [
+      1,
+      6
+    ],
+    "fill_indices_inclusive": [
+      1,
+      5
+    ],
+    "size_callback_bytes": {
+      "1": 16,
+      "2": 20,
+      "other": 0
+    },
+    "copy_callback_supported_index": 1,
+    "source_offset_for_supported_index": 8,
+    "copy_length_argument": "total caller-supplied WORD length, not current callback size",
+    "source_record_length_used_as_copy_bound": false
+  },
+  "source_producers_identified": false,
+  "runtime_behavior_verified": false,
+  "usb_transfer_performed": false
+}

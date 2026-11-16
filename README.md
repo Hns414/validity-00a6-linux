@@ -182,3 +182,5 @@ A [análise de repetição dos programas](docs/program-repeat-patch.md) liga fat
 Os [nós adicionais de captura](docs/additional-capture-nodes.md) incluem caminhos condicionais e dinâmicos além do programa-base; montagem final ainda não validada.
 
 O [layout de 0x15 e a fonte dinâmica](docs/chunk15-and-dynamic-source.md) delimita um nó de 12 bytes e callbacks que copiam estado do host, sem captura habilitada.
+
+A [auditoria dos registros dinâmicos](docs/dynamic-host-records.md) identifica a busca na lista do host e diferenças entre cálculo de tamanho e cópia que ainda precisam ser explicadas.

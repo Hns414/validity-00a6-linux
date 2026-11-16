@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.50.0-research — 2026-11-16
+
+- Consulta dinâmica ligada a lista do host com chave e campos de tamanho/ponteiro delimitados.
+- Assimetria entre índices, tamanhos e cópia documentada; tradução direta permanece pendente.
+- Quatro chamadas e cinco âncoras conferidas; somente documentação/evidência, sem USB.
+
 ## 0.49.0-research — 2026-11-16
 
 - Nó 0x15 delimitado a 12 bytes sob condição de modo/flag; dois DWORDs do conteúdo identificados.

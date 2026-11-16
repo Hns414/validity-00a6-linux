@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "method": "manual-static-producer-trace-with-checked-calls-and-field-stores",
+  "dll_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "checked_call_edges": [
+    {
+      "call_rva": "0x91649",
+      "target_rva": "0xe5560"
+    },
+    {
+      "call_rva": "0x916c3",
+      "target_rva": "0xe5560"
+    },
+    {
+      "call_rva": "0xe55d8",
+      "target_rva": "0xe6640"
+    },
+    {
+      "call_rva": "0xe66a4",
+      "target_rva": "0xd53f0"
+    },
+    {
+      "call_rva": "0xe6745",
+      "target_rva": "0xd53f0"
+    },
+    {
+      "call_rva": "0xe6794",
+      "target_rva": "0xd54b0"
+    },
+    {
+      "call_rva": "0x72ea1",
+      "target_rva": "0xe5e50"
+    },
+    {
+      "call_rva": "0xe5ec7",
+      "target_rva": "0xe6880"
+    },
+    {
+      "call_rva": "0xe69c0",
+      "target_rva": "0xe6640"
+    }
+  ],
+  "checked_instruction_anchors": 6,
+  "record_allocator": {
+    "rva": "0xe6640",
+    "node_bytes": 48,
+    "key_argument": 3,
+    "copy_mode_argument": 4,
+    "length_argument": 6,
+    "data_argument": 7,
+    "mode_one_allocates_and_copies_content": true,
+    "other_modes_retain_content_pointer": true,
+    "zero_length_sets_null_content": true
+  },
+  "lazy_defaults": {
+    "function_rva": "0x91530",
+    "missing_status": "0x76",
+    "index_1_bytes": 62,
+    "index_2_bytes": 14,
+    "wrapper_rva": "0xe5560",
+    "copy_mode": 1
+  },
+  "conditional_copy_bound": {
+    "assumption": "both default records present and dynamic size callback used",
+    "total_bytes": 36,
+    "index_1_source_offset": 8,
+    "source_end_exclusive": 44,
+    "index_1_record_bytes": 62,
+    "fits": true,
+    "runtime_selection_verified": false
+  },
+  "alternative_import": {
+    "entry_rva": "0x72e50",
+    "parser_rva": "0xe6880",
+    "header_bytes": 6,
+    "header_key_bytes": 2,
+    "header_length_bytes": 4,
+    "full_input_validation_verified": false
+  },
+  "usb_transfer_performed": false
+}

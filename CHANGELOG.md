@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.51.0-research — 2026-11-16
+
+- Alocador e modos de cópia/retenção dos registros do host delimitados.
+- Produtores sob demanda dos índices 1/2 ligados a registros de 62/14 bytes.
+- Limite de cópia explicado sob condições explícitas; entrada alternativa de importação localizada.
+- Nove chamadas e seis âncoras conferidas; somente documentação/evidência, sem USB.
+
 ## 0.50.0-research — 2026-11-16
 
 - Consulta dinâmica ligada a lista do host com chave e campos de tamanho/ponteiro delimitados.

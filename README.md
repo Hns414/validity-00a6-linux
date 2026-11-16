@@ -184,3 +184,5 @@ Os [nós adicionais de captura](docs/additional-capture-nodes.md) incluem caminh
 O [layout de 0x15 e a fonte dinâmica](docs/chunk15-and-dynamic-source.md) delimita um nó de 12 bytes e callbacks que copiam estado do host, sem captura habilitada.
 
 A [auditoria dos registros dinâmicos](docs/dynamic-host-records.md) identifica a busca na lista do host e diferenças entre cálculo de tamanho e cópia que ainda precisam ser explicadas.
+
+Os [produtores dos registros dinâmicos](docs/dynamic-record-producers.md) delimitam alocação, criação sob demanda e uma entrada alternativa de importação; seleção real ainda pendente.

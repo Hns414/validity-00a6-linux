@@ -65,3 +65,7 @@ O nome sandbox não significa execução sem efeitos no hardware. Nenhum execut�
 ## Estado da conclusão
 
 Confirmados: hashes/estrutura PE, correspondência integral de init_00 sem opcode na DLL principal, ausência do comando completo contíguo nos dois arquivos, três strings candidatas e coordenadas de análise. Não resolvidos: formato do envelope, função geradora, instruções/operações internas, memória-alvo, persistência e recuperação aplicável. Não há novo teste solicitado ao participante nesta etapa.
+
+## Continuação: consumidor do registro
+
+A [análise de seleção](init-selection.md) localizou o começo do registro em RVA 0x13c950 e sua entrada em uma tabela de ponteiros a partir de 0x13dad0. Há cadeia estática até um seletor e consumidor, com solicitação de máscara 0x4000 e cópia dos 500 bytes. O encaminhamento até a montagem USB e os efeitos do conteúdo ainda precisam ser resolvidos. Não foi executado código da DLL.

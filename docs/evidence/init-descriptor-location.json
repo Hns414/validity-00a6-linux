@@ -1,0 +1,26 @@
+{
+  "descriptor": {
+    "candidate_metadata_keys": {
+      "build": 164,
+      "major": 6,
+      "minor": 7
+    },
+    "hardware_execution_allowed": false,
+    "payload_pointer_field_offset": "0x48",
+    "payload_rva": "0x15f550",
+    "payload_size_bytes": 500,
+    "record_pointer_reference_rvas": [
+      "0x13db68"
+    ],
+    "record_rva": "0x13c950",
+    "record_size_bytes": 80,
+    "required_mask_field_2c": "0x4000",
+    "selection_evaluated": false,
+    "unresolved_parameter_field_20": 3,
+    "unresolved_selector_field_3c": 1
+  },
+  "dll_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "limit": "Keys matching E1 do not establish all selector conditions or payload effects.",
+  "method": "static-known-descriptor-location",
+  "schema_version": 1
+}

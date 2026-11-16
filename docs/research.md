@@ -127,3 +127,11 @@ Uma [avaliação do mantenedor do python-validity](https://github.com/uunicorn/p
 O [relatório PE](evidence/dell-static-survey.json) foi produzido por ferramenta somente leitura e reproduzido integralmente. Sete testes adicionais verificam casos PE sintéticos válidos, limites de arquivo, arquitetura, mapeamento de anchors e busca literal. Total: 44 testes aprovados. O envelope e seus efeitos ainda não foram decodificados; o próximo trabalho é rastrear argumentos e chamadas nos pontos candidatos. Não há operação adicional de hardware nesta etapa.
 
 Na busca ampliada da mesma etapa, init_00 sem o opcode inicial 0x06 (500 bytes) foi encontrado integralmente uma vez na DLL principal Dell, em RVA 0x15f550. Seu corpo após o prefixo de cinco bytes (496 bytes) também coincide. O bloco completo de 501 bytes permanece ausente como uma única sequência contígua. Isso sugere armazenamento separado de opcode e argumentos, sem demonstrar ainda a rotina que os reúne. init_04 e seus recortes pesquisados não foram encontrados. O relatório e o teste de busca foram atualizados; total final da etapa: 44 testes.
+
+## Rastreio do consumidor e da seleção
+
+A [análise de init-selection](init-selection.md) encontrou uma tabela de 75 ponteiros em RVA 0x13dad0; a entrada 19 aponta para o registro em RVA 0x13c950. Campos candidatos de versão/build (6, 7, 164) coincidem com E1. O campo +0x2c é 0x4000 e participa de testes de máscara; outro campo exigido e atributos/contexto continuam sem semântica completa.
+
+O caminho de 0x5eac0 solicita 0x4000 por 0x5ed80/0x5ede0. Este último chama o seletor em 0x8fb20, lê tamanho +0x44 e ponteiro +0x48, copia o conteúdo e o passa adiante via 0x62ad0. O caminho 0x53560 usa infraestrutura assíncrona. Ainda falta provar a formação do pacote USB e as operações executadas no sensor. Não se enviou o bloco.
+
+O [extrator de metadados do registro](../tools/locate_init_record.py) é limitado ao hash da DLL inspecionada; o [resultado](evidence/init-descriptor-location.json) indica explicitamente que a seleção não foi avaliada e a execução não foi habilitada. Seis testes adicionais, apenas sintéticos; 50 testes aprovados no total. Nenhum novo dado do participante foi necessário.

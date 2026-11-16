@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.9.0-research — 2026-11-16
+
+- Tabela e registro dos 500 bytes localizados; chaves candidatas 6.7/build 164 e máscara 0x4000 documentadas.
+- Caminho estático de solicitação, seleção e cópia do payload rastreado, com limites explícitos sobre contexto e operações internas.
+- Extrator de metadados restrito ao hash da DLL, sem executar o seletor ou exportar payloads.
+- Seis testes adicionais; 50 no total. Nenhuma nova operação de hardware habilitada.
+
 ## 0.8.0-research — 2026-11-16
 
 - Análise estática Dell: init_00 sem opcode (500 bytes) encontrado integralmente na DLL principal; blocos completos ausentes na busca contígua e três anchors candidatos localizados.

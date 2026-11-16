@@ -82,3 +82,7 @@ O participante já retornou E2 com 68 bytes e os indicadores esperados. Não rep
 ## Etapa v0.8.0-research
 
 A suíte atual contém 44 testes. Esta etapa adiciona análise estática de arquivos PE e não pede execução de opções ativas no sensor. E1 e E2 já têm resultados registrados; aguarde um experimento definido a partir da investigação do envelope.
+
+## Etapa v0.9.0-research
+
+A suíte atual contém 50 testes. O trabalho desta etapa rastreia estaticamente os descritores do driver Dell, sem novos comandos de hardware ou mudança nas consultas E1/E2. Não é necessário repetir os testes no sensor.

@@ -61,3 +61,5 @@ O trabalho pode continuar offline nas fontes do driver e na documentação do pr
 A [análise estática Dell](dell-static-analysis.md) acrescenta uma declaração do mantenedor sobre provável código executado no sensor, busca de correspondência literal nos arquivos do pacote e pontos candidatos para seguir o fluxo de dados da DLL. A hipótese de código não é uma especificação confirmada do envelope. Nenhum bloco foi executado e o formato interno permanece em aberto.
 
 A investigação ampliada encontrou também os 500 bytes de init_00 sem opcode no driver Dell do 00a6, integralmente. Isso avança a proveniência além da comparação entre projetos, mas não resolve a semântica do envelope nem permite supor que o bloco seja seguro para qualquer estado do sensor. As coordenadas e os limites estão em dell-static-analysis.md.
+
+A [etapa de seleção do registro](init-selection.md) agora relaciona o conteúdo a uma tabela de descritores e à rotina que consulta atributos e encaminha o buffer. A coincidência com a versão/build do participante não implica seleção completa ou segurança de execução.

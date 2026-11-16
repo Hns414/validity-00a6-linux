@@ -59,3 +59,7 @@ A comparação real foi regenerada dos objetos Git fixados de três repositório
 Sete testes adicionais (43 no total) usam arquivos PE32+ inteiramente sintéticos para verificar estrutura/seção, mapeamento de RVA, recusa de cabeçalhos truncados, arquitetura incorreta, seções fora do arquivo e anchors sem mapeamento inequívoco. A busca literal verifica correspondência contígua e não infere semântica a partir de um prefixo. Um teste adicional verifica que o payload armazenado sem o opcode é encontrado mesmo quando o comando completo não está presente. Nenhum teste carrega DLL ou utiliza binário proprietário como fixture.
 
 O relatório real foi regenerado a partir das duas DLLs privadas do pacote Dell e comparado ao JSON versionado; são idênticos. Não houve execução de código Windows ou acesso ao sensor.
+
+## Localização do descritor de inicialização
+
+Seis testes adicionais (50 no total) verificam metadados/coordenadas de um registro sintético, conteúdo ausente/duplicado, ponteiro duplicado, tamanho inconsistente e regiões ambíguas/não mapeadas. A ferramenta real verifica o hash exato da DLL antes de aplicar offsets de análise. O manifesto foi reproduzido por leitura estática, sem executar código do fabricante ou acessar USB. Esses testes não provam os critérios completos do seletor nem os efeitos do payload.

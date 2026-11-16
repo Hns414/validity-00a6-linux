@@ -45,3 +45,7 @@ Agora há um comando candidato de consulta ligado a um ramo e uma cadeia separad
 Onze destinos de chamadas diretas e o slot de dispatcher foram conferidos no binário fixado; as interpretações de branches continuam manuais. Nenhum comando 0x77 foi habilitado e nenhum estado foi observado no hardware. A etapa altera somente documentação/evidência; mantém a base de 68 testes validada em v0.25, sem nova execução da suíte.
 
 Não há novo teste com dedo nesta etapa. O próximo passo é rastrear 0xe7520/0x64a90 e identificar de onde chegam os eventos antes de preparar um experimento de detecção.
+
+## Avanço no caminho inferior
+
+A [análise do worker](event-worker.md) ligou um ramo de recepção ao pipe índice 3, correspondente a 0x83 na configuração lida do cache do alvo. O ramo alternativo e os significados dos eventos permanecem pendentes. Nenhum evento foi lido no sensor.

@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.27.0-research — 2026-11-16
+
+- Worker de eventos e registro de callback ligados ao ramo de leitura WinUSB por índice de pipe 3.
+- Ordem de descritores do alvo lida do cache sysfs: índice 3 corresponde a 0x83 interrupt IN nessa configuração.
+- Cache de eventos, fonte alternativa ainda desconhecida e cancelamento por AbortPipe distinguidos.
+- Coletor original de ordem, sem transferência USB; cinco testes novos, 73 aprovados.
+- Sem leitura de eventos ou comando novo no probe; significados e detecção de toque pendentes.
+
 ## 0.26.0-research — 2026-11-16
 
 - Ramo GetWOFStatus ligado à requisição interna 0x30 e construção de comando 0x77.

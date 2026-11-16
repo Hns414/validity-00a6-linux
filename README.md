@@ -39,7 +39,7 @@ Run `python3 tools/collect_usb_metadata.py` without sudo. It reads cached sysfs 
 
 The upstream open path resets USB and sends opaque initialization blocks. Its receive macros, endpoint transfer types and cancellation behavior need review before porting. An experimental single-query probe is now implemented and tested against a USB simulator. The participant reported a 38-byte reply from the target sensor; four candidate metadata fields have since been reported and match the selected upstream example fields; no raw reply has been inspected. See the [first hardware test](docs/first-hardware-test.md) before running it.
 
-Run offline checks with `python3 -m unittest discover -s tests -v`. The current suite has 68 tests for metadata privacy, source inventory parsing and a simulated libusb transport. Probe simulation requires a C compiler, pkg-config and libusb development headers; those tests are explicitly skipped if unavailable. No tests validate biometric support.
+Run offline checks with `python3 -m unittest discover -s tests -v`. The current suite has 73 tests for metadata privacy, source inventory parsing and a simulated libusb transport. Probe simulation requires a C compiler, pkg-config and libusb development headers; those tests are explicitly skipped if unavailable. No tests validate biometric support.
 
 ## Experimental hardware probe
 
@@ -128,6 +128,10 @@ The [capture groundwork](docs/capture-foundation.md) locates Dell diagnostic anc
 ## Finger-wait route research
 
 The [WaitForFinger analysis](docs/wait-finger-route.md) connects one status-query branch to an internal handler that constructs 0x77 and separates it from host event registration/waiting. State meanings and event endpoint mapping remain unverified; no query or finger-detection experiment was enabled.
+
+## Event worker and endpoint order
+
+The [event-worker analysis](docs/event-worker.md) traces a direct WinUSB branch to pipe index 3 and relates it to interrupt endpoint 0x83 using cached target descriptor order. Registration, local event cache and conditional AbortPipe cancellation are documented separately. A metadata-only cached-descriptor collector makes the mapping reproducible; event meanings and live detection remain unverified.
 
 ## Licensing
 

@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "method": "manual-static-worker-analysis-with-checked-dispatch-and-calls-plus-cached-descriptors",
+  "dll_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "internal_request_cases": [
+    {
+      "request_suffix": "0x38",
+      "case_index": 5,
+      "case_rva": "0xee8d7"
+    },
+    {
+      "request_suffix": "0x60",
+      "case_index": 8,
+      "case_rva": "0xee616"
+    },
+    {
+      "request_suffix": "0x64",
+      "case_index": 1,
+      "case_rva": "0xee521"
+    }
+  ],
+  "checked_call_edges": [
+    {
+      "call_rva": "0xe7555",
+      "target_rva": "0xedcb0"
+    },
+    {
+      "call_rva": "0xee6b5",
+      "target_rva": "0xef310"
+    },
+    {
+      "call_rva": "0xef56b",
+      "target_rva": "0xf1970"
+    },
+    {
+      "call_rva": "0xef5b5",
+      "target_rva": "0xf1a00"
+    },
+    {
+      "call_rva": "0xf1b66",
+      "target_rva": "0xf1760"
+    },
+    {
+      "call_rva": "0xf191b",
+      "target_rva": "0xf0f50"
+    },
+    {
+      "call_rva": "0xf1a74",
+      "target_rva": "0xf1250"
+    }
+  ],
+  "registration": {
+    "request": "0x938ae060",
+    "storage_rva": "0xf1970",
+    "callback_field": "0x48",
+    "context_field": "0x50",
+    "type_field": "0x58",
+    "enabled_field": "0x5c"
+  },
+  "worker": {
+    "rva": "0xf1aa0",
+    "receive_call_rva": "0xf1b66",
+    "requested_record_bytes": 7,
+    "callback_call_rva": "0xf1c1c"
+  },
+  "direct_winusb_branch": {
+    "routine_rva": "0xf1760",
+    "branch_rva": "0xf18dd",
+    "read_call_rva": "0xf191b",
+    "alternate_setting_argument": 0,
+    "pipe_index_argument": 3,
+    "query_pipe_call_rva": "0xf0fe9",
+    "read_pipe_call_rva": "0xf104d",
+    "endpoint_in_cached_target_configuration": "0x83",
+    "endpoint_type": "interrupt IN",
+    "maximum_packet_bytes": 8,
+    "runtime_windows_mapping_observed": false
+  },
+  "alternative_source_branch": {
+    "context_field": "0x60",
+    "call_rva": "0xf17f1",
+    "source_routine": "0xefeb0",
+    "source_identified": false
+  },
+  "cancellation": {
+    "request": "0x938ae064",
+    "routine_rva": "0xf1a00",
+    "clears_enabled": true,
+    "conditional_abort_call_rva": "0xf1a74",
+    "abort_pipe_slot_install_rva": "0xf02cf",
+    "abort_pipe_call_rva": "0xf1300"
+  },
+  "event_cache": {
+    "context_offset": "0x20",
+    "callback_copies_up_to_bytes": 7,
+    "readback_rva": "0xeed10",
+    "readback_bytes": 7,
+    "semantic_labels_verified": false
+  },
+  "api_reference": "https://learn.microsoft.com/en-us/windows/win32/api/winusb/nf-winusb-winusb_querypipe",
+  "cached_metadata_record": "target-endpoint-order-2026-11-16.json",
+  "usb_event_read_performed": false,
+  "new_hardware_command_enabled": false
+}

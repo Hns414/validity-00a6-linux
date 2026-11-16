@@ -243,3 +243,9 @@ Componente C original inspeciona somente contagens, sem cópia de pixels e sem l
 A [análise de rotas](wait-finger-route.md) liga GetWOFStatus à requisição interna 0x30, handler 0x81dc0 e montagem 0x77. O callback lê dois campos e o wrapper remapeia estados 0/1/2, ainda sem rótulos de presença validados. A espera por evento usa objeto do host e uma cadeia distinta de callbacks; endpoint inferior permanece pendente.
 
 Onze destinos de chamadas e ponteiro de dispatch foram conferidos. Os números internos não são opcodes USB; unidades dos wrappers de polling ainda não foram demonstradas. Documentação/evidência apenas, sem nova execução da base de 68 testes ou experimento com dedo.
+
+## Worker inferior e vínculo ao endpoint
+
+A [análise de eventos](event-worker.md) liga registro 0x938ae060 a armazenamento de callback e worker de sete bytes. O ramo direto chama WinUSB com índice 3; a ordem real dos descritores em cache do alvo e a definição primária de QueryPipe ligam esse índice a 0x83. Não houve leitura de eventos ou execução Windows.
+
+O cache local explica a consulta 0x938ae038; cancelamento 0x938ae064 pode chegar a AbortPipe. Há uma fonte alternativa ainda não identificada. Coletor original lê somente cache e publica metadados; cinco testes novos, 73 aprovados. Próxima análise nos campos/eventos e armamento, sem teste com dedo.

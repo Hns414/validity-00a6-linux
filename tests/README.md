@@ -95,3 +95,7 @@ O parser de literais inclui db_write_enable somente quando solicitado. Os testes
 ## Inspetor offline de bloco candidato de captura
 
 `test_capture_chunk.c` usa somente dados sintéticos do formato de referência 0091. Verifica limites de comprimento, linhas inteiras, acumulação sem overflow e saída sem pixels. O componente não está ligado ao probe e não valida o formato do 00a6.
+
+## Ordem de endpoints em cache
+
+`test_endpoint_order.py` usa descritores sintéticos e sysfs temporário. Verifica ordem original em vez de ordenação por endereço, recusa truncamentos/duplicatas/configurações fora do escopo e ausência de strings/topologia na saída. Não envia requisições USB.

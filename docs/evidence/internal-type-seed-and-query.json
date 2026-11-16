@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "method": "manual-static-internal-type-seeding-and-override-with-checked-calls",
+  "dll_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "checked_call_edges": [
+    {
+      "call_rva": "0x6575d",
+      "target_rva": "0x62eb0"
+    },
+    {
+      "call_rva": "0x6301a",
+      "target_rva": "0x54a40"
+    },
+    {
+      "call_rva": "0x54ba6",
+      "target_rva": "0x5a820"
+    },
+    {
+      "call_rva": "0x8266b",
+      "target_rva": "0x83220"
+    },
+    {
+      "call_rva": "0x826c3",
+      "target_rva": "0x7b110"
+    },
+    {
+      "call_rva": "0x6307f",
+      "target_rva": "0x5f140"
+    },
+    {
+      "call_rva": "0x5f173",
+      "target_rva": "0x63f80"
+    }
+  ],
+  "seed": {
+    "routine_rva": "0x62eb0",
+    "product": "0x30",
+    "candidate_internal_type": "0xdb",
+    "store_rva": "0x62fed",
+    "measurement_of_participant": false
+  },
+  "query": {
+    "internal_request": "0x35",
+    "dispatch_slot_rva": "0x1164e8",
+    "handler_rva": "0x82610",
+    "opcode": "0x75",
+    "opcode_argument_rva": "0x82667",
+    "initial_receive_capacity": 10,
+    "full_response_format_verified": false
+  },
+  "override": {
+    "conditional_mapping_rva": "0x5f140",
+    "mapper_rva": "0x63f80",
+    "can_replace_seed": true,
+    "additional_identifier_normalization_present": true
+  },
+  "context_commit": {
+    "source_field": "operation object +0x10",
+    "destination_field": "context +0x128",
+    "store_rva": "0x63319"
+  },
+  "table_registration_resolved": false,
+  "participant_internal_type_confirmed": false,
+  "usb_transfer_performed": false
+}

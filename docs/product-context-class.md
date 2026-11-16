@@ -40,3 +40,5 @@ O mapeamento 0x30 → 1 não fornece +0x128. Nos trechos examinados, esse últim
 A chamada ao helper e a instrução de armazenamento foram verificadas no binário fixado; a tabela foi lida usando o mapeamento de seções PE, com limite de 32 registros e terminador encontrado após cinco entradas. A interpretação dos papéis é manual, sem executar o driver.
 
 Somente documentação/evidência: mantém a base de **91 testes aprovados na v0.37**, sem nova execução da suíte. O próximo passo continua sendo identificar o produtor/registro da tabela e o valor de +0x128 antes de escolher o programa final. Nenhum novo comando USB ou teste com dedo foi realizado.
+
+A [continuação do tipo interno](internal-type-seed-and-query.md) identifica seu produtor e uma consulta que pode substituir a hipótese inicial baseada no produto.

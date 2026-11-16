@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.41.0-research — 2026-11-16
+
+- Produtor do identificador interno ligado à hipótese por produto e à consulta interna 0x35.
+- Handler confirmado construindo opcode 0x75 com capacidade inicial de resposta 10.
+- Candidato 0xdb para produto 0x30 distinguido de identificação real; substituição/mapeamento pendentes.
+- Sete chamadas conferidas; somente documentação/evidência, sem novo comando no probe.
+
 ## 0.40.0-research — 2026-11-16
 
 - Campo de contexto +0x23c ligado ao mapeamento estático de produto da ROM.

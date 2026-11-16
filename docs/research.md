@@ -275,3 +275,5 @@ A [origem imediata do programa de captura](capture-program-origin.md) foi ligada
 O [produtor do descritor de programa](program-descriptor-selection.md) foi ligado ao seletor da abertura e ao contexto +0x250; origem final da tabela ainda pendente.
 
 A [classificação de produto da ROM](product-context-class.md) liga condicionalmente o produto relatado 0x30 à classe de contexto 1; tipo interno ainda pendente.
+
+O [produtor do tipo interno](internal-type-seed-and-query.md) foi ligado a uma hipótese por produto e à consulta candidata 0x75; valor real ainda não confirmado.

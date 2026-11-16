@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "method": "manual-static-reply-body-layout-with-checked-instructions-and-calls",
+  "dll_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "checked_call_edges": [
+    {
+      "call_rva": "0x91156",
+      "target_rva": "0x91170"
+    },
+    {
+      "call_rva": "0x9113a",
+      "target_rva": "0xd54b0"
+    }
+  ],
+  "body": {
+    "signature": "0x30000288",
+    "signature_check_rva": "0x911a2",
+    "count_offset": 4,
+    "count_encoding": "little-endian-uint32",
+    "word_bytes": 4,
+    "multiply_rva": "0x911dd",
+    "data_offset": 8
+  },
+  "original_inspector_scope": {
+    "exact_length_required": true,
+    "analysis_limit_bytes": 65536,
+    "exports_word_contents": false,
+    "zero_count_structurally_allowed": true
+  },
+  "hardware_validated": false,
+  "response_semantics_verified": false,
+  "usb_transfer_performed": false
+}

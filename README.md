@@ -154,3 +154,5 @@ A [atribuição de modo e seleção no ramo 0x80](docs/start-mode-assignment.md)
 O [caminho posterior à preparação](docs/post-preparation-request9.md) alcança a requisição interna 9 e um builder de opcode 0x02; argumentos e resposta ainda pendentes.
 
 O [layout candidato de 0x02](docs/command02-layout.md) possui modelo original offline de tamanhos; suíte ampliada para 79 testes. Sem captura habilitada.
+
+O [inspetor de corpo candidato de resposta](docs/capture-reply-layout.md) valida assinatura e contagens offline sem expor palavras; suíte ampliada para 85 testes.

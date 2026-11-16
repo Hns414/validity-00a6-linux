@@ -101,3 +101,5 @@ O parser de literais inclui db_write_enable somente quando solicitado. Os testes
 `test_endpoint_order.py` usa descritores sintéticos e sysfs temporário. Verifica ordem original em vez de ordenação por endereço, recusa truncamentos/duplicatas/configurações fora do escopo e ausência de strings/topologia na saída. Não envia requisições USB.
 
 `test_capture_request_model.py` cobre o modelo offline de tamanhos de 0x02: fronteiras, orçamento de análise e caso especial dos múltiplos de 64. A suíte completa tem 79 testes. Não usa sensor nem payload.
+
+`test_capture_reply.py` cobre o corpo candidato de resposta: assinatura, contagens excessivas, truncamento, orçamento e omissão do conteúdo. A suíte completa tem 85 testes; não realiza USB.

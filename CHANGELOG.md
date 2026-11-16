@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.36.0-research — 2026-11-16
+
+- Corpo candidato de resposta ligado à assinatura 0x30000288 e contagem de palavras de quatro bytes.
+- Inspetor original offline valida limites e exporta somente contagens, sem conteúdo.
+- Estrutura pública de chunks distinguida dos buffers de nós ainda não reconstruídos.
+- Seis testes novos; 85 aprovados sem skips. Sem alteração no probe ativo.
+
 ## 0.35.0-research — 2026-11-16
 
 - Cabeçalho candidato de 0x02 e concatenação de nós delimitados; regra de quatro zeros quando total inicial é múltiplo de 64.

@@ -249,3 +249,5 @@ Onze destinos de chamadas e ponteiro de dispatch foram conferidos. Os números i
 A [análise de eventos](event-worker.md) liga registro 0x938ae060 a armazenamento de callback e worker de sete bytes. O ramo direto chama WinUSB com índice 3; a ordem real dos descritores em cache do alvo e a definição primária de QueryPipe ligam esse índice a 0x83. Não houve leitura de eventos ou execução Windows.
 
 O cache local explica a consulta 0x938ae038; cancelamento 0x938ae064 pode chegar a AbortPipe. Há uma fonte alternativa ainda não identificada. Coletor original lê somente cache e publica metadados; cinco testes novos, 73 aprovados. Próxima análise nos campos/eventos e armamento, sem teste com dedo.
+
+O [rastreamento do registro de eventos](event-registration.md) distingue tipos do host, conclusão e seletores do cache; armamento do sensor ainda pendente.

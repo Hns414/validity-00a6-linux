@@ -49,3 +49,5 @@ Não há novo teste com dedo nesta etapa. O próximo passo é rastrear 0xe7520/0
 ## Avanço no caminho inferior
 
 A [análise do worker](event-worker.md) ligou um ramo de recepção ao pipe índice 3, correspondente a 0x83 na configuração lida do cache do alvo. O ramo alternativo e os significados dos eventos permanecem pendentes. Nenhum evento foi lido no sensor.
+
+A [análise do registro](event-registration.md) identifica o callback que sinaliza a espera do host e a conversão dos tipos superiores em um único tipo inferior. Isso ainda não identifica o comando de armamento.

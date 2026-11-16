@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "method": "manual-static-analysis-with-checked-direct-calls",
+  "dll_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "checked_call_edges": [
+    {
+      "call_rva": "0x14ea7",
+      "target_rva": "0x48c00"
+    },
+    {
+      "call_rva": "0x14eb9",
+      "target_rva": "0x112c0"
+    },
+    {
+      "call_rva": "0x48cf7",
+      "target_rva": "0x5c3a0"
+    },
+    {
+      "call_rva": "0x5c427",
+      "target_rva": "0xe7520"
+    },
+    {
+      "call_rva": "0x44f18",
+      "target_rva": "0x5f7e0"
+    },
+    {
+      "call_rva": "0x138ea",
+      "target_rva": "0x14ce0"
+    }
+  ],
+  "upper_registration_types": [
+    1,
+    2,
+    3
+  ],
+  "lower_worker_type_for_all_three": 1,
+  "wait_registration_callback_rva": "0x11278",
+  "callback_stores_completion_status_at": "host_context+0x30",
+  "callback_signals_handle_at": "host_context+0x28",
+  "set_event_iat_rva": "0x1105a8",
+  "semantic_event_labels_verified": false,
+  "sensor_arming_command_identified": false,
+  "usb_transfer_performed": false
+}

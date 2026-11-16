@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.28.0-research — 2026-11-16
+
+- Tipos superiores de registro separados do tipo inferior único do worker.
+- Callback WaitForFinger ligado ao status de conclusão e SetEvent do host.
+- Seletores de interpretação do cache distinguidos de opcodes USB.
+- Seis chamadas conferidas no binário; somente documentação/evidência, sem novo comando ou teste no sensor.
+
 ## 0.27.0-research — 2026-11-16
 
 - Worker de eventos e registro de callback ligados ao ramo de leitura WinUSB por índice de pipe 3.

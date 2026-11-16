@@ -138,3 +138,5 @@ The [event-worker analysis](docs/event-worker.md) traces a direct WinUSB branch 
 Project-authored code and documentation are licensed under **LGPL-2.1-or-later**; see [LICENSE](LICENSE). This matches the inspected upstream VFS7552 driver's license. Third-party materials retain their own terms. The Dell package and its INF are not redistributed. No upstream driver code has been copied into this project.
 
 Independent project, unaffiliated with Dell, Validity or Synaptics.
+
+O [rastreamento do registro de eventos](docs/event-registration.md) distingue tipos do host, conclusão e seletores do cache; armamento do sensor ainda pendente.

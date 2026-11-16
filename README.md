@@ -186,3 +186,5 @@ O [layout de 0x15 e a fonte dinâmica](docs/chunk15-and-dynamic-source.md) delim
 A [auditoria dos registros dinâmicos](docs/dynamic-host-records.md) identifica a busca na lista do host e diferenças entre cálculo de tamanho e cópia que ainda precisam ser explicadas.
 
 Os [produtores dos registros dinâmicos](docs/dynamic-record-producers.md) delimitam alocação, criação sob demanda e uma entrada alternativa de importação; seleção real ainda pendente.
+
+Os [nós condicionais de transporte](docs/conditional-transport-nodes.md) acrescentam campos aleatórios gerados no host; formatos e condições delimitados, sem captura habilitada.

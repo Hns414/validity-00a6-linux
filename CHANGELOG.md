@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.52.0-research — 2026-11-16
+
+- Construtor condicional delimitado nos formatos de nós 0x36/0x06, com 112/110 bytes.
+- Campos do host ligados à importação CryptGenRandom; montagem depende de material novo.
+- Doze chamadas e seis âncoras conferidas; somente documentação/evidência, sem USB.
+
 ## 0.51.0-research — 2026-11-16
 
 - Alocador e modos de cópia/retenção dos registros do host delimitados.

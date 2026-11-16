@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "method": "manual-static-conditional-node-layout-with-checked-call-edges",
+  "dll_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "checked_call_edges": [
+    {
+      "call_rva": "0x7cb22",
+      "target_rva": "0x87d90"
+    },
+    {
+      "call_rva": "0x87e07",
+      "target_rva": "0x74c90"
+    },
+    {
+      "call_rva": "0x87e44",
+      "target_rva": "0x8bb30"
+    },
+    {
+      "call_rva": "0x87e6b",
+      "target_rva": "0x877f0"
+    },
+    {
+      "call_rva": "0x87f43",
+      "target_rva": "0x61e30"
+    },
+    {
+      "call_rva": "0x87f80",
+      "target_rva": "0x61ed0"
+    },
+    {
+      "call_rva": "0x880c5",
+      "target_rva": "0x74d60"
+    },
+    {
+      "call_rva": "0x88159",
+      "target_rva": "0x61e30"
+    },
+    {
+      "call_rva": "0x88196",
+      "target_rva": "0x61ed0"
+    },
+    {
+      "call_rva": "0x61e63",
+      "target_rva": "0xd9f90"
+    },
+    {
+      "call_rva": "0x61e9c",
+      "target_rva": "0xd9f90"
+    },
+    {
+      "call_rva": "0x61ef9",
+      "target_rva": "0xd9f90"
+    }
+  ],
+  "constructor_rva": "0x87d90",
+  "chunks": [
+    {
+      "type": 54,
+      "content_bytes": 108,
+      "node_bytes": 112,
+      "condition": "helper 0x74c90 nonzero and context class +0x23c equals 1"
+    },
+    {
+      "type": 6,
+      "content_bytes": 106,
+      "node_bytes": 110,
+      "condition": "helper 0x74c90 nonzero, class differs from 1, helper 0x8bb30 nonzero"
+    }
+  ],
+  "common_content_sources": [
+    {
+      "content_offset": 0,
+      "context_offset": "0x17c",
+      "bytes": 32
+    },
+    {
+      "content_offset": 32,
+      "context_offset": "0x19c",
+      "bytes": 32
+    },
+    {
+      "content_offset": 64,
+      "context_offset": "0x1c0",
+      "bytes": 32,
+      "condition": "descriptor flag 0x08 set; otherwise zero"
+    }
+  ],
+  "producer_helper": "0xd9f90",
+  "producer_import_rva": "0x1100a8",
+  "producer_import_semantics_verified": true,
+  "transport_predicates_assumed_stable_during_constructor": true,
+  "runtime_selection_verified": false,
+  "usb_transfer_performed": false,
+  "producer_import_name": "CryptGenRandom",
+  "import_verification": "objdump PE import table: IAT RVA 0x1100a8"
+}

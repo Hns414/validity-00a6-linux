@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.38.0-research — 2026-11-16
+
+- Origem imediata do programa de 0x02 ligada a descritor do host e cópia para nó.
+- Modificação condicional da cópia distinguida de um literal pronto para envio.
+- Dependência pública do tipo interno do sensor documentada; identificação do participante ainda pendente.
+- Quatro chamadas conferidas; somente documentação/evidência, sem novo comando USB.
+
 ## 0.37.0-research — 2026-11-16
 
 - Lookup de blocos tipo/tamanho e construtor de bloco vazio ligados à requisição 9.

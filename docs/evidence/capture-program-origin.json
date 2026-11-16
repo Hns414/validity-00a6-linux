@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "method": "manual-static-program-buffer-origin-with-checked-calls",
+  "dll_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "checked_call_edges": [
+    {
+      "call_rva": "0x7c877",
+      "target_rva": "0x709e0"
+    },
+    {
+      "call_rva": "0x7c8ba",
+      "target_rva": "0x877f0"
+    },
+    {
+      "call_rva": "0x7c960",
+      "target_rva": "0x5b840"
+    },
+    {
+      "call_rva": "0x7ca38",
+      "target_rva": "0x82eb0"
+    }
+  ],
+  "getter": {
+    "rva": "0x709e0",
+    "descriptor_length_field": "0x34",
+    "descriptor_pointer_field": "0x38",
+    "null_or_minus_one_descriptor_returns_empty": true
+  },
+  "builder": {
+    "getter_call_rva": "0x7c877",
+    "copy_to_node_call_rva": "0x7c8ba",
+    "local_copy_modified_conditionally": true,
+    "modification_helper_rva": "0x82eb0"
+  },
+  "candidate_setter": {
+    "rva": "0x70ae0",
+    "allocates_and_copies_host_buffer": true,
+    "reachable_caller_identified": false
+  },
+  "public_selection": {
+    "commit": "a6bbc21dce7b8b3c3cd92378a0b2579a2fb45920",
+    "class": "SensorCaptureProg",
+    "depends_on_internal_sensor_type": true,
+    "participant_internal_sensor_type_known": false
+  },
+  "complete_program_provenance_established": false,
+  "usb_transfer_performed": false
+}

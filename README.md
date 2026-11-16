@@ -158,3 +158,5 @@ O [layout candidato de 0x02](docs/command02-layout.md) possui modelo original of
 O [inspetor de corpo candidato de resposta](docs/capture-reply-layout.md) valida assinatura e contagens offline sem expor palavras; suíte ampliada para 85 testes.
 
 A [análise dos nós e blocos](docs/capture-chunk-nodes.md) confirma caminhos tipo/tamanho e acrescenta inspetor offline sem conteúdo; suíte com 91 testes.
+
+A [origem imediata do programa de captura](docs/capture-program-origin.md) foi ligada a descritor e cópia modificável; o tipo interno do sensor ainda não foi identificado.

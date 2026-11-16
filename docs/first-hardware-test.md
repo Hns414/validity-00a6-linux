@@ -21,7 +21,7 @@ make probe
 
 Dependências no EndeavourOS/Arch: compilador C (por exemplo gcc), make, pkgconf, libusb e Python 3. Se faltarem, o erro de compilação indicará isso; instale os pacotes de desenvolvimento pelo gerenciador da distribuição antes de continuar. A compilação não instala nada no sistema.
 
-Confira se os 23 testes passam sem skips. O --help não inicializa libusb. Nada nessas etapas executa o teste de hardware.
+Confira se os 27 testes atuais passam sem skips. O --help não inicializa libusb. Nada nessas etapas executa o teste de hardware.
 
 ## Executar uma vez no sensor
 
@@ -56,3 +56,17 @@ Esse estado significa que houve troca de dados; não confirma identidade dos cam
 | cancel_drain_failed | O callback não pôde ser drenado; processo termina sem liberar memória ainda em uso. O SO fecha recursos; informar resultado antes de repetir |
 
 Uma permissão negada não é falha do protocolo. Em nenhum estado o teste anuncia suporte biométrico. O código de saída 0 significa apenas resposta recebida sem validação semântica; falhas retornam 2. Interface liberada e memória de transporte são verificadas nas simulações; recuperação física do leitor ainda não foi exercitada.
+
+## Próximo passo após o retorno de 38 bytes: resumo candidato
+
+O participante já relatou E1 com 38 bytes e necessidade de sudo. Para a próxima execução, no mesmo clone:
+
+```bash
+cd ~/validity-00a6-linux
+git pull --ff-only
+make test
+make probe
+sudo ./build/probe-rom-info --summarize-rom-info
+```
+
+Execute a última linha somente após os 27 testes passarem sem skips e a compilação concluir. Ela envia novamente a mesma consulta 0x01, uma vez, e publica somente os campos candidatos de [rom-info.md](rom-info.md). Compartilhe apenas a linha JSON. O formato será schema_version 2; candidate_layout_unverified indica hipótese de layout, não compatibilidade comprovada. Se o tamanho ou status não corresponderem ao requisito, rom_info_candidate será null; não pedir dump bruto nem executar comandos adicionais para contornar a recusa.

@@ -10,6 +10,11 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+#include "rom_info.h"
+
+static int summarize_requested;
+static struct rom_info_candidate candidate;
+static const char *decode_status = "not_attempted";
 
 static volatile sig_atomic_t interrupted;
 static void on_signal(int signo) { (void)signo; interrupted = 1; }
@@ -24,9 +29,19 @@ static int64_t now_ms(void)
 static void report(const char *status, const char *stage, int bytes)
 {
     /* No raw response, serial, host/user identity, USB path or library error text. */
-    printf("{\"schema_version\":1,\"experiment\":\"E1\",\"status\":\"%s\","
-           "\"stage\":\"%s\",\"received_bytes\":%d,\"biometric_support\":false}\n",
-           status, stage, bytes);
+    printf("{\"schema_version\":%d,\"experiment\":\"E1\",\"status\":\"%s\","
+           "\"stage\":\"%s\",\"received_bytes\":%d,\"biometric_support\":false",
+           summarize_requested ? 2 : 1, status, stage, bytes);
+    if (summarize_requested) {
+        printf(",\"decode_status\":\"%s\",\"rom_info_candidate\":", decode_status);
+        if (strcmp(decode_status, "candidate_layout_unverified") == 0)
+            printf("{\"firmware_build\":%u,\"firmware_major\":%u,"
+                   "\"firmware_minor\":%u,\"product_code\":%u}",
+                   (unsigned int)candidate.firmware_build, candidate.firmware_major,
+                   candidate.firmware_minor, candidate.product_code);
+        else printf("null");
+    }
+    puts("}");
 }
 
 static int valid_config(const struct libusb_config_descriptor *cfg)
@@ -140,9 +155,11 @@ static const char *exchange(libusb_context *ctx, libusb_device_handle *handle,
 
 int main(int argc, char **argv)
 {
-    if (argc != 2 || strcmp(argv[1], "--probe-rom-info") != 0) {
+    summarize_requested = argc == 2 && strcmp(argv[1], "--summarize-rom-info") == 0;
+    if (argc != 2 || (!summarize_requested && strcmp(argv[1], "--probe-rom-info") != 0)) {
         puts("Experimental 138a:00a6 probe. Read docs/lab.md before hardware use.\n"
-             "Usage: probe-rom-info --probe-rom-info\n"
+             "Usage: probe-rom-info --probe-rom-info | --summarize-rom-info\n"
+             "Summary emits only candidate build/version/product metadata, never raw bytes.\n"
              "Sends one 0x01 query; receives at most 64 bytes. No reset or initialization.\n"
              "Response semantics are unvalidated. No USB access without the explicit flag.");
         return argc == 2 && strcmp(argv[1], "--help") == 0 ? 0 : 1;
@@ -206,12 +223,16 @@ int main(int argc, char **argv)
     if (status) goto finish;
     stage = "read";
     status = exchange(ctx, handle, 0x81, response, sizeof(response), deadline, &received);
-    /* The response is neither decoded nor logged: structure is unverified for 00a6. */
+    if (!status && summarize_requested)
+        decode_status = rom_info_decode(response, (size_t)received, &candidate);
+    /* Only allowlisted candidate fields may escape; never log raw response bytes. */
     memset(response, 0, sizeof(response));
     if (!status) status = received ? "reply_received_unvalidated" : "empty_reply";
 finish:
     if (claimed && libusb_release_interface(handle, 0) != 0) {
         status = "release_error";
+        decode_status = "not_attempted";
+        memset(&candidate, 0, sizeof(candidate));
         stage = "cleanup";
     }
     if (handle) libusb_close(handle);

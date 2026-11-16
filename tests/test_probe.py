@@ -23,7 +23,8 @@ class ProbeTests(unittest.TestCase):
         cls.binary = Path(cls.tmp.name) / 'probe-simulated'
         subprocess.run(['cc', '-std=c11', '-Wall', '-Wextra', '-Werror',
                         '-Dclock_gettime=fake_clock_gettime', *flags.stdout.split(),
-                        str(ROOT / 'src/probe_rom_info.c'), str(ROOT / 'tests/fake_libusb.c'),
+                        str(ROOT / 'src/probe_rom_info.c'), str(ROOT / 'src/rom_info.c'),
+                        str(ROOT / 'tests/fake_libusb.c'),
                         '-o', str(cls.binary)], check=True, capture_output=True)
 
     def run_probe(self, scenario='normal', flag='--probe-rom-info'):
@@ -37,11 +38,48 @@ class ProbeTests(unittest.TestCase):
             return proc, calls
         result = json.loads(proc.stdout)
         self.assertEqual(proc.returncode, 0 if result['status'] == 'reply_received_unvalidated' else 2)
-        self.assertEqual(set(result), {'schema_version', 'experiment', 'status', 'stage',
-                                      'received_bytes', 'biometric_support'})
+        keys = {'schema_version', 'experiment', 'status', 'stage', 'received_bytes', 'biometric_support'}
+        if flag == '--summarize-rom-info':
+            keys |= {'decode_status', 'rom_info_candidate'}
+        self.assertEqual(set(result), keys)
         self.assertFalse(result['biometric_support'])
         self.assertNotIn('a5a5', proc.stdout.lower())
         return result, calls
+
+    def test_decoder_bounds_endianness_and_omitted_byte_independence(self):
+        binary = Path(self.tmp.name) / 'decoder-test'
+        subprocess.run(['cc', '-std=c11', '-Wall', '-Wextra', '-Werror',
+                        '-I', str(ROOT / 'src'), str(ROOT / 'src/rom_info.c'),
+                        str(ROOT / 'tests/test_rom_info.c'), '-o', str(binary)],
+                       check=True, capture_output=True)
+        subprocess.run([str(binary)], check=True, capture_output=True, timeout=3)
+
+    def test_summary_exports_only_allowlisted_candidate_fields(self):
+        result, calls = self.run_probe(flag='--summarize-rom-info')
+        self.assertEqual(result['schema_version'], 2)
+        self.assertEqual(result['decode_status'], 'candidate_layout_unverified')
+        self.assertEqual(result['rom_info_candidate'], {
+            'firmware_build': 0x12345678, 'firmware_major': 6,
+            'firmware_minor': 7, 'product_code': 0x30})
+        self.assertEqual(calls.count('write_01'), 1)
+        self.assertEqual(calls.count('read_64'), 1)
+
+    def test_summary_rejects_unexpected_length_and_device_status(self):
+        for scenario, expected in [('summary_short', 'unexpected_length'),
+                                   ('summary_long', 'unexpected_length'),
+                                   ('summary_error', 'device_status_nonzero')]:
+            with self.subTest(scenario=scenario):
+                result, calls = self.run_probe(scenario, flag='--summarize-rom-info')
+                self.assertEqual(result['decode_status'], expected)
+                self.assertIsNone(result['rom_info_candidate'])
+                self.assertEqual(calls.count('read_64'), 1)
+
+    def test_summary_does_not_decode_transport_or_cleanup_failures(self):
+        for scenario in ['read_timeout', 'disconnect', 'permission', 'release_error']:
+            with self.subTest(scenario=scenario):
+                result, _ = self.run_probe(scenario, flag='--summarize-rom-info')
+                self.assertEqual(result['decode_status'], 'not_attempted')
+                self.assertIsNone(result['rom_info_candidate'])
 
     def test_help_does_not_initialize_usb(self):
         proc, calls = self.run_probe(flag='--help')

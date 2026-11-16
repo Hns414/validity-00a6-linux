@@ -1,6 +1,6 @@
 # Ambiente e próximo experimento
 
-Estado em 2026-11-16: coleta sysfs e análise offline concluídas. Não foi preparado nem validado um ambiente de execução ativa do protocolo. Os metadados do kernel estão acessíveis, mas libusb falhou na primeira sessão; uma ferramenta de transporte ainda precisará diagnosticar separadamente permissões e visibilidade.
+Estado em 2026-11-16: coleta sysfs e análise offline concluídas; o participante relatou a execução de E1 com resposta de 38 bytes. A consulta foi executada no Linux do participante; isolamento do ambiente e recuperação física não foram validados. Os metadados do kernel estão acessíveis, mas libusb falhou na primeira sessão; uma ferramenta de transporte ainda precisará diagnosticar separadamente permissões e visibilidade.
 
 ## Ambiente definido para desenvolvimento
 
@@ -15,7 +15,7 @@ Para testes com USB, usar host de teste ou sistema live com senha disponível e 
 
 Objetivo: verificar se a consulta 0x01, usada como informação de ROM em projetos relacionados, é reconhecida pelo 00a6. Essa finalidade ainda é hipótese para este ID; emissão de um byte por bulk OUT já é operação ativa, mesmo quando o objetivo é ler informação.
 
-**Estado: protótipo C implementado, compilado e testado com libusb simulada; não executado no hardware.**
+**Estado: protótipo C compilado e simulado; participante relatou resposta de 38 bytes no hardware. Conteúdo da resposta e recuperação física não validados.**
 
 Evidência específica localizada: a issue Validity90 #110 contém um relato do Latitude 3490 com 138a:00a6, envio de 0x01 e resposta de 38 bytes. O protótipo relacionado fazia reset antes; por isso o relato não valida a consulta isolada nem garante ausência de efeitos persistentes. Confirmar o ambiente de recuperação antes de testar. Não coletar cadastro ou autenticação biométrica para essa finalidade; traces brutos ficam privados.
 
@@ -29,10 +29,16 @@ Contrato implementado pelo protótipo (com limites abaixo):
 
 Saída pública desejada: resultado sanitizado associado ao commit do protótipo, sem identificadores únicos. Um retorno bem-sucedido só comprovará essa consulta; não comprovará captura, matching ou autenticação.
 
-Se o dispositivo deixar de responder, o procedimento de recuperação deverá seguir o plano previamente exercitado no host de teste. Sem esse plano, E1 permanece pendente. Não existe ainda promessa de reversão de estado persistente por software.
+Se o dispositivo deixar de responder, o procedimento de recuperação deverá seguir o plano previamente exercitado no host de teste. A recuperação física permanece sem validação; esse requisito continua relevante para novos experimentos. Não existe ainda promessa de reversão de estado persistente por software.
 
 ## Execução pelo participante
 
 O ambiente do participante é Linux somente. Não é preciso instalar Windows para E1. O [primeiro teste de hardware](first-hardware-test.md) traz compilação, comando, pré-condições e interpretação. O agente não executou a opção ativa no sensor.
 
 O protótipo não chama reset, set_configuration, detach, pareamento, escrita em flash ou comandos de captura. Encerrar uma transferência que não retorna seu callback dentro do limite exige terminar o processo sem liberar buffers ainda em uso; o sistema operacional fecha seus recursos. Isso não deve ser apresentado como recuperação comprovada do dispositivo.
+
+## Resultado do participante e próximo passo
+
+Em 2026-11-16, o participante informou: 23 testes offline aprovados, compilação concluída, permissão negada sem elevação e resposta de 38 bytes com sudo. O [registro sanitizado](evidence/e1-participant-report-2026-11-16.json) contém somente essas evidências. O agente não reproduziu a operação ativa; o hash do código executado no host não foi informado. A referência esperada é v0.4.0-research, pelo fluxo de clone e compilação relatado.
+
+A opção --summarize-rom-info repete a mesma operação de transporte e acrescenta uma análise estritamente limitada aos [campos candidatos](rom-info.md). Não adiciona cmd_19, inicialização, reset ou captura. A saída usa schema_version 2 para distinguir o novo formato; a opção anterior continua com schema_version 1.

@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.5.0-research — 2026-11-16
+
+- Primeiro resultado E1 do participante registrado: resposta de 38 bytes após execução elevada; conteúdo não validado.
+- Nova opção --summarize-rom-info para a mesma consulta única, com schema 2 e somente quatro campos candidatos.
+- Decoder com comprimento exato/status inicial zero, endian explícito e exclusão de bytes desconhecidos.
+- Quatro testes adicionais; 27 no total. Verificações ASan/UBSan com LeakSanitizer desabilitado por limitação do ambiente.
+- Sem execução do novo resumo no hardware pelo agente e sem suporte biométrico confirmado.
+
 ## 0.4.0-research — 2026-11-16
 
 - Probe C experimental para consulta isolada 0x01, sem reset/configuração/retry e sem publicar resposta bruta.

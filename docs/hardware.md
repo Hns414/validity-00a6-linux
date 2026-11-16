@@ -39,3 +39,7 @@ Confirmados: VID:PID 138a:00a6; USB 2.00, 12 Mbps; classe/subclasse/protocolo de
 | 0x84 | Interrupt IN | 16 | 10 |
 
 O INF Dell identifica o nome comercial VFS7552; o silício interno, firmware, funções específicas dos endpoints e mecanismo biométrico desta variante continuam sem verificação. As seções anteriores preservam o histórico do diagnóstico inicial.
+
+## E1 no host do participante
+
+Em 2026-11-16, o participante relatou a consulta isolada 0x01: sem sudo, permission_denied no preflight; com sudo, reply_received_unvalidated e received_bytes 38. [Evidência sanitizada](evidence/e1-participant-report-2026-11-16.json). Trata-se de relato acompanhado da saída da ferramenta, não de captura de barramento ou repetição independente pelo agente. Nenhum campo do conteúdo foi validado; suporte biométrico permanece desconhecido.

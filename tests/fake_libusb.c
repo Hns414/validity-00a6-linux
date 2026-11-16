@@ -130,7 +130,15 @@ int LIBUSB_CALL libusb_handle_events_timeout_completed(libusb_context *ctx, stru
     struct libusb_transfer *t = pending;
     t->status = LIBUSB_TRANSFER_COMPLETED;
     t->actual_length = t->endpoint == 1 ? 1 : 38;
-    if (t->endpoint == 0x81) memset(t->buffer, 0xa5, 64); /* never print response */
+    if (t->endpoint == 0x81) {
+        memset(t->buffer, 0xa5, 64); /* timestamp, padding and tail must remain private */
+        t->buffer[0] = 0; t->buffer[1] = 0;
+        t->buffer[6] = 0x78; t->buffer[7] = 0x56; t->buffer[8] = 0x34; t->buffer[9] = 0x12;
+        t->buffer[10] = 6; t->buffer[11] = 7; t->buffer[13] = 0x30;
+        if (scenario("summary_error")) t->buffer[1] = 1;
+        if (scenario("summary_short")) t->actual_length = 17;
+        if (scenario("summary_long")) t->actual_length = 39;
+    }
     if (scenario("short_write") && t->endpoint == 1) t->actual_length = 0;
     if (scenario("empty_read") && t->endpoint == 0x81) t->actual_length = 0;
     if (scenario("overflow") && t->endpoint == 0x81) t->actual_length = 65;

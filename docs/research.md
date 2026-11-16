@@ -91,3 +91,9 @@ O início do registro mostra envio de 0x01 e resposta de 38 bytes, seguido de di
 Foi feito apenas inventário local dos imports PE da DLL Dell: isso não identificou o fluxo de consulta nem provou a semântica de 0x01. Nenhum código da DLL foi executado, incorporado ou redistribuído.
 
 Implementado um probe C original com libusb, condicionado à opção explícita --probe-rom-info. O teste real depende do participante e está documentado em [first-hardware-test.md](first-hardware-test.md). As simulações exercitam uma consulta, uma leitura limitada, falhas de pré-condição, permissão, interface ocupada, timeout, cancelamento por sinal, desconexão, erro de event loop, resposta vazia e conclusão tardia. A biblioteca real foi usada para compilar e exibir somente --help; a opção ativa não foi executada nesta sessão.
+
+## Resultado E1 e análise candidata da resposta
+
+O [relato do participante](evidence/e1-participant-report-2026-11-16.json) confirma uma resposta de 38 bytes à consulta isolada, segundo o resultado da ferramenta. Isso acrescenta evidência específica além do relato Validity90, mas sem resposta bruta nem validação semântica. O fluxo implementado não exige reset ou blocos de inicialização.
+
+Próximo passo preparado: --summarize-rom-info, com layout candidato baseado no RomInfo de python-validity, commit a6bbc21dce7b8b3c3cd92378a0b2579a2fb45920. O [mapa de campos](rom-info.md) documenta offsets, little endian, status zero, tamanho exato e exclusões de privacidade. A análise não assume que o layout esteja confirmado para 00a6. Nenhum comando adicional foi implementado ou enviado ao sensor nesta etapa pelo agente.

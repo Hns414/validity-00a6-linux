@@ -7,7 +7,7 @@ Cada marco exige evidência registrada; versões experimentais não indicam apti
 | M0 — v0.1.0-research | Estrutura, documentação, fontes, limites e plano de testes; commit inicial | Publicado: 1476b11 |
 | M1 — identidade | Descritores sanitizados, INF com ID exato, hashes e fontes fixadas por commit | Concluído: v0.2.0-research |
 | M2 — arquitetura | Comparação upstream, licença definida, estratégia libfprint e ambiente recuperável | Parcial: matriz e relato específico investigados; recuperação e semântica da consulta isolada pendentes |
-| M3 — transporte | Operações mínimas compreendidas, timeouts/cancelamento e testes offline; experimento de hardware revisado | Parcial: v0.4.0-research inclui probe C e simulador; E1 real pendente |
+| M3 — transporte | Operações mínimas compreendidas, timeouts/cancelamento e testes offline; experimento de hardware revisado | Parcial: E1 relatado pelo participante com 38 bytes; resumo de campos preparado em v0.5.0-research; semântica e recuperação pendentes |
 | M4 — biometria | Cadastro e verificação legítimos no hardware, rejeição e erros validados sem publicar dados biométricos | Pendente |
 | M5 — integração | Revisão de segurança, integração fprintd/GNOME, proposta upstream e limitações documentadas | Pendente |
 

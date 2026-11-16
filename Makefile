@@ -6,9 +6,9 @@ USB_LIBS = $(shell pkg-config --libs libusb-1.0)
 .PHONY: probe test clean
 probe: build/probe-rom-info
 
-build/probe-rom-info: src/probe_rom_info.c
+build/probe-rom-info: src/probe_rom_info.c src/rom_info.c src/rom_info.h
 	mkdir -p build
-	$(CC) $(CFLAGS) $(USB_CFLAGS) $< -o $@ $(USB_LIBS)
+	$(CC) $(CFLAGS) $(USB_CFLAGS) src/probe_rom_info.c src/rom_info.c -o $@ $(USB_LIBS)
 
 test:
 	python3 -m unittest discover -s tests -v

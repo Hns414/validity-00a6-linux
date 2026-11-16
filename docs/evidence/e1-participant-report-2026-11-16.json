@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "experiment": "E1",
+  "date": "2026-11-16",
+  "evidence_type": "participant_report_in_project_chat",
+  "independently_reproduced_by_agent": false,
+  "device": {
+    "vid": "138a",
+    "pid": "00a6",
+    "host_model": "Dell Latitude 3490"
+  },
+  "expected_code_ref": "v0.4.0-research",
+  "code_ref_verified_on_participant_host": false,
+  "participant_checks": {
+    "offline_tests_passed": 23,
+    "probe_compiled": true
+  },
+  "attempts": [
+    {
+      "elevated": false,
+      "result": {
+        "schema_version": 1,
+        "experiment": "E1",
+        "status": "permission_denied",
+        "stage": "preflight",
+        "received_bytes": 0,
+        "biometric_support": false
+      }
+    },
+    {
+      "elevated": true,
+      "result": {
+        "schema_version": 1,
+        "experiment": "E1",
+        "status": "reply_received_unvalidated",
+        "stage": "read",
+        "received_bytes": 38,
+        "biometric_support": false
+      }
+    }
+  ],
+  "limits": [
+    "No raw reply available",
+    "No semantic fields validated",
+    "No capture or authentication tested",
+    "Firmware state and physical recovery not validated"
+  ]
+}

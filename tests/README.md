@@ -35,3 +35,9 @@ Verificados: consulta única, leitura limitada, ordem e liberação de recursos,
 Também foram compilados os mesmos arquivos com -fsanitize=address,undefined e executados 23 cenários simulados, sem diagnósticos desses sanitizadores. Isso não verifica o comportamento do driver USB real, latência real, firmware ou recuperação do sensor.
 
 Dependências adicionais: compilador C, pkg-config e headers de libusb-1.0. Se faltarem, os nove testes de transporte mostram skip explícito; os demais continuam disponíveis com Python padrão. O teste de hardware é manual e separado, nunca executado pelo comando make test.
+
+## Decodificação candidata de ROM info
+
+Quatro testes adicionais (27 no total) verificam a seleção de campos, recusa de tamanho/status inesperados, ausência de campos em falhas de transporte/liberação e um programa C específico de limites e privacidade. Esse programa percorre todos os comprimentos entre 0 e 64, verifica little endian e modifica cada byte omitido para demonstrar que não afeta a saída dos campos candidatos. Testa também ponteiros nulos e limpeza do resultado ao rejeitar entrada.
+
+Verificação extra desta etapa: decoder e oito cenários simulados de resumo passaram com ASan/UBSan. LeakSanitizer falhou por limitação de ptrace do ambiente; a execução foi repetida com ASAN_OPTIONS=detect_leaks=0. Portanto não se declara validação de leaks por esse sanitizador nesta etapa. O resumo ainda não foi executado no sensor pelo participante.

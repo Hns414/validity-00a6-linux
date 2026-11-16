@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "method": "manual-static-node-layout-and-host-copy-callbacks-with-checked-calls",
+  "dll_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "checked_call_edges": [
+    {
+      "call_rva": "0x87c63",
+      "target_rva": "0x877f0"
+    },
+    {
+      "call_rva": "0x87cd3",
+      "target_rva": "0x8c050"
+    },
+    {
+      "call_rva": "0x73740",
+      "target_rva": "0x922b0"
+    },
+    {
+      "call_rva": "0x73783",
+      "target_rva": "0x923d0"
+    },
+    {
+      "call_rva": "0x92ca8",
+      "target_rva": "0xd54b0"
+    }
+  ],
+  "chunk15": {
+    "constructor_rva": "0x87b70",
+    "conditions": [
+      "descriptor DWORD +0x04 equals 0",
+      "descriptor DWORD +0x08 mask 0x20 clear"
+    ],
+    "node_bytes": 12,
+    "header_bytes": 4,
+    "declared_content_bytes": 8,
+    "content_dwords": [
+      0,
+      10272
+    ],
+    "content_builder_rva": "0x8c050",
+    "builder_third_argument_does_not_change_dwords_in_examined_function": true,
+    "operational_semantics_verified": false
+  },
+  "dynamic_source": {
+    "class_selector_offset": "0x08",
+    "supported_class_in_examined_dispatch": 1,
+    "size_callback_rva": "0x92be0",
+    "copy_callback_rva": "0x92c20",
+    "copy_call_rva": "0x92ca8",
+    "source_structure_producers_identified": false
+  },
+  "program_modified": false,
+  "usb_transfer_performed": false
+}

@@ -291,3 +291,5 @@ A [reconstrução dos programas](program-materialization.md) encontrou igualdade
 A [análise de repetição dos programas](program-repeat-patch.md) liga fatores ao tipo e acrescenta auditor offline sem mutação; suíte com 103 testes.
 
 Os [nós adicionais de captura](additional-capture-nodes.md) incluem caminhos condicionais e dinâmicos além do programa-base; montagem final ainda não validada.
+
+O [layout de 0x15 e a fonte dinâmica](chunk15-and-dynamic-source.md) delimita um nó de 12 bytes e callbacks que copiam estado do host, sem captura habilitada.

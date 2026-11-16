@@ -46,3 +46,5 @@ A tabela de programas, o descritor mutável, os nós adicionais e o cabeçalho f
 Nove destinos de chamadas e a máscara da flag foram conferidos no binário fixado. A análise foi limitada às rotinas indicadas: a função 0x736c0 termina em 0x73794; rotinas vizinhas de outros objetos não foram atribuídas a esse helper só por proximidade no disassembly.
 
 O próximo passo é reconstruir 0x8c050 e os produtores do objeto dinâmico, além da origem das flags de inclusão. Somente documentos/evidência: mantém a base de **103 testes aprovados na v0.47**, sem nova execução da suíte. Probe inalterado, sem novo comando ou teste com dedo.
+
+A [continuação de 0x15 e da fonte dinâmica](chunk15-and-dynamic-source.md) resolve a condição/tamanho desse nó e identifica os callbacks de tamanho/cópia.

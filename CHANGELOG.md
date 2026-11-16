@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.49.0-research — 2026-11-16
+
+- Nó 0x15 delimitado a 12 bytes sob condição de modo/flag; dois DWORDs do conteúdo identificados.
+- Limite exato do helper de conteúdo conferido; rotinas vizinhas separadas.
+- Fonte dinâmica ligada a callbacks de tamanho e cópia de estruturas do host.
+- Cinco chamadas conferidas; somente documentação/evidência, sem novo comando USB.
+
 ## 0.48.0-research — 2026-11-16
 
 - Inclusão condicional de bloco vazio 0x17 ligada à flag 0x10.

@@ -289,3 +289,5 @@ O [registro da tabela de programas](program-table-registration.md) corrige a cat
 A [reconstrução dos programas](program-materialization.md) encontrou igualdade integral pública em 17/21 entradas e acrescentou comparador offline; suíte com 97 testes.
 
 A [análise de repetição dos programas](program-repeat-patch.md) liga fatores ao tipo e acrescenta auditor offline sem mutação; suíte com 103 testes.
+
+Os [nós adicionais de captura](additional-capture-nodes.md) incluem caminhos condicionais e dinâmicos além do programa-base; montagem final ainda não validada.

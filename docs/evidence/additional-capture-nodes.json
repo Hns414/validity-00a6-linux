@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "method": "manual-static-additional-node-paths-with-checked-calls-and-flag",
+  "dll_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "checked_call_edges": [
+    {
+      "call_rva": "0x7ca64",
+      "target_rva": "0x87910"
+    },
+    {
+      "call_rva": "0x7caa4",
+      "target_rva": "0x87a20"
+    },
+    {
+      "call_rva": "0x87a83",
+      "target_rva": "0x736c0"
+    },
+    {
+      "call_rva": "0x87aa7",
+      "target_rva": "0x877f0"
+    },
+    {
+      "call_rva": "0x87ad6",
+      "target_rva": "0x736c0"
+    },
+    {
+      "call_rva": "0x73740",
+      "target_rva": "0x922b0"
+    },
+    {
+      "call_rva": "0x73783",
+      "target_rva": "0x923d0"
+    },
+    {
+      "call_rva": "0x7cae2",
+      "target_rva": "0x87b70"
+    },
+    {
+      "call_rva": "0x87cd3",
+      "target_rva": "0x8c050"
+    }
+  ],
+  "empty_17": {
+    "flag_mask": "0x10",
+    "call_rva": "0x7ca64",
+    "content_length": 0
+  },
+  "dynamic_node": {
+    "constructor_rva": "0x87a20",
+    "conditional_call_rva": "0x7caa4",
+    "source_host_field": "0x108",
+    "size_call_rva": "0x87a83",
+    "fill_call_rva": "0x87ad6",
+    "source_wrapper_rva": "0x736c0",
+    "size_dispatch_rva": "0x922b0",
+    "fill_dispatch_rva": "0x923d0",
+    "content_semantics_verified": false
+  },
+  "other_constructor": {
+    "rva": "0x87b70",
+    "call_rva": "0x7cae2",
+    "header_type": 21,
+    "declared_header_content_bytes": 8,
+    "complete_node_layout_verified": false,
+    "payload_builder_rva": "0x8c050"
+  },
+  "base_program_equals_complete_capture_request": false,
+  "usb_transfer_performed": false
+}

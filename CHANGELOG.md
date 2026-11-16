@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.48.0-research — 2026-11-16
+
+- Inclusão condicional de bloco vazio 0x17 ligada à flag 0x10.
+- Caminho adicional de nó dinâmico separado em consulta de tamanho e preenchimento.
+- Construtor de cabeçalho 0x15/8 bytes localizado, com layout completo ainda pendente.
+- Nove chamadas conferidas; somente documentação/evidência, sem novo comando USB.
+
 ## 0.47.0-research — 2026-11-16
 
 - Fator de repetição ligado aos metadados do tipo; exemplos 0xdb=1 e 0xed=2.

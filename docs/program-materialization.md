@@ -48,3 +48,5 @@ A saída contém comprimentos, contagens, hashes, RVAs e índices de igualdade; 
 Três destinos de chamadas do materializador foram conferidos no binário. Seis novos testes cobrem ordem dos fragmentos, mapeamento/truncamento, terminador, limite de percurso e rejeição de inicializadores públicos dinâmicos ou ambíguos. `make test` passou com **97 testes sem skips**.
 
 A próxima investigação é delimitar as modificações aplicadas aos programas já identificados e o tipo efetivo necessário para selecioná-los. O probe ativo permanece inalterado; não houve novo comando, captura ou teste com dedo.
+
+A [análise dos nós adicionais](additional-capture-nodes.md) delimita outras fontes e condições de montagem, além dos programas-base comparados.

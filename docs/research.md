@@ -135,3 +135,11 @@ A [análise de init-selection](init-selection.md) encontrou uma tabela de 75 pon
 O caminho de 0x5eac0 solicita 0x4000 por 0x5ed80/0x5ede0. Este último chama o seletor em 0x8fb20, lê tamanho +0x44 e ponteiro +0x48, copia o conteúdo e o passa adiante via 0x62ad0. O caminho 0x53560 usa infraestrutura assíncrona. Ainda falta provar a formação do pacote USB e as operações executadas no sensor. Não se enviou o bloco.
 
 O [extrator de metadados do registro](../tools/locate_init_record.py) é limitado ao hash da DLL inspecionada; o [resultado](evidence/init-descriptor-location.json) indica explicitamente que a seleção não foi avaliada e a execução não foi habilitada. Seis testes adicionais, apenas sintéticos; 50 testes aprovados no total. Nenhum novo dado do participante foi necessário.
+
+## Montagem interna e limite do rastreamento USB
+
+O [rastreio de framing](init-framing.md) confirmou o dispatcher em RVA 0x5a820, tabela 0x116340 e entrada 7 em 0x116378 para o handler 0x7e540. Esse handler usa comando 0x06, soma um byte ao tamanho e copia os argumentos na posição 1. Com os 500 bytes encontrados na DLL, o frame reconstruído coincide integralmente com init_00 upstream; o [manifesto](evidence/init-frame-verification.json) registra comprimento/hash sem reproduzir o payload.
+
+Implementado um codificador C original apenas para uso offline e teste sintético; não está ligado ao probe USB. O teste verifica falhas sem alteração de saída, limites, sentinelas e sobreposição de buffers. A suíte tem 51 testes aprovados; ASan/UBSan do encoder também passou, com detecção de leaks desabilitada pela limitação já registrada.
+
+O caminho de transporte chama rotinas que podem manipular descritores antes de um callback indireto. O vínculo desse callback ao wrapper WinUsb_WritePipe e as transformações relevantes ao contexto do 00a6 não foram comprovados. Não afirmar captura de tráfego nem equivalência final de bytes no barramento. Nenhuma DLL ou nova operação de hardware foi executada nesta etapa.

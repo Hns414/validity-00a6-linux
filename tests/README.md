@@ -63,3 +63,9 @@ O relatório real foi regenerado a partir das duas DLLs privadas do pacote Dell 
 ## Localização do descritor de inicialização
 
 Seis testes adicionais (50 no total) verificam metadados/coordenadas de um registro sintético, conteúdo ausente/duplicado, ponteiro duplicado, tamanho inconsistente e regiões ambíguas/não mapeadas. A ferramenta real verifica o hash exato da DLL antes de aplicar offsets de análise. O manifesto foi reproduzido por leitura estática, sem executar código do fabricante ou acessar USB. Esses testes não provam os critérios completos do seletor nem os efeitos do payload.
+
+## Framing offline de init_00
+
+Um novo teste automatizado compila src/init_frame.c com um programa C de dados sintéticos. Verifica comprimentos entre 0 e 600, todas as capacidades menores que 501, saída intacta em falhas, sentinelas, ponteiros nulos, SIZE_MAX e argumentos sobrepostos à saída. Total: 51 testes aprovados. O programa também passou com ASan/UBSan, ASAN_OPTIONS=detect_leaks=0; não se declara teste de leaks.
+
+A composição real em memória a partir da DLL privada foi comparada ao init_00 upstream e registrada somente como metadados. A ferramenta de verificação não interpreta automaticamente o disassembly nem executa instruções do fabricante. O encoder não é ligado ao probe ativo; nenhum teste unitário envia o bloco ao USB.

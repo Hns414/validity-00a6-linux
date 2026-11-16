@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.10.0-research — 2026-11-16
+
+- Dispatcher e handler da solicitação interna 7 identificados: montagem de opcode 0x06 e argumentos.
+- Frame de 501 bytes reconstruído em memória e comparado integralmente ao init_00 upstream.
+- Codificador C original e offline, sem payload embutido e sem link no executável USB; teste de limites/sobreposição e ASan/UBSan.
+- 51 testes aprovados. Callback USB final, transformações e efeitos do conteúdo continuam pendentes; nenhum novo comando ativo.
+
 ## 0.9.0-research — 2026-11-16
 
 - Tabela e registro dos 500 bytes localizados; chaves candidatas 6.7/build 164 e máscara 0x4000 documentadas.

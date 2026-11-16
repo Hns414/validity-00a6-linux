@@ -86,3 +86,7 @@ A suíte atual contém 44 testes. Esta etapa adiciona análise estática de arqu
 ## Etapa v0.9.0-research
 
 A suíte atual contém 50 testes. O trabalho desta etapa rastreia estaticamente os descritores do driver Dell, sem novos comandos de hardware ou mudança nas consultas E1/E2. Não é necessário repetir os testes no sensor.
+
+## Etapa v0.10.0-research
+
+A suíte atual contém 51 testes. Esta versão verifica montagem de frames em memória e não adiciona uma opção de inicialização ao probe. Nenhum novo teste no sensor é solicitado.

@@ -63,3 +63,7 @@ Seis testes novos usam somente bytes sintéticos para verificar campos/coordenad
 - Definir recuperação aplicável ao que essas operações efetivamente fizerem.
 
 Esta etapa confirma a ligação estática entre registro, seleção e encaminhamento do payload. Ainda não prova que o registro seria selecionado no estado atual do sensor, nem que executá-lo seria adequado. Não há novo comando de hardware para o participante.
+
+## Continuação: montagem do frame
+
+A [análise de framing](init-framing.md) relacionou a solicitação interna 7 ao handler 0x7e540, que constrói 0x06 seguido dos argumentos. A reprodução offline resultou no frame de 501 bytes idêntico ao upstream. A ligação final entre a camada de transporte e o wrapper USB ainda não foi completada, e os efeitos do payload no sensor continuam desconhecidos.

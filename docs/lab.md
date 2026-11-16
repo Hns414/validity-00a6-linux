@@ -54,3 +54,7 @@ O participante confirmou a troca de transporte de E2 pelos indicadores publicado
 ## Limite da execução de código proprietário
 
 Nesta fase, DLLs são somente dados para inspeção estática. O sandbox de terceiros não foi executado porque não estabelece isolamento em relação ao sensor e pode disparar alterações persistentes. A [análise do driver Dell](dell-static-analysis.md) registra essa distinção e os pontos candidatos para continuar offline. Nenhum ambiente de execução de DLL com USB simulado foi preparado ou validado.
+
+## Codificador de frame offline
+
+A etapa v0.10.0-research contém um encoder C testado somente com argumentos sintéticos, sem link no executável que acessa USB. A [verificação de montagem](init-framing.md) não habilita emissão de init_00. Não há novo teste de hardware nem necessidade de repetir E1/E2.

@@ -84,6 +84,14 @@ class ProbeTests(unittest.TestCase):
                 self.assertIsNone(result['candidate_status_zero'])
                 self.assertIsNone(result['reference_length_match'])
 
+    def test_offline_init_frame_bounds_aliasing_and_failure_atomicity(self):
+        binary = Path(self.tmp.name) / 'init-frame-test'
+        subprocess.run(['cc', '-std=c11', '-Wall', '-Wextra', '-Werror',
+                        '-I', str(ROOT / 'src'), str(ROOT / 'src/init_frame.c'),
+                        str(ROOT / 'tests/test_init_frame.c'), '-o', str(binary)],
+                       check=True, capture_output=True)
+        subprocess.run([str(binary)], check=True, capture_output=True, timeout=3)
+
     def test_decoder_bounds_endianness_and_omitted_byte_independence(self):
         binary = Path(self.tmp.name) / 'decoder-test'
         subprocess.run(['cc', '-std=c11', '-Wall', '-Wextra', '-Werror',

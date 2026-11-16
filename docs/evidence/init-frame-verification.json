@@ -1,0 +1,17 @@
+{
+  "arguments_length": 500,
+  "dispatch_slot_rva": "0x116378",
+  "dll_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "equals_upstream_init_00": true,
+  "frame_length": 501,
+  "frame_sha256": "c0ce06740d8c9b836b0d52de2167404ba0b117d0423a278d9fce4b3742e686ee",
+  "handler_rva": "0x7e540",
+  "hardware_execution_enabled": false,
+  "method": "offline-reconstruction-not-vendor-code-execution",
+  "opcode": "0x06",
+  "payload_effects_known": false,
+  "request_index": 7,
+  "schema_version": 1,
+  "upstream_reference_commit": "8b6e4e39bee58de2774222e3730269def470b157",
+  "vendor_instruction_semantics_automatically_verified": false
+}

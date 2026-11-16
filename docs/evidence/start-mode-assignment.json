@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "method": "manual-assignment-and-preference-analysis-with-checked-data",
+  "dll_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "assignment": {
+    "routine_rva": "0x16998",
+    "condition": "first argument DWORD +0x04 equals 1",
+    "final_store_rva": "0x16ac9",
+    "mode_written": 3,
+    "overrides_earlier_stores": true
+  },
+  "checked_call_edges": [
+    {
+      "call_rva": "0x1b033",
+      "target_rva": "0x16998"
+    },
+    {
+      "call_rva": "0x1b128",
+      "target_rva": "0x2bc20"
+    }
+  ],
+  "mask80_filter_stages": [
+    {
+      "filter": "mask_80",
+      "indices": [
+        10,
+        15,
+        16,
+        23,
+        28,
+        29,
+        32,
+        33,
+        39,
+        40,
+        45,
+        52,
+        53,
+        58,
+        62,
+        63,
+        66,
+        67,
+        71
+      ]
+    },
+    {
+      "filter": "excluded_22020",
+      "indices": [
+        10,
+        15,
+        16,
+        23,
+        28,
+        29,
+        32,
+        33,
+        39,
+        40,
+        45,
+        52,
+        53,
+        58,
+        62,
+        63,
+        66,
+        67,
+        71
+      ]
+    },
+    {
+      "filter": "version",
+      "indices": [
+        15,
+        16,
+        52,
+        53
+      ]
+    },
+    {
+      "filter": "parameter_zero",
+      "indices": [
+        15,
+        16,
+        52,
+        53
+      ]
+    },
+    {
+      "filter": "discriminator_2",
+      "indices": [
+        52,
+        53
+      ]
+    },
+    {
+      "filter": "gate_one",
+      "indices": [
+        52,
+        53
+      ]
+    }
+  ],
+  "conditional_preference": {
+    "candidates": [
+      52,
+      53
+    ],
+    "equal_specificity_wildcards": [
+      "0x1c",
+      "0x38",
+      "0x40"
+    ],
+    "shorter_candidate": 53,
+    "record_rva": "0x13d3f0",
+    "arguments_bytes": 6676,
+    "candidate_frame_bytes": 6677,
+    "field_20": 17,
+    "length_comparison_branch_rva": "0x8fe21",
+    "replacement_rva": "0x8fe59"
+  },
+  "public_comparison": {
+    "commit": "8b6e4e39bee58de2774222e3730269def470b157",
+    "name": "vfs7552_init_04",
+    "equal_length": true,
+    "equal_bytes": false,
+    "candidate_frame_sha256": "106d036c2b177f6d2380d3148c8737d7e1462ad7c1df6b8f93912e76f1ddcdb4",
+    "public_frame_sha256": "477d0e7dd70db24b71b2902ed56029f296f9dd318ee3e2a03f44416d5d671789"
+  },
+  "runtime_path_observed": false,
+  "payload_semantics_verified": false,
+  "usb_transfer_performed": false
+}

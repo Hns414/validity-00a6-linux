@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.33.0-research — 2026-11-16
+
+- Escrita posterior de modo 3 identificada em ramo do host, substituindo cálculos anteriores.
+- Ramo 0x80 avaliado condicionalmente: entrada 53 menor substitui a 52 sob mesmas condições de especificidade.
+- Frame candidato de 6677 bytes difere do init_04 público de mesmo tamanho.
+- Somente documentação/evidência; sem alteração de probe ou envio USB.
+
 ## 0.32.0-research — 2026-11-16
 
 - Campo de escolha da preparação rastreado até parâmetro do construtor no host.

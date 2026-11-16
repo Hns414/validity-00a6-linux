@@ -38,3 +38,5 @@ Não há motivo para pedir outra leitura E1 para resolver um parâmetro do drive
 Seis destinos de chamadas foram conferidos diretamente no binário fixado; os movimentos de argumentos e a reescrita condicional foram interpretados manualmente. Não foram executados o construtor ou os caminhos de captura.
 
 Esta etapa modifica somente documentos/evidência. Mantém a base de 73 testes aprovados na v0.27, sem nova execução da suíte. Nenhuma opção foi adicionada ao probe e não há teste com dedo nesta etapa.
+
+A [continuação da atribuição](start-mode-assignment.md) identifica uma escrita final de modo 3 em um ramo anterior ao construtor e avalia a preferência entre candidatas de 0x80.

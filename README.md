@@ -87,7 +87,11 @@ The [selector refinement](docs/init-discriminator.md) identifies an internal bit
 
 ## E1 discriminator summary
 
-`--summarize-init-discriminator` repeats the isolated 0x01 E1 query and exports only candidate major, one flag bit and its derived discriminator under schema 4. The [static dataflow analysis and Linux instructions](docs/rom-discriminator.md) document the candidate raw-reply mapping. It does not select or send an init payload; participant validation is pending. Earlier schemas remain unchanged.
+`--summarize-init-discriminator` repeats the isolated 0x01 E1 query and exports only candidate major, one flag bit and its derived discriminator under schema 4. The [static dataflow analysis and Linux instructions](docs/rom-discriminator.md) document the candidate raw-reply mapping. It does not select or send an init payload. The participant reported major 6, the bit set and discriminator 2; earlier schemas remain unchanged.
+
+## Participant discriminator result
+
+The [participant result and 484-byte comparison](docs/init-484.md) show discriminator 2, which excludes the known 500-byte record under this predicate and admits the 484-byte record at this filter. The latter exactly matches the public python-validity `blobs_90.py` init arguments. Full selection, payload effects and biometric support remain unverified; no init executor is enabled.
 
 ## Licensing
 

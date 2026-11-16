@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "method": "hash-pinned-bounded-descriptor-read-and-public-literal-AST-comparison",
+  "dll_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "record_rva": "0x13d490",
+  "table_index": 55,
+  "argument_length": 484,
+  "argument_sha256": "7071967a90f5a5ad82e206bdb5ab7aefdfb231cb106ea89dcbd11a64381f7bb1",
+  "public_source": {
+    "repository": "https://github.com/uunicorn/python-validity",
+    "commit": "a6bbc21dce7b8b3c3cd92378a0b2579a2fb45920",
+    "path": "validitysensor/blobs_90.py",
+    "symbol": "init_hardcoded",
+    "frame_length": 485,
+    "frame_sha256": "854b90943a8b865ca237b686112381d15460f715c88147ff6d83d7b8d264b1db"
+  },
+  "arguments_equal_public_frame_without_opcode": true,
+  "opcode_06_plus_arguments_equals_public_frame": true,
+  "hardware_execution_enabled": false,
+  "full_selection_evaluated": false,
+  "limits": [
+    "Byte identity does not establish payload effects",
+    "Family name 90 does not establish 0090 protocol compatibility for 00a6",
+    "Comparison performed in memory without exporting payload"
+  ]
+}

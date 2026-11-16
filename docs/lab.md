@@ -70,3 +70,7 @@ Os predicados de transformação e duas escritas na flag interna foram registrad
 ## Observação adicional E1 em v0.16.0-research
 
 O [resumo do discriminante](rom-discriminator.md) está preparado e simulado. Ele repete somente 0x01 para observar um bit candidato, com schema 4; não executa init_00/init_04. Este é um novo teste útil no participante após as etapas offline; a saída real permanece pendente. Compartilhar somente JSON, sem captura bruta.
+
+## Resultado do resumo E1 schema 4
+
+O participante relatou execução de v0.16, 59 testes aprovados e discriminante 2. O [resultado e seus limites](init-484.md) estão registrados; não repetir a consulta agora. A investigação retorna ao ramo de 484 bytes e aos demais filtros, sem inicialização ativa.

@@ -53,3 +53,7 @@ sudo ./build/probe-rom-info --summarize-init-discriminator
 Compartilhar somente a linha JSON. Se houver erro, parar e compartilhar essa saída, sem repetir automaticamente. Não executar o driver upstream com ID alterado ou enviar os blocos de inicialização.
 
 O resultado permitirá avaliar esse predicado para o participante. Ainda faltam os demais filtros, contexto do transporte, efeitos dos payloads e recuperação antes de preparar qualquer executor de inicialização. Resultado real desta opção permanece pendente.
+
+## Resultado recebido
+
+O [relato do participante](init-484.md) registrou 38 bytes, major 6, bit ativo e discriminante 2 após atualização para 9d429de. O resultado mínimo desta opção foi obtido; a seleção completa segue pendente. Não repetir o teste para esta investigação.

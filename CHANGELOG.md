@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.17.0-research — 2026-11-16
+
+- Participante relatou E1 schema 4: 38 bytes, major 6, bit ativo e discriminante 2, após 59 testes aprovados.
+- Resultado exclui entrada de 500 bytes e admite a de 484 apenas no filtro +0x34; seleção completa pendente.
+- Argumentos da entrada 55 comparados integralmente ao init_hardcoded público de blobs_90.py; frame reconstruído de 485 bytes idêntico.
+- Somente documentação/evidência; nenhum novo executor ou teste de hardware solicitado.
+
 ## 0.16.0-research — 2026-11-16
 
 - Origem do byte interno rastreada pelo handler 0x01 e callback de normalização até o offset candidato 0x19 da resposta completa.

@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-16",
+  "evidence_type": "participant_terminal_output_in_project_chat",
+  "independently_reproduced_by_agent": false,
+  "code_ref_reported": "9d429de",
+  "code_ref_basis": "Participant paste includes fast-forward to 9d429de, 59 tests and compilation",
+  "offline_tests_passed": 59,
+  "result": {
+    "schema_version": 4,
+    "experiment": "E1",
+    "status": "reply_received_unvalidated",
+    "stage": "read",
+    "received_bytes": 38,
+    "biometric_support": false,
+    "decode_status": "candidate_layout_unverified",
+    "discriminator_candidate": {
+      "firmware_major": 6,
+      "flag_0x20_set": true,
+      "derived_value": 2
+    },
+    "full_selection_evaluated": false
+  },
+  "interpretation": {
+    "among_pair_record_19_passes_discriminator": false,
+    "among_pair_record_55_passes_discriminator": true,
+    "full_selection_evaluated": false
+  },
+  "limits": [
+    "Candidate layout not independently observed by agent",
+    "Other selector filters and transport context not established",
+    "No init payload sent by the reported tool",
+    "No capture, matching or recovery tested"
+  ]
+}

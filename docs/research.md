@@ -183,3 +183,9 @@ O modelo offline original recebeu cinco testes; make test passou com 57 testes s
 O [rastreio de normalização](rom-discriminator.md) ligou solicitação interna 1, handler 0x7df10, remoção do status e callback 0x56830 ao buffer armazenado em contexto +0x28. O byte interno +0x17 é preservado a partir do conteúdo da resposta +0x17, correspondente ao offset candidato bruto 0x19.
 
 Preparada opção --summarize-init-discriminator com schema 4 e apenas major/bit/valor derivado. Consultas E1 e schemas anteriores mantidos; nenhuma emissão de init. 59 testes passaram sem skips, build concluído e ASan/UBSan do decoder passou sem detecção de leaks. Próxima evidência necessária: resultado mínimo do participante para esse campo, sem dump.
+
+## Resultado real do discriminante e ramo de 484 bytes
+
+O [relato sanitizado e a comparação](init-484.md) registram o E1 schema 4 do participante em 9d429de: major 6, bit 0x20 ativo, valor derivado 2 e 38 bytes. Isso exclui a entrada 19 pelo filtro +0x34 e admite a 55 por esse filtro, sem concluir seleção global. Os 59 testes passaram no host conforme relato.
+
+Os 484 argumentos da entrada 55 coincidem integralmente com o init_hardcoded público de blobs_90.py sem opcode; acrescentar 0x06 produz o frame público de 485 bytes e mesmo hash. A localização em família 90 não implica compatibilidade do restante do protocolo. Etapa somente documental; próximo trabalho offline nos filtros e consumidor, sem repetir hardware.

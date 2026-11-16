@@ -251,3 +251,5 @@ A [análise de eventos](event-worker.md) liga registro 0x938ae060 a armazenament
 O cache local explica a consulta 0x938ae038; cancelamento 0x938ae064 pode chegar a AbortPipe. Há uma fonte alternativa ainda não identificada. Coletor original lê somente cache e publica metadados; cinco testes novos, 73 aprovados. Próxima análise nos campos/eventos e armamento, sem teste com dedo.
 
 O [rastreamento do registro de eventos](event-registration.md) distingue tipos do host, conclusão e seletores do cache; armamento do sensor ainda pendente.
+
+A [preparação de Start](start-preparation.md) alcança o seletor com máscara 0x400000; seleção e efeitos ainda pendentes.

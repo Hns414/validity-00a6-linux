@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.29.0-research — 2026-11-16
+
+- Ramo de preparação de Start ligado ao seletor com máscara 0x400000 e parâmetro 0x22020.
+- Onze descritores filtrados por máscara, incluindo dois candidatos 6.7 de 12100 bytes; seleção integral e efeitos pendentes.
+- Quatro chamadas conferidas; somente documentação/evidência, sem novo comando no sensor.
+
 ## 0.28.0-research — 2026-11-16
 
 - Tipos superiores de registro separados do tipo inferior único do worker.

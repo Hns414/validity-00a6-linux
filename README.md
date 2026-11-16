@@ -140,3 +140,5 @@ Project-authored code and documentation are licensed under **LGPL-2.1-or-later**
 Independent project, unaffiliated with Dell, Validity or Synaptics.
 
 O [rastreamento do registro de eventos](docs/event-registration.md) distingue tipos do host, conclusão e seletores do cache; armamento do sensor ainda pendente.
+
+A [preparação de Start](docs/start-preparation.md) alcança o seletor com máscara 0x400000; seleção e efeitos ainda pendentes.

@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "method": "manual-static-branch-analysis-and-checked-calls-table-metadata",
+  "dll_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "checked_call_edges": [
+    {
+      "call_rva": "0x1368d",
+      "target_rva": "0x45bd0"
+    },
+    {
+      "call_rva": "0x45d75",
+      "target_rva": "0x47430"
+    },
+    {
+      "call_rva": "0x476e7",
+      "target_rva": "0x5e9f0"
+    },
+    {
+      "call_rva": "0x5ea7e",
+      "target_rva": "0x5ed80"
+    }
+  ],
+  "selector_mask": "0x400000",
+  "caller_parameter": "0x22020",
+  "mask_candidates_without_full_selection": [
+    {
+      "table_index": 15,
+      "record_rva": "0x13c810",
+      "mask": "0x400080",
+      "major": 6,
+      "minor": 7,
+      "build_field": 65535,
+      "arguments_bytes": 12100,
+      "field_20": 18
+    },
+    {
+      "table_index": 24,
+      "record_rva": "0x13cae0",
+      "mask": "0x400000",
+      "major": 6,
+      "minor": 8,
+      "build_field": 65535,
+      "arguments_bytes": 7348,
+      "field_20": 20
+    },
+    {
+      "table_index": 28,
+      "record_rva": "0x13cc20",
+      "mask": "0x400080",
+      "major": 6,
+      "minor": 10,
+      "build_field": 65535,
+      "arguments_bytes": 5060,
+      "field_20": 1
+    },
+    {
+      "table_index": 32,
+      "record_rva": "0x13cd60",
+      "mask": "0x400080",
+      "major": 6,
+      "minor": 11,
+      "build_field": 65535,
+      "arguments_bytes": 10756,
+      "field_20": 10
+    },
+    {
+      "table_index": 39,
+      "record_rva": "0x13cf90",
+      "mask": "0x400080",
+      "major": 6,
+      "minor": 20,
+      "build_field": 65535,
+      "arguments_bytes": 10500,
+      "field_20": 14
+    },
+    {
+      "table_index": 46,
+      "record_rva": "0x13d1c0",
+      "mask": "0x400000",
+      "major": 6,
+      "minor": 21,
+      "build_field": 65535,
+      "arguments_bytes": 7108,
+      "field_20": 4
+    },
+    {
+      "table_index": 52,
+      "record_rva": "0x13d3a0",
+      "mask": "0x400080",
+      "major": 6,
+      "minor": 7,
+      "build_field": 65535,
+      "arguments_bytes": 12100,
+      "field_20": 18
+    },
+    {
+      "table_index": 59,
+      "record_rva": "0x13d5d0",
+      "mask": "0x400000",
+      "major": 6,
+      "minor": 8,
+      "build_field": 65535,
+      "arguments_bytes": 7348,
+      "field_20": 20
+    },
+    {
+      "table_index": 62,
+      "record_rva": "0x13d6c0",
+      "mask": "0x400080",
+      "major": 6,
+      "minor": 11,
+      "build_field": 65535,
+      "arguments_bytes": 10756,
+      "field_20": 10
+    },
+    {
+      "table_index": 66,
+      "record_rva": "0x13d800",
+      "mask": "0x400080",
+      "major": 6,
+      "minor": 20,
+      "build_field": 65535,
+      "arguments_bytes": 10500,
+      "field_20": 13
+    },
+    {
+      "table_index": 72,
+      "record_rva": "0x13d9e0",
+      "mask": "0x400000",
+      "major": 6,
+      "minor": 21,
+      "build_field": 65535,
+      "arguments_bytes": 4772,
+      "field_20": 1
+    }
+  ],
+  "full_selection_evaluated": false,
+  "payload_effects_verified": false,
+  "usb_transfer_performed": false
+}

@@ -67,3 +67,7 @@ Esta etapa confirma a ligação estática entre registro, seleção e encaminham
 ## Continuação: montagem do frame
 
 A [análise de framing](init-framing.md) relacionou a solicitação interna 7 ao handler 0x7e540, que constrói 0x06 seguido dos argumentos. A reprodução offline resultou no frame de 501 bytes idêntico ao upstream. A ligação final entre a camada de transporte e o wrapper USB ainda não foi completada, e os efeitos do payload no sensor continuam desconhecidos.
+
+## Refinamento: seleção não única por versão/máscara
+
+A [análise posterior](open-order.md) encontrou também a entrada 55 em RVA 0x13d490, com versão 6.7/build 164, máscara 0x4000 e 484 bytes de argumentos. Ela difere da entrada 19 em campos adicionais. A identidade do payload de 500 bytes continua válida; os campos candidatos do E1 não resolvem a seleção entre registros.

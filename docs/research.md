@@ -165,3 +165,9 @@ Etapa somente documental, com evidência estática manual; código e base de 52 
 O [rastreio de 0x771e0](alert-records.md) encontrou nível/descrição de dois bytes, tipo 0x15 e cabeçalho 03 03 com comprimento big endian. A comparação com a RFC 5246 sustenta a interpretação de alerta, incluindo close_notify quando o argumento é zero. Os chamadores aparecem em caminhos de liberação/reinicialização do contexto do host. Esta interpretação não decodifica init_00 nem comprova sessão TLS no leitor.
 
 Dentro de 0x773a0, o modo 0xff e o bit 0x02 de +0x128 são requisitos adicionais; os predicados da etapa anterior delimitavam somente a tentativa. O registro de evidência permanece manual. Nenhuma alteração de código, execução adicional da suíte ou operação USB nesta etapa.
+
+## Ordem de abertura e segundo registro candidato
+
+A [ordem parcial](open-order.md) liga chamadas de seleção 0x4000 e 0x1 à coordenação posterior do contexto em uma rotina externa delimitada por `.pdata`. Contexto preexistente e branches impedem concluir que init_00 sempre trafega em claro. A segunda solicitação não foi identificada como init_04.
+
+Uma varredura da tabela revelou duas entradas com 6.7/build 164 e máscara 0x4000: índices 19/55, tamanhos 500/484. Os valores do E1 não selecionam unicamente a primeira. Cinco destinos de chamadas diretas e os campos publicados foram conferidos no binário fixado por hash; a análise de alcance continua manual. Etapa somente documental, sem novos testes ou operações no sensor.

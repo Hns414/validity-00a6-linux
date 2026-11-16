@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.14.0-research — 2026-11-16
+
+- Ordem parcial das solicitações 0x4000/0x1 e coordenação posterior do contexto documentada.
+- Criação condicional do contexto auxiliar ligada à máquina de estados.
+- Segunda entrada com versão 6.7/build 164 e máscara 0x4000 encontrada: 484 argumentos, contra 500 da referência.
+- Cinco destinos CALL rel32 e campos das duas entradas conferidos no binário fixado por hash.
+- Somente documentos/evidência; nenhuma nova execução de testes ou comando USB.
+
 ## 0.13.0-research — 2026-11-16
 
 - Buffer interno rastreado a construtor compatível com alertas TLS; comparação explícita com RFC 5246.

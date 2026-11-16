@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "dll_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "method": "manual-control-flow-analysis-with-checked-relative-call-targets-and-table-fields",
+  "enclosing_runtime_function": {
+    "begin_rva": "0x64b00",
+    "end_rva_exclusive": "0x6588c"
+  },
+  "direct_call_edges": [
+    {
+      "call_rva": "0x65411",
+      "target_rva": "0x5eac0",
+      "relative_call_target_verified": true
+    },
+    {
+      "call_rva": "0x65442",
+      "target_rva": "0x5eb60",
+      "relative_call_target_verified": true
+    },
+    {
+      "call_rva": "0x65579",
+      "target_rva": "0x746c0",
+      "relative_call_target_verified": true
+    },
+    {
+      "call_rva": "0x74757",
+      "target_rva": "0x79500",
+      "relative_call_target_verified": true
+    },
+    {
+      "call_rva": "0x7968a",
+      "target_rva": "0x753f0",
+      "relative_call_target_verified": true
+    }
+  ],
+  "matching_version_and_mask_descriptors": [
+    {
+      "table_index": 19,
+      "record_rva": "0x13c950",
+      "major": 6,
+      "minor": 7,
+      "build": 164,
+      "mask": "0x4000",
+      "unresolved_field_20": 3,
+      "selector_field_3c": 1,
+      "argument_length": 500
+    },
+    {
+      "table_index": 55,
+      "record_rva": "0x13d490",
+      "major": 6,
+      "minor": 7,
+      "build": 164,
+      "mask": "0x4000",
+      "unresolved_field_20": 1,
+      "selector_field_3c": 1,
+      "argument_length": 484
+    }
+  ],
+  "runtime_selection_evaluated": false,
+  "device_operations_added": false,
+  "limits": [
+    "Address order alone is not proof of reachability; branches reviewed manually",
+    "Existing auxiliary context may predate the enclosing routine",
+    "Multiple descriptor matches on selected fields do not imply both pass the full selector",
+    "Second mask 0x1 is not identified as init_04"
+  ]
+}

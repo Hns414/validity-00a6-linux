@@ -77,6 +77,10 @@ The [context analysis](docs/transport-context.md) documents the observed guards 
 
 The [internal buffer analysis](docs/alert-records.md) finds a path consistent with TLS alerts, including close_notify, and documents an additional application-record guard. This separates a connection-signaling buffer from the opaque init payload; it does not establish a working TLS session on the 00a6.
 
+## Partial initialization order
+
+The [opening-path analysis](docs/open-order.md) places the 0x4000 and 0x1 selection requests before later context coordination in one static path. Two records share version 6.7/build 164 and mask 0x4000 but have different argument lengths (500/484). Matching E1 fields therefore does not uniquely select the known init_00 record. Runtime selection remains unresolved.
+
 ## Licensing
 
 Project-authored code and documentation are licensed under **LGPL-2.1-or-later**; see [LICENSE](LICENSE). This matches the inspected upstream VFS7552 driver's license. Third-party materials retain their own terms. The Dell package and its INF are not redistributed. No upstream driver code has been copied into this project.

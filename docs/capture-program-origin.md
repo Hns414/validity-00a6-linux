@@ -31,3 +31,5 @@ Os dois arquivos foram lidos localmente e conferidos contra o commit fixado, sem
 Ainda não há um programa final de captura estabelecido para o participante. O trabalho seguinte é ligar o descritor ao seu produtor e determinar como identificar o tipo interno sem expor conteúdo desconhecido. Uma nova consulta de hardware só será proposta com comando, formato de resposta e campos permitidos delimitados; não é necessário repetir E1/E2 agora.
 
 Quatro destinos de chamadas foram conferidos no binário; o fluxo e os papéis são análise manual. Esta etapa altera somente documentos/evidência. Mantém a base de **91 testes aprovados na v0.37**, sem nova execução da suíte. Probe inalterado, sem captura ou teste com dedo.
+
+A [continuação do produtor](program-descriptor-selection.md) liga o descritor ao seletor de abertura e ao armazenamento em contexto +0x250.

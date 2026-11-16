@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "method": "manual-static-program-descriptor-selection-with-checked-calls-and-store",
+  "dll_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "checked_call_edges": [
+    {
+      "call_rva": "0x6584b",
+      "target_rva": "0x5f430"
+    },
+    {
+      "call_rva": "0x5f598",
+      "target_rva": "0x63620"
+    },
+    {
+      "call_rva": "0x636a7",
+      "target_rva": "0x63470"
+    },
+    {
+      "call_rva": "0x63718",
+      "target_rva": "0x906e0"
+    },
+    {
+      "call_rva": "0x475c1",
+      "target_rva": "0x700d0"
+    },
+    {
+      "call_rva": "0x7c877",
+      "target_rva": "0x709e0"
+    }
+  ],
+  "selection": {
+    "setup_rva": "0x5f430",
+    "wrapper_rva": "0x63620",
+    "selector_rva": "0x906e0",
+    "selected_descriptor_context_field": "0x250",
+    "store_rva": "0x5f5d0",
+    "reuse_if_already_populated": true,
+    "required_context_23c": 1
+  },
+  "setup_arguments": {
+    "type_source_context_field": "0x128",
+    "first_parameter_default_for_context_23c_1": "0x18",
+    "first_parameter_for_types_e2_fd": "0x0c",
+    "other_context_first_parameter": "0x12",
+    "second_parameter": "0x19",
+    "additional_value": "0x08"
+  },
+  "table_source": {
+    "obtained_by_wrapper_rva": "0x63470",
+    "lookup_rva": "0x64750",
+    "lookup_category": 2,
+    "full_table_provenance_identified": false
+  },
+  "participant_internal_type_identified": false,
+  "runtime_program_selection_observed": false,
+  "usb_transfer_performed": false
+}

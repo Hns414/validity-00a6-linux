@@ -160,3 +160,5 @@ O [inspetor de corpo candidato de resposta](docs/capture-reply-layout.md) valida
 A [análise dos nós e blocos](docs/capture-chunk-nodes.md) confirma caminhos tipo/tamanho e acrescenta inspetor offline sem conteúdo; suíte com 91 testes.
 
 A [origem imediata do programa de captura](docs/capture-program-origin.md) foi ligada a descritor e cópia modificável; o tipo interno do sensor ainda não foi identificado.
+
+O [produtor do descritor de programa](docs/program-descriptor-selection.md) foi ligado ao seletor da abertura e ao contexto +0x250; origem final da tabela ainda pendente.

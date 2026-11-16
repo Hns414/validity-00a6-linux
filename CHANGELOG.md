@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.39.0-research — 2026-11-16
+
+- Produtor do descritor de programa ligado ao seletor da abertura e ao armazenamento em contexto +0x250.
+- Parâmetros condicionais 0x18/0x0c, segundo parâmetro 0x19 e contexto obrigatório delimitados.
+- Tabela obtida por lookup de categoria 2; origem final e tipo do participante pendentes.
+- Seis chamadas e armazenamento conferidos; somente documentação/evidência, sem USB.
+
 ## 0.38.0-research — 2026-11-16
 
 - Origem imediata do programa de 0x02 ligada a descritor do host e cópia para nó.

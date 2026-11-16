@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "method": "manual-post-preparation-trace-with-checked-dispatch-calls-and-opcode-construction",
+  "dll_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "checked_call_edges": [
+    {
+      "call_rva": "0x47aa8",
+      "target_rva": "0x54d30"
+    },
+    {
+      "call_rva": "0x54ea9",
+      "target_rva": "0x7c4e0"
+    },
+    {
+      "call_rva": "0x54ec8",
+      "target_rva": "0x5a820"
+    },
+    {
+      "call_rva": "0x7e0e2",
+      "target_rva": "0x7d660"
+    },
+    {
+      "call_rva": "0x7e16f",
+      "target_rva": "0x7d660"
+    },
+    {
+      "call_rva": "0x7d850",
+      "target_rva": "0x83220"
+    },
+    {
+      "call_rva": "0x7e32c",
+      "target_rva": "0x7b110"
+    },
+    {
+      "call_rva": "0x47ae1",
+      "target_rva": "0x5e3d0"
+    },
+    {
+      "call_rva": "0x56bbb",
+      "target_rva": "0x5e3d0"
+    }
+  ],
+  "request": {
+    "internal_index": 9,
+    "index_store_rva": "0x54e2b",
+    "dispatch_slot_rva": "0x116388",
+    "handler_rva": "0x7dfe0",
+    "completion_rva": "0x56ab0"
+  },
+  "construction": {
+    "builder_rva": "0x7d660",
+    "allocation_helper_rva": "0x83220",
+    "opcode_argument": 2,
+    "opcode_argument_rva": "0x7d84c",
+    "first_byte_store_rva": "0x83294",
+    "arguments_fully_decoded": false
+  },
+  "transport": {
+    "call_rva": "0x7e32c",
+    "initial_receive_capacity": 4098,
+    "conditional_receive_capacity": 2,
+    "actual_reply_length_observed": false
+  },
+  "subsequent_host_response_processing_rva": "0x5e3d0",
+  "host_field_04_semantic_name_verified": false,
+  "usb_transfer_performed": false,
+  "capture_enabled": false
+}

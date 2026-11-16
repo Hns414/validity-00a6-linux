@@ -261,3 +261,5 @@ A [comparação pública da preparação](start-public-comparison.md) não encon
 A [origem do parâmetro de preparação](start-parameter-origin.md) foi ligada ao contexto do host; não é o discriminante medido por E1.
 
 A [atribuição de modo e seleção no ramo 0x80](start-mode-assignment.md) revela sobrescrita local para 3 e preferência condicional pela entrada 53 de 6676 argumentos.
+
+O [caminho posterior à preparação](post-preparation-request9.md) alcança a requisição interna 9 e um builder de opcode 0x02; argumentos e resposta ainda pendentes.

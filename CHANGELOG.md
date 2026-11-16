@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.34.0-research — 2026-11-16
+
+- Caminho posterior à preparação ligado à requisição interna 9 e ao builder de opcode 0x02.
+- Capacidades iniciais de recepção 4098/2 distinguidas de comprimento real.
+- Processamento posterior de conteúdo identificado; formato e semântica pendentes.
+- Nove chamadas e slot de dispatch conferidos; sem alteração do probe ou transferência USB.
+
 ## 0.33.0-research — 2026-11-16
 
 - Escrita posterior de modo 3 identificada em ramo do host, substituindo cálculos anteriores.

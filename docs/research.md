@@ -171,3 +171,9 @@ Dentro de 0x773a0, o modo 0xff e o bit 0x02 de +0x128 são requisitos adicionais
 A [ordem parcial](open-order.md) liga chamadas de seleção 0x4000 e 0x1 à coordenação posterior do contexto em uma rotina externa delimitada por `.pdata`. Contexto preexistente e branches impedem concluir que init_00 sempre trafega em claro. A segunda solicitação não foi identificada como init_04.
 
 Uma varredura da tabela revelou duas entradas com 6.7/build 164 e máscara 0x4000: índices 19/55, tamanhos 500/484. Os valores do E1 não selecionam unicamente a primeira. Cinco destinos de chamadas diretas e os campos publicados foram conferidos no binário fixado por hash; a análise de alcance continua manual. Etapa somente documental, sem novos testes ou operações no sensor.
+
+## Discriminante das entradas 19/55
+
+O [novo rastreamento](init-discriminator.md) liga o campo +0x34 ao helper 0x8feb0. Major 6 e bit 0x20 zerado no byte interno +0x17 resultam em 3 (entrada de 500 bytes); bit ativo resulta em 2 (484 bytes). Os registros não passam simultaneamente por esse predicado. +0x20 é carregado pelo consumidor, não é o filtro que distingue o par.
+
+O modelo offline original recebeu cinco testes; make test passou com 57 testes sem skips. Não há mapeamento confirmado do byte interno até o frame USB nem novo campo no probe. Próxima etapa: origem/normalização da estrutura interna; nenhum teste de hardware adicional nesta versão.

@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.15.0-research — 2026-11-16
+
+- Campo +0x34 ligado ao discriminante derivado do bit 0x20 de uma estrutura interna; distingue os registros de 500/484 bytes para major 6.
+- Campo +0x20 identificado como parâmetro passado ao consumidor, sem atribuir semântica completa.
+- Modelo offline original do predicado, sem seleção de payload, e cinco testes novos; 57 testes aprovados.
+- Correspondência com offset USB ainda não estabelecida; probe ativo inalterado e nenhum novo teste de hardware.
+
 ## 0.14.0-research — 2026-11-16
 
 - Ordem parcial das solicitações 0x4000/0x1 e coordenação posterior do contexto documentada.

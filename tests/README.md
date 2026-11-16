@@ -75,3 +75,7 @@ A composição real em memória a partir da DLL privada foi comparada ao init_00
 Um novo teste C percorre tamanhos 0–128, verifica little endian, status não zero, payload vazio e comprimento dos dados, recusa cabeçalhos truncados/ponteiros nulos e confirma limpeza de saída e independência dos bytes do payload. Total: 52 testes aprovados, incluindo integração de E1/E2 com o helper comum e schemas preservados. ASan/UBSan do parser passou com detect_leaks=0; LeakSanitizer continua fora da validação por limitação do ambiente.
 
 Esses testes verificam nosso parser e simulações de transporte. Não verificam a semântica completa da DLL, o contexto do participante ou seus callbacks em runtime.
+
+## Discriminante offline de inicialização
+
+`test_init_discriminator.py` usa somente entradas sintéticas para o helper modelado em `tools/model_init_discriminator.py`. Verifica fronteiras da CLI e isolamento do bit relevante. Não valida o seletor inteiro, offsets USB ou escolha de payload no dispositivo.

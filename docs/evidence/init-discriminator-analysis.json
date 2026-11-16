@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "method": "manual-static-predicate-analysis-with-bounded-PE-field-read",
+  "dll_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "selector_rva": "0x8fb20",
+  "derived_discriminator": {
+    "helper_rva": "0x8feb0",
+    "version_pointer_context_offset": "0x28",
+    "major_offset_in_internal_structure": "0x8",
+    "flag_byte_offset_in_internal_structure": "0x17",
+    "mask": 32,
+    "major_6_bit_clear": 3,
+    "major_6_bit_set": 2,
+    "other_major": 0,
+    "helper_call_rva": "0x8fbd2",
+    "record_field_offset": "0x34",
+    "comparison_rva": "0x8fd67"
+  },
+  "records": [
+    {
+      "table_index": 19,
+      "record_rva": "0x13c950",
+      "fields": {
+        "0x10": 6,
+        "0x14": 7,
+        "0x18": 164,
+        "0x1c": 65535,
+        "0x20": 3,
+        "0x2c": 16384,
+        "0x30": 0,
+        "0x34": 3,
+        "0x38": 65535,
+        "0x3c": 1,
+        "0x40": 65535,
+        "0x44": 500
+      }
+    },
+    {
+      "table_index": 55,
+      "record_rva": "0x13d490",
+      "fields": {
+        "0x10": 6,
+        "0x14": 7,
+        "0x18": 164,
+        "0x1c": 65535,
+        "0x20": 1,
+        "0x2c": 16384,
+        "0x30": 0,
+        "0x34": 2,
+        "0x38": 65535,
+        "0x3c": 1,
+        "0x40": 65535,
+        "0x44": 484
+      }
+    }
+  ],
+  "consumer_parameter": {
+    "record_field": "0x20",
+    "load_rva": "0x5efdd",
+    "consumer_call_rva": "0x5f002",
+    "role": "passed to consumer; not used to distinguish candidates by this selector"
+  },
+  "runtime_input_available": false,
+  "raw_USB_offset_mapping_verified": false,
+  "full_selector_reimplemented": false,
+  "hardware_execution_enabled": false
+}

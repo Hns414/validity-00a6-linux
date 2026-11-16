@@ -71,3 +71,7 @@ A [análise de framing](init-framing.md) relacionou a solicitação interna 7 ao
 ## Refinamento: seleção não única por versão/máscara
 
 A [análise posterior](open-order.md) encontrou também a entrada 55 em RVA 0x13d490, com versão 6.7/build 164, máscara 0x4000 e 484 bytes de argumentos. Ela difere da entrada 19 em campos adicionais. A identidade do payload de 500 bytes continua válida; os campos candidatos do E1 não resolvem a seleção entre registros.
+
+## Discriminante identificado
+
+A [análise de +0x34](init-discriminator.md) encontrou uma comparação com o resultado de 0x8feb0: para major 6, um bit interno determina 3 ou 2 e separa as entradas 19/55. A origem desse campo na resposta USB e a seleção completa continuam pendentes; +0x20 é passado ao consumidor.

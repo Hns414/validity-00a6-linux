@@ -39,7 +39,7 @@ Run `python3 tools/collect_usb_metadata.py` without sudo. It reads cached sysfs 
 
 The upstream open path resets USB and sends opaque initialization blocks. Its receive macros, endpoint transfer types and cancellation behavior need review before porting. An experimental single-query probe is now implemented and tested against a USB simulator. The participant reported a 38-byte reply from the target sensor; four candidate metadata fields have since been reported and match the selected upstream example fields; no raw reply has been inspected. See the [first hardware test](docs/first-hardware-test.md) before running it.
 
-Run offline checks with `python3 -m unittest discover -s tests -v`. The current suite has 52 tests for metadata privacy, source inventory parsing and a simulated libusb transport. Probe simulation requires a C compiler, pkg-config and libusb development headers; those tests are explicitly skipped if unavailable. No tests validate biometric support.
+Run offline checks with `python3 -m unittest discover -s tests -v`. The current suite has 57 tests for metadata privacy, source inventory parsing and a simulated libusb transport. Probe simulation requires a C compiler, pkg-config and libusb development headers; those tests are explicitly skipped if unavailable. No tests validate biometric support.
 
 ## Experimental hardware probe
 
@@ -80,6 +80,10 @@ The [internal buffer analysis](docs/alert-records.md) finds a path consistent wi
 ## Partial initialization order
 
 The [opening-path analysis](docs/open-order.md) places the 0x4000 and 0x1 selection requests before later context coordination in one static path. Two records share version 6.7/build 164 and mask 0x4000 but have different argument lengths (500/484). Matching E1 fields therefore does not uniquely select the known init_00 record. Runtime selection remains unresolved.
+
+## Initialization discriminator model
+
+The [selector refinement](docs/init-discriminator.md) identifies an internal bit-derived discriminator that separates the 500-byte and 484-byte records. An original offline model tests this predicate with synthetic inputs. The internal-to-USB field mapping and full runtime selection remain unverified; no hardware probe field or command was added.
 
 ## Licensing
 

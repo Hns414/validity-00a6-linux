@@ -201,3 +201,9 @@ O consumidor classifica máscara 0x4000 com retorno 1 e pula consulta/atualizaç
 A [análise de 0x537b0](pre-init-preparation.md) ligou a requisição interna 8 ao handler 0x7ed80. O handler conclui localmente quando não encontra gatilhos; caso contrário, constrói 0x1a e encaminha ao transporte. Retorno zero não prova uma troca USB.
 
 A limpeza posterior zera campos da versão/cache do host, inclusive quando a conclusão tem status não zero após despacho aceito. Isso não demonstra reset do sensor. Destinos de chamadas e ponteiro da tabela foram conferidos; semântica do comando e de 0xd1 permanece pendente. Somente documentação/evidência nesta etapa, sem repetir testes ou hardware.
+
+## Referência de cleanup e códigos de retorno
+
+A [análise de cleanup/status](cleanup-status.md) localizou call_cleanups no python-validity fixado, com envio 0x1a e aceitação especial de 0x0491. A tabela estática Dell traduz 0x0491 em zero e 0x0401 em 0xd1. Isso distingue os códigos internos aceitos pelo consumidor dos status brutos, sem provar efeito do comando no 00a6.
+
+Os gatilhos do mesmo contexto podem vir da resposta de versão ou de atualizações locais de cache; foram registrados pontos observados, sem alegar cobertura exaustiva. Nenhuma alteração de código executável, teste de hardware ou nova execução da suíte nesta etapa documental.

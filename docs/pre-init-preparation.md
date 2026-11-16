@@ -45,3 +45,7 @@ Reproduzir somente `0x06 + argumentos` não reproduz a preparação do fornecedo
 O [registro estruturado](evidence/pre-init-preparation-analysis.json) inclui cinco destinos de CALL rel32 conferidos e o ponteiro de dispatcher lido diretamente no binário fixado. A interpretação dos branches é manual, não prova automática de equivalência completa.
 
 Esta etapa altera somente documentação/evidência. A base de 59 testes validada em v0.18 permanece, sem nova execução da suíte. Não há novo comando ativo ou teste de hardware solicitado ao participante.
+
+## Refinamento de finalidade e códigos
+
+A [comparação posterior](cleanup-status.md) encontrou uso público de 0x1a como call_cleanups e conferiu as traduções Dell 0x0491 → 0 e 0x0401 → 0xd1. Os efeitos no 00a6 continuam sem validação; o código interno 0xd1 não equivale ao status bruto 0x0491.

@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "method": "manual-static-status-branch-analysis-and-bounded-jump-table-read",
+  "dll_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "public_reference": {
+    "repository": "https://github.com/uunicorn/python-validity",
+    "commit": "a6bbc21dce7b8b3c3cd92378a0b2579a2fb45920",
+    "path": "validitysensor/flash.py",
+    "symbol": "call_cleanups",
+    "command": "0x1a",
+    "exception_status": "0x0491",
+    "source_label": "Nothing to commit",
+    "used_after": [
+      "erase_flash",
+      "write_flash"
+    ]
+  },
+  "vendor_mapping": {
+    "routine_rva": "0x7da00",
+    "device_status_0491": {
+      "subtracted_base": "0x0402",
+      "index": 143,
+      "byte_table_rva": "0x7dca4",
+      "case_index": 8,
+      "destination_table_rva": "0x7dc68",
+      "case_rva": "0x7db54",
+      "internal_return": 0
+    },
+    "device_status_0401": {
+      "comparison_rva": "0x7da18",
+      "case_rva": "0x7db47",
+      "internal_return": "0xd1"
+    }
+  },
+  "same_context_trigger_writes_observed": [
+    {
+      "rva": "0x569d8",
+      "field": "version +0x0f",
+      "source": "response content +0x0f"
+    },
+    {
+      "rva": "0x62e2b",
+      "field": "version +0x0f",
+      "source": "descriptor +0x20 parameter, only cache-managed mask path"
+    },
+    {
+      "rva": "0x62de2",
+      "field": "cache DWORD +0",
+      "source": "request mask, only classifier return zero"
+    },
+    {
+      "rva": "0x62e0b",
+      "field": "cache byte +8",
+      "source": "descriptor +0x20 parameter, only classifier return zero"
+    },
+    {
+      "rva": "0x5c4cb",
+      "field": "version +0x0f",
+      "value": 0
+    }
+  ],
+  "limits": [
+    "Observed writes are not an exhaustive alias analysis",
+    "Upstream usage does not prove 00a6 device-side semantics",
+    "No device status 0x0491 or 0x0401 was observed on participant hardware",
+    "Internal zero can represent translated status or local completion, not necessarily raw device status zero"
+  ],
+  "new_hardware_operation_enabled": false
+}

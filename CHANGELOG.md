@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.20.0-research — 2026-11-16
+
+- Referência pública associa 0x1a a call_cleanups após operações de flash; efeitos no 00a6 não demonstrados.
+- Tradução Dell conferida: status 0x0491 para retorno interno zero; 0x0401 para 0xd1.
+- Origens observadas dos campos de gatilho ligadas à resposta de versão e ao cache do host.
+- Conclusão local, status bruto e status traduzido distinguidos; probe sem alterações.
+- Somente documentos/evidência; base anterior de 59 testes sem nova execução ou comando USB.
+
 ## 0.19.0-research — 2026-11-16
 
 - Preparação 0x537b0 ligada à requisição interna 8 e handler 0x7ed80.

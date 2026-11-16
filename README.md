@@ -101,6 +101,10 @@ The [table and consumer analysis](docs/init-484-selection.md) leaves only record
 
 The [preparation analysis](docs/pre-init-preparation.md) separates local completion from a context-dependent path that constructs command 0x1a. Host cache cleanup does not establish device reset or recovery. Neither this command nor an init executor is enabled; command semantics remain unresolved.
 
+## Cleanup reference and status translation
+
+The [cleanup/status analysis](docs/cleanup-status.md) links public 0x1a usage to cleanup after flash operations and checks two Dell status translations. Device status 0x0491 maps to internal zero; 0x0401 maps to internal 0xd1. These references do not establish 00a6 command effects or recovery, and the probe behavior is unchanged.
+
 ## Licensing
 
 Project-authored code and documentation are licensed under **LGPL-2.1-or-later**; see [LICENSE](LICENSE). This matches the inspected upstream VFS7552 driver's license. Third-party materials retain their own terms. The Dell package and its INF are not redistributed. No upstream driver code has been copied into this project.

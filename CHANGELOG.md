@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.0-research — 2026-11-16
+
+- Identificação comercial VFS7552 confirmada pelo INF oficial para 138a:00a6.
+- Hashes do pacote e INF, fontes fixadas por commit e estado da MR 626 documentados.
+- Coletor sysfs com campos numéricos permitidos, evidência real sanitizada e quatro testes offline.
+- Licença LGPL-2.1-or-later adotada para código e documentação próprios.
+- Sem comandos de protocolo ou validação biométrica.
+
 ## 0.1.0-research — 2026-11-16
 
 - Estrutura inicial de pesquisa e documentação bilíngue.

@@ -1,0 +1,60 @@
+{
+  "devices": [
+    {
+      "bDeviceClass": 255,
+      "bDeviceProtocol": 255,
+      "bDeviceSubClass": 16,
+      "bNumConfigurations": 1,
+      "bNumInterfaces": 1,
+      "bcdDevice": 356,
+      "idProduct": 166,
+      "idVendor": 5002,
+      "interfaces": [
+        {
+          "bAlternateSetting": 0,
+          "bInterfaceClass": 255,
+          "bInterfaceNumber": 0,
+          "bInterfaceProtocol": 0,
+          "bInterfaceSubClass": 0,
+          "bNumEndpoints": 5,
+          "endpoints": [
+            {
+              "bEndpointAddress": 1,
+              "bInterval": 0,
+              "bmAttributes": 2,
+              "wMaxPacketSize": 64
+            },
+            {
+              "bEndpointAddress": 129,
+              "bInterval": 0,
+              "bmAttributes": 2,
+              "wMaxPacketSize": 64
+            },
+            {
+              "bEndpointAddress": 130,
+              "bInterval": 0,
+              "bmAttributes": 2,
+              "wMaxPacketSize": 64
+            },
+            {
+              "bEndpointAddress": 131,
+              "bInterval": 4,
+              "bmAttributes": 3,
+              "wMaxPacketSize": 8
+            },
+            {
+              "bEndpointAddress": 132,
+              "bInterval": 10,
+              "bmAttributes": 3,
+              "wMaxPacketSize": 16
+            }
+          ]
+        }
+      ],
+      "speed_mbps": 12,
+      "usb_version": "2.00"
+    }
+  ],
+  "schema_version": 1,
+  "source": "linux-sysfs-cached-metadata"
+}

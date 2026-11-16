@@ -6,6 +6,6 @@ Antes de enviar, remova serial, hostname, usuário, service tag, caminhos pessoa
 
 Abra issues para achados técnicos sem dados sensíveis. Use branches e PRs pequenos; mensagens de commit devem explicar a mudança. Nenhuma compatibilidade será declarada apenas por semelhança do nome ou ID.
 
-Licença pendente: nesta etapa, contribua com discussão e evidências. A incorporação de código aguarda licença explícita e análise das licenças upstream. Preserve atribuições e proveniência; não copie código ou conteúdo proprietário.
+Código e documentação próprios usam LGPL-2.1-or-later (LICENSE), alinhada ao driver VFS7552 upstream inspecionado. Ao contribuir, use essa licença para material original e preserve atribuições e proveniência. Antes de incorporar código de terceiros, analise os termos específicos. Não copie conteúdo proprietário.
 
 Para resultados de hardware, siga tests/README.md. Não execute reset, escrita em flash, pareamento ou comandos de outro modelo por tentativa.

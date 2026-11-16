@@ -33,3 +33,41 @@ Não instalar python-validity nem executar seus exemplos de reset/pareamento nes
 3. Transporte: quais endpoints e mensagens são necessários? Começar por documentação e análise offline; nenhuma transferência vendor-specific foi autorizada pelo plano atual.
 4. Segurança: matching ocorre no host ou sensor? Há chaves, templates persistentes ou inicialização que altera flash?
 5. Testabilidade: construir fixtures sintéticas de mensagens documentadas antes de testes ativos; não inventar um driver funcional.
+
+## Atualização M1 — evidências verificadas em 2026-11-16
+
+Esta seção substitui as pendências anteriores sobre obtenção do pacote, INF e acesso à MR. Nenhum binário foi executado.
+
+### Identificação Dell
+
+O download oficial funcionou na nova tentativa com User-Agent de navegador. SHA-256 do EXE: `91980fd65adaa40b3f97b82ae547e4e7c9626f3d694bcf9d34083afb2720367d`, igual ao divulgado pela Dell.
+
+Extração somente do INF com bsdtar; caminho interno: `drivers/production/Windows10-x64/synaWudfBioUsbDellProd.inf`. SHA-256 dos bytes originais extraídos: `0abecbe2fe25320e36c81a4eb8c3473b91b7787bf5eaac56e436eee3a4e8d803`.
+
+Metadados factuais mínimos, sem redistribuir o arquivo:
+
+- DriverVer: 09/29/2017,5.5.4.1032 (data do INF, distinta da publicação Dell).
+- Seções Synaptics.NTamd64.6.1 e Synaptics.NTamd64.6.2 associam USB\VID_138A&PID_00A6 ao token WBDIUsbDeviceName.
+- Nome resolvido: Synaptics VFS7552 Touch Fingerprint Sensor.
+- Não há filtro REV nessa associação: ela não demonstra suporte específico à revisão 1.64 nem equivalência com 0091.
+
+Pacote proprietário mantido fora do repositório; inspeção de metadados não concede direitos de redistribuição ou de reutilização de seu código.
+
+### Fontes fixadas e comparação
+
+libfprint: commit `8b6e4e39bee58de2774222e3730269def470b157`, obtido do repositório oficial.
+
+- [Catálogo upstream](https://gitlab.freedesktop.org/libfprint/libfprint/-/blob/8b6e4e39bee58de2774222e3730269def470b157/libfprint/fprint-list-udev-hwdb.c): 138a:00a6 está na lista de dispositivos conhecidos e não suportados. Sua presença nesse arquivo não é registro de driver.
+- [Driver vfs7552.c](https://gitlab.freedesktop.org/libfprint/libfprint/-/blob/8b6e4e39bee58de2774222e3730269def470b157/libfprint/drivers/vfs7552.c): tabela registra somente 138a:0091. Implementa FpImageDevice; abrir o dispositivo já executa reset USB e inicialização. Não executar apenas para descobrir compatibilidade.
+- [Protocolo](https://gitlab.freedesktop.org/libfprint/libfprint/-/blob/8b6e4e39bee58de2774222e3730269def470b157/libfprint/drivers/vfs7552_proto.h): usa OUT 0x01, IN 0x81 e interrupt 0x83, endereços também presentes no 00a6. Isso é indício de transporte semelhante, não equivalência de mensagens. As sequências incluem grandes blocos de inicialização cuja aplicabilidade ainda exige análise.
+- Cabeçalho do driver e meson.build indicam LGPL-2.1-or-later. Adotada a mesma licença para nosso material original; preservação de atribuições continua obrigatória se houver incorporação futura.
+
+python-validity: commit `a6bbc21dce7b8b3c3cd92378a0b2579a2fb45920`, [tabela USB](https://github.com/uunicorn/python-validity/blob/a6bbc21dce7b8b3c3cd92378a0b2579a2fb45920/validitysensor/usb.py). Não registra 00a6; continua referência secundária, sem teste neste sensor.
+
+### MR 626
+
+Consultada pela API oficial GitLab: estado opened, merged_at nulo, SHA `5db7da904f74f7fb912d4a18f700a9671d8ab4ac`. Título: validity: 0x969/0xd51 sensor support, robustness and security hardening. Trata de dispositivos VCSFW com TLS e matching no sensor. A descrição e seus IDs relatados não incluem 138a:00a6. As alegações de validação pertencem ao autor da MR e não foram reproduzidas por este projeto. Não confundir o protocolo dela com o de nosso sensor apenas pelo fabricante.
+
+### Próximo marco
+
+Preparar uma matriz de mensagens do VFS7552 upstream (efeito, entradas, respostas, timeout, cancelamento e possível persistência), avaliar os blocos de inicialização e procurar evidências públicas específicas do 00a6. Somente depois definir um experimento ativo mínimo com plano de recuperação. M1 estabelece identidade comercial e descritores; não comprova protocolo nem reconhecimento biométrico.

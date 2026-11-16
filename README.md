@@ -6,14 +6,14 @@ Open-source research toward Linux support for the Validity USB fingerprint reade
 
 ## Scope
 
-Identify the hardware and protocol, evaluate existing drivers, then pursue a userspace libfprint implementation and fprintd integration. A kernel module is not an established requirement. The commercial sensor model remains unverified; VFS7552 is a hypothesis, not a compatibility claim.
+Identify the hardware and protocol, evaluate existing drivers, then pursue a userspace libfprint implementation and fprintd integration. A kernel module is not an established requirement. Dell’s inspected INF identifies 138a:00a6 as a Synaptics VFS7552 Touch Fingerprint Sensor. Compatibility with other VFS7552 USB IDs remains unverified.
 
 ## Current findings
 
-- The supplied hardware report describes revision 1.64, USB full speed, a vendor-specific interface and five endpoints. Descriptors have not been independently captured here.
-- The official libfprint development device list consulted on 2026-11-16 does not list 138a:00a6; it associates VFS7552 with 138a:0091.
-- python-validity's inspected USB device table does not contain 138a:00a6.
-- Dell package NKXR6 lists Latitude 3490 compatibility, but its INF has not been inspected.
+- Cached Linux sysfs metadata confirms revision 1.64, USB 2.00 at 12 Mbps, one vendor-specific interface and five endpoints.
+- Dell NKXR6 was downloaded, its SHA-256 verified and its INF inspected without executing the installer. It maps 138a:00a6 to the VFS7552 commercial name.
+- The pinned libfprint source explicitly lists 138a:00a6 as known unsupported. Its VFS7552 driver registers 138a:0091 only.
+- Endpoint addresses overlap with that driver, but no protocol compatibility or functional support has been established.
 
 See [hardware](docs/hardware.md), [research and sources](docs/research.md), [milestones](docs/roadmap.md), and [test plan](tests/README.md). Working documentation is in Portuguese; this public overview is in English.
 
@@ -29,8 +29,14 @@ Small, reviewable commits on main; experimental work on topic branches. The init
 
 Read [CONTRIBUTING](CONTRIBUTING.md) and [SECURITY](SECURITY.md). Keep biometric samples, unique identifiers, keys, proprietary firmware and binaries out of Git. Do not change PAM or use experiments for login.
 
+## Metadata collection
+
+Run `python3 tools/collect_usb_metadata.py` without sudo. It reads cached sysfs fields and emits JSON to stdout; it does not open USB devices, reset them or send protocol commands. Output excludes serials, string descriptors and topology paths. Review it before sharing. No device returns status 1; inaccessible or malformed metadata returns status 2.
+
+Run offline checks with `python3 -m unittest discover -s tests -v`.
+
 ## Licensing
 
-No license has been selected yet. Public visibility alone does not grant an open-source license. This is intended to become an open-source driver project; select and publish an upstream-compatible license before accepting code contributions. No third-party code is included in this baseline.
+Project-authored code and documentation are licensed under **LGPL-2.1-or-later**; see [LICENSE](LICENSE). This matches the inspected upstream VFS7552 driver's license. Third-party materials retain their own terms. The Dell package and its INF are not redistributed. No upstream driver code has been copied into this project.
 
 Independent project, unaffiliated with Dell, Validity or Synaptics.

@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.31.0-research — 2026-11-16
+
+- Dois blocos de preparação comparados com 47 literais públicos fixados: sem igualdade integral.
+- Máscaras 0x400000 e 0x80 delimitadas como alternativas de contexto, com ramo adicional que pula ambas.
+- Dois destinos de chamadas conferidos; somente documentação/evidência, sem novo comando USB.
+
 ## 0.30.0-research — 2026-11-16
 
 - Preparação de Start reduzida condicionalmente à entrada 52 com discriminante 2; gate/contexto ainda não observados.

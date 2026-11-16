@@ -43,3 +43,5 @@ Quando prossegue, o caminho comum passa pela preparação 0x537b0 e pelo envio i
 Quatro destinos adicionais de chamadas foram conferidos no binário fixado; campos de descritores e comparação dos blocos foram calculados com mapeamento de seções PE. Ramos e significado de estruturas continuam análise manual. Somente documentação/evidência: permanece a base de 73 testes aprovados na v0.27, sem nova execução necessária.
 
 Precisamos agora investigar o conteúdo por referências públicas e os demais caminhos de preparação, além de definir recuperação e observação de eventos. A seleção condicional não estabelece que o bloco seja apenas armamento de dedo ou que possa ser enviado com segurança. Probe e encoder offline não foram ampliados para esse comprimento; não há teste com dedo nesta etapa.
+
+A [análise das alternativas](start-public-comparison.md) delimita o campo de contexto que escolhe 0x400000 ou 0x80 e compara os blocos com referências públicas.

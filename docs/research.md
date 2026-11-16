@@ -255,3 +255,5 @@ O [rastreamento do registro de eventos](event-registration.md) distingue tipos d
 A [preparação de Start](start-preparation.md) alcança o seletor com máscara 0x400000; seleção e efeitos ainda pendentes.
 
 A [seleção condicional de Start](start-selection.md) deixa a entrada 52 sob premissas explícitas; inclui máscara excluída e limitações do cache.
+
+A [comparação pública da preparação](start-public-comparison.md) não encontrou igualdade com 47 literais conhecidos e delimita os ramos alternativos 0x400000/0x80.

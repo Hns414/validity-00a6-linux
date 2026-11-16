@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "method": "offline-public-literal-comparison-and-manual-exclusive-branch-analysis",
+  "dll_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "reference_commits": {
+    "libfprint": "8b6e4e39bee58de2774222e3730269def470b157",
+    "Validity91": "75f38a615ef1560829f9cd8aa07459d10f0962ae",
+    "python-validity": "a6bbc21dce7b8b3c3cd92378a0b2579a2fb45920"
+  },
+  "reference_literal_count": 47,
+  "reference_inventory": {
+    "libfprint:VFS7552_NORMAL_REPLY": 2,
+    "libfprint:vfs7552_cmd_01": 1,
+    "libfprint:vfs7552_cmd_01_recv": 38,
+    "libfprint:vfs7552_cmd_19": 1,
+    "libfprint:vfs7552_cmd_19_recv": 68,
+    "libfprint:vfs7552_init_00": 501,
+    "libfprint:vfs7552_init_01": 10,
+    "libfprint:vfs7552_init_02": 6,
+    "libfprint:vfs7552_init_02_recv": 6,
+    "libfprint:vfs7552_init_03": 1,
+    "libfprint:vfs7552_init_03_recv": 10,
+    "libfprint:vfs7552_init_04": 6677,
+    "libfprint:vfs7552_image_start": 13725,
+    "libfprint:vfs7552_image_start_resp": 1962,
+    "libfprint:vfs7552_is_image_ready": 5,
+    "libfprint:vfs7552_is_image_ready_resp_ready": 6,
+    "libfprint:vfs7552_is_image_ready_resp_not_ready": 6,
+    "libfprint:vfs7552_is_image_ready_resp_finger_off": 6,
+    "libfprint:vfs7552_read_image_chunk": 5,
+    "libfprint:vfs7552_cmd_04": 1,
+    "libfprint:vfs7552_cmd_52": 1,
+    "libfprint:interrupt_ok": 5,
+    "libfprint:interrupt_ready": 5,
+    "libfprint:interrupt_dont_ask": 5,
+    "Validity91:0": 1,
+    "Validity91:1": 1,
+    "Validity91:2": 501,
+    "Validity91:3": 10,
+    "Validity91:4": 6,
+    "Validity91:5": 1,
+    "Validity91:6": 6677,
+    "python-validity:90:init_hardcoded": 485,
+    "python-validity:90:init_hardcoded_clean_slate": 0,
+    "python-validity:90:reset_blob": 11493,
+    "python-validity:90:db_write_enable": 1765,
+    "python-validity:97:init_hardcoded": 581,
+    "python-validity:97:init_hardcoded_clean_slate": 741,
+    "python-validity:97:reset_blob": 12037,
+    "python-validity:97:db_write_enable": 3621,
+    "python-validity:9a:init_hardcoded": 581,
+    "python-validity:9a:init_hardcoded_clean_slate": 741,
+    "python-validity:9a:reset_blob": 12037,
+    "python-validity:9a:db_write_enable": 3621,
+    "python-validity:9d:init_hardcoded": 581,
+    "python-validity:9d:init_hardcoded_clean_slate": 741,
+    "python-validity:9d:reset_blob": 12037,
+    "python-validity:9d:db_write_enable": 3621
+  },
+  "candidate_results": [
+    {
+      "table_index": 15,
+      "arguments_bytes": 12100,
+      "candidate_frame_bytes": 12101,
+      "exact_frame_reference_matches": [],
+      "exact_arguments_reference_matches": [],
+      "equal_length_frame_reference_names": []
+    },
+    {
+      "table_index": 52,
+      "arguments_bytes": 12100,
+      "candidate_frame_bytes": 12101,
+      "exact_frame_reference_matches": [],
+      "exact_arguments_reference_matches": [],
+      "equal_length_frame_reference_names": []
+    }
+  ],
+  "exclusive_branch": {
+    "context_word_offset": "0x0c",
+    "equals_2_required_mask": "0x400000",
+    "other_value_required_mask": "0x80",
+    "excluded_mask_both": "0x22020",
+    "host_context_skip_field": "indirect_context+0x04",
+    "skip_value": 5
+  },
+  "checked_call_edges": [
+    {
+      "call_rva": "0x4771d",
+      "target_rva": "0x5e7b0"
+    },
+    {
+      "call_rva": "0x5e83e",
+      "target_rva": "0x5ed80"
+    }
+  ],
+  "semantic_operation_identified": false,
+  "usb_transfer_performed": false
+}

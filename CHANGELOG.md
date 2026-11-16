@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.32.0-research — 2026-11-16
+
+- Campo de escolha da preparação rastreado até parâmetro do construtor no host.
+- Origem distinta do discriminante E1 e ajuste condicional de 3 para 1 documentados.
+- Seis chamadas conferidas; somente documentação/evidência, sem novo comando USB.
+
 ## 0.31.0-research — 2026-11-16
 
 - Dois blocos de preparação comparados com 47 literais públicos fixados: sem igualdade integral.

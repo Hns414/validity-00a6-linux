@@ -36,3 +36,5 @@ As comparações foram feitas byte a byte em memória; dois destinos adicionais 
 A etapa altera somente documentos/evidência. Continua a base de 73 testes aprovados na v0.27, sem nova execução da suíte. O probe ativo não recebeu opções novas e o encoder offline continua restrito aos comprimentos anteriormente estudados.
 
 O próximo trabalho é rastrear a origem do WORD +0x0c e do estado que permite pular a preparação, além de investigar os ramos posteriores até o início efetivo de aquisição. Nenhum teste com dedo está disponível ainda.
+
+A [continuação da origem do campo](start-parameter-origin.md) liga +0x0c a parâmetros do construtor e documenta seu ajuste local antes da escolha.

@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "method": "manual-static-host-parameter-origin-with-checked-calls",
+  "dll_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "checked_call_edges": [
+    {
+      "call_rva": "0x1b128",
+      "target_rva": "0x2bc20"
+    },
+    {
+      "call_rva": "0x1b1a2",
+      "target_rva": "0x10e08"
+    },
+    {
+      "call_rva": "0x1368d",
+      "target_rva": "0x45bd0"
+    },
+    {
+      "call_rva": "0x45d75",
+      "target_rva": "0x47430"
+    },
+    {
+      "call_rva": "0x47623",
+      "target_rva": "0x5da20"
+    },
+    {
+      "call_rva": "0x47650",
+      "target_rva": "0x4ee00"
+    }
+  ],
+  "origin_chain": [
+    {
+      "rva": "0x2bc20",
+      "operation": "return DWORD at accessor argument +0x18"
+    },
+    {
+      "rva": "0x1b128",
+      "operation": "accessor input is outer host object +0x1d0"
+    },
+    {
+      "rva": "0x10ea6",
+      "operation": "store fourth constructor argument into capture object +0x80"
+    },
+    {
+      "rva": "0x12de8",
+      "operation": "copy low WORD to Start stack parameter block +0x0c"
+    },
+    {
+      "rva": "0x45d5c",
+      "operation": "copy 0x1c-byte parameter block to preparation context"
+    }
+  ],
+  "local_rewrite": {
+    "rva": "0x476a9",
+    "conditions": [
+      "selected metadata WORD +0x12 equals 1",
+      "preparation WORD +0x0c equals 3"
+    ],
+    "result": 1
+  },
+  "branch_field_is_new_usb_response": false,
+  "host_parameter_semantic_name_verified": false,
+  "usb_transfer_performed": false
+}

@@ -299,3 +299,5 @@ A [auditoria dos registros dinâmicos](dynamic-host-records.md) identifica a bus
 Os [produtores dos registros dinâmicos](dynamic-record-producers.md) delimitam alocação, criação sob demanda e uma entrada alternativa de importação; seleção real ainda pendente.
 
 Os [nós condicionais de transporte](conditional-transport-nodes.md) acrescentam campos aleatórios gerados no host; formatos e condições delimitados, sem captura habilitada.
+
+Um [consumidor criptográfico isolado](isolated-block-consumer.md) usa os campos anteriores; seu alcance pelo fluxo de captura permanece sem demonstração.

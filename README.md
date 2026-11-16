@@ -188,3 +188,5 @@ A [auditoria dos registros dinâmicos](docs/dynamic-host-records.md) identifica 
 Os [produtores dos registros dinâmicos](docs/dynamic-record-producers.md) delimitam alocação, criação sob demanda e uma entrada alternativa de importação; seleção real ainda pendente.
 
 Os [nós condicionais de transporte](docs/conditional-transport-nodes.md) acrescentam campos aleatórios gerados no host; formatos e condições delimitados, sem captura habilitada.
+
+Um [consumidor criptográfico isolado](docs/isolated-block-consumer.md) usa os campos anteriores; seu alcance pelo fluxo de captura permanece sem demonstração.

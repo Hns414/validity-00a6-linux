@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.53.0-research — 2026-11-16
+
+- Rotina isolada ligada aos campos de chave/IV e à importação CryptDecrypt.
+- Atualização pela cauda de 16 bytes e encaminhamento posterior delimitados.
+- Alcance pelo fluxo de captura explicitamente não demonstrado; nenhum novo experimento USB.
+- Sete chamadas diretas e três por importação conferidas; mudança documental.
+
 ## 0.52.0-research — 2026-11-16
 
 - Construtor condicional delimitado nos formatos de nós 0x36/0x06, com 112/110 bytes.

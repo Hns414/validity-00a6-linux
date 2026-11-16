@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "method": "manual-static-isolated-block-consumer-with-checked-calls-and-imports",
+  "dll_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "checked_call_edges": [
+    {
+      "call_rva": "0x86025",
+      "target_rva": "0xd54b0"
+    },
+    {
+      "call_rva": "0x86083",
+      "target_rva": "0xdae20"
+    },
+    {
+      "call_rva": "0xdaf2a",
+      "target_rva": "0xe0ce0"
+    },
+    {
+      "call_rva": "0xe0df0",
+      "target_rva": "0xe18f0"
+    },
+    {
+      "call_rva": "0x8609d",
+      "target_rva": "0x62090"
+    },
+    {
+      "call_rva": "0x860c0",
+      "target_rva": "0xd54b0"
+    },
+    {
+      "call_rva": "0x860dd",
+      "target_rva": "0x61ff0"
+    }
+  ],
+  "checked_import_calls": [
+    {
+      "call_rva": "0xe0e3d",
+      "iat_rva": "0x110090",
+      "name": "CryptSetKeyParam"
+    },
+    {
+      "call_rva": "0xe0e7d",
+      "iat_rva": "0x110090",
+      "name": "CryptSetKeyParam"
+    },
+    {
+      "call_rva": "0xe0fad",
+      "iat_rva": "0x1100c8",
+      "name": "CryptDecrypt"
+    }
+  ],
+  "consumer_rva": "0x85f60",
+  "guards_observed": [
+    "context DWORD +0x178 nonzero",
+    "input DWORD length nonzero"
+  ],
+  "requires_additional_bounds_check_in_any_port": "at least 16 input bytes before reading trailing block",
+  "saved_trailing_bytes": 16,
+  "class_one_key_length_argument": 32,
+  "dispatcher_mode_argument": 5,
+  "key_source_context_offset": "0x17c",
+  "iv_source_context_offset": "0x19c",
+  "successful_next_iv_source": "saved trailing input block",
+  "direct_e8_target_candidates_in_scanned_text": [],
+  "absolute_pointer_occurrences": 0,
+  "consumer_reachability_established": false,
+  "capture_path_proven": false,
+  "usb_transfer_performed": false
+}

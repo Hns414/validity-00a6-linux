@@ -40,3 +40,7 @@ O encoder original agora aceita somente os dois comprimentos investigados: 484 o
 O teste nativo cobre ambos os tamanhos, rejeição dos demais comprimentos de 0–600 e SIZE_MAX, capacidades insuficientes sem alteração da saída, capacidade exata, sentinelas e sobreposição. `make test` passou com 59 testes sem skips; o teste existente foi ampliado. ASan/UBSan do encoder passou sem diagnóstico com detecção de leaks desabilitada, conforme limitação já registrada.
 
 O [registro estruturado](evidence/init-484-conditional-selection.json) contém premissas, índices após cada filtro e coordenadas. O filtro de tabela foi calculado sobre dados; os branches e papéis foram interpretados manualmente, sem prova automática de equivalência completa. Próximo passo: analisar 0x537b0 e os efeitos do conteúdo, sem enviar inicialização ao leitor.
+
+## Preparação delimitada posteriormente
+
+A [análise da requisição 8](pre-init-preparation.md) encontrou dois caminhos: conclusão local ou construção condicional de 0x1a conforme estado em memória do host. A limpeza posterior também é local. Essa distinção não estabelece efeitos do comando ou recuperação, e não habilita envio.

@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "method": "manual-static-branch-analysis-with-checked-dispatch-pointer-and-relative-calls",
+  "dll_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "preparation_wrapper_rva": "0x537b0",
+  "internal_request": 8,
+  "dispatch_slot_rva": "0x116380",
+  "handler_rva": "0x7ed80",
+  "completion_rva": "0x61dd0",
+  "send_path": {
+    "cache_context_offset": "0x220",
+    "cache_trigger_fields": {
+      "dword_0": "nonzero",
+      "byte_8": "nonzero"
+    },
+    "version_context_offset": "0x28",
+    "version_trigger_byte_offset": "0x0f",
+    "version_trigger": "nonzero",
+    "condition": "cache exists and either trigger field nonzero, OR version exists and trigger byte nonzero",
+    "command_value": "0x1a",
+    "builder_call_rva": "0x7ee6b",
+    "internal_frame_bytes": 1,
+    "receive_capacity_argument": 2,
+    "transport_call_rva": "0x7eec3"
+  },
+  "local_path": {
+    "completion_call_rva": "0x7ee5d",
+    "reported_status": 0,
+    "response_descriptor": null,
+    "transport_called_in_this_handler": false
+  },
+  "local_cleanup": {
+    "routine_rva": "0x5c480",
+    "called_after_dispatch_returns_zero": true,
+    "conditional_on_command_completion_status_zero": false,
+    "cleared_fields": [
+      "version +0x0f",
+      "cache DWORD +0",
+      "cache DWORD +4",
+      "cache byte +8"
+    ],
+    "device_reset_proven": false
+  },
+  "caller_accepts_status_values": [
+    "0",
+    "0xd1"
+  ],
+  "checked_call_edges": [
+    {
+      "call_rva": "0x538b4",
+      "target_rva": "0x5a820",
+      "relative_target_checked": true
+    },
+    {
+      "call_rva": "0x538d6",
+      "target_rva": "0x5c480",
+      "relative_target_checked": true
+    },
+    {
+      "call_rva": "0x7ee6b",
+      "target_rva": "0x83220",
+      "relative_target_checked": true
+    },
+    {
+      "call_rva": "0x7eec3",
+      "target_rva": "0x7b110",
+      "relative_target_checked": true
+    },
+    {
+      "call_rva": "0x62d27",
+      "target_rva": "0x537b0",
+      "relative_target_checked": true
+    }
+  ],
+  "runtime_path_observed": false,
+  "command_semantics_established": false,
+  "new_hardware_command_enabled": false
+}

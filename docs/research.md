@@ -195,3 +195,9 @@ Os 484 argumentos da entrada 55 coincidem integralmente com o init_hardcoded pú
 A [varredura completa da tabela](init-484-selection.md) deixa somente entrada 55 sob máscara 0x4000, versão 6.7/build 164, argumento zero e discriminante 2. Os outros filtros são wildcards ou exigem byte interno +0x0a igual a 1, valor já exigido pelo gate anterior no mesmo fluxo de abertura. As premissas vêm de relatos separados, sem snapshot atômico; a seleção runtime não foi observada.
 
 O consumidor classifica máscara 0x4000 com retorno 1 e pula consulta/atualização de cache do host. Não foi observada incorporação de +0x20 ao frame nesse caminho. A chamada 0x537b0 antes da requisição 7 permanece por investigar. Encoder offline aceita agora 484/500 argumentos; 59 testes e ASan/UBSan passaram, com detecção de leaks desabilitada. Nenhum novo comando ativo ou teste de hardware.
+
+## Preparação condicional anterior ao frame
+
+A [análise de 0x537b0](pre-init-preparation.md) ligou a requisição interna 8 ao handler 0x7ed80. O handler conclui localmente quando não encontra gatilhos; caso contrário, constrói 0x1a e encaminha ao transporte. Retorno zero não prova uma troca USB.
+
+A limpeza posterior zera campos da versão/cache do host, inclusive quando a conclusão tem status não zero após despacho aceito. Isso não demonstra reset do sensor. Destinos de chamadas e ponteiro da tabela foram conferidos; semântica do comando e de 0xd1 permanece pendente. Somente documentação/evidência nesta etapa, sem repetir testes ou hardware.

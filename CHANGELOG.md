@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.19.0-research — 2026-11-16
+
+- Preparação 0x537b0 ligada à requisição interna 8 e handler 0x7ed80.
+- Caminho local de sucesso separado do caminho que monta comando 0x1a sob gatilhos do contexto.
+- Limpeza de campos do host documentada sem atribuir reset/recuperação do sensor.
+- Cinco destinos de chamadas e ponteiro de dispatch conferidos; semântica de 0x1a e 0xd1 pendente.
+- Somente documentação/evidência; base anterior de 59 testes, sem nova execução ou operação USB.
+
 ## 0.18.0-research — 2026-11-16
 
 - Varredura dos 75 registros deixa somente entrada 55 sob valores candidatos e gate de abertura explícitos.

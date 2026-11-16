@@ -43,3 +43,7 @@ O INF Dell identifica o nome comercial VFS7552; o silício interno, firmware, fu
 ## E1 no host do participante
 
 Em 2026-11-16, o participante relatou a consulta isolada 0x01: sem sudo, permission_denied no preflight; com sudo, reply_received_unvalidated e received_bytes 38. [Evidência sanitizada](evidence/e1-participant-report-2026-11-16.json). Trata-se de relato acompanhado da saída da ferramenta, não de captura de barramento ou repetição independente pelo agente. Nenhum campo do conteúdo foi validado; suporte biométrico permanece desconhecido.
+
+## Resumo E1 informado pelo participante
+
+Campos candidatos recebidos: versão 6.7, build 164 e produto 48 (0x30), em resposta de 38 bytes. [Registro e proveniência](evidence/e1-summary-participant-2026-11-16.json). Os valores coincidem com os quatro campos do exemplo upstream 0091; a semântica do layout e o resto da resposta não foram validados. Não tratar versão 6.7 como versão comercial de firmware confirmada.

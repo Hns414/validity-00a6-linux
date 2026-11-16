@@ -41,3 +41,9 @@ Dependências adicionais: compilador C, pkg-config e headers de libusb-1.0. Se f
 Quatro testes adicionais (27 no total) verificam a seleção de campos, recusa de tamanho/status inesperados, ausência de campos em falhas de transporte/liberação e um programa C específico de limites e privacidade. Esse programa percorre todos os comprimentos entre 0 e 64, verifica little endian e modifica cada byte omitido para demonstrar que não afeta a saída dos campos candidatos. Testa também ponteiros nulos e limpeza do resultado ao rejeitar entrada.
 
 Verificação extra desta etapa: decoder e oito cenários simulados de resumo passaram com ASan/UBSan. LeakSanitizer falhou por limitação de ptrace do ambiente; a execução foi repetida com ASAN_OPTIONS=detect_leaks=0. Portanto não se declara validação de leaks por esse sanitizador nesta etapa. O resumo ainda não foi executado no sensor pelo participante.
+
+## E2: isolamento do comando e privacidade
+
+Três testes adicionais (30 no total) verificam emissão única de 0x19, nenhuma emissão de 0x01, leitura limitada a 128 bytes, formato schema 3, status incompleto/não zero, tamanho diferente da referência e ausência de conclusões em erros de transporte/liberação. O simulador exige que o byte do comando coincida com a operação esperada pelo teste; qualquer outro envio falha.
+
+Treze cenários E2 simulados foram executados com ASan/UBSan e ASAN_OPTIONS=detect_leaks=0, sem diagnósticos. A detecção de leaks permanece indisponível por limitação de ptrace do ambiente. Não houve execução ativa de E2 no sensor nesta etapa.

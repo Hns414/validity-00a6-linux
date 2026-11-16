@@ -30,7 +30,8 @@ class ProbeTests(unittest.TestCase):
     def run_probe(self, scenario='normal', flag='--probe-rom-info'):
         trace = Path(self.tmp.name) / 'trace'
         trace.unlink(missing_ok=True)
-        env = {**os.environ, 'FAKE_SCENARIO': scenario, 'FAKE_TRACE': str(trace)}
+        env = {**os.environ, 'FAKE_SCENARIO': scenario, 'FAKE_TRACE': str(trace),
+               'FAKE_EXPECT_QUERY': '19' if flag == '--probe-cmd19' else '01'}
         proc = subprocess.run([str(self.binary), flag], env=env, capture_output=True, text=True, timeout=3)
         calls = trace.read_text().splitlines() if trace.exists() else []
         self.assertEqual(proc.stderr, '')
@@ -41,10 +42,47 @@ class ProbeTests(unittest.TestCase):
         keys = {'schema_version', 'experiment', 'status', 'stage', 'received_bytes', 'biometric_support'}
         if flag == '--summarize-rom-info':
             keys |= {'decode_status', 'rom_info_candidate'}
+        if flag == '--probe-cmd19':
+            keys |= {'command', 'candidate_status_zero', 'reference_length_bytes', 'reference_length_match'}
         self.assertEqual(set(result), keys)
         self.assertFalse(result['biometric_support'])
         self.assertNotIn('a5a5', proc.stdout.lower())
         return result, calls
+
+    def test_cmd19_is_one_isolated_query_with_bounded_reply(self):
+        result, calls = self.run_probe(flag='--probe-cmd19')
+        self.assertEqual(result['schema_version'], 3)
+        self.assertEqual(result['experiment'], 'E2')
+        self.assertEqual(result['command'], '0x19')
+        self.assertEqual(result['received_bytes'], 68)
+        self.assertTrue(result['candidate_status_zero'])
+        self.assertTrue(result['reference_length_match'])
+        self.assertEqual(result['reference_length_bytes'], 68)
+        self.assertEqual(calls.count('write_19'), 1)
+        self.assertEqual(calls.count('read_128'), 1)
+        self.assertNotIn('write_01', calls)
+        self.assertNotIn('read_64', calls)
+        self.assertIn('release', calls)
+
+    def test_cmd19_short_status_different_size_and_nonzero_status(self):
+        for scenario, zero, match in [('cmd19_short', None, False),
+                                      ('cmd19_different_length', True, False),
+                                      ('cmd19_error', False, True),
+                                      ('empty_read', None, False)]:
+            with self.subTest(scenario=scenario):
+                result, calls = self.run_probe(scenario, flag='--probe-cmd19')
+                self.assertIs(result['candidate_status_zero'], zero)
+                self.assertIs(result['reference_length_match'], match)
+                self.assertEqual(calls.count('read_128'), 1)
+                self.assertNotIn('write_01', calls)
+
+    def test_cmd19_transport_failures_do_not_invent_status_or_length_match(self):
+        for scenario in ['permission', 'write_timeout', 'read_timeout', 'disconnect',
+                         'cancel_read', 'overflow', 'release_error', 'stuck']:
+            with self.subTest(scenario=scenario):
+                result, _ = self.run_probe(scenario, flag='--probe-cmd19')
+                self.assertIsNone(result['candidate_status_zero'])
+                self.assertIsNone(result['reference_length_match'])
 
     def test_decoder_bounds_endianness_and_omitted_byte_independence(self):
         binary = Path(self.tmp.name) / 'decoder-test'

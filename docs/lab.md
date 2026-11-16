@@ -42,3 +42,7 @@ O protótipo não chama reset, set_configuration, detach, pareamento, escrita em
 Em 2026-11-16, o participante informou: 23 testes offline aprovados, compilação concluída, permissão negada sem elevação e resposta de 38 bytes com sudo. O [registro sanitizado](evidence/e1-participant-report-2026-11-16.json) contém somente essas evidências. O agente não reproduziu a operação ativa; o hash do código executado no host não foi informado. A referência esperada é v0.4.0-research, pelo fluxo de clone e compilação relatado.
 
 A opção --summarize-rom-info repete a mesma operação de transporte e acrescenta uma análise estritamente limitada aos [campos candidatos](rom-info.md). Não adiciona cmd_19, inicialização, reset ou captura. A saída usa schema_version 2 para distinguir o novo formato; a opção anterior continua com schema_version 1.
+
+## E2: comando 0x19 isolado
+
+O resumo E1 do participante mostrou coincidência dos quatro campos candidatos com a referência upstream. O próximo teste preparado é [E2](cmd19.md). Ele usa a mesma seleção de dispositivo, interface e timeouts de E1, com uma única emissão 0x19 e capacidade de leitura 128. Não executa 0x01, inicialização, reset ou recuperação automática. O significado e os efeitos internos de 0x19 ainda não estão estabelecidos; a operação não é anunciada como leitura comprovadamente sem efeitos. E2 foi testado somente com transporte simulado.

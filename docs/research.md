@@ -97,3 +97,15 @@ Implementado um probe C original com libusb, condicionado à opção explícita 
 O [relato do participante](evidence/e1-participant-report-2026-11-16.json) confirma uma resposta de 38 bytes à consulta isolada, segundo o resultado da ferramenta. Isso acrescenta evidência específica além do relato Validity90, mas sem resposta bruta nem validação semântica. O fluxo implementado não exige reset ou blocos de inicialização.
 
 Próximo passo preparado: --summarize-rom-info, com layout candidato baseado no RomInfo de python-validity, commit a6bbc21dce7b8b3c3cd92378a0b2579a2fb45920. O [mapa de campos](rom-info.md) documenta offsets, little endian, status zero, tamanho exato e exclusões de privacidade. A análise não assume que o layout esteja confirmado para 00a6. Nenhum comando adicional foi implementado ou enviado ao sensor nesta etapa pelo agente.
+
+## Investigação de 0x19 — 2026-11-16
+
+- libfprint fixado: vfs7552_initialization envia 0x19 depois de 0x01 e antes de init_00; capacidade de leitura 128, array de exemplo com 68 bytes. A macro RECV_CHECK_SIZE nesse callback não garante validação de comprimento.
+- python-validity fixado: send_init envia 0x19 e verifica status, sem documentar o significado do payload.
+- Validity90 fixado: init_sequence_msg2 é 0x19, resposta-modelo tem 68 bytes e campos marcados variáveis. A existência de bytes variáveis motiva não publicar dump ou hash.
+- No [relato público #110](https://github.com/nmikhailov/Validity90/issues/110), a primeira resposta registrada após 0x19 tem 68 bytes. O log repete a impressão do mesmo bloco; essa duplicação não é uma segunda leitura USB. O protocolo e as alterações locais do autor não estão integralmente estabelecidos.
+- A [MR 626](https://gitlab.freedesktop.org/libfprint/libfprint/-/merge_requests/626), no head 5db7da904f74f7fb912d4a18f700a9671d8ab4ac, define VCSFW_CMD_UNKNOWN_INIT como 0x19. Isso reforça a ausência de uma semântica plenamente documentada; não prova equivalência entre suas famílias de sensores.
+
+Decisão: manter nome cmd19, sem chamar o resultado de capacidades, sessão TLS ou identidade. O [experimento E2](cmd19.md) foi implementado como uma emissão isolada, sem reset, 0x01 ou continuação. A emissão pode alterar estado interno; não há garantia formal de ausência de persistência. Seu resultado será apenas contagem e dois indicadores mínimos; nenhum payload é decodificado. Execução no hardware continua pendente e deverá ser explícita pelo participante.
+
+O [resumo E1 do participante](evidence/e1-summary-participant-2026-11-16.json) foi registrado nesta etapa: os campos selecionados coincidem com a referência upstream; o conteúdo integral não foi comparado.

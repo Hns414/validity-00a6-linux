@@ -13,6 +13,10 @@
 #include "rom_info.h"
 
 static int summarize_requested;
+static int cmd19_requested;
+static int cmd19_reply_observed;
+static int cmd19_has_status;
+static int cmd19_status_zero;
 static struct rom_info_candidate candidate;
 static const char *decode_status = "not_attempted";
 
@@ -29,9 +33,10 @@ static int64_t now_ms(void)
 static void report(const char *status, const char *stage, int bytes)
 {
     /* No raw response, serial, host/user identity, USB path or library error text. */
-    printf("{\"schema_version\":%d,\"experiment\":\"E1\",\"status\":\"%s\","
+    printf("{\"schema_version\":%d,\"experiment\":\"%s\",\"status\":\"%s\","
            "\"stage\":\"%s\",\"received_bytes\":%d,\"biometric_support\":false",
-           summarize_requested ? 2 : 1, status, stage, bytes);
+           cmd19_requested ? 3 : summarize_requested ? 2 : 1,
+           cmd19_requested ? "E2" : "E1", status, stage, bytes);
     if (summarize_requested) {
         printf(",\"decode_status\":\"%s\",\"rom_info_candidate\":", decode_status);
         if (strcmp(decode_status, "candidate_layout_unverified") == 0)
@@ -40,6 +45,12 @@ static void report(const char *status, const char *stage, int bytes)
                    (unsigned int)candidate.firmware_build, candidate.firmware_major,
                    candidate.firmware_minor, candidate.product_code);
         else printf("null");
+    }
+    if (cmd19_requested) {
+        printf(",\"command\":\"0x19\",\"candidate_status_zero\":%s,"
+               "\"reference_length_bytes\":68,\"reference_length_match\":%s",
+               cmd19_has_status ? (cmd19_status_zero ? "true" : "false") : "null",
+               cmd19_reply_observed ? (bytes == 68 ? "true" : "false") : "null");
     }
     puts("}");
 }
@@ -155,12 +166,13 @@ static const char *exchange(libusb_context *ctx, libusb_device_handle *handle,
 
 int main(int argc, char **argv)
 {
+    cmd19_requested = argc == 2 && strcmp(argv[1], "--probe-cmd19") == 0;
     summarize_requested = argc == 2 && strcmp(argv[1], "--summarize-rom-info") == 0;
-    if (argc != 2 || (!summarize_requested && strcmp(argv[1], "--probe-rom-info") != 0)) {
+    if (argc != 2 || (!cmd19_requested && !summarize_requested && strcmp(argv[1], "--probe-rom-info") != 0)) {
         puts("Experimental 138a:00a6 probe. Read docs/lab.md before hardware use.\n"
-             "Usage: probe-rom-info --probe-rom-info | --summarize-rom-info\n"
+             "Usage: probe-rom-info --probe-rom-info | --summarize-rom-info | --probe-cmd19\n"
              "Summary emits only candidate build/version/product metadata, never raw bytes.\n"
-             "Sends one 0x01 query; receives at most 64 bytes. No reset or initialization.\n"
+             "E1 sends 0x01, reads <=64 bytes. E2 sends only 0x19, reads <=128 bytes. No reset or subsequent initialization blocks.\n"
              "Response semantics are unvalidated. No USB access without the explicit flag.");
         return argc == 2 && strcmp(argv[1], "--help") == 0 ? 0 : 1;
     }
@@ -216,13 +228,22 @@ int main(int argc, char **argv)
     int64_t start = now_ms();
     if (start < 0) { status = "clock_error"; goto finish; }
     int64_t deadline = start + 3000;
-    unsigned char query = 0x01, response[64] = {0};
+    unsigned char query = cmd19_requested ? 0x19 : 0x01;
+    unsigned char response[128] = {0};
+    int receive_capacity = cmd19_requested ? 128 : 64;
     int written = 0;
     stage = "write";
     status = exchange(ctx, handle, 0x01, &query, 1, deadline, &written);
     if (status) goto finish;
     stage = "read";
-    status = exchange(ctx, handle, 0x81, response, sizeof(response), deadline, &received);
+    status = exchange(ctx, handle, 0x81, response, receive_capacity, deadline, &received);
+    if (!status && cmd19_requested) {
+        cmd19_reply_observed = 1;
+        if (received >= 2) {
+            cmd19_has_status = 1;
+            cmd19_status_zero = response[0] == 0 && response[1] == 0;
+        }
+    }
     if (!status && summarize_requested)
         decode_status = rom_info_decode(response, (size_t)received, &candidate);
     /* Only allowlisted candidate fields may escape; never log raw response bytes. */
@@ -232,6 +253,8 @@ finish:
     if (claimed && libusb_release_interface(handle, 0) != 0) {
         status = "release_error";
         decode_status = "not_attempted";
+        cmd19_reply_observed = 0;
+        cmd19_has_status = 0;
         memset(&candidate, 0, sizeof(candidate));
         stage = "cleanup";
     }

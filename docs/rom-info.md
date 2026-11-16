@@ -36,3 +36,9 @@ Exemplo **sintético, usado nos testes**, não leitura do hardware:
 A nova opção usa exatamente o mesmo transporte da consulta anterior: um byte OUT, leitura de até 64 bytes, sem reset, troca de configuração, inicialização ou retry. Nenhuma execução dessa opção ativa foi feita pelo agente. Veja o [passo a passo do participante](first-hardware-test.md).
 
 Uma resposta coerente pode orientar comparação com fontes existentes. Não valida transporte de captura, pareamento, matching ou login. O código de saída 0 continua indicando somente resposta recebida; não é aprovação semântica do layout.
+
+## Resultado do participante
+
+O participante informou schema 2 com resposta de 38 bytes, candidate_layout_unverified, firmware_build 164, firmware_major 6, firmware_minor 7 e product_code 48 (0x30). A atualização do clone para 36df362 e os 27 testes aprovados constam na saída fornecida.
+
+Esses quatro campos coincidem com vfs7552_cmd_01_recv do libfprint no commit fixado. [Registro sanitizado](evidence/e1-summary-participant-2026-11-16.json). Só os campos selecionados foram comparados, não a resposta completa; isso reforça a hipótese de layout compartilhado sem confirmar captura ou compatibilidade das sequências seguintes.

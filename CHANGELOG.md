@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.6.0-research — 2026-11-16
+
+- Resumo E1 do participante registrado: versão candidata 6.7, build 164, produto 48; quatro campos coincidem com o exemplo upstream.
+- Consulta 0x19 investigada sem atribuir semântica não demonstrada; referência de 68 bytes e limites documentados.
+- E2 experimental --probe-cmd19 implementado: envio isolado, leitura até 128 bytes, schema 3 com indicadores mínimos, sem dump/hash.
+- Três testes adicionais; 30 no total. Treze cenários E2 simulados passaram com ASan/UBSan, sem validação de leaks.
+- E2 real pendente; sem inicialização completa ou suporte biométrico.
+
 ## 0.5.0-research — 2026-11-16
 
 - Primeiro resultado E1 do participante registrado: resposta de 38 bytes após execução elevada; conteúdo não validado.

@@ -21,7 +21,7 @@ make probe
 
 Dependências no EndeavourOS/Arch: compilador C (por exemplo gcc), make, pkgconf, libusb e Python 3. Se faltarem, o erro de compilação indicará isso; instale os pacotes de desenvolvimento pelo gerenciador da distribuição antes de continuar. A compilação não instala nada no sistema.
 
-Confira se os 27 testes atuais passam sem skips. O --help não inicializa libusb. Nada nessas etapas executa o teste de hardware.
+Confira se os 30 testes atuais passam sem skips. O --help não inicializa libusb. Nada nessas etapas executa o teste de hardware.
 
 ## Executar uma vez no sensor
 
@@ -69,4 +69,8 @@ make probe
 sudo ./build/probe-rom-info --summarize-rom-info
 ```
 
-Execute a última linha somente após os 27 testes passarem sem skips e a compilação concluir. Ela envia novamente a mesma consulta 0x01, uma vez, e publica somente os campos candidatos de [rom-info.md](rom-info.md). Compartilhe apenas a linha JSON. O formato será schema_version 2; candidate_layout_unverified indica hipótese de layout, não compatibilidade comprovada. Se o tamanho ou status não corresponderem ao requisito, rom_info_candidate será null; não pedir dump bruto nem executar comandos adicionais para contornar a recusa.
+Execute a última linha somente após os 30 testes passarem sem skips e a compilação concluir. Ela envia novamente a mesma consulta 0x01, uma vez, e publica somente os campos candidatos de [rom-info.md](rom-info.md). Compartilhe apenas a linha JSON. O formato será schema_version 2; candidate_layout_unverified indica hipótese de layout, não compatibilidade comprovada. Se o tamanho ou status não corresponderem ao requisito, rom_info_candidate será null; não pedir dump bruto nem executar comandos adicionais para contornar a recusa.
+
+## Próximo experimento após E1 e resumo: E2
+
+O participante já relatou resposta de 38 bytes e os quatro campos candidatos. Não repetir E1 por rotina. O próximo comando disponível é --probe-cmd19; ele é um experimento distinto, com efeitos internos ainda não totalmente documentados. Leia [cmd19.md](cmd19.md) antes de executar. Não encadear outras consultas ou inicialização após seu resultado.

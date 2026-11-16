@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-16",
+  "evidence_type": "participant_terminal_output_in_project_chat",
+  "independently_reproduced_by_agent": false,
+  "code_ref_reported": "36df362",
+  "code_ref_basis": "Participant paste includes fast-forward to 36df362 followed by compilation",
+  "offline_tests_passed": 27,
+  "result": {
+    "schema_version": 2,
+    "experiment": "E1",
+    "status": "reply_received_unvalidated",
+    "stage": "read",
+    "received_bytes": 38,
+    "biometric_support": false,
+    "decode_status": "candidate_layout_unverified",
+    "rom_info_candidate": {
+      "firmware_build": 164,
+      "firmware_major": 6,
+      "firmware_minor": 7,
+      "product_code": 48
+    }
+  },
+  "comparison": {
+    "upstream_commit": "8b6e4e39bee58de2774222e3730269def470b157",
+    "upstream_file": "libfprint/drivers/vfs7552_proto.h",
+    "array": "vfs7552_cmd_01_recv",
+    "selected_fields_match": true,
+    "full_reply_compared": false
+  },
+  "limits": [
+    "Candidate field semantics not independently validated",
+    "No raw reply retained in project",
+    "No capture, matching or recovery validation"
+  ]
+}

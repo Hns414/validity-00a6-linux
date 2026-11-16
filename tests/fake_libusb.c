@@ -13,6 +13,10 @@ static int64_t millis;
 static struct libusb_transfer *pending;
 static int cancelled;
 static int events;
+static int cmd19_mode(void) {
+    const char *value = getenv("FAKE_EXPECT_QUERY");
+    return value && strcmp(value, "19") == 0;
+}
 static int scenario(const char *s) {
     const char *value = getenv("FAKE_SCENARIO");
     return value && strcmp(s, value) == 0;
@@ -103,9 +107,10 @@ void LIBUSB_CALL libusb_free_transfer(struct libusb_transfer *t) { trace("free_t
 int LIBUSB_CALL libusb_submit_transfer(struct libusb_transfer *t) {
     if (t->type != LIBUSB_TRANSFER_TYPE_BULK || t->timeout == 0 || t->timeout > 1000) abort();
     if (t->endpoint == 1) {
-        if (t->length != 1 || t->buffer[0] != 1) abort();
-        trace("write_01");
-    } else if (t->endpoint == 0x81 && t->length == 64) trace("read_64");
+        if (t->length != 1 || t->buffer[0] != (cmd19_mode() ? 0x19 : 1)) abort();
+        trace(cmd19_mode() ? "write_19" : "write_01");
+    } else if (t->endpoint == 0x81 && t->length == (cmd19_mode() ? 128 : 64))
+        trace(cmd19_mode() ? "read_128" : "read_64");
     else abort();
     if (scenario("submit_error")) return LIBUSB_ERROR_IO;
     pending = t; cancelled = 0; events = 0;
@@ -129,19 +134,22 @@ int LIBUSB_CALL libusb_handle_events_timeout_completed(libusb_context *ctx, stru
     if (scenario("event_error") && events == 1) return LIBUSB_ERROR_IO;
     struct libusb_transfer *t = pending;
     t->status = LIBUSB_TRANSFER_COMPLETED;
-    t->actual_length = t->endpoint == 1 ? 1 : 38;
+    t->actual_length = t->endpoint == 1 ? 1 : cmd19_mode() ? 68 : 38;
     if (t->endpoint == 0x81) {
-        memset(t->buffer, 0xa5, 64); /* timestamp, padding and tail must remain private */
+        memset(t->buffer, 0xa5, (size_t)t->length); /* timestamp, padding and tail must remain private */
         t->buffer[0] = 0; t->buffer[1] = 0;
         t->buffer[6] = 0x78; t->buffer[7] = 0x56; t->buffer[8] = 0x34; t->buffer[9] = 0x12;
         t->buffer[10] = 6; t->buffer[11] = 7; t->buffer[13] = 0x30;
+        if (scenario("cmd19_error")) t->buffer[1] = 1;
+        if (scenario("cmd19_short")) t->actual_length = 1;
+        if (scenario("cmd19_different_length")) t->actual_length = 65;
         if (scenario("summary_error")) t->buffer[1] = 1;
         if (scenario("summary_short")) t->actual_length = 17;
         if (scenario("summary_long")) t->actual_length = 39;
     }
     if (scenario("short_write") && t->endpoint == 1) t->actual_length = 0;
     if (scenario("empty_read") && t->endpoint == 0x81) t->actual_length = 0;
-    if (scenario("overflow") && t->endpoint == 0x81) t->actual_length = 65;
+    if (scenario("overflow") && t->endpoint == 0x81) t->actual_length = t->length + 1;
     if (scenario("read_timeout") && t->endpoint == 0x81) t->status = LIBUSB_TRANSFER_TIMED_OUT;
     if (scenario("write_timeout") && t->endpoint == 1) t->status = LIBUSB_TRANSFER_TIMED_OUT;
     if (scenario("disconnect") && t->endpoint == 0x81) t->status = LIBUSB_TRANSFER_NO_DEVICE;

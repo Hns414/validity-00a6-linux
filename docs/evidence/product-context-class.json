@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "method": "manual-static-product-classification-with-bounded-table-read",
+  "dll_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "classification_helper_rva": "0x5bab0",
+  "mapping_table_rva": "0x119188",
+  "mapping_record_bytes": 8,
+  "mappings": [
+    {
+      "product": "0x2b",
+      "context_class": 1
+    },
+    {
+      "product": "0x2d",
+      "context_class": 1
+    },
+    {
+      "product": "0x30",
+      "context_class": 1
+    },
+    {
+      "product": "0x32",
+      "context_class": 1
+    },
+    {
+      "product": "0x33",
+      "context_class": 1
+    }
+  ],
+  "zero_terminator_checked": true,
+  "caller": {
+    "call_rva": "0x64dad",
+    "input": "version structure byte +0x0b",
+    "context_class_store_rva": "0x64dbd",
+    "context_field": "0x23c"
+  },
+  "participant_candidate_product": "0x30",
+  "conditional_class_for_reported_product": 1,
+  "participant_internal_sensor_type_known": false,
+  "program_table_registration_resolved": false,
+  "runtime_classification_observed": false,
+  "usb_transfer_performed": false
+}

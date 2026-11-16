@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.40.0-research — 2026-11-16
+
+- Campo de contexto +0x23c ligado ao mapeamento estático de produto da ROM.
+- Produto candidato 0x30 implica classe 1 sob as premissas já documentadas do relato E1.
+- Classe, produto ROM e tipo interno do sensor distinguidos; registro da tabela permanece pendente.
+- Somente documentação/evidência, sem novo comando USB.
+
 ## 0.39.0-research — 2026-11-16
 
 - Produtor do descritor de programa ligado ao seletor da abertura e ao armazenamento em contexto +0x250.

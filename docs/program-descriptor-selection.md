@@ -33,3 +33,5 @@ A tabela de programas não foi equiparada à tabela de 75 descritores de prepara
 Ficou identificado um produtor concreto do descritor consumido no builder, seu armazenamento e reaproveitamento no host e o seletor que o fornece. Permanecem a proveniência final da tabela/programas, a identificação do campo +0x128 no participante e os demais critérios de seleção. Também continuam pendentes os efeitos dos programas e a recuperação de operações ativas.
 
 Seis destinos de chamadas e a instrução de armazenamento foram conferidos no binário fixado. O fluxo e os papéis continuam análise manual, sem seleção observada em runtime. Somente documentos/evidência: mantém a base de **91 testes aprovados na v0.37**, sem nova execução da suíte. Probe inalterado, sem teste com dedo.
+
+A [origem da classe de contexto](product-context-class.md) foi ligada à tabela de produtos da ROM; isso não identifica o tipo interno nem o registro da tabela de programas.

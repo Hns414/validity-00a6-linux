@@ -213,3 +213,9 @@ Os gatilhos do mesmo contexto podem vir da resposta de versão ou de atualizaç�
 A [inspeção upstream](public-init-flow.md) documenta send_init, dispatcher por ID e retorno local para o clean-slate vazio de blobs_90. O bloco é enviado diretamente por Usb.cmd; a abertura TLS explícita de open_common vem depois, mas init_flash tem ramo anterior de provisionamento e TLS. Nenhuma dessas rotinas foi executada.
 
 Verificador original agora reproduz a comparação integral sob hash/commit fixados, com leitura limitada e saída de metadados. Seis testes novos, 65 aprovados sem skips. Identidade e posição no fluxo não decodificam o payload; probe ativo e hardware inalterados.
+
+## Separação de payloads e limite da hipótese criptográfica
+
+A [análise de papéis](payload-roles.md) distingue init e write-enable nas quatro famílias públicas. Na família 90, a entrada Dell 57 coincide com os 1764 argumentos de write-enable, máscara 0x10008, enquanto a entrada 55 tem 484 argumentos e máscara 0x4000. Prefixo igual e alinhamento não identificam finalidade/proteção.
+
+Inventário ampliado opcional, sem executar fonte ou payload; padrão schema 1 reproduzido integralmente. Dois testes novos, 67 aprovados. As rotinas TLS encontradas não estabelecem decoder do corpo de inicialização; nenhuma proteção interna ou operação de hardware foi validada nesta etapa.

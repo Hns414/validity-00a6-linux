@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.22.0-research — 2026-11-16
+
+- Init de 485 bytes separado do write-enable de 1765 bytes, apesar de prefixo/alinhamento comuns.
+- Entrada Dell 57 comparada integralmente ao write-enable público; máscara distinta 0x10008 e seleção não avaliada.
+- Inventário offline opcional de write-enable com schema 2; saída padrão schema 1 reproduzida sem alteração.
+- Dois testes novos; 67 aprovados. Proteção interna do payload permanece não demonstrada; probe inalterado.
+
 ## 0.21.0-research — 2026-11-16
 
 - Fluxo público do bloco de 484 argumentos documentado: consultas, seleção por ID e caminho clean-slate vazio da família 90.

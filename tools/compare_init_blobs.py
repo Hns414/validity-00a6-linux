@@ -26,9 +26,11 @@ def literal_hex(node):
     return bytes.fromhex(''.join(node.value.split()))
 
 
-def unhex_assignments(source):
+def unhex_assignments(source, include_write_enable=False):
     result = {}
     selected = {'init_hardcoded', 'init_hardcoded_clean_slate', 'reset_blob'}
+    if include_write_enable:
+        selected.add('db_write_enable')
     for node in ast.parse(source).body:
         if not isinstance(node, ast.Assign):
             continue
@@ -117,6 +119,8 @@ def main():
     parser.add_argument('libfprint', type=Path)
     parser.add_argument('validity91', type=Path)
     parser.add_argument('python_validity', type=Path)
+    parser.add_argument('--include-write-enable', action='store_true',
+                        help='Include a distinct opaque write-enable literal; does not execute it')
     args = parser.parse_args()
     try:
         header = pinned(args.libfprint, LIBFPRINT, 'libfprint/drivers/vfs7552_proto.h')
@@ -133,13 +137,25 @@ def main():
             report['validity91']['messages'].append({
                 'index': i, **metadata(data), 'optional_declared': item['optional_declared'],
                 'equals_init_00': data == target, 'equals_init_04': data == arrays['vfs7552_init_04']})
+        if args.include_write_enable:
+            report['schema_version'] = 2
+            report['init_vs_write_enable'] = {}
         for model in ['90', '97', '9a', '9d']:
             source = pinned(args.python_validity, PYTHON_VALIDITY, f'validitysensor/blobs_{model}.py')
             result = {}
-            for name, data in unhex_assignments(source.decode()).items():
+            blobs = unhex_assignments(source.decode(), args.include_write_enable)
+            for name, data in blobs.items():
                 result[name] = {**metadata(data), 'equals_init_00': data == target,
                                 'common_prefix_bytes_with_init_00': common_prefix(target, data)}
             report['python_validity']['device_blobs'][model] = result
+            if args.include_write_enable:
+                init, write = blobs['init_hardcoded'], blobs['db_write_enable']
+                report['init_vs_write_enable'][model] = {
+                    'identical': init == write,
+                    'common_prefix_bytes': common_prefix(init, write),
+                    'same_five_byte_prefix': len(init) >= 5 and len(write) >= 5 and init[:5] == write[:5],
+                    'write_enable_body_after_five_bytes_multiple_of_16':
+                        len(write) >= 5 and (len(write)-5) % 16 == 0}
         print(json.dumps(report, indent=2, sort_keys=True))
         return 0
     except (OSError, ValueError, KeyError, SyntaxError, subprocess.CalledProcessError):

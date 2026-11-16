@@ -1,0 +1,211 @@
+{
+  "init_vs_write_enable": {
+    "90": {
+      "common_prefix_bytes": 5,
+      "identical": false,
+      "same_five_byte_prefix": true,
+      "write_enable_body_after_five_bytes_multiple_of_16": true
+    },
+    "97": {
+      "common_prefix_bytes": 5,
+      "identical": false,
+      "same_five_byte_prefix": true,
+      "write_enable_body_after_five_bytes_multiple_of_16": true
+    },
+    "9a": {
+      "common_prefix_bytes": 5,
+      "identical": false,
+      "same_five_byte_prefix": true,
+      "write_enable_body_after_five_bytes_multiple_of_16": true
+    },
+    "9d": {
+      "common_prefix_bytes": 5,
+      "identical": false,
+      "same_five_byte_prefix": true,
+      "write_enable_body_after_five_bytes_multiple_of_16": true
+    }
+  },
+  "libfprint": {
+    "commit": "8b6e4e39bee58de2774222e3730269def470b157",
+    "init_00": {
+      "length": 501,
+      "sha256": "c0ce06740d8c9b836b0d52de2167404ba0b117d0423a278d9fce4b3742e686ee"
+    },
+    "init_04": {
+      "length": 6677,
+      "sha256": "477d0e7dd70db24b71b2902ed56029f296f9dd318ee3e2a03f44416d5d671789"
+    }
+  },
+  "python_validity": {
+    "commit": "a6bbc21dce7b8b3c3cd92378a0b2579a2fb45920",
+    "device_blobs": {
+      "90": {
+        "db_write_enable": {
+          "common_prefix_bytes_with_init_00": 5,
+          "equals_init_00": false,
+          "length": 1765,
+          "sha256": "fd5a68c1d323974f6cef2ab5a5cd5f1fd0a52d6bd520b806141327057a161263"
+        },
+        "init_hardcoded": {
+          "common_prefix_bytes_with_init_00": 5,
+          "equals_init_00": false,
+          "length": 485,
+          "sha256": "854b90943a8b865ca237b686112381d15460f715c88147ff6d83d7b8d264b1db"
+        },
+        "init_hardcoded_clean_slate": {
+          "common_prefix_bytes_with_init_00": 0,
+          "equals_init_00": false,
+          "length": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "reset_blob": {
+          "common_prefix_bytes_with_init_00": 5,
+          "equals_init_00": false,
+          "length": 11493,
+          "sha256": "950d9bd2907aaf0c9f6be2208fa335b367db8ed0b29f4de2f41808c2fa9bc562"
+        }
+      },
+      "97": {
+        "db_write_enable": {
+          "common_prefix_bytes_with_init_00": 5,
+          "equals_init_00": false,
+          "length": 3621,
+          "sha256": "9c94e0f3d2ef89d625c91d04999cefa0a8d846ef0a1842825bcde3cc8f032517"
+        },
+        "init_hardcoded": {
+          "common_prefix_bytes_with_init_00": 5,
+          "equals_init_00": false,
+          "length": 581,
+          "sha256": "3404634893ce32b7fca6b62846f665f41c9dedd5029f0daadc6d800f9567e65f"
+        },
+        "init_hardcoded_clean_slate": {
+          "common_prefix_bytes_with_init_00": 5,
+          "equals_init_00": false,
+          "length": 741,
+          "sha256": "29d8b94221d850d1965e722d93223589dbff61c11182451a6a5b86dc5a3bc511"
+        },
+        "reset_blob": {
+          "common_prefix_bytes_with_init_00": 5,
+          "equals_init_00": false,
+          "length": 12037,
+          "sha256": "a2e7567075c126dca659bdb4c09c3ea4241508dfb32c7c9255f79090470f4013"
+        }
+      },
+      "9a": {
+        "db_write_enable": {
+          "common_prefix_bytes_with_init_00": 5,
+          "equals_init_00": false,
+          "length": 3621,
+          "sha256": "9c94e0f3d2ef89d625c91d04999cefa0a8d846ef0a1842825bcde3cc8f032517"
+        },
+        "init_hardcoded": {
+          "common_prefix_bytes_with_init_00": 5,
+          "equals_init_00": false,
+          "length": 581,
+          "sha256": "3404634893ce32b7fca6b62846f665f41c9dedd5029f0daadc6d800f9567e65f"
+        },
+        "init_hardcoded_clean_slate": {
+          "common_prefix_bytes_with_init_00": 5,
+          "equals_init_00": false,
+          "length": 741,
+          "sha256": "29d8b94221d850d1965e722d93223589dbff61c11182451a6a5b86dc5a3bc511"
+        },
+        "reset_blob": {
+          "common_prefix_bytes_with_init_00": 5,
+          "equals_init_00": false,
+          "length": 12037,
+          "sha256": "a2e7567075c126dca659bdb4c09c3ea4241508dfb32c7c9255f79090470f4013"
+        }
+      },
+      "9d": {
+        "db_write_enable": {
+          "common_prefix_bytes_with_init_00": 5,
+          "equals_init_00": false,
+          "length": 3621,
+          "sha256": "9c94e0f3d2ef89d625c91d04999cefa0a8d846ef0a1842825bcde3cc8f032517"
+        },
+        "init_hardcoded": {
+          "common_prefix_bytes_with_init_00": 5,
+          "equals_init_00": false,
+          "length": 581,
+          "sha256": "3404634893ce32b7fca6b62846f665f41c9dedd5029f0daadc6d800f9567e65f"
+        },
+        "init_hardcoded_clean_slate": {
+          "common_prefix_bytes_with_init_00": 5,
+          "equals_init_00": false,
+          "length": 741,
+          "sha256": "29d8b94221d850d1965e722d93223589dbff61c11182451a6a5b86dc5a3bc511"
+        },
+        "reset_blob": {
+          "common_prefix_bytes_with_init_00": 5,
+          "equals_init_00": false,
+          "length": 12037,
+          "sha256": "a2e7567075c126dca659bdb4c09c3ea4241508dfb32c7c9255f79090470f4013"
+        }
+      }
+    }
+  },
+  "schema_version": 2,
+  "scope": "offline-byte-comparison-not-command-semantics",
+  "validity91": {
+    "commit": "75f38a615ef1560829f9cd8aa07459d10f0962ae",
+    "messages": [
+      {
+        "equals_init_00": false,
+        "equals_init_04": false,
+        "index": 0,
+        "length": 1,
+        "optional_declared": true,
+        "sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a"
+      },
+      {
+        "equals_init_00": false,
+        "equals_init_04": false,
+        "index": 1,
+        "length": 1,
+        "optional_declared": true,
+        "sha256": "68aa2e2ee5dff96e3355e6c7ee373e3d6a4e17f75f9518d843709c0c9bc3e3d4"
+      },
+      {
+        "equals_init_00": true,
+        "equals_init_04": false,
+        "index": 2,
+        "length": 501,
+        "optional_declared": true,
+        "sha256": "c0ce06740d8c9b836b0d52de2167404ba0b117d0423a278d9fce4b3742e686ee"
+      },
+      {
+        "equals_init_00": false,
+        "equals_init_04": false,
+        "index": 3,
+        "length": 10,
+        "optional_declared": false,
+        "sha256": "14c64b4f7828f3a3bf933ce3fd62a187c8a8a19165058981864af077c3aea904"
+      },
+      {
+        "equals_init_00": false,
+        "equals_init_04": false,
+        "index": 4,
+        "length": 6,
+        "optional_declared": true,
+        "sha256": "8d2946b1b366e865527e13fc679d3c6cc4d1b67f9381a098f15f382c1bfb3156"
+      },
+      {
+        "equals_init_00": false,
+        "equals_init_04": false,
+        "index": 5,
+        "length": 1,
+        "optional_declared": true,
+        "sha256": "0bfe935e70c321c7ca3afc75ce0d0ca2f98b5422e008bb31c00c6d7f1f1c0ad6"
+      },
+      {
+        "equals_init_00": false,
+        "equals_init_04": true,
+        "index": 6,
+        "length": 6677,
+        "optional_declared": false,
+        "sha256": "477d0e7dd70db24b71b2902ed56029f296f9dd318ee3e2a03f44416d5d671789"
+      }
+    ]
+  }
+}

@@ -55,6 +55,24 @@ init_messages.append(Validity_Messages(query=array('B', bytes.fromhex('0602'))))
             with self.subTest(source=source), self.assertRaises(ValueError):
                 compare.literal_hex(ast.parse(source, mode='eval').body)
 
+    def test_write_enable_requires_explicit_inventory_option(self):
+        source = "init_hardcoded=unhex('0602000001aa')\ndb_write_enable=unhex('0602000001bbcc')"
+        basic = compare.unhex_assignments(source)
+        expanded = compare.unhex_assignments(source, include_write_enable=True)
+        self.assertNotIn('db_write_enable', basic)
+        self.assertEqual(expanded['db_write_enable'], bytes.fromhex('0602000001bbcc'))
+        self.assertNotEqual(expanded['init_hardcoded'], expanded['db_write_enable'])
+        self.assertEqual(compare.common_prefix(expanded['init_hardcoded'], expanded['db_write_enable']), 5)
+
+    def test_write_enable_dynamic_or_duplicate_initializer_rejected_when_selected(self):
+        for expression in ["get_hex()", "'xx'", "'0'"]:
+            source = f"init_hardcoded=unhex('06')\ndb_write_enable=unhex({expression})"
+            with self.subTest(expression=expression), self.assertRaises(ValueError):
+                compare.unhex_assignments(source, include_write_enable=True)
+        source = "init_hardcoded=unhex('06')\ndb_write_enable=unhex('01')\ndb_write_enable=unhex('02')"
+        with self.assertRaises(ValueError):
+            compare.unhex_assignments(source, include_write_enable=True)
+
 
 if __name__ == '__main__':
     unittest.main()

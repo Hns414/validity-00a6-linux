@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "method": "bounded-hash-pinned-descriptor-read-and-public-AST-literal-comparison",
+  "dll_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "record_rva": "0x13d530",
+  "table_index": 57,
+  "record_fields": {
+    "0x10": 6,
+    "0x14": 7,
+    "0x18": 164,
+    "0x20": 3,
+    "0x2c": 65544,
+    "0x34": 2,
+    "0x3c": 1,
+    "0x44": 1764
+  },
+  "public_reference_commit": "a6bbc21dce7b8b3c3cd92378a0b2579a2fb45920",
+  "public_reference_path": "validitysensor/blobs_90.py",
+  "public_symbol": "db_write_enable",
+  "public_frame_length": 1765,
+  "public_frame_sha256": "fd5a68c1d323974f6cef2ab5a5cd5f1fd0a52d6bd520b806141327057a161263",
+  "arguments_equal_public_without_opcode": true,
+  "opcode_06_plus_arguments_equals_public_frame": true,
+  "selection_evaluated": false,
+  "device_side_protection_verified": false,
+  "hardware_execution_enabled": false
+}

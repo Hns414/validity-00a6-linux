@@ -39,7 +39,7 @@ Run `python3 tools/collect_usb_metadata.py` without sudo. It reads cached sysfs 
 
 The upstream open path resets USB and sends opaque initialization blocks. Its receive macros, endpoint transfer types and cancellation behavior need review before porting. An experimental single-query probe is now implemented and tested against a USB simulator. The participant reported a 38-byte reply from the target sensor; four candidate metadata fields have since been reported and match the selected upstream example fields; no raw reply has been inspected. See the [first hardware test](docs/first-hardware-test.md) before running it.
 
-Run offline checks with `python3 -m unittest discover -s tests -v`. The current suite has 65 tests for metadata privacy, source inventory parsing and a simulated libusb transport. Probe simulation requires a C compiler, pkg-config and libusb development headers; those tests are explicitly skipped if unavailable. No tests validate biometric support.
+Run offline checks with `python3 -m unittest discover -s tests -v`. The current suite has 67 tests for metadata privacy, source inventory parsing and a simulated libusb transport. Probe simulation requires a C compiler, pkg-config and libusb development headers; those tests are explicitly skipped if unavailable. No tests validate biometric support.
 
 ## Experimental hardware probe
 
@@ -108,6 +108,10 @@ The [cleanup/status analysis](docs/cleanup-status.md) links public 0x1a usage to
 ## Public initialization flow and verification
 
 The [public-flow analysis](docs/public-init-flow.md) places the matching 484-byte arguments within upstream initialization and distinguishes that sequence from Dell preparation. A hash-restricted offline verifier now reproduces the exact 485-byte frame comparison without exporting payloads. The public project does not register 00a6, and payload effects remain unresolved.
+
+## Distinct payload roles
+
+The [payload-role analysis](docs/payload-roles.md) distinguishes the 485-byte init frame from a 1765-byte public write-enable frame also found in a separate Dell descriptor. They share a prefix and block alignment, which do not establish purpose or cryptography. An optional offline inventory includes the write-enable literals; internal payload protection remains unverified.
 
 ## Licensing
 

@@ -87,3 +87,7 @@ O teste nativo de ROM verifica o decoder de um bit para todos os valores possív
 ## Verificador do frame de 485 bytes
 
 `test_init_484.py` usa arquivo/intervalos sintéticos para verificar correspondência integral, divergência no último byte, campos e ligações, limites PE e truncamento. Não carrega DLL ou acessa USB. O verificador da CLI exige hash e tamanho conhecidos antes da inspeção; o resultado real da comparação é somente metadado.
+
+## Inventário opcional de write-enable
+
+O parser de literais inclui db_write_enable somente quando solicitado. Os testes verificam separação do init apesar de prefixo comum e recusa de expressões dinâmicas/duplicadas. Nenhum bloco é executado.

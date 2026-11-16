@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.7.0-research — 2026-11-16
+
+- Resultado E2 do participante registrado: 68 bytes, prefixo candidato zero e tamanho coincidente com referência.
+- Proveniência de init_00/init_04 comparada com Validity91 e famílias de blobs python-validity, em commits fixados.
+- Comparador estático reproduzível, sem execução de Python upstream e sem redistribuir payloads.
+- Sete testes adicionais; 37 no total. Nenhum executor de blocos ou novo teste ativo de hardware.
+
 ## 0.6.0-research — 2026-11-16
 
 - Resumo E1 do participante registrado: versão candidata 6.7, build 164, produto 48; quatro campos coincidem com o exemplo upstream.

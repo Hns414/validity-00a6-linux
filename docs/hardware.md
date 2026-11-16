@@ -47,3 +47,7 @@ Em 2026-11-16, o participante relatou a consulta isolada 0x01: sem sudo, permiss
 ## Resumo E1 informado pelo participante
 
 Campos candidatos recebidos: versão 6.7, build 164 e produto 48 (0x30), em resposta de 38 bytes. [Registro e proveniência](evidence/e1-summary-participant-2026-11-16.json). Os valores coincidem com os quatro campos do exemplo upstream 0091; a semântica do layout e o resto da resposta não foram validados. Não tratar versão 6.7 como versão comercial de firmware confirmada.
+
+## E2 informado pelo participante
+
+No commit relatado f174d7a, após 30 testes aprovados, E2 retornou 68 bytes, os dois bytes iniciais zero sob a interpretação candidata e tamanho coincidente com a referência. [Evidência sanitizada](evidence/e2-participant-report-2026-11-16.json). Payload, estado interno e recuperação permanecem não validados. Nenhuma captura ou autenticação foi demonstrada.

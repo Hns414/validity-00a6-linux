@@ -45,4 +45,8 @@ A opção --summarize-rom-info repete a mesma operação de transporte e acresce
 
 ## E2: comando 0x19 isolado
 
-O resumo E1 do participante mostrou coincidência dos quatro campos candidatos com a referência upstream. O próximo teste preparado é [E2](cmd19.md). Ele usa a mesma seleção de dispositivo, interface e timeouts de E1, com uma única emissão 0x19 e capacidade de leitura 128. Não executa 0x01, inicialização, reset ou recuperação automática. O significado e os efeitos internos de 0x19 ainda não estão estabelecidos; a operação não é anunciada como leitura comprovadamente sem efeitos. E2 foi testado somente com transporte simulado.
+O resumo E1 do participante mostrou coincidência dos quatro campos candidatos com a referência upstream. O próximo teste preparado é [E2](cmd19.md). Ele usa a mesma seleção de dispositivo, interface e timeouts de E1, com uma única emissão 0x19 e capacidade de leitura 128. Não executa 0x01, inicialização, reset ou recuperação automática. O significado e os efeitos internos de 0x19 ainda não estão estabelecidos; a operação não é anunciada como leitura comprovadamente sem efeitos. Após essa preparação, o participante relatou E2 com 68 bytes e prefixo candidato zero; não houve captura de payload ou validação dos efeitos internos.
+
+## Situação após E2
+
+O participante confirmou a troca de transporte de E2 pelos indicadores publicados. A próxima etapa não requer novo comando de hardware: a análise de [init_00 e init_04](init-blobs.md) permanece offline. Não executar o driver upstream com o ID alterado, pois isso enviaria esses blocos automaticamente. As ferramentas ativas deste projeto continuam limitadas às opções explícitas E1/E2 já documentadas.

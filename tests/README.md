@@ -47,3 +47,9 @@ Verificação extra desta etapa: decoder e oito cenários simulados de resumo pa
 Três testes adicionais (30 no total) verificam emissão única de 0x19, nenhuma emissão de 0x01, leitura limitada a 128 bytes, formato schema 3, status incompleto/não zero, tamanho diferente da referência e ausência de conclusões em erros de transporte/liberação. O simulador exige que o byte do comando coincida com a operação esperada pelo teste; qualquer outro envio falha.
 
 Treze cenários E2 simulados foram executados com ASan/UBSan e ASAN_OPTIONS=detect_leaks=0, sem diagnósticos. A detecção de leaks permanece indisponível por limitação de ptrace do ambiente. Não houve execução ativa de E2 no sensor nesta etapa.
+
+## Comparação estática dos blocos de inicialização
+
+Sete testes adicionais (37 no total) verificam extração de literais sem executar o Python upstream, tratamento de whitespace inclusive entre nibbles usado por unhex, rejeição de expressões/dados inválidos/definições duplicadas, ordem e flag optional das mensagens e distinção entre prefixo comum e igualdade integral. O comparador usa ast para ler sintaxe; não usa eval nem importa módulos de terceiros.
+
+A comparação real foi regenerada dos objetos Git fixados de três repositórios e coincide com o JSON versionado. O resultado só descreve igualdade, tamanhos, hashes e flags declaradas. Não valida semântica de comandos ou segurança de sua execução. Nenhuma nova transferência USB foi realizada nesta etapa.

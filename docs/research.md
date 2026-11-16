@@ -109,3 +109,11 @@ Próximo passo preparado: --summarize-rom-info, com layout candidato baseado no 
 Decisão: manter nome cmd19, sem chamar o resultado de capacidades, sessão TLS ou identidade. O [experimento E2](cmd19.md) foi implementado como uma emissão isolada, sem reset, 0x01 ou continuação. A emissão pode alterar estado interno; não há garantia formal de ausência de persistência. Seu resultado será apenas contagem e dois indicadores mínimos; nenhum payload é decodificado. Execução no hardware continua pendente e deverá ser explícita pelo participante.
 
 O [resumo E1 do participante](evidence/e1-summary-participant-2026-11-16.json) foi registrado nesta etapa: os campos selecionados coincidem com a referência upstream; o conteúdo integral não foi comparado.
+
+## Resultado E2 e proveniência de init_00
+
+O [resultado do participante](evidence/e2-participant-report-2026-11-16.json) registra 68 bytes, prefixo candidato zero e correspondência do tamanho após 30 testes e compilação em f174d7a. Isso não equivale a comparar o payload integral.
+
+A análise seguinte está em [init-blobs.md](init-blobs.md), acompanhada de [comparação reproduzível](evidence/init-blob-comparison.json). O bloco de 501 bytes é idêntico ao do Validity91 fixado em 75f38a615ef1560829f9cd8aa07459d10f0962ae, onde é declarado opcional mas enviado por padrão. O bloco de 6.677 bytes também coincide integralmente com o dessa origem. Já os blobs init_hardcoded de python-validity têm tamanhos e hashes distintos; compartilham somente os cinco bytes iniciais com init_00, assim como seus reset_blob. Não extrapolar semântica por esse prefixo.
+
+Decisão desta etapa: nenhum executor para init_00/init_04; continuar com análise de formato, operações e persistência, antes de propor envio ao hardware. A ausência de documentação de efeitos é uma lacuna técnica, não prova de que o bloco seja destrutivo. O E2 não precisa ser repetido para esse trabalho offline.

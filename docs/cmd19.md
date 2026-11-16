@@ -1,6 +1,6 @@
 # E2: comando 0x19 isolado
 
-Estado: implementado e simulado; não executado no hardware do participante. O objetivo é observar uma resposta a 0x19, sem reproduzir a inicialização inteira. Este é um novo experimento, distinto de E1.
+Estado: implementado e simulado; participante relatou execução real com resposta de 68 bytes e prefixo de status candidato zero. O conteúdo e efeitos internos não foram validados. O objetivo é observar uma resposta a 0x19, sem reproduzir a inicialização inteira. Este é um novo experimento, distinto de E1.
 
 ## Evidência e incerteza
 
@@ -33,7 +33,7 @@ make test
 make probe
 ```
 
-Se os 30 testes passarem sem skips e a compilação concluir, a opção ativa é:
+Se os 37 testes atuais passarem sem skips e a compilação concluir, a opção ativa é:
 
 ```bash
 sudo ./build/probe-rom-info --probe-cmd19
@@ -55,3 +55,7 @@ Exemplo **sintético de simulação**, não resultado do seu sensor:
 - Em falha de transporte, cancelamento ou liberação, os indicadores não afirmam validade nem correspondência.
 
 Mesmo true/true não valida o conteúdo integral, a inicialização, captura ou matching. O próximo passo dependerá do resultado observado e da análise das sequências seguintes.
+
+## Resultado informado pelo participante
+
+Em 2026-11-16, o participante atualizou para f174d7a, informou 30 testes aprovados e executou E2. O JSON retornou received_bytes 68, candidate_status_zero true e reference_length_match true. [Registro sanitizado](evidence/e2-participant-report-2026-11-16.json). Isso confirma apenas os indicadores medidos pelo código; não demonstra identidade do payload nem ausência de alteração de estado. Não há necessidade de repetir E2 agora. A investigação seguinte é offline, sobre [init_00](init-blobs.md).

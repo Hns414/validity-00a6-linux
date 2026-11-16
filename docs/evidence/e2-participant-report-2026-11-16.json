@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-16",
+  "evidence_type": "participant_terminal_output_in_project_chat",
+  "independently_reproduced_by_agent": false,
+  "code_ref_reported": "f174d7a",
+  "code_ref_basis": "Participant paste includes fast-forward to f174d7a, tests and compilation",
+  "offline_tests_passed": 30,
+  "result": {
+    "schema_version": 3,
+    "experiment": "E2",
+    "status": "reply_received_unvalidated",
+    "stage": "read",
+    "received_bytes": 68,
+    "biometric_support": false,
+    "command": "0x19",
+    "candidate_status_zero": true,
+    "reference_length_bytes": 68,
+    "reference_length_match": true
+  },
+  "limits": [
+    "Only candidate status prefix and byte count inspected",
+    "No payload retained or compared",
+    "No guarantee about internal state changes",
+    "No capture, matching or physical recovery tested"
+  ]
+}

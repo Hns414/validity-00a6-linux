@@ -39,7 +39,7 @@ Run `python3 tools/collect_usb_metadata.py` without sudo. It reads cached sysfs 
 
 The upstream open path resets USB and sends opaque initialization blocks. Its receive macros, endpoint transfer types and cancellation behavior need review before porting. An experimental single-query probe is now implemented and tested against a USB simulator. The participant reported a 38-byte reply from the target sensor; four candidate metadata fields have since been reported and match the selected upstream example fields; no raw reply has been inspected. See the [first hardware test](docs/first-hardware-test.md) before running it.
 
-Run offline checks with `python3 -m unittest discover -s tests -v`. The current suite has 30 tests for metadata privacy, source inventory parsing and a simulated libusb transport. Probe simulation requires a C compiler, pkg-config and libusb development headers; those tests are explicitly skipped if unavailable. No tests validate biometric support.
+Run offline checks with `python3 -m unittest discover -s tests -v`. The current suite has 37 tests for metadata privacy, source inventory parsing and a simulated libusb transport. Probe simulation requires a C compiler, pkg-config and libusb development headers; those tests are explicitly skipped if unavailable. No tests validate biometric support.
 
 ## Experimental hardware probe
 
@@ -47,7 +47,11 @@ Build with `make probe` (C compiler, make, pkg-config and libusb-1.0 development
 
 ## Experimental command 0x19 probe
 
-`build/probe-rom-info --probe-cmd19` runs E2: a single 0x19 command and a receive capped at 128 bytes. It neither runs 0x01 first nor continues initialization. Its semantics and persistence effects remain unknown; do not call it a proven read-only operation. Only byte count and candidate status/length booleans are exported. Read [E2 instructions and limitations](docs/cmd19.md) before hardware use. E2 has only been simulated, not run on our target by the agent or participant.
+`build/probe-rom-info --probe-cmd19` runs E2: a single 0x19 command and a receive capped at 128 bytes. It neither runs 0x01 first nor continues initialization. Its semantics and persistence effects remain unknown; do not call it a proven read-only operation. Only byte count and candidate status/length booleans are exported. Read [E2 instructions and limitations](docs/cmd19.md) before hardware use. The participant reported a 68-byte E2 reply with a zero candidate status prefix. The payload and internal effects remain unvalidated; see the [sanitized result](docs/evidence/e2-participant-report-2026-11-16.json).
+
+## Initialization research
+
+The [init_00 analysis](docs/init-blobs.md) traces the 501-byte upstream block to an identical Validity91 literal. Its short prefix also occurs in unrelated initialization and reset blobs; that prefix does not establish safe semantics. No tool sends init_00 or init_04 in this project. A [reproducible offline comparator](tools/compare_init_blobs.py) exports only public-source hashes, lengths and comparison metadata, not payloads.
 
 ## Licensing
 

@@ -39,5 +39,43 @@ int main(void)
     assert(strcmp(rom_info_decode(NULL, 38, &out), "unexpected_length") == 0);
     assert(memcmp(&out, &zero, sizeof(out)) == 0);
     assert(strcmp(rom_info_decode(data, 38, NULL), "invalid_argument") == 0);
+    struct rom_info_discriminator_candidate branch, branch_zero = {0};
+    memset(data, 0, sizeof(data));
+    data[10] = 6;
+    for (unsigned int value = 0; value < 256; value++) {
+        data[0x19] = (unsigned char)value;
+        assert(strcmp(rom_info_discriminator_decode(data, 38, &branch),
+                      "candidate_layout_unverified") == 0);
+        assert(branch.firmware_major == 6);
+        assert(branch.flag_0x20_set == ((value & 0x20u) != 0));
+        assert(branch.derived_value == ((value & 0x20u) ? 2u : 3u));
+    }
+    struct rom_info_discriminator_candidate baseline = branch;
+    for (size_t i = 2; i < sizeof(data); i++) {
+        if (i == 10 || i == 0x19) continue;
+        data[i] ^= 0xff;
+        rom_info_discriminator_decode(data, 38, &branch);
+        assert(memcmp(&baseline, &branch, sizeof(branch)) == 0);
+    }
+    for (size_t length = 0; length <= sizeof(data); length++) {
+        if (length == 38) continue;
+        memset(&branch, 0xff, sizeof(branch));
+        assert(strcmp(rom_info_discriminator_decode(data, length, &branch),
+                      "unexpected_length") == 0);
+        assert(memcmp(&branch, &branch_zero, sizeof(branch)) == 0);
+    }
+    data[10] = 5;
+    rom_info_discriminator_decode(data, 38, &branch);
+    assert(branch.derived_value == 0);
+    for (int i = 0; i < 2; i++) {
+        data[i] = 1;
+        assert(strcmp(rom_info_discriminator_decode(data, 38, &branch),
+                      "device_status_nonzero") == 0);
+        assert(memcmp(&branch, &branch_zero, sizeof(branch)) == 0);
+        data[i] = 0;
+    }
+    assert(strcmp(rom_info_discriminator_decode(NULL, 38, &branch), "unexpected_length") == 0);
+    assert(memcmp(&branch, &branch_zero, sizeof(branch)) == 0);
+    assert(strcmp(rom_info_discriminator_decode(data, 38, NULL), "invalid_argument") == 0);
     return 0;
 }

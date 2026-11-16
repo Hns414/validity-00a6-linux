@@ -42,6 +42,8 @@ class ProbeTests(unittest.TestCase):
         keys = {'schema_version', 'experiment', 'status', 'stage', 'received_bytes', 'biometric_support'}
         if flag == '--summarize-rom-info':
             keys |= {'decode_status', 'rom_info_candidate'}
+        if flag == '--summarize-init-discriminator':
+            keys |= {'decode_status', 'discriminator_candidate', 'full_selection_evaluated'}
         if flag == '--probe-cmd19':
             keys |= {'command', 'candidate_status_zero', 'reference_length_bytes', 'reference_length_match'}
         self.assertEqual(set(result), keys)
@@ -216,6 +218,30 @@ class ProbeTests(unittest.TestCase):
         self.assertNotIn('free_transfer', calls)
         self.assertNotIn('release', calls)
         self.assertNotIn('close', calls)
+
+    def test_discriminator_summary_is_same_single_e1_query(self):
+        for scenario, major, bit, value in [('normal', 6, True, 2),
+                                           ('discriminator_clear', 6, False, 3),
+                                           ('discriminator_other_major', 5, True, 0)]:
+            with self.subTest(scenario=scenario):
+                result, calls = self.run_probe(scenario, flag='--summarize-init-discriminator')
+                self.assertEqual(result['schema_version'], 4)
+                self.assertEqual(result['experiment'], 'E1')
+                self.assertFalse(result['full_selection_evaluated'])
+                self.assertEqual(result['discriminator_candidate'], {
+                    'firmware_major': major, 'flag_0x20_set': bit, 'derived_value': value})
+                self.assertEqual(calls.count('write_01'), 1)
+                self.assertEqual(calls.count('read_64'), 1)
+                self.assertNotIn('write_19', calls)
+                self.assertLess(calls.index('write_01'), calls.index('read_64'))
+
+    def test_discriminator_summary_rejects_malformed_and_failed_exchange(self):
+        for scenario in ['summary_short', 'summary_long', 'summary_error',
+                         'read_timeout', 'disconnect', 'release_error', 'permission']:
+            with self.subTest(scenario=scenario):
+                result, _ = self.run_probe(scenario, flag='--summarize-init-discriminator')
+                self.assertIsNone(result['discriminator_candidate'])
+                self.assertFalse(result['full_selection_evaluated'])
 
 
 if __name__ == '__main__':

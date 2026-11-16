@@ -19,3 +19,18 @@ const char *rom_info_decode(const unsigned char *data, size_t length,
     out->product_code = data[13];
     return "candidate_layout_unverified";
 }
+
+const char *rom_info_discriminator_decode(const unsigned char *data, size_t length,
+                             struct rom_info_discriminator_candidate *out)
+{
+    if (!out) return "invalid_argument";
+    memset(out, 0, sizeof(*out));
+    struct rom_info_candidate metadata;
+    const char *status = rom_info_decode(data, length, &metadata);
+    if (strcmp(status, "candidate_layout_unverified") != 0) return status;
+    out->firmware_major = metadata.firmware_major;
+    out->flag_0x20_set = (data[0x19] & 0x20u) != 0;
+    out->derived_value = metadata.firmware_major == 6 ?
+                        (out->flag_0x20_set ? 2u : 3u) : 0u;
+    return status;
+}

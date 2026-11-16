@@ -79,3 +79,7 @@ Esses testes verificam nosso parser e simulações de transporte. Não verificam
 ## Discriminante offline de inicialização
 
 `test_init_discriminator.py` usa somente entradas sintéticas para o helper modelado em `tools/model_init_discriminator.py`. Verifica fronteiras da CLI e isolamento do bit relevante. Não valida o seletor inteiro, offsets USB ou escolha de payload no dispositivo.
+
+## Resumo de discriminante E1
+
+O teste nativo de ROM verifica o decoder de um bit para todos os valores possíveis, dados não permitidos, comprimentos e erros. A libusb simulada cobre schema 4, ambos os ramos e outro major, envio único E1 e recusa de respostas/falhas. Não há sensor na suíte.

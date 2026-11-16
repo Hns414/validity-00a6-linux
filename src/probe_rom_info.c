@@ -14,6 +14,8 @@
 #include "status_reply.h"
 
 static int summarize_requested;
+static int discriminator_requested;
+static struct rom_info_discriminator_candidate discriminator_candidate;
 static int cmd19_requested;
 static int cmd19_reply_observed;
 static int cmd19_has_status;
@@ -36,7 +38,7 @@ static void report(const char *status, const char *stage, int bytes)
     /* No raw response, serial, host/user identity, USB path or library error text. */
     printf("{\"schema_version\":%d,\"experiment\":\"%s\",\"status\":\"%s\","
            "\"stage\":\"%s\",\"received_bytes\":%d,\"biometric_support\":false",
-           cmd19_requested ? 3 : summarize_requested ? 2 : 1,
+           discriminator_requested ? 4 : cmd19_requested ? 3 : summarize_requested ? 2 : 1,
            cmd19_requested ? "E2" : "E1", status, stage, bytes);
     if (summarize_requested) {
         printf(",\"decode_status\":\"%s\",\"rom_info_candidate\":", decode_status);
@@ -46,6 +48,16 @@ static void report(const char *status, const char *stage, int bytes)
                    (unsigned int)candidate.firmware_build, candidate.firmware_major,
                    candidate.firmware_minor, candidate.product_code);
         else printf("null");
+    }
+    if (discriminator_requested) {
+        printf(",\"decode_status\":\"%s\",\"discriminator_candidate\":", decode_status);
+        if (strcmp(decode_status, "candidate_layout_unverified") == 0)
+            printf("{\"firmware_major\":%u,\"flag_0x20_set\":%s,\"derived_value\":%u}",
+                   discriminator_candidate.firmware_major,
+                   discriminator_candidate.flag_0x20_set ? "true" : "false",
+                   discriminator_candidate.derived_value);
+        else printf("null");
+        printf(",\"full_selection_evaluated\":false");
     }
     if (cmd19_requested) {
         printf(",\"command\":\"0x19\",\"candidate_status_zero\":%s,"
@@ -167,12 +179,14 @@ static const char *exchange(libusb_context *ctx, libusb_device_handle *handle,
 
 int main(int argc, char **argv)
 {
+    discriminator_requested = argc == 2 && strcmp(argv[1], "--summarize-init-discriminator") == 0;
     cmd19_requested = argc == 2 && strcmp(argv[1], "--probe-cmd19") == 0;
     summarize_requested = argc == 2 && strcmp(argv[1], "--summarize-rom-info") == 0;
-    if (argc != 2 || (!cmd19_requested && !summarize_requested && strcmp(argv[1], "--probe-rom-info") != 0)) {
+    if (argc != 2 || (!discriminator_requested && !cmd19_requested && !summarize_requested && strcmp(argv[1], "--probe-rom-info") != 0)) {
         puts("Experimental 138a:00a6 probe. Read docs/lab.md before hardware use.\n"
-             "Usage: probe-rom-info --probe-rom-info | --summarize-rom-info | --probe-cmd19\n"
+             "Usage: probe-rom-info --probe-rom-info | --summarize-rom-info | --summarize-init-discriminator | --probe-cmd19\n"
              "Summary emits only candidate build/version/product metadata, never raw bytes.\n"
+             "Discriminator summary emits major, one candidate flag bit and derived value; no payload selection.\n"
              "E1 sends 0x01, reads <=64 bytes. E2 sends only 0x19, reads <=128 bytes. No reset or subsequent initialization blocks.\n"
              "Response semantics are unvalidated. No USB access without the explicit flag.");
         return argc == 2 && strcmp(argv[1], "--help") == 0 ? 0 : 1;
@@ -248,6 +262,9 @@ int main(int argc, char **argv)
     }
     if (!status && summarize_requested)
         decode_status = rom_info_decode(response, (size_t)received, &candidate);
+    if (!status && discriminator_requested)
+        decode_status = rom_info_discriminator_decode(response, (size_t)received,
+                                                     &discriminator_candidate);
     /* Only allowlisted candidate fields may escape; never log raw response bytes. */
     memset(response, 0, sizeof(response));
     if (!status) status = received ? "reply_received_unvalidated" : "empty_reply";
@@ -258,6 +275,7 @@ finish:
         cmd19_reply_observed = 0;
         cmd19_has_status = 0;
         memset(&candidate, 0, sizeof(candidate));
+        memset(&discriminator_candidate, 0, sizeof(discriminator_candidate));
         stage = "cleanup";
     }
     if (handle) libusb_close(handle);

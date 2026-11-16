@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "method": "manual-static-dataflow-analysis",
+  "dll_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "chain": [
+    {
+      "rva": "0x64d38",
+      "observation": "calls 0x533a0 with destination buffer allocated as 0x1b bytes when absent"
+    },
+    {
+      "rva": "0x534ad",
+      "observation": "internal request 1, output pointer saved at completion context +0x18"
+    },
+    {
+      "rva": "0x534b5",
+      "observation": "installs completion 0x56830"
+    },
+    {
+      "rva": "0x116348",
+      "observation": "dispatcher table slot 1 points to handler 0x7df10"
+    },
+    {
+      "rva": "0x7df67",
+      "observation": "command 1; receive capacity 0x26 at 0x7df87; transport call 0x7dfc3"
+    },
+    {
+      "rva": "0x7dea8",
+      "observation": "common status path advances received data pointer by two"
+    },
+    {
+      "rva": "0x56a49",
+      "observation": "completion reads source +0x17 and stores destination +0x17 at 0x56a4f"
+    },
+    {
+      "rva": "0x64d71",
+      "observation": "stores populated output pointer at external context +0x28"
+    },
+    {
+      "rva": "0x8feea",
+      "observation": "discriminator reads internal +0x17; masks 0x20"
+    }
+  ],
+  "candidate_mapping": {
+    "raw_status_prefix_bytes": 2,
+    "body_offset": 23,
+    "raw_reply_offset": 25,
+    "bit_mask": 32
+  },
+  "live_validation": false,
+  "full_selector_validated": false,
+  "proprietary_payload_exported": false
+}

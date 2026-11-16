@@ -49,3 +49,7 @@ Cinco testes novos verificam vetores de referência, irrelevância dos outros se
 A origem e a cópia da estrutura interna apontada por +0x28 ainda precisam ser rastreadas até o tratamento da resposta. Não foi comprovada nesta etapa uma correspondência entre seu +0x17 e um offset do frame USB E1. O resumo E1 publicado não contém esse campo; não se pode inferir seu valor a partir de build, produto, bcdDevice ou tamanho da resposta.
 
 Nenhum novo campo foi adicionado ao probe ativo e não se solicita repetir E1. O próximo trabalho é verificar a origem e a normalização dessa estrutura; só então avaliar se uma observação mínima adicional é necessária. Efeitos do payload e recuperação permanecem pendentes.
+
+## Rastreio posterior até E1
+
+A [análise de origem](rom-discriminator.md) ligou o campo interno à resposta cleartext do handler 0x01. A opção schema 4 foi preparada para observar somente o bit candidato; sua execução no participante ainda está pendente. Isso refina a lacuna de mapeamento desta etapa sem resolver os demais filtros.

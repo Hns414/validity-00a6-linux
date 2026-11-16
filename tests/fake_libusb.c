@@ -143,6 +143,8 @@ int LIBUSB_CALL libusb_handle_events_timeout_completed(libusb_context *ctx, stru
         if (scenario("cmd19_error")) t->buffer[1] = 1;
         if (scenario("cmd19_short")) t->actual_length = 1;
         if (scenario("cmd19_different_length")) t->actual_length = 65;
+        if (scenario("discriminator_clear")) t->buffer[0x19] &= (unsigned char)~0x20u;
+        if (scenario("discriminator_other_major")) t->buffer[10] = 5;
         if (scenario("summary_error")) t->buffer[1] = 1;
         if (scenario("summary_short")) t->actual_length = 17;
         if (scenario("summary_long")) t->actual_length = 39;

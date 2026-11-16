@@ -66,3 +66,7 @@ O rastreamento estático chegou aos wrappers WinUSB e ao callback de resposta. I
 ## Contexto em v0.12.0-research
 
 Os predicados de transformação e duas escritas na flag interna foram registrados por análise estática. Não foi medido o contexto do leitor nem decodificado o conteúdo de inicialização. Esta etapa altera somente documentos; não requer compilação ou repetição dos testes E1/E2 pelo participante.
+
+## Observação adicional E1 em v0.16.0-research
+
+O [resumo do discriminante](rom-discriminator.md) está preparado e simulado. Ele repete somente 0x01 para observar um bit candidato, com schema 4; não executa init_00/init_04. Este é um novo teste útil no participante após as etapas offline; a saída real permanece pendente. Compartilhar somente JSON, sem captura bruta.

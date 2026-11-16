@@ -15,4 +15,13 @@ struct rom_info_candidate {
  * unknown fields, serials or trailing bytes are exported. */
 const char *rom_info_decode(const unsigned char *data, size_t length,
                             struct rom_info_candidate *out);
+struct rom_info_discriminator_candidate {
+    unsigned int firmware_major;
+    unsigned int flag_0x20_set;
+    unsigned int derived_value;
+};
+/* Candidate mapping for the cleartext 38-byte E1 layout. Exports one bit,
+ * never the complete internal flag byte. Does not perform full selection. */
+const char *rom_info_discriminator_decode(const unsigned char *data, size_t length,
+                             struct rom_info_discriminator_candidate *out);
 #endif

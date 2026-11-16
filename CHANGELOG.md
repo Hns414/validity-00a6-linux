@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.16.0-research — 2026-11-16
+
+- Origem do byte interno rastreada pelo handler 0x01 e callback de normalização até o offset candidato 0x19 da resposta completa.
+- Nova opção explícita --summarize-init-discriminator: mesma consulta E1, schema 4, major/um bit/valor derivado, sem seleção de payload.
+- Testes de privacidade, ramos, comprimentos e falhas; 59 testes aprovados e build concluído.
+- ASan/UBSan do decoder sem diagnóstico, com detecção de leaks desabilitada.
+- Resultado real do novo resumo pendente; nenhum bloco de inicialização habilitado.
+
 ## 0.15.0-research — 2026-11-16
 
 - Campo +0x34 ligado ao discriminante derivado do bit 0x20 de uma estrutura interna; distingue os registros de 500/484 bytes para major 6.

@@ -177,3 +177,9 @@ Uma varredura da tabela revelou duas entradas com 6.7/build 164 e máscara 0x400
 O [novo rastreamento](init-discriminator.md) liga o campo +0x34 ao helper 0x8feb0. Major 6 e bit 0x20 zerado no byte interno +0x17 resultam em 3 (entrada de 500 bytes); bit ativo resulta em 2 (484 bytes). Os registros não passam simultaneamente por esse predicado. +0x20 é carregado pelo consumidor, não é o filtro que distingue o par.
 
 O modelo offline original recebeu cinco testes; make test passou com 57 testes sem skips. Não há mapeamento confirmado do byte interno até o frame USB nem novo campo no probe. Próxima etapa: origem/normalização da estrutura interna; nenhum teste de hardware adicional nesta versão.
+
+## Origem do campo e resumo E1 específico
+
+O [rastreio de normalização](rom-discriminator.md) ligou solicitação interna 1, handler 0x7df10, remoção do status e callback 0x56830 ao buffer armazenado em contexto +0x28. O byte interno +0x17 é preservado a partir do conteúdo da resposta +0x17, correspondente ao offset candidato bruto 0x19.
+
+Preparada opção --summarize-init-discriminator com schema 4 e apenas major/bit/valor derivado. Consultas E1 e schemas anteriores mantidos; nenhuma emissão de init. 59 testes passaram sem skips, build concluído e ASan/UBSan do decoder passou sem detecção de leaks. Próxima evidência necessária: resultado mínimo do participante para esse campo, sem dump.

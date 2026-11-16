@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "analysis_method": "manual-diagnostic-anchor-and-reference-format-review",
+  "dll_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "anchors": [
+    {
+      "name": "CCaptureImage::Start",
+      "string_rva": "0x110a30",
+      "xref_rva": "0x125b1",
+      "enclosing_function": [
+        "0x124c0",
+        "0x14bb0"
+      ]
+    },
+    {
+      "name": "CCaptureImage::WaitForFinger",
+      "string_rva": "0x110a10",
+      "xref_rva": "0x14d3c",
+      "enclosing_function": [
+        "0x14ce0",
+        "0x1569a"
+      ]
+    },
+    {
+      "name": "CCaptureImage::forceFingerUp",
+      "string_rva": "0x1109d0",
+      "xref_rva": "0x1576f",
+      "enclosing_function": [
+        "0x1570c",
+        "0x15eb5"
+      ]
+    }
+  ],
+  "anchor_limit": "Names come from diagnostic strings; enclosing ranges from pdata, not proof of full semantics or USB route",
+  "reference_format": {
+    "repository": "https://gitlab.freedesktop.org/libfprint/libfprint",
+    "commit": "8b6e4e39bee58de2774222e3730269def470b157",
+    "registered_usb_id": "138a:0091",
+    "header_bytes": 6,
+    "payload_length_offset": 2,
+    "payload_length_endianness": "little",
+    "width": 112,
+    "height": 112,
+    "control_bytes_per_row": 8,
+    "row_bytes": 120
+  },
+  "target_00a6_format_validated": false,
+  "original_offline_component": {
+    "path": "src/capture_chunk.c",
+    "pixels_copied": false,
+    "hardware_probe_linked": false,
+    "stricter_shape_checks": [
+      "exact standalone frame length",
+      "nonempty whole rows",
+      "bounded row accumulation"
+    ]
+  },
+  "hardware_capture_enabled": false
+}

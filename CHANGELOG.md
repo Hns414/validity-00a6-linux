@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.25.0-research — 2026-11-16
+
+- Anchors de Start/WaitForFinger/forceFingerUp localizados, com limites de interpretação explícitos.
+- Inspetor C original offline de formato candidato 0091, somente contagens; sem copiar pixels ou link no probe.
+- Validação estrita de comprimentos, linhas inteiras e acumulação; 68 testes aprovados.
+- ASan/UBSan sem diagnóstico, com detecção de leaks desabilitada. Formato 00a6 e captura real pendentes.
+
 ## 0.24.0-research — 2026-11-16
 
 - Handler de init delimitado como montagem/cópia, sem interpretação do corpo naquele trecho.

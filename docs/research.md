@@ -231,3 +231,9 @@ Nenhum consumidor público do corpo foi localizado nesta busca. O resultado é u
 A [análise do handler/callback](init-completion.md) liga 2 + 0x20 à capacidade inicial de recepção em descritor passado por referência ao transporte. O callback de conclusão armazena status traduzido e sinaliza espera, sem ler o corpo. Nenhum tamanho exato de resposta ou efeito de patch foi demonstrado por isso.
 
 O handler copia argumentos opacos para o frame; não contém decoder do corpo no trecho examinado. Limite local da análise, sem afirmar ausência global de parser na DLL. Somente documentação/evidência, sem novos testes ou comando ativo.
+
+## Base offline de captura
+
+A [nova base](capture-foundation.md) localiza anchors de diagnóstico Dell relacionados a iniciar captura, aguardar dedo e forçar retirada; os nomes ainda não provam os comandos reais. A referência 0091 fornece geometria e formato candidato de blocos, não validados para 00a6.
+
+Componente C original inspeciona somente contagens, sem cópia de pixels e sem link no probe. O teste sintético cobre limites, linhas parciais, status e ausência de influência do corpo na saída; 68 testes e ASan/UBSan passaram, sem detecção de leaks. Próximo trabalho no caminho de comandos/eventos, ainda sem teste com dedo.

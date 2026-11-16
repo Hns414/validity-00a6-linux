@@ -39,7 +39,7 @@ Run `python3 tools/collect_usb_metadata.py` without sudo. It reads cached sysfs 
 
 The upstream open path resets USB and sends opaque initialization blocks. Its receive macros, endpoint transfer types and cancellation behavior need review before porting. An experimental single-query probe is now implemented and tested against a USB simulator. The participant reported a 38-byte reply from the target sensor; four candidate metadata fields have since been reported and match the selected upstream example fields; no raw reply has been inspected. See the [first hardware test](docs/first-hardware-test.md) before running it.
 
-Run offline checks with `python3 -m unittest discover -s tests -v`. The current suite has 67 tests for metadata privacy, source inventory parsing and a simulated libusb transport. Probe simulation requires a C compiler, pkg-config and libusb development headers; those tests are explicitly skipped if unavailable. No tests validate biometric support.
+Run offline checks with `python3 -m unittest discover -s tests -v`. The current suite has 68 tests for metadata privacy, source inventory parsing and a simulated libusb transport. Probe simulation requires a C compiler, pkg-config and libusb development headers; those tests are explicitly skipped if unavailable. No tests validate biometric support.
 
 ## Experimental hardware probe
 
@@ -120,6 +120,10 @@ The [primary-document review](docs/vendor-security-context.md) separates transpo
 ## Initialization completion contract
 
 The [handler/completion analysis](docs/init-completion.md) distinguishes copied patch arguments, an initial receive capacity of 34 bytes and a callback that stores translated status without parsing the reply body. These facts do not establish exact reply length, patch effects or capture readiness.
+
+## Offline capture groundwork
+
+The [capture groundwork](docs/capture-foundation.md) locates Dell diagnostic anchors for starting capture and waiting for a finger. An original offline inspector validates a strict candidate chunk shape from the 0091 reference and returns only counts, without copying pixels. The format is unverified on 00a6 and no capture command is enabled.
 
 ## Licensing
 

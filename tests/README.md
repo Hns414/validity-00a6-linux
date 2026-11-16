@@ -91,3 +91,7 @@ O teste nativo de ROM verifica o decoder de um bit para todos os valores possív
 ## Inventário opcional de write-enable
 
 O parser de literais inclui db_write_enable somente quando solicitado. Os testes verificam separação do init apesar de prefixo comum e recusa de expressões dinâmicas/duplicadas. Nenhum bloco é executado.
+
+## Inspetor offline de bloco candidato de captura
+
+`test_capture_chunk.c` usa somente dados sintéticos do formato de referência 0091. Verifica limites de comprimento, linhas inteiras, acumulação sem overflow e saída sem pixels. O componente não está ligado ao probe e não valida o formato do 00a6.

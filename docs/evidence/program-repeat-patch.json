@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "method": "manual-static-repeat-patch-and-original-offline-impact-model",
+  "dll_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "checked_call_edges": [
+    {
+      "call_rva": "0x657c7",
+      "target_rva": "0x4ee00"
+    },
+    {
+      "call_rva": "0x82ff3",
+      "target_rva": "0x4ee00"
+    },
+    {
+      "call_rva": "0x82f90",
+      "target_rva": "0x70db0"
+    },
+    {
+      "call_rva": "0x8303f",
+      "target_rva": "0x70db0"
+    }
+  ],
+  "factor_source": {
+    "metadata_table_rva": "0x115030",
+    "record_bytes": 168,
+    "record_count": 29,
+    "factor_field": "0x14",
+    "context_field": "0x294",
+    "context_store_rva": "0x65809"
+  },
+  "patch": {
+    "routine_rva": "0x82eb0",
+    "repeat_pattern": "opcode & 0xf8 == 0x10",
+    "repeat_threshold": 1,
+    "byte_product_store_rva": "0x8313d",
+    "address_increment_store_rva": "0x8316c",
+    "counter_store_rva": "0x83207",
+    "scan_continues_while_remaining_at_least": 3
+  },
+  "conditional_examples": [
+    {
+      "candidate_type": "0xdb",
+      "program_index": 2,
+      "metadata_index": 0,
+      "factor": 1,
+      "impact_no_address_increment": {
+        "schema_version": 1,
+        "model": "candidate-repeat-patch-impact",
+        "effective_multiplier": 1,
+        "eligible_repeat_sites": 5,
+        "repeat_byte_overflow_sites": 0,
+        "address_byte_overflow_sites": 0,
+        "counter_u32_overflow": false,
+        "inspected_prefix_bytes": 15,
+        "uninspected_bytes": 761,
+        "program_modified": false,
+        "hardware_validated": false
+      },
+      "impact_with_address_increment": {
+        "schema_version": 1,
+        "model": "candidate-repeat-patch-impact",
+        "effective_multiplier": 1,
+        "eligible_repeat_sites": 5,
+        "repeat_byte_overflow_sites": 0,
+        "address_byte_overflow_sites": 0,
+        "counter_u32_overflow": false,
+        "inspected_prefix_bytes": 15,
+        "uninspected_bytes": 761,
+        "program_modified": false,
+        "hardware_validated": false
+      }
+    },
+    {
+      "candidate_type": "0xed",
+      "program_index": 4,
+      "metadata_index": 2,
+      "factor": 2,
+      "impact_no_address_increment": {
+        "schema_version": 1,
+        "model": "candidate-repeat-patch-impact",
+        "effective_multiplier": 2,
+        "eligible_repeat_sites": 5,
+        "repeat_byte_overflow_sites": 0,
+        "address_byte_overflow_sites": 0,
+        "counter_u32_overflow": false,
+        "inspected_prefix_bytes": 127,
+        "uninspected_bytes": 245,
+        "program_modified": false,
+        "hardware_validated": false
+      },
+      "impact_with_address_increment": {
+        "schema_version": 1,
+        "model": "candidate-repeat-patch-impact",
+        "effective_multiplier": 2,
+        "eligible_repeat_sites": 5,
+        "repeat_byte_overflow_sites": 0,
+        "address_byte_overflow_sites": 0,
+        "counter_u32_overflow": false,
+        "inspected_prefix_bytes": 127,
+        "uninspected_bytes": 245,
+        "program_modified": false,
+        "hardware_validated": false
+      }
+    }
+  ],
+  "program_modified": false,
+  "participant_selection_verified": false,
+  "usb_transfer_performed": false
+}

@@ -176,3 +176,5 @@ A [ordem do transporte de 0x75](docs/query75-transport-order.md) separa prepara�
 O [registro da tabela de programas](docs/program-table-registration.md) corrige a categoria para 1 e inventaria 21 entradas estáticas, sem publicar payloads.
 
 A [reconstrução dos programas](docs/program-materialization.md) encontrou igualdade integral pública em 17/21 entradas e acrescentou comparador offline; suíte com 97 testes.
+
+A [análise de repetição dos programas](docs/program-repeat-patch.md) liga fatores ao tipo e acrescenta auditor offline sem mutação; suíte com 103 testes.

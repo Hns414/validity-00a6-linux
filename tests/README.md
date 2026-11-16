@@ -107,3 +107,5 @@ O parser de literais inclui db_write_enable somente quando solicitado. Os testes
 `test_capture_chunks.py` verifica o inspetor offline de sequências tipo/tamanho: truncamentos, cabeçalhos, limites e omissão de conteúdo. A suíte completa tem 91 testes.
 
 `test_capture_programs.py` cobre fragmentos empacotados, limites de leitura e extração de literais públicos sem execução. A suíte completa tem 97 testes.
+
+`test_program_repeats.py` verifica fronteiras e possíveis truncamentos do auditor de repetição, sem alterar programas ou acessar USB. A suíte completa tem 103 testes.

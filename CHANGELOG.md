@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.47.0-research — 2026-11-16
+
+- Fator de repetição ligado aos metadados do tipo; exemplos 0xdb=1 e 0xed=2.
+- Ajustes de 0x34 separados da preservação condicional do contador 0x2f.
+- Auditor original offline reporta impacto/truncamentos sem modificar programas.
+- Seis testes novos; 103 aprovados sem skips. Sem novo comando no probe.
+
 ## 0.46.0-research — 2026-11-16
 
 - Layout estático de fragmentos distinguido do descritor mutável de programa.

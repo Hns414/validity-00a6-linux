@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.18.0-research — 2026-11-16
+
+- Varredura dos 75 registros deixa somente entrada 55 sob valores candidatos e gate de abertura explícitos.
+- Consumidor de máscara 0x4000 pula cache local; papel de +0x20 delimitado e chamada preparatória 0x537b0 pendente.
+- Encoder offline ampliado para 484/500 argumentos, sem link no probe; teste de limites/sobreposição ampliado.
+- 59 testes aprovados; ASan/UBSan do encoder sem diagnóstico, sem detecção de leaks.
+- Nenhuma inicialização USB ou novo teste de hardware.
+
 ## 0.17.0-research — 2026-11-16
 
 - Participante relatou E1 schema 4: 38 bytes, major 6, bit ativo e discriminante 2, após 59 testes aprovados.

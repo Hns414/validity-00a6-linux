@@ -54,3 +54,7 @@ A [análise de transporte e status](transport-and-status.md) resolveu a instala�
 ## Próxima investigação
 
 Determinar as condições de contexto que escolhem transformação ou passagem do frame no caminho USB já identificado. Em paralelo, determinar a função e os efeitos do conteúdo carregado no sensor. Compor corretamente um frame não torna seguro enviá-lo: as condições de seleção, os efeitos internos e a recuperação continuam pendentes. Nenhum teste adicional é solicitado ao participante nesta etapa.
+
+## Ampliação para o ramo de 484 argumentos
+
+Em v0.18 o encoder offline passou a aceitar também 484 argumentos, além dos 500 originais. O [rastreio do consumidor](init-484-selection.md) delimita as condições para esse ramo. Os contratos de falha sem alteração e sobreposição continuam testados; nenhum dos tamanhos é enviado pelo probe.

@@ -5,9 +5,10 @@
 int validity_encode_init_frame(const uint8_t *arguments, size_t length,
                                uint8_t *output, size_t capacity)
 {
-    if (!arguments || !output || length != 500 || capacity < 501)
+    if (!arguments || !output || (length != 484 && length != 500) ||
+        capacity < length+1)
         return 0;
-    memmove(output+1, arguments, 500);
+    memmove(output+1, arguments, length);
     output[0] = 0x06;
-    return 501;
+    return (int)(length+1);
 }

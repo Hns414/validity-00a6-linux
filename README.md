@@ -93,6 +93,10 @@ The [selector refinement](docs/init-discriminator.md) identifies an internal bit
 
 The [participant result and 484-byte comparison](docs/init-484.md) show discriminator 2, which excludes the known 500-byte record under this predicate and admits the 484-byte record at this filter. The latter exactly matches the public python-validity `blobs_90.py` init arguments. Full selection, payload effects and biometric support remain unverified; no init executor is enabled.
 
+## Conditional 484-byte selection
+
+The [table and consumer analysis](docs/init-484-selection.md) leaves only record 55 under the reported candidate values and the opening path’s mandatory gate. This is a conditional static result, not observed runtime selection. The offline encoder now accepts 484 or 500 arguments and remains disconnected from USB; the preparatory call and payload effects are unresolved.
+
 ## Licensing
 
 Project-authored code and documentation are licensed under **LGPL-2.1-or-later**; see [LICENSE](LICENSE). This matches the inspected upstream VFS7552 driver's license. Third-party materials retain their own terms. The Dell package and its INF are not redistributed. No upstream driver code has been copied into this project.

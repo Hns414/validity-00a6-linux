@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "method": "bounded-hash-pinned-table-filtering-plus-manual-control-flow",
+  "dll_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "table_rva": "0x13dad0",
+  "entries_inspected": 75,
+  "null_terminator_checked": true,
+  "assumed_inputs": {
+    "major": 6,
+    "minor": 7,
+    "build": 164,
+    "required_mask": "0x4000",
+    "excluded_mask": 0,
+    "caller_parameter": 0,
+    "discriminator": 2
+  },
+  "input_basis": "Version/build from earlier participant E1; discriminator from schema 4. Not one atomic response snapshot.",
+  "stages": [
+    {
+      "filter": "required_mask_0x4000",
+      "remaining_indices": [
+        19,
+        55
+      ]
+    },
+    {
+      "filter": "version_6_7_164",
+      "remaining_indices": [
+        19,
+        55
+      ]
+    },
+    {
+      "filter": "caller_parameter_zero",
+      "remaining_indices": [
+        19,
+        55
+      ]
+    },
+    {
+      "filter": "discriminator_two",
+      "remaining_indices": [
+        55
+      ]
+    }
+  ],
+  "remaining_record": {
+    "table_index": 55,
+    "rva": "0x13d490",
+    "fields": {
+      "0x10": 6,
+      "0x14": 7,
+      "0x18": 164,
+      "0x1c": 65535,
+      "0x20": 1,
+      "0x24": 5,
+      "0x28": 4,
+      "0x2c": 16384,
+      "0x30": 0,
+      "0x34": 2,
+      "0x38": 65535,
+      "0x3c": 1,
+      "0x40": 65535,
+      "0x44": 484
+    }
+  },
+  "opening_gate": {
+    "load_rva": "0x64d7a",
+    "compare_rva": "0x64d7e",
+    "required_internal_byte_0a": 1,
+    "failure_exit_rva": "0x64d9f"
+  },
+  "consumer": {
+    "routine_rva": "0x62ad0",
+    "mask_classifier_rva": "0x63f00",
+    "mask_4000_classifier_return": 1,
+    "cache_path_bypass_branch": "0x62ba7",
+    "pre_send_call_rva": "0x62d27",
+    "pre_send_target_rva": "0x537b0",
+    "request_7_wrapper_call_rva": "0x62da5",
+    "request_7_wrapper_rva": "0x53560",
+    "parameter_20_cache_update_skipped_for_mask_4000": true
+  },
+  "runtime_full_selection_observed": false,
+  "payload_effects_decoded": false,
+  "initialization_usb_enabled": false
+}

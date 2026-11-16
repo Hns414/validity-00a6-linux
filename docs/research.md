@@ -189,3 +189,9 @@ Preparada opção --summarize-init-discriminator com schema 4 e apenas major/bit
 O [relato sanitizado e a comparação](init-484.md) registram o E1 schema 4 do participante em 9d429de: major 6, bit 0x20 ativo, valor derivado 2 e 38 bytes. Isso exclui a entrada 19 pelo filtro +0x34 e admite a 55 por esse filtro, sem concluir seleção global. Os 59 testes passaram no host conforme relato.
 
 Os 484 argumentos da entrada 55 coincidem integralmente com o init_hardcoded público de blobs_90.py sem opcode; acrescentar 0x06 produz o frame público de 485 bytes e mesmo hash. A localização em família 90 não implica compatibilidade do restante do protocolo. Etapa somente documental; próximo trabalho offline nos filtros e consumidor, sem repetir hardware.
+
+## Seleção condicional única e consumidor
+
+A [varredura completa da tabela](init-484-selection.md) deixa somente entrada 55 sob máscara 0x4000, versão 6.7/build 164, argumento zero e discriminante 2. Os outros filtros são wildcards ou exigem byte interno +0x0a igual a 1, valor já exigido pelo gate anterior no mesmo fluxo de abertura. As premissas vêm de relatos separados, sem snapshot atômico; a seleção runtime não foi observada.
+
+O consumidor classifica máscara 0x4000 com retorno 1 e pula consulta/atualização de cache do host. Não foi observada incorporação de +0x20 ao frame nesse caminho. A chamada 0x537b0 antes da requisição 7 permanece por investigar. Encoder offline aceita agora 484/500 argumentos; 59 testes e ASan/UBSan passaram, com detecção de leaks desabilitada. Nenhum novo comando ativo ou teste de hardware.

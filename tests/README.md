@@ -105,3 +105,5 @@ O parser de literais inclui db_write_enable somente quando solicitado. Os testes
 `test_capture_reply.py` cobre o corpo candidato de resposta: assinatura, contagens excessivas, truncamento, orçamento e omissão do conteúdo. A suíte completa tem 85 testes; não realiza USB.
 
 `test_capture_chunks.py` verifica o inspetor offline de sequências tipo/tamanho: truncamentos, cabeçalhos, limites e omissão de conteúdo. A suíte completa tem 91 testes.
+
+`test_capture_programs.py` cobre fragmentos empacotados, limites de leitura e extração de literais públicos sem execução. A suíte completa tem 97 testes.

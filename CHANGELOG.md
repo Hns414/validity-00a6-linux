@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.46.0-research — 2026-11-16
+
+- Layout estático de fragmentos distinguido do descritor mutável de programa.
+- Ferramenta original reconstrói programas offline: 17/21 entradas coincidem com referências públicas fixadas.
+- Entradas de tipos candidatos 0xdb/0xed ligadas a programas públicos de 1044/644 bytes, sem seleção do participante.
+- Seis testes novos; 97 aprovados sem skips. Probe ativo inalterado.
+
 ## 0.45.0-research — 2026-11-16
 
 - Corrigida categoria do seletor de programas para 1, conforme argumento do wrapper.

@@ -36,3 +36,5 @@ Os registros estáticos não devem ser interpretados diretamente como a estrutur
 Foi localizado o vínculo da categoria correta à tabela estática e inventariadas suas entradas. A lacuna seguinte é reconstruir os campos posteriores dos registros, a montagem/obtenção dos buffers e a preferência do seletor para tipos candidatos. Não usar a hipótese 0xdb como seleção real do participante.
 
 Três destinos de chamadas, o argumento de categoria, o endereço da tabela e seu terminador foram conferidos no binário fixado. O registro nas listas continua análise manual, sem observação em runtime. Somente documentos/evidência: mantém a base de **91 testes aprovados na v0.37**, sem nova execução da suíte. Nenhum novo comando no probe ou teste com dedo.
+
+A [continuação do materializador](program-materialization.md) resolve os campos posteriores e reconstrói os buffers para comparação pública, sem selecionar o programa do participante.

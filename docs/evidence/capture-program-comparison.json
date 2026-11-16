@@ -1,0 +1,216 @@
+{
+  "dll_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "participant_selection_verified": false,
+  "public_commit": "a6bbc21dce7b8b3c3cd92378a0b2579a2fb45920",
+  "public_program_count": 42,
+  "records": [
+    {
+      "exact_public_program_indices": [
+        17
+      ],
+      "fragment_count": 2,
+      "program_bytes": 840,
+      "program_sha256": "458ea6fcb268da1e4b1544c9e1b9b42652eb1f2fafb2268edb88fbc61e4bf9c4",
+      "record_rva": "0x1be0b0",
+      "table_index": 0
+    },
+    {
+      "exact_public_program_indices": [],
+      "fragment_count": 2,
+      "program_bytes": 648,
+      "program_sha256": "9476a5efebe82e4b117571c15052e51adb10533f1b2ddf6f9de39aee48444123",
+      "record_rva": "0x1be110",
+      "table_index": 1
+    },
+    {
+      "exact_public_program_indices": [
+        41
+      ],
+      "fragment_count": 2,
+      "program_bytes": 1044,
+      "program_sha256": "d2df1fb04f56e7e1ecb027edfc0dd6b71a90abc0d7036618ba0458869651fbc9",
+      "record_rva": "0x1be170",
+      "table_index": 2
+    },
+    {
+      "exact_public_program_indices": [
+        20
+      ],
+      "fragment_count": 2,
+      "program_bytes": 828,
+      "program_sha256": "0c2db1bc9df67c1058de7c4e4bf321be9bf5d88282d675af6ec7b39f0cc20e4c",
+      "record_rva": "0x1be1d0",
+      "table_index": 3
+    },
+    {
+      "exact_public_program_indices": [
+        15
+      ],
+      "fragment_count": 2,
+      "program_bytes": 644,
+      "program_sha256": "c67e8ecfb38921fc3d9bb96e4e4c205f731de325c9075aa419300295ed2dab63",
+      "record_rva": "0x1be230",
+      "table_index": 4
+    },
+    {
+      "exact_public_program_indices": [
+        32
+      ],
+      "fragment_count": 3,
+      "program_bytes": 2372,
+      "program_sha256": "74a8832828fc71671d26a17a0ca797fe7eac829247213bf7ca783c4d1f3682c3",
+      "record_rva": "0x1be270",
+      "table_index": 5
+    },
+    {
+      "exact_public_program_indices": [],
+      "fragment_count": 2,
+      "program_bytes": 644,
+      "program_sha256": "ad37fc70654cb753e5a6356de155826e1c0417d7bcaac9ff488627cfe65ee1c9",
+      "record_rva": "0x1be2d0",
+      "table_index": 6
+    },
+    {
+      "exact_public_program_indices": [
+        33
+      ],
+      "fragment_count": 3,
+      "program_bytes": 2372,
+      "program_sha256": "c171d0056c24b2f00f73ae4d8fc4c01e12d2d5b4e2d6d5e25640057a180e5bef",
+      "record_rva": "0x1be338",
+      "table_index": 7
+    },
+    {
+      "exact_public_program_indices": [],
+      "fragment_count": 2,
+      "program_bytes": 644,
+      "program_sha256": "a6d3bc3efa16e0a9fba8126d29e367113c5231725eea89c94e238f62b6cf6ee8",
+      "record_rva": "0x1be398",
+      "table_index": 8
+    },
+    {
+      "exact_public_program_indices": [
+        19
+      ],
+      "fragment_count": 2,
+      "program_bytes": 796,
+      "program_sha256": "728b5e7db5a35d777dc9e26b5948375437d03d07d48bcaf18b57ff25dbc51458",
+      "record_rva": "0x1be3f8",
+      "table_index": 9
+    },
+    {
+      "exact_public_program_indices": [],
+      "fragment_count": 2,
+      "program_bytes": 644,
+      "program_sha256": "eb5ae272406eecf939eea5cfc156ffe57aabe4f01267448fd383fd411529db16",
+      "record_rva": "0x1be458",
+      "table_index": 10
+    },
+    {
+      "exact_public_program_indices": [
+        26,
+        27
+      ],
+      "fragment_count": 3,
+      "program_bytes": 1688,
+      "program_sha256": "4d18a04e3bf25c3a08bc458a4662d4c87498486edd25fd6d2c5c02b9a84f50b1",
+      "record_rva": "0x1be4c0",
+      "table_index": 11
+    },
+    {
+      "exact_public_program_indices": [
+        26,
+        27
+      ],
+      "fragment_count": 3,
+      "program_bytes": 1688,
+      "program_sha256": "4d18a04e3bf25c3a08bc458a4662d4c87498486edd25fd6d2c5c02b9a84f50b1",
+      "record_rva": "0x1be528",
+      "table_index": 12
+    },
+    {
+      "exact_public_program_indices": [
+        30,
+        31
+      ],
+      "fragment_count": 3,
+      "program_bytes": 1688,
+      "program_sha256": "578b5dde6946645d13139c036931fd932eb55f7133e220d7febf688b09f946f3",
+      "record_rva": "0x1be590",
+      "table_index": 13
+    },
+    {
+      "exact_public_program_indices": [
+        30,
+        31
+      ],
+      "fragment_count": 3,
+      "program_bytes": 1688,
+      "program_sha256": "578b5dde6946645d13139c036931fd932eb55f7133e220d7febf688b09f946f3",
+      "record_rva": "0x1be5f8",
+      "table_index": 14
+    },
+    {
+      "exact_public_program_indices": [
+        34
+      ],
+      "fragment_count": 3,
+      "program_bytes": 2372,
+      "program_sha256": "5c129b021f51ba0ce42ddf55d6026a02d514f0647af843147a225e14ab4c3660",
+      "record_rva": "0x1be660",
+      "table_index": 15
+    },
+    {
+      "exact_public_program_indices": [
+        35
+      ],
+      "fragment_count": 3,
+      "program_bytes": 2372,
+      "program_sha256": "2c7067d4186f0353086231ea20014ff5963f617905a82c82f68746e1218fb1de",
+      "record_rva": "0x1be6c8",
+      "table_index": 16
+    },
+    {
+      "exact_public_program_indices": [
+        13
+      ],
+      "fragment_count": 2,
+      "program_bytes": 644,
+      "program_sha256": "34cf4c9a72f5a046a39301fbd5d455509018f8ff10f7e878be4d6bab304036cf",
+      "record_rva": "0x1be728",
+      "table_index": 17
+    },
+    {
+      "exact_public_program_indices": [
+        16
+      ],
+      "fragment_count": 2,
+      "program_bytes": 832,
+      "program_sha256": "5a460fae7b0c9254264ceaf0ec8a3937403652e06ad446a027a349bb21828aa6",
+      "record_rva": "0x1be788",
+      "table_index": 18
+    },
+    {
+      "exact_public_program_indices": [
+        13
+      ],
+      "fragment_count": 2,
+      "program_bytes": 644,
+      "program_sha256": "34cf4c9a72f5a046a39301fbd5d455509018f8ff10f7e878be4d6bab304036cf",
+      "record_rva": "0x1be7e8",
+      "table_index": 19
+    },
+    {
+      "exact_public_program_indices": [
+        12
+      ],
+      "fragment_count": 2,
+      "program_bytes": 644,
+      "program_sha256": "bae485fd5c1d235c81ea67a917a610c9824bafa5cb84330c7a8b08fe02912813",
+      "record_rva": "0x1be848",
+      "table_index": 20
+    }
+  ],
+  "schema_version": 1,
+  "usb_transfer_performed": false
+}

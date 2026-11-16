@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "method": "manual-static-materialization-and-ranking-with-checked-calls",
+  "dll_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "checked_call_edges": [
+    {
+      "call_rva": "0x90a5a",
+      "target_rva": "0xd53f0"
+    },
+    {
+      "call_rva": "0x90bc6",
+      "target_rva": "0xd53f0"
+    },
+    {
+      "call_rva": "0x90c4f",
+      "target_rva": "0xd54b0"
+    }
+  ],
+  "static_descriptor": {
+    "fragment_list_pointer_offset": "0x34",
+    "packed_fragment_record_bytes": 10,
+    "fragment_size_offset": 0,
+    "fragment_pointer_offset": 2,
+    "terminator": "null fragment pointer"
+  },
+  "runtime_descriptor": {
+    "allocated_bytes": 64,
+    "copied_metadata_bytes": 52,
+    "assembled_program_size_offset": "0x34",
+    "assembled_program_pointer_offset": "0x38"
+  },
+  "preference": {
+    "version_components": [
+      "major",
+      "minor",
+      "build",
+      "internal_byte_0f"
+    ],
+    "weights": [
+      64,
+      16,
+      4,
+      1
+    ],
+    "greater_score_replaces": true,
+    "equal_score_keeps_first": true,
+    "full_selection_on_participant_verified": false
+  },
+  "comparison_record": "capture-program-comparison.json",
+  "usb_transfer_performed": false
+}

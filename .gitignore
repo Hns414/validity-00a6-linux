@@ -1,0 +1,21 @@
+# Local/private research material
+/private/
+/artifacts/
+/vendor/
+/captures/
+*.pcap
+*.pcapng
+*.bin
+*.exe
+*.EXE
+*.dll
+*.sys
+*.key
+*.pem
+.env
+.env.*
+__pycache__/
+*.py[cod]
+.venv/
+build/
+*.log

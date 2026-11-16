@@ -48,10 +48,11 @@
   "table_source": {
     "obtained_by_wrapper_rva": "0x63470",
     "lookup_rva": "0x64750",
-    "lookup_category": 2,
+    "lookup_category": 1,
     "full_table_provenance_identified": false
   },
   "participant_internal_type_identified": false,
   "runtime_program_selection_observed": false,
-  "usb_transfer_performed": false
+  "usb_transfer_performed": false,
+  "category_corrected_in_version": "0.45.0-research"
 }

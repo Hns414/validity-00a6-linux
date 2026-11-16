@@ -172,3 +172,5 @@ O [callback e mapeamento de 0x75](docs/query75-callback-mapping.md) separa corpo
 A [conferência pública de 0x75](docs/query75-public-crosscheck.md) corrige o mapper para o segundo DWORD e delimita o contexto TLS do fluxo público.
 
 A [ordem do transporte de 0x75](docs/query75-transport-order.md) separa preparação, reaproveitamento de contexto e decisão de transformar o buffer.
+
+O [registro da tabela de programas](docs/program-table-registration.md) corrige a categoria para 1 e inventaria 21 entradas estáticas, sem publicar payloads.

@@ -33,7 +33,7 @@ Isso não demonstra execução completa da abertura, presença da tabela de prog
 - **Classe de contexto 1:** resultado desta tabela de mapeamento.
 - **Campo +0x128:** identificador usado na seleção de programas, ainda sem valor identificado para o participante.
 
-O mapeamento 0x30 → 1 não fornece +0x128. Nos trechos examinados, esse último recebe um valor armazenado por outra operação em 0x63319. A origem completa dessa operação, suas alternativas e o valor final continuam pendentes. Também não foi resolvido quem registra a tabela recuperada por categoria 2 nas listas do host.
+O mapeamento 0x30 → 1 não fornece +0x128. Nos trechos examinados, esse último recebe um valor armazenado por outra operação em 0x63319. A origem completa dessa operação, suas alternativas e o valor final continuam pendentes. Também não foi resolvido quem registra a tabela recuperada por categoria 1 (corrigida na v0.45) nas listas do host.
 
 ## Validação e próximo passo
 

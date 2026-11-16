@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.45.0-research — 2026-11-16
+
+- Corrigida categoria do seletor de programas para 1, conforme argumento do wrapper.
+- Inicializador ligado à tabela estática 0x1be890: 21 entradas e terminador nulo conferidos.
+- Produtor dos nós de categoria localizado; layouts posteriores e seleção real pendentes.
+- Somente documentação/evidência, sem novo comando USB.
+
 ## 0.44.0-research — 2026-11-16
 
 - Ordem condicional de preparação de transporte antes da identificação 0x75 delimitada.

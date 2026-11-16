@@ -22,7 +22,7 @@ A proximidade do par 0x18/0x19 com a referência pública `SensorCaptureProg.get
 
 ## Tabela fornecida ao seletor
 
-Antes da seleção, 0x63620 chama 0x63470 em 0x636a7 para obter a tabela. Esse wrapper consulta **0x64750 com categoria 2**. A rotina percorre listas do host, compara um campo de categoria e outro associado ao contexto +0x23c e retorna um objeto encontrado.
+Antes da seleção, 0x63620 chama 0x63470 em 0x636a7 para obter a tabela. Esse wrapper consulta **0x64750 com categoria 1**. A rotina percorre listas do host, compara um campo de categoria e outro associado ao contexto +0x23c e retorna um objeto encontrado.
 
 O seletor 0x906e0 recebe uma tabela de ponteiros e a percorre até ponteiro nulo. Examina campos com curingas 0xffff e atributos do contexto. A classificação completa, a preferência e o produtor das listas ainda não foram reconstruídos nesta etapa. Não publicar um índice escolhido para o participante sem resolver essas dependências.
 
@@ -35,3 +35,5 @@ Ficou identificado um produtor concreto do descritor consumido no builder, seu a
 Seis destinos de chamadas e a instrução de armazenamento foram conferidos no binário fixado. O fluxo e os papéis continuam análise manual, sem seleção observada em runtime. Somente documentos/evidência: mantém a base de **91 testes aprovados na v0.37**, sem nova execução da suíte. Probe inalterado, sem teste com dedo.
 
 A [origem da classe de contexto](product-context-class.md) foi ligada à tabela de produtos da ROM; isso não identifica o tipo interno nem o registro da tabela de programas.
+
+A [análise do registro das tabelas](program-table-registration.md) corrige a categoria para 1 e localiza a tabela estática de 21 entradas.

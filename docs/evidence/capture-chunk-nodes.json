@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "method": "manual-static-node-and-chunk-lookup-with-checked-calls",
+  "dll_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "checked_call_edges": [
+    {
+      "call_rva": "0x7ca38",
+      "target_rva": "0x82eb0"
+    },
+    {
+      "call_rva": "0x82f90",
+      "target_rva": "0x70db0"
+    },
+    {
+      "call_rva": "0x8303f",
+      "target_rva": "0x70db0"
+    },
+    {
+      "call_rva": "0x7ca64",
+      "target_rva": "0x87910"
+    },
+    {
+      "call_rva": "0x8797e",
+      "target_rva": "0x877f0"
+    },
+    {
+      "call_rva": "0x878d0",
+      "target_rva": "0xd54b0"
+    },
+    {
+      "call_rva": "0x70e51",
+      "target_rva": "0xd54b0"
+    }
+  ],
+  "lookup": {
+    "rva": "0x70db0",
+    "header_bytes": 4,
+    "type_field": "little-endian-uint16 at +0",
+    "content_size_field": "little-endian-uint16 at +2",
+    "advance_rva": "0x70ea4",
+    "advance": "4 + content_size",
+    "bounds_check_rva": "0x70e6d"
+  },
+  "empty_chunk_constructor": {
+    "rva": "0x87910",
+    "header_bytes": 4,
+    "content_size": 0,
+    "node_allocator_call_rva": "0x8797e"
+  },
+  "node_storage": {
+    "allocator_rva": "0x877f0",
+    "host_metadata_bytes": 32,
+    "copied_buffer_length_field": "0x12",
+    "buffer_pointer_field": "0x18",
+    "copy_call_rva": "0x878d0"
+  },
+  "scope": "structural-format-evidence-not-all-node-constructor-semantics",
+  "usb_transfer_performed": false,
+  "hardware_validated": false
+}

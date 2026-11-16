@@ -103,3 +103,5 @@ O parser de literais inclui db_write_enable somente quando solicitado. Os testes
 `test_capture_request_model.py` cobre o modelo offline de tamanhos de 0x02: fronteiras, orçamento de análise e caso especial dos múltiplos de 64. A suíte completa tem 79 testes. Não usa sensor nem payload.
 
 `test_capture_reply.py` cobre o corpo candidato de resposta: assinatura, contagens excessivas, truncamento, orçamento e omissão do conteúdo. A suíte completa tem 85 testes; não realiza USB.
+
+`test_capture_chunks.py` verifica o inspetor offline de sequências tipo/tamanho: truncamentos, cabeçalhos, limites e omissão de conteúdo. A suíte completa tem 91 testes.

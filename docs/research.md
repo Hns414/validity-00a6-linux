@@ -267,3 +267,5 @@ O [caminho posterior à preparação](post-preparation-request9.md) alcança a r
 O [layout candidato de 0x02](command02-layout.md) possui modelo original offline de tamanhos; suíte ampliada para 79 testes. Sem captura habilitada.
 
 O [inspetor de corpo candidato de resposta](capture-reply-layout.md) valida assinatura e contagens offline sem expor palavras; suíte ampliada para 85 testes.
+
+A [análise dos nós e blocos](capture-chunk-nodes.md) confirma caminhos tipo/tamanho e acrescenta inspetor offline sem conteúdo; suíte com 91 testes.

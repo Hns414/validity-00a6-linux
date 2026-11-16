@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.37.0-research — 2026-11-16
+
+- Lookup de blocos tipo/tamanho e construtor de bloco vazio ligados à requisição 9.
+- Metadados dos nós do host distinguidos dos buffers concatenados no frame.
+- Inspetor original offline retorna somente contagens; seis testes novos, 91 aprovados.
+- Sem alteração no probe ativo ou novo comando USB.
+
 ## 0.36.0-research — 2026-11-16
 
 - Corpo candidato de resposta ligado à assinatura 0x30000288 e contagem de palavras de quatro bytes.

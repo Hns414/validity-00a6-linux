@@ -279,3 +279,5 @@ A [classificação de produto da ROM](product-context-class.md) liga condicional
 O [produtor do tipo interno](internal-type-seed-and-query.md) foi ligado a uma hipótese por produto e à consulta candidata 0x75; valor real ainda não confirmado.
 
 O [callback e mapeamento de 0x75](query75-callback-mapping.md) separa corpo, normalização e consulta de tabela; tipo real ainda não confirmado.
+
+A [conferência pública de 0x75](query75-public-crosscheck.md) corrige o mapper para o segundo DWORD e delimita o contexto TLS do fluxo público.

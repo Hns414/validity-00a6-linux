@@ -8,11 +8,11 @@ O wrapper 0x54a40 instala **0x5a710** como callback em 0x54b79. Esse callback gu
 
 Isso exige pelo menos oito bytes acessíveis de corpo nesse caminho. A capacidade inicial de dez bytes do handler é coerente com dois bytes de status comum mais oito de corpo, mas **não comprova comprimento exato em hardware**. O callback não apresenta uma verificação visível de comprimento antes dessas leituras; podem existir validações anteriores, ainda não auditadas integralmente.
 
-Um decoder original futuro precisará validar tamanho antes de acessar campos e separar o status do corpo. Nenhum dado dessa consulta foi coletado no participante. O significado do segundo DWORD continua desconhecido e ele não deve ser publicado como metadado inofensivo por suposição.
+Um decoder original futuro precisará validar tamanho antes de acessar campos e separar o status do corpo. Nenhum dado dessa consulta foi coletado no participante. A interpretação dos campos foi refinada na [conferência pública posterior](query75-public-crosscheck.md); não publicar dados reais desconhecidos por suposição.
 
-## O primeiro resultado é interpretado, não usado diretamente
+## O segundo DWORD é interpretado, não usado diretamente
 
-Na rotina 0x62eb0, sucesso da consulta e primeiro resultado não zero permitem um caminho de substituição. Há uma regra explícita em 0x63031–0x63056:
+Na rotina 0x62eb0, sucesso da consulta e segundo DWORD de corpo não zero permitem um caminho de substituição. Há uma regra explícita em 0x63031–0x63056:
 
 `0x0049000c` → `0x00830003`
 
@@ -49,3 +49,5 @@ A rotina também obtém um snapshot de contexto por 0x5dfd0 e pode guardar refer
 Foram conferidos o vínculo do callback, as duas leituras DWORD, duas chamadas e os três registros da tabela fixada. O fluxo de interpretação permanece análise manual. O tipo interno real do participante e o registro da tabela de programas nas listas do host continuam pendentes.
 
 Esta etapa altera somente documentos/evidência. Mantém a base de **91 testes aprovados na v0.37**, sem nova execução da suíte. Não há decoder ativo de 0x75, novo comando no probe ou teste com dedo.
+
+A v0.43 corrigiu a fonte do mapper para o segundo DWORD, seguindo os ponteiros de saída até o chamador; veja a [conferência detalhada](query75-public-crosscheck.md).

@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "method": "checked-output-pointer-trace-and-pinned-public-source-review",
+  "dll_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "corrected_mapping_source_body_offset": 4,
+  "output_trace": [
+    {
+      "body_offset": 0,
+      "completion_offset": "0x14",
+      "wrapper_local": "rsp+0x3c",
+      "output_argument": "rdx",
+      "caller_local": "rsp+0x50",
+      "used_by_type_mapper_in_examined_path": false
+    },
+    {
+      "body_offset": 4,
+      "completion_offset": "0x18",
+      "wrapper_local": "rsp+0x40",
+      "output_argument": "r8",
+      "caller_local": "rsp+0x48",
+      "used_by_type_mapper_in_examined_path": true
+    }
+  ],
+  "public_reference": {
+    "commit": "a6bbc21dce7b8b3c3cd92378a0b2579a2fb45920",
+    "identify_function": "validitysensor/sensor.py:identify_sensor",
+    "body_format": "<LHH",
+    "first_dword_required_zero": true,
+    "second_dword_contains_identifier_pair": true,
+    "normal_open_order": [
+      "usb.send_init",
+      "tls.open",
+      "upload_fwext",
+      "sensor.open / identify_sensor"
+    ],
+    "tls_cmd_can_fall_back_to_cleartext": true
+  },
+  "earlier_first_dword_mapping_description_corrected": true,
+  "usb_transfer_performed": false,
+  "cleartext_before_init_support_verified": false
+}

@@ -62,5 +62,7 @@
   ],
   "second_word_semantics_verified": false,
   "full_mapping_semantics_verified": false,
-  "usb_transfer_performed": false
+  "usb_transfer_performed": false,
+  "mapped_body_word_offset": 4,
+  "mapping_source_corrected_in_version": "0.43.0-research"
 }

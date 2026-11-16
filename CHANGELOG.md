@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.43.0-research — 2026-11-16
+
+- Corrigida inversão na interpretação: mapper de 0x75 usa o segundo DWORD do corpo, conforme ponteiros de saída.
+- Perfil público <LHH e identificação após TLS confrontados com a DLL.
+- Fallback USB público distinguido de suporte antes da inicialização.
+- Somente documentação/evidência; nenhum decoder ativo ou comando USB foi alterado.
+
 ## 0.42.0-research — 2026-11-16
 
 - Callback de 0x75 ligado a dois DWORDs de corpo após status comum; validação de tamanho necessária.

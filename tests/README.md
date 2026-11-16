@@ -25,3 +25,13 @@ Cada relatório deve conter: data, commit, ambiente sem identificadores, operaç
 O analisador possui dez testes offline adicionais para cálculo de comprimentos sem contar comentários, preservação da ordem, distinção entre tamanhos declarados e verificados, rejeição de expressões/valores inválidos, declarações não suportadas, arrays/sequências duplicados, referências ausentes, macros inválidas e resposta maior que o buffer solicitado. Total atual: 14 testes.
 
 O inventário real também foi regenerado do commit fixado e comparado ao JSON versionado. Isso verifica a reprodução da análise de fonte, não a compatibilidade do 00a6. O parser aceita um subconjunto restrito de C e falha diante de sintaxe que não compreende.
+
+## Transporte C com USB simulada
+
+Nove testes adicionais, com vários cenários por teste, compilam src/probe_rom_info.c contra tests/fake_libusb.c, sem link com a libusb real. O simulador implementa somente as funções necessárias; adicionar chamadas não previstas, como reset ou troca de configuração, quebra esse link de teste. O relógio também é simulado para exercitar deadlines sem esperas reais.
+
+Verificados: consulta única, leitura limitada, ordem e liberação de recursos, recusa de descritores incompatíveis/múltiplos alvos/permissão/interface ocupada, short write, timeout, desconexão, cancelamento SIGINT, event loop com erro, conclusão tardia e saída controlada quando o callback de cancelamento não é entregue. A saída não contém bytes de resposta. Total: 23 testes, sem skips no ambiente usado nesta etapa.
+
+Também foram compilados os mesmos arquivos com -fsanitize=address,undefined e executados 23 cenários simulados, sem diagnósticos desses sanitizadores. Isso não verifica o comportamento do driver USB real, latência real, firmware ou recuperação do sensor.
+
+Dependências adicionais: compilador C, pkg-config e headers de libusb-1.0. Se faltarem, os nove testes de transporte mostram skip explícito; os demais continuam disponíveis com Python padrão. O teste de hardware é manual e separado, nunca executado pelo comando make test.

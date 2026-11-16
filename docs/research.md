@@ -81,3 +81,13 @@ Inventário reproduzível implementado: 24 arrays e seis sequências do driver u
 A análise confirma que simplesmente adicionar o ID do 00a6 já acionaria reset e envio de blocos cuja aplicabilidade não conhecemos. O [experimento E1](lab.md) foi especificado como consulta isolada candidata, sem implementação ou execução ativa nesta etapa. O ambiente recuperável e a semântica específica do 00a6 permanecem pendentes; M2 continua parcial.
 
 Validação desta etapa: 14 testes offline aprovados; inventário regenerado a partir dos objetos Git e comparado com o arquivo versionado. Não houve instalação de driver, alteração de PAM, acesso a dados biométricos ou transferências USB.
+
+## Atualização E1 — fonte específica e transporte experimental
+
+Localizado o relato [Validity90 #110](https://github.com/nmikhailov/Validity90/issues/110), aberto em 2023-02-05, com título identificando Latitude 3490 e 138a:00a6. O anexo público foi consultado localmente: 46.038 bytes; SHA-256 `30614818a28e1015f47931cf9e051cabb6e3f7df0d483837168f4c476c198133`. Não foi copiado para este repositório, pois contém respostas brutas que não precisamos redistribuir.
+
+O início do registro mostra envio de 0x01 e resposta de 38 bytes, seguido de divergência do valor esperado pelo protótipo. O resto do registro contém outras divergências; não é validação de captura ou autenticação. A tabela do [prototype/main.c](https://github.com/nmikhailov/Validity90/blob/8b80cfeae15487d5e13ff5ff3ab4f282eac765be/prototype/main.c), no commit inspecionado `8b80cfeae15487d5e13ff5ff3ab4f282eac765be`, não registra 00a6. Não sabemos quais alterações locais o autor do relato utilizou. Além disso, esse caminho de main faz reset e set_configuration antes de init; o relato não comprova a consulta isolada que propomos.
+
+Foi feito apenas inventário local dos imports PE da DLL Dell: isso não identificou o fluxo de consulta nem provou a semântica de 0x01. Nenhum código da DLL foi executado, incorporado ou redistribuído.
+
+Implementado um probe C original com libusb, condicionado à opção explícita --probe-rom-info. O teste real depende do participante e está documentado em [first-hardware-test.md](first-hardware-test.md). As simulações exercitam uma consulta, uma leitura limitada, falhas de pré-condição, permissão, interface ocupada, timeout, cancelamento por sinal, desconexão, erro de event loop, resposta vazia e conclusão tardia. A biblioteca real foi usada para compilar e exibir somente --help; a opção ativa não foi executada nesta sessão.

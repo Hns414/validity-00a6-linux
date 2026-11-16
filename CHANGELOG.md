@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.4.0-research — 2026-11-16
+
+- Probe C experimental para consulta isolada 0x01, sem reset/configuração/retry e sem publicar resposta bruta.
+- Verificação de ID/revisão/descritores; timeouts, cancelamento por sinal e tratamento de recursos.
+- Simulador linkado no lugar da libusb e nove testes adicionais; 23 testes no total.
+- 23 cenários simulados verificados com AddressSanitizer e UndefinedBehaviorSanitizer.
+- Relato público específico do Latitude 3490/00a6 investigado, com limites documentados.
+- Instruções para primeiro teste Linux pelo participante; execução real e suporte biométrico continuam pendentes.
+
 ## 0.3.0-research — 2026-11-16
 
 - Matriz das sequências de abertura, captura e parada do VFS7552 upstream.

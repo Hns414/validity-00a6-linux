@@ -37,9 +37,13 @@ Run `python3 tools/collect_usb_metadata.py` without sudo. It reads cached sysfs 
 
 `python3 tools/analyze_vfs7552.py /path/to/libfprint` inventories arrays and action sequences from a pinned Git commit in an existing local upstream checkout. It outputs lengths, hashes and sequence metadata; it never executes C or communicates with the sensor. See the [reproducible inventory](docs/evidence/vfs7552-static-inventory.json) and [limitations](docs/protocol.md).
 
-The upstream open path resets USB and sends opaque initialization blocks. Its receive macros, endpoint transfer types and cancellation behavior need review before porting. No active probe has been implemented or run.
+The upstream open path resets USB and sends opaque initialization blocks. Its receive macros, endpoint transfer types and cancellation behavior need review before porting. An experimental single-query probe is now implemented and tested against a USB simulator. It has not been run on the target sensor. See the [first hardware test](docs/first-hardware-test.md) before running it.
 
-Run offline checks with `python3 -m unittest discover -s tests -v`. The current suite has 14 tests for metadata privacy and source inventory parsing; it does not validate biometric support.
+Run offline checks with `python3 -m unittest discover -s tests -v`. The current suite has 23 tests for metadata privacy, source inventory parsing and a simulated libusb transport. Probe simulation requires a C compiler, pkg-config and libusb development headers; those tests are explicitly skipped if unavailable. No tests validate biometric support.
+
+## Experimental hardware probe
+
+Build with `make probe` (C compiler, make, pkg-config and libusb-1.0 development files required). `build/probe-rom-info --help` does not access USB. The explicit `--probe-rom-info` flag sends a single 0x01 query and receives at most 64 bytes, after descriptor checks. No reset, configuration change, retry or raw reply logging is performed. A received reply is reported as **unvalidated**, never as working biometric support. Read the [Linux test instructions](docs/first-hardware-test.md) before active use.
 
 ## Licensing
 

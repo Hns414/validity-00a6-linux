@@ -39,7 +39,7 @@ Run `python3 tools/collect_usb_metadata.py` without sudo. It reads cached sysfs 
 
 The upstream open path resets USB and sends opaque initialization blocks. Its receive macros, endpoint transfer types and cancellation behavior need review before porting. An experimental single-query probe is now implemented and tested against a USB simulator. The participant reported a 38-byte reply from the target sensor; four candidate metadata fields have since been reported and match the selected upstream example fields; no raw reply has been inspected. See the [first hardware test](docs/first-hardware-test.md) before running it.
 
-Run offline checks with `python3 -m unittest discover -s tests -v`. The current suite has 51 tests for metadata privacy, source inventory parsing and a simulated libusb transport. Probe simulation requires a C compiler, pkg-config and libusb development headers; those tests are explicitly skipped if unavailable. No tests validate biometric support.
+Run offline checks with `python3 -m unittest discover -s tests -v`. The current suite has 52 tests for metadata privacy, source inventory parsing and a simulated libusb transport. Probe simulation requires a C compiler, pkg-config and libusb development headers; those tests are explicitly skipped if unavailable. No tests validate biometric support.
 
 ## Experimental hardware probe
 
@@ -64,6 +64,10 @@ The [descriptor analysis](docs/init-selection.md) traces the known 500-byte argu
 ## Offline init framing
 
 The [framing analysis](docs/init-framing.md) traced internal request 7 to a handler that constructs opcode 0x06 followed by the selected arguments. Reconstructing the 500 known argument bytes in memory produces the exact 501-byte upstream init_00 frame. An original offline encoder is tested with synthetic data and is not linked into the USB probe. Transport transformations, device-side effects and recovery remain unresolved; no new active command is enabled.
+
+## Transport and response status
+
+The [static transport analysis](docs/transport-and-status.md) now connects a vendor request to the WinUSB write/read wrappers and identifies the response callback. Context-dependent transformations and payload effects remain unresolved. An original status-header parser is shared by E1/E2 without changing their public schemas or adding commands. The init frame encoder is still offline-only.
 
 ## Licensing
 

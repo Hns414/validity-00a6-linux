@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "analysis_method": "manual-static-disassembly-and-table-reads",
+  "dll_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "hardware_trace_captured": false,
+  "vendor_code_executed": false,
+  "response_callback": {
+    "assignment_rva": "0x65919",
+    "handler_rva": "0x7dd60",
+    "call_rva": "0x7b213",
+    "role": "response-postprocessing"
+  },
+  "vendor_request": {
+    "value": "0x938ae058",
+    "handler_assignment_rva": "0xed60b",
+    "handler_rva": "0xee420",
+    "case_index": 6,
+    "case_target_rva": "0xee721",
+    "exchange_rva": "0xeea70"
+  },
+  "write_route": {
+    "wrapper_rvas": [
+      "0xef7d0",
+      "0xf10d0"
+    ],
+    "pipe_query_rva": "0xf1174",
+    "api_call_rva": "0xf11d8",
+    "resolved_api": "WinUsb_WritePipe",
+    "api_slot_offset": "0x30"
+  },
+  "read_route": {
+    "wrapper_rvas": [
+      "0xef750",
+      "0xf0f50"
+    ],
+    "pipe_query_rva": "0xf0fe9",
+    "api_call_rva": "0xf104d",
+    "resolved_api": "WinUsb_ReadPipe",
+    "api_slot_offset": "0x28"
+  },
+  "api_object": {
+    "global_rva": "0x223900",
+    "allocation_rva": "0xeef64",
+    "initializer_call_rva": "0xeefb5",
+    "initializer_rva": "0xf01b0"
+  },
+  "limits": [
+    "Context-specific transformations not fully resolved",
+    "Runtime pipe selection not traced",
+    "Internal payload operations and persistence unknown",
+    "No initialization execution enabled"
+  ]
+}

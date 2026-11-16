@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.11.0-research — 2026-11-16
+
+- Cadeia estática da requisição do fornecedor ligada aos wrappers WinUsb_WritePipe/ReadPipe.
+- Callback +0x20 identificado como pós-processamento de resposta; condições de contexto e transformações seguem em análise.
+- Parser C original de status cleartext centralizado em E1/E2, preservando consultas e schemas.
+- 52 testes aprovados e ASan/UBSan do parser sem diagnóstico, com detecção de leaks desabilitada.
+- Nenhuma nova operação de hardware ou inicialização habilitada.
+
 ## 0.10.0-research — 2026-11-16
 
 - Dispatcher e handler da solicitação interna 7 identificados: montagem de opcode 0x06 e argumentos.

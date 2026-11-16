@@ -47,14 +47,10 @@ Não contém o payload da DLL e não interpreta seu conteúdo. O Makefile do pro
 
 O teste C usa dados inteiramente sintéticos: percorre comprimentos 0–600 e capacidades inferiores a 501, verifica sentinelas de memória, conteúdo, sobreposição, ponteiros nulos e SIZE_MAX. Também passou com ASan/UBSan e detecção de leaks desabilitada pela limitação de ptrace do ambiente. Total atual da suíte: 51 testes aprovados.
 
-## O trecho de transporte ainda não resolvido
+## Continuação do rastreamento de transporte
 
-A rotina 0x7b110 chama 0x7b260, que inspeciona o comando e encaminha descritores para outras funções. Há caminhos que manipulam buffers e estado antes de chamar indiretamente uma função no offset +0x20 do contexto, em 0x7b213.
-
-Não foi demonstrado qual callback está instalado nesse contexto, quais transformações ocorreriam no caminho escolhido para o participante ou a chegada do frame completo a WinUsb_WritePipe. A DLL resolve esse símbolo dinamicamente em outro objeto: a referência à string aparece em 0xf0297, e o ponteiro resolvido é guardado no offset +0x30 daquele objeto. A ligação entre esses dois objetos ainda precisa ser estabelecida; coincidência de offsets de membros em objetos distintos não prova identidade de callbacks.
-
-Por isso esta etapa comprova a **montagem interna** e o encaminhamento para uma camada de transporte, sem afirmar equivalência dos bytes no barramento em qualquer estado do sensor.
+A [análise de transporte e status](transport-and-status.md) resolveu a instalação do callback em +0x20 e identificou seu papel de pós-processamento da resposta. O envio/leitura seguem uma requisição interna até os wrappers WinUSB. A seleção de contexto e suas transformações continuam pendentes, portanto a igualdade do frame interno não é uma observação de bytes no barramento.
 
 ## Próxima investigação
 
-Seguir a instalação do callback do contexto e a transformação dos descritores até o wrapper USB. Em paralelo, determinar a função e os efeitos do conteúdo carregado no sensor. Compor corretamente um frame não torna seguro enviá-lo: as condições de seleção, os efeitos internos e a recuperação continuam pendentes. Nenhum teste adicional é solicitado ao participante nesta etapa.
+Determinar as condições de contexto que escolhem transformação ou passagem do frame no caminho USB já identificado. Em paralelo, determinar a função e os efeitos do conteúdo carregado no sensor. Compor corretamente um frame não torna seguro enviá-lo: as condições de seleção, os efeitos internos e a recuperação continuam pendentes. Nenhum teste adicional é solicitado ao participante nesta etapa.

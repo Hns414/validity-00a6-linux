@@ -90,3 +90,7 @@ A suíte atual contém 50 testes. O trabalho desta etapa rastreia estaticamente 
 ## Etapa v0.10.0-research
 
 A suíte atual contém 51 testes. Esta versão verifica montagem de frames em memória e não adiciona uma opção de inicialização ao probe. Nenhum novo teste no sensor é solicitado.
+
+## Etapa v0.11.0-research
+
+A suíte atual contém 52 testes. As opções e os schemas das consultas existentes permanecem iguais; a mudança de código centraliza o parsing do status. Não há novo teste de sensor solicitado nem opção de inicialização habilitada.

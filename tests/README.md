@@ -69,3 +69,9 @@ Seis testes adicionais (50 no total) verificam metadados/coordenadas de um regis
 Um novo teste automatizado compila src/init_frame.c com um programa C de dados sintéticos. Verifica comprimentos entre 0 e 600, todas as capacidades menores que 501, saída intacta em falhas, sentinelas, ponteiros nulos, SIZE_MAX e argumentos sobrepostos à saída. Total: 51 testes aprovados. O programa também passou com ASan/UBSan, ASAN_OPTIONS=detect_leaks=0; não se declara teste de leaks.
 
 A composição real em memória a partir da DLL privada foi comparada ao init_00 upstream e registrada somente como metadados. A ferramenta de verificação não interpreta automaticamente o disassembly nem executa instruções do fabricante. O encoder não é ligado ao probe ativo; nenhum teste unitário envia o bloco ao USB.
+
+## Parser comum de status cleartext
+
+Um novo teste C percorre tamanhos 0–128, verifica little endian, status não zero, payload vazio e comprimento dos dados, recusa cabeçalhos truncados/ponteiros nulos e confirma limpeza de saída e independência dos bytes do payload. Total: 52 testes aprovados, incluindo integração de E1/E2 com o helper comum e schemas preservados. ASan/UBSan do parser passou com detect_leaks=0; LeakSanitizer continua fora da validação por limitação do ambiente.
+
+Esses testes verificam nosso parser e simulações de transporte. Não verificam a semântica completa da DLL, o contexto do participante ou seus callbacks em runtime.

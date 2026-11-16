@@ -23,7 +23,7 @@ class ProbeTests(unittest.TestCase):
         cls.binary = Path(cls.tmp.name) / 'probe-simulated'
         subprocess.run(['cc', '-std=c11', '-Wall', '-Wextra', '-Werror',
                         '-Dclock_gettime=fake_clock_gettime', *flags.stdout.split(),
-                        str(ROOT / 'src/probe_rom_info.c'), str(ROOT / 'src/rom_info.c'),
+                        str(ROOT / 'src/probe_rom_info.c'), str(ROOT / 'src/rom_info.c'), str(ROOT / 'src/status_reply.c'),
                         str(ROOT / 'tests/fake_libusb.c'),
                         '-o', str(cls.binary)], check=True, capture_output=True)
 
@@ -92,10 +92,18 @@ class ProbeTests(unittest.TestCase):
                        check=True, capture_output=True)
         subprocess.run([str(binary)], check=True, capture_output=True, timeout=3)
 
+    def test_cleartext_status_header_bounds_endianness_and_payload_omission(self):
+        binary = Path(self.tmp.name) / 'status-reply-test'
+        subprocess.run(['cc', '-std=c11', '-Wall', '-Wextra', '-Werror',
+                        '-I', str(ROOT / 'src'), str(ROOT / 'src/status_reply.c'),
+                        str(ROOT / 'tests/test_status_reply.c'), '-o', str(binary)],
+                       check=True, capture_output=True)
+        subprocess.run([str(binary)], check=True, capture_output=True, timeout=3)
+
     def test_decoder_bounds_endianness_and_omitted_byte_independence(self):
         binary = Path(self.tmp.name) / 'decoder-test'
         subprocess.run(['cc', '-std=c11', '-Wall', '-Wextra', '-Werror',
-                        '-I', str(ROOT / 'src'), str(ROOT / 'src/rom_info.c'),
+                        '-I', str(ROOT / 'src'), str(ROOT / 'src/rom_info.c'), str(ROOT / 'src/status_reply.c'),
                         str(ROOT / 'tests/test_rom_info.c'), '-o', str(binary)],
                        check=True, capture_output=True)
         subprocess.run([str(binary)], check=True, capture_output=True, timeout=3)

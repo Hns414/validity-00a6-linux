@@ -11,6 +11,7 @@
 #include <string.h>
 #include <time.h>
 #include "rom_info.h"
+#include "status_reply.h"
 
 static int summarize_requested;
 static int cmd19_requested;
@@ -239,9 +240,10 @@ int main(int argc, char **argv)
     status = exchange(ctx, handle, 0x81, response, receive_capacity, deadline, &received);
     if (!status && cmd19_requested) {
         cmd19_reply_observed = 1;
-        if (received >= 2) {
+        struct validity_status_reply header;
+        if (validity_parse_status_reply(response, (size_t)received, &header)) {
             cmd19_has_status = 1;
-            cmd19_status_zero = response[0] == 0 && response[1] == 0;
+            cmd19_status_zero = header.device_status == 0;
         }
     }
     if (!status && summarize_requested)

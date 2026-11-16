@@ -143,3 +143,11 @@ O [rastreio de framing](init-framing.md) confirmou o dispatcher em RVA 0x5a820, 
 Implementado um codificador C original apenas para uso offline e teste sintético; não está ligado ao probe USB. O teste verifica falhas sem alteração de saída, limites, sentinelas e sobreposição de buffers. A suíte tem 51 testes aprovados; ASan/UBSan do encoder também passou, com detecção de leaks desabilitada pela limitação já registrada.
 
 O caminho de transporte chama rotinas que podem manipular descritores antes de um callback indireto. O vínculo desse callback ao wrapper WinUsb_WritePipe e as transformações relevantes ao contexto do 00a6 não foram comprovados. Não afirmar captura de tráfego nem equivalência final de bytes no barramento. Nenhuma DLL ou nova operação de hardware foi executada nesta etapa.
+
+## Transporte WinUSB e callback de resposta
+
+A [análise estática](transport-and-status.md) localizou a instalação do callback +0x20 em 0x65919, com destino 0x7dd60. Seu papel é tratamento da resposta. O caminho de envio usa a requisição 0x938ae058, o handler 0xee420 e o case 0xee721, chegando a 0xeea70, que encaminha escrita e leitura aos wrappers WinUSB. A resolução dinâmica dos símbolos e as chamadas pelos slots +0x30/+0x28 foram ligadas ao mesmo objeto global.
+
+Essa cadeia é um caminho implementado na DLL, sem trace ou avaliação do contexto real do participante. PipeID é consultado dinamicamente e há transformações condicionais anteriores. O efeito do payload permanece desconhecido. O [registro de análise](evidence/transport-route-analysis.json) é manual e não é validado pela suíte como prova de equivalência de disassembly.
+
+Foi implementado um parser C original de status cleartext, compartilhado por E1/E2, mantendo schemas e comandos anteriores. Respostas curtas são recusadas; status não zero não é confundido com erro de parsing ou sucesso biométrico. O novo teste e ASan/UBSan passaram; 52 testes no total. Nenhuma operação ativa foi adicionada ou executada nesta etapa.

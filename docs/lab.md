@@ -58,3 +58,7 @@ Nesta fase, DLLs são somente dados para inspeção estática. O sandbox de terc
 ## Codificador de frame offline
 
 A etapa v0.10.0-research contém um encoder C testado somente com argumentos sintéticos, sem link no executável que acessa USB. A [verificação de montagem](init-framing.md) não habilita emissão de init_00. Não há novo teste de hardware nem necessidade de repetir E1/E2.
+
+## Transporte e status em v0.11.0-research
+
+O rastreamento estático chegou aos wrappers WinUSB e ao callback de resposta. Isso não é uma execução de DLL nem captura de tráfego. As consultas existentes agora usam uma função comum de parsing de status, testada com bytes sintéticos, mantendo os mesmos schemas. Nenhum comando adicional está habilitado; não repetir E1/E2 para validar uma análise estática.

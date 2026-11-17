@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "method": "manual-static-transport-capacity-and-response-normalization-trace",
+  "dll_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "checked_call_edges": [
+    {
+      "call_rva": "0x7b35b",
+      "target_rva": "0x747e0"
+    },
+    {
+      "call_rva": "0x7b377",
+      "target_rva": "0xd53f0"
+    },
+    {
+      "call_rva": "0x7b4fb",
+      "target_rva": "0x749e0"
+    },
+    {
+      "call_rva": "0x74b3f",
+      "target_rva": "0x774e0"
+    },
+    {
+      "call_rva": "0x74b79",
+      "target_rva": "0xe79f0"
+    }
+  ],
+  "receive_capacity_adjustment": {
+    "rva": "0x748a2",
+    "added_bytes": 69,
+    "before_state_mode_transformation_guards": true,
+    "requires_auxiliary_context_and_length_pointer": true
+  },
+  "response_normalizer": {
+    "rva": "0x749e0",
+    "parser_rva": "0x774e0",
+    "parsed_content_source_offset": 21,
+    "returned_length_field": "auxiliary +0x12c",
+    "does_not_prove_original_requested_capacity_bound": true
+  },
+  "common_status_callback": {
+    "rva": "0x7dd60",
+    "non44_body_prefix_removed_bytes": 2,
+    "short_response_bounds_audit_complete": false
+  },
+  "offline_inspector_capacity_check": {
+    "explicit_destination_capacity": true,
+    "rejects_content_over_capacity": true,
+    "no_usb": true
+  },
+  "transport_bound_proof_complete": false,
+  "usb_transfer_performed": false
+}

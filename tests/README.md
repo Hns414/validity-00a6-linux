@@ -111,3 +111,5 @@ O parser de literais inclui db_write_enable somente quando solicitado. Os testes
 `test_program_repeats.py` verifica fronteiras e possíveis truncamentos do auditor de repetição, sem alterar programas ou acessar USB. A suíte completa tem 103 testes.
 
 O inspetor offline de corpo candidato 0x78 é coberto por seis testes de limites, contagens e privacidade da saída. Suíte completa: 109 testes aprovados na v0.59.
+
+Na v0.62, três testes adicionais verificam a capacidade explícita do destino no inspetor offline 0x78. Suíte completa: 112 testes aprovados.

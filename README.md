@@ -206,3 +206,5 @@ A [origem do bloco de leitura](docs/read78-origin.md) foi ligada ao opcode 0x78;
 A [auditoria de capacidade dos índices](docs/descriptor-index-capacity.md) confirma espaço para as 29 contagens fixadas; limites completos da leitura ainda pendentes.
 
 Os [chamadores da capacidade de leitura](docs/read78-capacity-callers.md) selecionam 4.800/32.768 bytes e reutilizam buffers; a prova do limite após transporte continua pendente.
+
+Os [limites após transporte](docs/response-transport-bounds.md) permanecem sob auditoria; o inspetor offline aceita capacidade explícita e a suíte tem 112 testes.

@@ -58,3 +58,26 @@ class Read78ReplyTests(unittest.TestCase):
                 self.assertEqual(result.returncode, 2)
                 self.assertEqual(result.stdout, '')
                 self.assertNotIn('PRIVATE', result.stderr)
+
+    def test_explicit_capacity_exact_larger_and_zero(self):
+        valid = body(3, b'abc')
+        self.assertEqual(inspect(valid, capacity=3), inspect(valid, capacity=9))
+        self.assertEqual(inspect(body(0), capacity=0)['content_bytes'], 0)
+        with self.assertRaises(ValueError):
+            inspect(valid, capacity=2)
+
+    def test_invalid_capacity_types_and_range(self):
+        for capacity in (-1, True, 1.5, '3', ANALYSIS_LIMIT-3):
+            with self.assertRaises(ValueError):
+                inspect(body(0), capacity=capacity)
+        self.assertEqual(inspect(body(0), capacity=ANALYSIS_LIMIT-4)['content_bytes'], 0)
+
+    def test_cli_rejects_valid_body_over_destination_capacity(self):
+        script = Path(__file__).resolve().parents[1]/'tools/inspect_read78_reply.py'
+        with tempfile.TemporaryDirectory() as tmp:
+            p = Path(tmp)/'PRIVATE.bin'
+            p.write_bytes(body(3, b'abc'))
+            result = subprocess.run([sys.executable, str(script), str(p), '--capacity', '2'], capture_output=True, text=True)
+            self.assertEqual(result.returncode, 2)
+            self.assertEqual(result.stdout, '')
+            self.assertNotIn('PRIVATE', result.stderr)

@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.62.0-research — 2026-11-17
+
+- Acréscimo condicional de 69 bytes à capacidade de recepção separado do limite inicial.
+- Normalização ligada ao parser 0x774e0 e ao comprimento auxiliar, ainda sem prova completa de limite.
+- Inspetor offline ganha capacidade explícita do destino e recusa excesso.
+- Três testes novos; 112 aprovados sem skips. Probe ativo inalterado.
+
 ## 0.61.0-research — 2026-11-17
 
 - Capacidade de leitura rastreada a dois chamadores com seleção de 4.800/32.768 bytes.

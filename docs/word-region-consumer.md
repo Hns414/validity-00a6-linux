@@ -1,4 +1,6 @@
-# Consumidor alcançável da região de palavras
+# Encaminhamento da região de palavras
+
+**Correção na v0.57:** a reconstrução de 0xa2470/0xa3510 mostrou preparação de descritor sem ler os argumentos de região e comprimento. As referências abaixo a “consumidor” descrevem apenas o encaminhamento de argumentos, não consumo demonstrado do conteúdo. Veja a [análise completa](word-descriptor-builder.md).
 
 Continuação da [entrega ao processamento do host](host-processing-handoff.md), por análise estática manual da DLL fixada. A [evidência](evidence/word-region-consumer.json) registra oito destinos de chamadas conferidos. Sem execução do driver ou USB.
 

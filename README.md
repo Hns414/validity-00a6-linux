@@ -196,3 +196,5 @@ A [conclusão da requisição 9](docs/request9-completion.md) liga o parser ao c
 A [entrega ao processamento do host](docs/host-processing-handoff.md) liga a resposta à interface e resolve seu método indireto, com duração dos ponteiros ainda pendente.
 
 O [consumidor da região de palavras](docs/word-region-consumer.md) fecha a ligação até 0xa2470 e separa os três layouts do host, sem semântica de pixels confirmada.
+
+A [correção do papel de 0xa2470](docs/word-descriptor-builder.md) mostra preparação de descritor sem leitura da região; consumo efetivo das palavras ainda não demonstrado.

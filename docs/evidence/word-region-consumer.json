@@ -70,5 +70,7 @@
     "semantics_verified": false
   },
   "pixel_semantics_verified": false,
-  "usb_transfer_performed": false
+  "usb_transfer_performed": false,
+  "interpretation_correction_v057": "a2470 forwards region arguments but supported a3510 branch does not read them; descriptor preparation only",
+  "actual_reply_word_consumption_demonstrated": false
 }

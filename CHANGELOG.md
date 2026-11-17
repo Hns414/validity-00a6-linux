@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.57.0-research — 2026-11-17
+
+- Corrigida interpretação de 0xa2470 como consumidor: ramo suportado prepara descritor sem ler palavras.
+- Layout de saída e condição de metadados +0x28=3 delimitados.
+- Loop signed de 16 bits e capacidade de saída ainda dependente do chamador documentados.
+- Duas chamadas e seis âncoras conferidas; somente documentação/evidência, sem USB.
+
 ## 0.56.0-research — 2026-11-17
 
 - Descritor de chamada distinguido do estado de captura e do estado de processamento.

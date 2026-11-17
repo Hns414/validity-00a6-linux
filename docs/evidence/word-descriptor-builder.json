@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "method": "manual-static-complete-wrapper-and-descriptor-builder-audit",
+  "dll_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "checked_call_edges": [
+    {
+      "call_rva": "0xa24e7",
+      "target_rva": "0xa3510"
+    },
+    {
+      "call_rva": "0xa3573",
+      "target_rva": "0xd5430"
+    }
+  ],
+  "checked_instruction_anchors": 6,
+  "wrapper": {
+    "rva": "0xa2470",
+    "required_metadata_dword_28": 3,
+    "supported_target_rva": "0xa3510",
+    "other_value_status": "0x6f"
+  },
+  "builder": {
+    "rva": "0xa3510",
+    "end_rva_exclusive": "0xa35cb",
+    "reads_region_pointer_argument": false,
+    "reads_region_length_argument": false,
+    "output_dword_00": "third argument",
+    "output_dword_04": "metadata WORD +0x32 plus WORD +0x42",
+    "output_bytes_08_to_1ab": "filled with low byte of third argument",
+    "output_word_array_1ac": "identity indices; loop bound is signed low WORD of output DWORD +4"
+  },
+  "output_capacity_validated_in_builder": false,
+  "actual_reply_word_transformation_demonstrated": false,
+  "usb_transfer_performed": false
+}

@@ -212,3 +212,5 @@ Os [limites após transporte](docs/response-transport-bounds.md) permanecem sob 
 O [comprimento normalizado de registros](docs/record-normalized-length.md) foi delimitado no ramo examinado; a prova do limite de destino e o contrato multirregistro continuam abertos.
 
 Os [contratos dos helpers de transformação](docs/transform-helper-contracts.md) explicitam leituras anteriores às APIs e verificações de tamanho ainda dependentes do chamador.
+
+O [contrato multirregistro](docs/multirecord-copy-contract.md) distingue sobrescrita de comprimento de concatenação; novo inspetor offline e suíte com 118 testes.

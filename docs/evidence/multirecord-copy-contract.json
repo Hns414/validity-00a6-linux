@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "method": "manual-static-record-loop-and-final-copy-contract-audit",
+  "dll_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "checked_instruction_anchors": 7,
+  "checked_call_edges": [
+    {
+      "call_rva": "0x74b79",
+      "target_rva": "0xe79f0"
+    }
+  ],
+  "loop": {
+    "initial_auxiliary_length": 0,
+    "marker_check_predicate": "auxiliary length != 0 OR auxiliary mode == 0xff",
+    "early_success_marker_bytes": [
+      0,
+      255
+    ],
+    "application_length_store": "overwrite auxiliary DWORD +0x12c; not accumulation",
+    "advance": "record start + 5 + declared L",
+    "multiple_application_records_structurally_excluded": false
+  },
+  "final_copy": {
+    "source": "original receive buffer + 21",
+    "length": "auxiliary DWORD +0x12c",
+    "concatenation_demonstrated": false
+  },
+  "single_application_record_contract_verified_in_hardware": false,
+  "offline_tool": "inspect_record_envelope.py",
+  "offline_policy": "complete known-type 3/3 records; nonzero declared length; no tail markers; budget 65536",
+  "usb_transfer_performed": false
+}

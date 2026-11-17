@@ -113,3 +113,5 @@ O parser de literais inclui db_write_enable somente quando solicitado. Os testes
 O inspetor offline de corpo candidato 0x78 é coberto por seis testes de limites, contagens e privacidade da saída. Suíte completa: 109 testes aprovados na v0.59.
 
 Na v0.62, três testes adicionais verificam a capacidade explícita do destino no inspetor offline 0x78. Suíte completa: 112 testes aprovados.
+
+Na v0.65, seis testes cobrem o inspetor offline de envelopes de registros. Suíte completa: 118 testes aprovados.

@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.65.0-research — 2026-11-17
+
+- Laço de registros auditado: comprimento auxiliar sobrescrito e predicado OR de parada delimitados.
+- Cópia final distinguida de concatenação; contrato multirregistro segue sem validação no hardware.
+- Novo inspetor offline conta envelopes e registros de aplicação sem expor conteúdo.
+- Seis testes novos; 118 aprovados sem skips. Probe ativo inalterado.
+
 ## 0.64.0-research — 2026-11-17
 
 - Helper de transformação ligado ao dispatcher de operação 5, com preservação de cauda anterior à chamada.

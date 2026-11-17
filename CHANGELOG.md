@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.71.0-research — 2026-11-17
+
+- Laço superior ligado à tentativa adiada de restauração no estado 6.
+- Resultado guardado da operação distinguido do retorno de avanço da máquina.
+- Helper de saída ligado a LeaveCriticalSection; retenção/liberação de referência delimitada.
+- Restauração universal não presumida; somente documentação/evidência, sem USB.
+
 ## 0.70.0-research — 2026-11-17
 
 - Consulta de timeout ligada a WinUsb_GetPipePolicy e ao pedido interno 0x938ae050.

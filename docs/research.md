@@ -335,3 +335,5 @@ As [políticas WinUSB examinadas](pipe-policy-setup.md) incluem timeout inicial 
 O [ajuste de timeout durante a sessão](runtime-pipe-timeout.md) liga o pedido interno ao setter e delimita um caminho de 8000 ms, sem garantir restauração em todas as saídas ou fim de resposta.
 
 A [consulta e os caminhos de restauração do timeout](timeout-query-restoration.md) foram ligados à API; um desvio de erro evita os setters explícitos, com efeitos indiretos de limpeza ainda pendentes.
+
+A [restauração adiada pela máquina de estados](deferred-timeout-restoration.md) liga o laço superior ao estado 6: uma nova passagem pode tentar restaurar o timeout antes de devolver o erro guardado.

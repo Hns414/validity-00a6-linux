@@ -31,3 +31,5 @@ O caminho que ignora um valor guardado igual a zero merece distinção do caminh
 O futuro transporte Linux precisa manter separados: prazo da operação, timeout de cada transferência e encerramento da resposta. Se introduzir configurações temporárias, deve definir quem as possui, quando são restauradas e como reportar falha de restauração sem apagar o erro principal. Esse é um requisito de projeto; nenhuma implementação ativa foi acrescentada nesta etapa.
 
 A prova de enquadramento/tamanho da resposta continua aberta. Próximo passo: seguir os efeitos de limpeza e a transição para estado 6 antes de decidir se uma nova operação de hardware é justificável. Probe e seus prazos inalterados. Mudança documental, com base anterior de **119 testes aprovados**, sem repetir a suíte e sem teste com dedo.
+
+A [restauração adiada pela máquina de estados](deferred-timeout-restoration.md) liga o laço superior ao estado 6: uma nova passagem pode tentar restaurar o timeout antes de devolver o erro guardado.

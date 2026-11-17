@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "analysis": "deferred_timeout_restoration",
+  "source_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "hardware_executed": false,
+  "biometric_support": false,
+  "method": "static_manual_with_private_byte_checks",
+  "verified_calls": [
+    {
+      "call_rva": "0x74757",
+      "target_rva": "0x79500"
+    },
+    {
+      "call_rva": "0x747b3",
+      "target_rva": "0x7af60"
+    },
+    {
+      "call_rva": "0x7af88",
+      "target_rva": "0x7aa50"
+    },
+    {
+      "call_rva": "0x7aadf",
+      "target_rva": "0xd6160"
+    },
+    {
+      "call_rva": "0x7a526",
+      "target_rva": "0xe7430"
+    },
+    {
+      "call_rva": "0x7a56b",
+      "target_rva": "0x758e0"
+    }
+  ],
+  "verified_anchor_rvas": [
+    "0x7473f",
+    "0x74746",
+    "0x74765",
+    "0x747ac",
+    "0x7a0ec",
+    "0x7a119",
+    "0x7a555",
+    "0x7a55b",
+    "0x7a578",
+    "0x7aabc",
+    "0x7aac9",
+    "0x7aad1"
+  ],
+  "state_dispatch": {
+    "table_rva": "0x7a770",
+    "index": 6,
+    "target_rva": "0x7a4e0"
+  },
+  "cleanup_import": {
+    "wrapper_rva": "0xd6160",
+    "call_rva": "0xd619c",
+    "iat_rva": "0x1105c0",
+    "name": "LeaveCriticalSection",
+    "import_name_check": "objdump -p"
+  },
+  "caller_loop": {
+    "function_rva": "0x746c0",
+    "call_rva": "0x74757",
+    "back_edge_rva": "0x747ac",
+    "continuation": "return status zero and completion flag not one"
+  },
+  "deferred_error": {
+    "source_call_rva": "0x7a0e2",
+    "stored_status_field": "aux+0x4ec",
+    "next_state": 6,
+    "restore_call_rva": "0x7a526",
+    "return_status_load_rva": "0x7a555",
+    "completion_write_rva": "0x7a578"
+  },
+  "limits": [
+    "Requires caller to continue, context retained and next invocation preconditions to succeed.",
+    "State 6 skips setter when saved timeout is zero.",
+    "Setter success and runtime restoration have not been observed.",
+    "Reference-count destruction branch not exhaustively audited."
+  ]
+}

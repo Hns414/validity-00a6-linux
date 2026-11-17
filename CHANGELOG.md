@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.75.0-research — 2026-11-17
+
+- Preparação local ligada a contadores/flags e criação de hash SHA-256 por CryptoAPI.
+- Identificadores iniciais 7 e 5 ligados a busca em dados de memória, sem confundi-los com opcodes USB.
+- Origem dos dados e processamento opcional mantidos como pendências.
+- Somente documentação/evidência; probe inalterado, sem USB.
+
 ## 0.74.0-research — 2026-11-17
 
 - Descarte após erro ligado à limpeza de estrutura auxiliar de 1320 bytes e anulação do ponteiro.

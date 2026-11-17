@@ -343,3 +343,5 @@ O [componente C de envelopes](record-envelope-c-component.md) valida buffers com
 O [tratamento de leituras truncadas](truncated-read-path.md) delimita falha da API, rejeição estrutural e saída sem cópia normalizada; não demonstra remontagem local.
 
 O [descarte do contexto auxiliar](auxiliary-context-discard.md) liga a falha à anulação do estado local; nova alocação foi delimitada, sem demonstrar recuperação do sensor.
+
+A [preparação local do auxiliar](local-auxiliary-preparation.md) liga a criação de hash à CryptoAPI e separa seletores de busca em memória de comandos USB.

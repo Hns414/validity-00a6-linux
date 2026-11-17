@@ -35,3 +35,5 @@ Descarte do estado do host não equivale a reset USB, encerramento confirmado da
 Para o driver original, uma falha de normalização deve invalidar o contexto associado; uma operação posterior só poderá prosseguir após um procedimento de recuperação estabelecido e validado. A criação de uma nova estrutura em memória é apenas uma parte desse requisito.
 
 Próximo ponto: auditar o início da preparação e os efeitos observáveis dos estados iniciais, distinguindo alocação local de negociação com o dispositivo. Probe inalterado, sem USB e sem teste com dedo. Etapa documental: base de **121 testes aprovados na v0.72**, sem repetir a suíte.
+
+A [preparação local do auxiliar](local-auxiliary-preparation.md) liga a criação de hash à CryptoAPI e separa seletores de busca em memória de comandos USB.

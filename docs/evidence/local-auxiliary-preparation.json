@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "analysis": "local_auxiliary_preparation",
+  "source_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "method": "static_manual_with_private_byte_checks",
+  "hardware_executed": false,
+  "biometric_support": false,
+  "verified_calls": [
+    {
+      "call_rva": "0x7554a",
+      "target_rva": "0x78cf0"
+    },
+    {
+      "call_rva": "0x75567",
+      "target_rva": "0x78d70"
+    },
+    {
+      "call_rva": "0x7559d",
+      "target_rva": "0x76050"
+    },
+    {
+      "call_rva": "0x76071",
+      "target_rva": "0xdf8a0"
+    },
+    {
+      "call_rva": "0x78d21",
+      "target_rva": "0xd5430"
+    },
+    {
+      "call_rva": "0x78da1",
+      "target_rva": "0xd5430"
+    },
+    {
+      "call_rva": "0x79778",
+      "target_rva": "0x8d550"
+    },
+    {
+      "call_rva": "0x798e2",
+      "target_rva": "0x8d550"
+    },
+    {
+      "call_rva": "0x8d5b7",
+      "target_rva": "0x5e140"
+    },
+    {
+      "call_rva": "0x8d723",
+      "target_rva": "0x71b40"
+    }
+  ],
+  "verified_anchor_rvas": [
+    "0x76066",
+    "0x7606c",
+    "0xdf962",
+    "0x78d10",
+    "0x78d90",
+    "0x78d44",
+    "0x78dc4",
+    "0x5e184",
+    "0x8d60c",
+    "0x8d61b",
+    "0x8d628",
+    "0x8d649",
+    "0x8d5a8",
+    "0x7976c",
+    "0x798d6"
+  ],
+  "local_hash": {
+    "wrapper_rva": "0x76050",
+    "selector": 0,
+    "algorithm_id": "0x800c",
+    "algorithm_name": "CALG_SHA_256",
+    "iat_rva": "0x1100d0",
+    "api_name": "CryptCreateHash",
+    "output_field": "aux+0x120"
+  },
+  "memory_lookup": {
+    "function_rva": "0x8d550",
+    "context_field": "context+0x228",
+    "data_length_field": "+0x1c",
+    "data_pointer_field": "+0x20",
+    "entry_prefix_bytes": 36,
+    "id_bytes": 2,
+    "length_bytes": 2,
+    "ids_observed_in_state_callers": [
+      7,
+      5
+    ]
+  },
+  "limits": [
+    "Hash initialization is not authentication or established session.",
+    "Lookup IDs are not USB opcodes at these call sites.",
+    "Origin of cached data and optional processing helper not fully traced.",
+    "No complete preparation or recovery sequence authorized for execution by this evidence alone."
+  ]
+}

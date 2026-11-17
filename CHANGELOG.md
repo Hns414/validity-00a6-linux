@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.58.0-research — 2026-11-17
+
+- Slot posterior +0x18 da interface resolvido para 0xa47c0.
+- Ramo do método ligado a 0xaa660 e à chamada de reordenação 0xa2510.
+- Operações de bytes/bits e índices delimitadas, sem confirmar semântica de pixels.
+- Três chamadas e associação do método conferidas; somente documentação, sem USB.
+
 ## 0.57.0-research — 2026-11-17
 
 - Corrigida interpretação de 0xa2470 como consumidor: ramo suportado prepara descritor sem ler palavras.

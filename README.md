@@ -198,3 +198,5 @@ A [entrega ao processamento do host](docs/host-processing-handoff.md) liga a res
 O [consumidor da região de palavras](docs/word-region-consumer.md) fecha a ligação até 0xa2470 e separa os três layouts do host, sem semântica de pixels confirmada.
 
 A [correção do papel de 0xa2470](docs/word-descriptor-builder.md) mostra preparação de descritor sem leitura da região; consumo efetivo das palavras ainda não demonstrado.
+
+O [método posterior da interface](docs/processing-method18.md) tem ramo ligado à reordenação de bytes/bits; origem integral da entrada e semântica no sensor ainda pendentes.

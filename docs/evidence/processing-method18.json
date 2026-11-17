@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "method": "manual-static-method18-and-byte-reordering-call-trace",
+  "dll_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "checked_call_edges": [
+    {
+      "call_rva": "0xa49a9",
+      "target_rva": "0xaa660"
+    },
+    {
+      "call_rva": "0xaab18",
+      "target_rva": "0xa2510"
+    },
+    {
+      "call_rva": "0xaaad2",
+      "target_rva": "0xd54b0"
+    }
+  ],
+  "method_binding": {
+    "instruction_rva": "0xa3663",
+    "slot": "0x18",
+    "target_rva": "0xa47c0",
+    "call_site_rva": "0x48379"
+  },
+  "method_branches": [
+    {
+      "condition": "processing-state byte +0x6b8 bit 0 set",
+      "action": "copy input after 12-byte prefix then call 0xa8960"
+    },
+    {
+      "condition": "bit clear",
+      "action": "forward input descriptor to 0xaa660"
+    }
+  ],
+  "inside_aa660": {
+    "copy_branch_conditions": [
+      "metadata DWORD +0x28 equals 3",
+      "prepared descriptor DWORD +0 equals 8"
+    ],
+    "other_branch_call_rva": "0xaab18",
+    "other_branch_target": "0xa2510",
+    "input_origin_fully_traced": false
+  },
+  "a2510_observed_operations": {
+    "copies_initial_bytes": 8,
+    "index_table_offset": "0x1ac",
+    "index_entry_signed_bits": 16,
+    "branches_for_widths": [
+      4,
+      8
+    ],
+    "other_widths_bit_extraction_present": true,
+    "return_alignment_bytes": 16
+  },
+  "pixel_semantics_verified": false,
+  "runtime_branch_verified": false,
+  "usb_transfer_performed": false
+}

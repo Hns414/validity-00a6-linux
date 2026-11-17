@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.66.0-research — 2026-11-17
+
+- Componente original em C valida corpo candidato 0x78 e capacidade antes de devolver referência ao conteúdo.
+- Contrato de duração do buffer, entrada normalizada e ausência de interpretação biométrica documentados.
+- Teste nativo de limites e invariantes; 119 testes aprovados sem skips. ASan/UBSan aprovados, sem detecção de leaks.
+- Componente ainda separado do probe; nenhum novo comando USB.
+
 ## 0.65.0-research — 2026-11-17
 
 - Laço de registros auditado: comprimento auxiliar sobrescrito e predicado OR de parada delimitados.

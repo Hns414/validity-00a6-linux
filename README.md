@@ -214,3 +214,5 @@ O [comprimento normalizado de registros](docs/record-normalized-length.md) foi d
 Os [contratos dos helpers de transformação](docs/transform-helper-contracts.md) explicitam leituras anteriores às APIs e verificações de tamanho ainda dependentes do chamador.
 
 O [contrato multirregistro](docs/multirecord-copy-contract.md) distingue sobrescrita de comprimento de concatenação; novo inspetor offline e suíte com 118 testes.
+
+O [componente C para corpo 0x78](docs/read78-c-component.md) valida contagem/capacidade e devolve referência sem cópia; 119 testes e ASan/UBSan aprovados, ainda separado do probe.

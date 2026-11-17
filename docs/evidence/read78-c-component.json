@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "component": "original-offline-read78-body-parser",
+  "implementation_files": [
+    "src/read78_body.c",
+    "src/read78_body.h"
+  ],
+  "input_layer": "candidate body after independently established normalization/authentication/status handling",
+  "output": "borrowed content view; no content copy",
+  "analysis_limit": 65536,
+  "maximum_destination_capacity_in_scope": 65532,
+  "validation": {
+    "suite_tests": 119,
+    "suite_passed": true,
+    "native_test_passed": true,
+    "address_sanitizer_passed": true,
+    "undefined_behavior_sanitizer_passed": true,
+    "leak_detection_enabled": false
+  },
+  "probe_linked": false,
+  "usb_transfer_performed": false,
+  "hardware_validated": false
+}

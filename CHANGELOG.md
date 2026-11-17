@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.67.0-research — 2026-11-17
+
+- Caminho inferior de leitura ligado novamente a WinUsb_ReadPipe e ao retorno de bytes transferidos.
+- Uma chamada de leitura distinguida de garantia de registro único, com fonte oficial da API.
+- Contratos de transporte, normalização e corpo 0x78 separados na arquitetura documentada.
+- Três chamadas, três âncoras e associação da API conferidas; somente documentação, sem USB.
+
 ## 0.66.0-research — 2026-11-17
 
 - Componente original em C valida corpo candidato 0x78 e capacidade antes de devolver referência ao conteúdo.

@@ -327,3 +327,5 @@ Os [contratos dos helpers de transformação](transform-helper-contracts.md) exp
 O [contrato multirregistro](multirecord-copy-contract.md) distingue sobrescrita de comprimento de concatenação; novo inspetor offline e suíte com 118 testes.
 
 O [componente C para corpo 0x78](read78-c-component.md) valida contagem/capacidade e devolve referência sem cópia; 119 testes e ASan/UBSan aprovados, ainda separado do probe.
+
+A [fronteira entre leitura e registros](readpipe-record-boundary.md) distingue bytes transferidos de enquadramento e mantém a resposta única como hipótese não demonstrada.

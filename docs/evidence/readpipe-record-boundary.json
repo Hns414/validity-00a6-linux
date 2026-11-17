@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "method": "manual-static-read-wrapper-and-API-binding-audit",
+  "dll_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "checked_call_edges": [
+    {
+      "call_rva": "0xeeaa5",
+      "target_rva": "0xef7d0"
+    },
+    {
+      "call_rva": "0xeead9",
+      "target_rva": "0xef750"
+    },
+    {
+      "call_rva": "0xef7a3",
+      "target_rva": "0xf0f50"
+    }
+  ],
+  "read_api": {
+    "binding_instruction_rva": "0xf0279",
+    "name_rva": "0x21c7f8",
+    "name": "WinUsb_ReadPipe",
+    "object_slot": "0x28",
+    "call_rva": "0xf104d"
+  },
+  "pipe_query": {
+    "object_slot": "0x20",
+    "call_rva": "0xf0fe9"
+  },
+  "wrapper": {
+    "rva": "0xef750",
+    "forwards_transferred_count_on_success": true,
+    "count_store_rva": "0xef7bf",
+    "parses_record_headers": false
+  },
+  "exchange": {
+    "rva": "0xeea70",
+    "read_call_count_on_examined_success_path": 1,
+    "guarantees_one_record": false
+  },
+  "actual_pipe_policies_audited": false,
+  "single_record_reply_observed_on_hardware": false,
+  "usb_transfer_performed": false,
+  "primary_API_source": "https://learn.microsoft.com/en-us/windows/win32/api/winusb/nf-winusb-winusb_readpipe"
+}

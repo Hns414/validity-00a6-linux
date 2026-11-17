@@ -341,3 +341,5 @@ A [restauração adiada pela máquina de estados](deferred-timeout-restoration.m
 O [componente C de envelopes](record-envelope-c-component.md) valida buffers completos e conta registros sem conteúdo; 121 testes aprovados, ainda separado do transporte ativo.
 
 O [tratamento de leituras truncadas](truncated-read-path.md) delimita falha da API, rejeição estrutural e saída sem cópia normalizada; não demonstra remontagem local.
+
+O [descarte do contexto auxiliar](auxiliary-context-discard.md) liga a falha à anulação do estado local; nova alocação foi delimitada, sem demonstrar recuperação do sensor.

@@ -38,3 +38,5 @@ O wrapper 0x7b110 só alcança seu callback de conclusão depois de sucesso de 0
 O comportamento delimitado é rejeitar truncamento nos ramos examinados, sem remontagem local demonstrada. Ele não prova que as respostas reais sempre cheguem completas, nem autoriza concatenar leituras arbitrárias. O [componente C de envelopes](record-envelope-c-component.md) continua recebendo exclusivamente buffers completos para análise estrutural, sem conduzir novas leituras.
 
 Próximo ponto: seguir a invalidação/liberação do contexto em 0x758e0 e determinar o requisito de nova sessão após erro de normalização. Probe inalterado; sem USB, captura ou teste com dedo. Etapa documental: base de **121 testes aprovados na v0.72**, sem repetir a suíte.
+
+O [descarte do contexto auxiliar](auxiliary-context-discard.md) liga a falha à anulação do estado local; nova alocação foi delimitada, sem demonstrar recuperação do sensor.

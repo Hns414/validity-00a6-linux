@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.74.0-research — 2026-11-17
+
+- Descarte após erro ligado à limpeza de estrutura auxiliar de 1320 bytes e anulação do ponteiro.
+- Predicado de presença/modo e alocação posterior delimitados, sem presumir sessão recuperada.
+- Descarte local distinguido de reset USB e recuperação do dispositivo.
+- Somente documentação/evidência; probe inalterado, sem USB.
+
 ## 0.73.0-research — 2026-11-17
 
 - Rota síncrona de leitura distinguida do suporte assíncrono do helper genérico.

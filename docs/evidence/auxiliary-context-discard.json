@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "analysis": "auxiliary_context_discard",
+  "source_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "hardware_executed": false,
+  "biometric_support": false,
+  "method": "static_manual_with_private_byte_checks",
+  "verified_calls": [
+    {
+      "call_rva": "0x74c6b",
+      "target_rva": "0x758e0"
+    },
+    {
+      "call_rva": "0x75930",
+      "target_rva": "0xd5410"
+    },
+    {
+      "call_rva": "0x75960",
+      "target_rva": "0xd5410"
+    },
+    {
+      "call_rva": "0x7599e",
+      "target_rva": "0xd5410"
+    },
+    {
+      "call_rva": "0x759c4",
+      "target_rva": "0xd5410"
+    },
+    {
+      "call_rva": "0x75a1c",
+      "target_rva": "0xd5430"
+    },
+    {
+      "call_rva": "0x75a35",
+      "target_rva": "0xd5430"
+    },
+    {
+      "call_rva": "0x75a4a",
+      "target_rva": "0xd5430"
+    },
+    {
+      "call_rva": "0x75a62",
+      "target_rva": "0xd5410"
+    },
+    {
+      "call_rva": "0x7543d",
+      "target_rva": "0xd53f0"
+    },
+    {
+      "call_rva": "0x75486",
+      "target_rva": "0xd5430"
+    }
+  ],
+  "verified_argument_anchor_rvas": [
+    "0x75a11",
+    "0x75a2a",
+    "0x75a3a",
+    "0x75a40",
+    "0x75a6c",
+    "0x75438",
+    "0x75447",
+    "0x74d13",
+    "0x74d26",
+    "0x755d0",
+    "0x755e1"
+  ],
+  "discard": {
+    "function_rva": "0x758e0",
+    "argument": "address of context+0x50",
+    "auxiliary_size_bytes": 1320,
+    "zero_fill_call_rva": "0x75a4a",
+    "release_call_rva": "0x75a62",
+    "null_store_rva": "0x75a6c"
+  },
+  "allocation": {
+    "function_rva": "0x753f0",
+    "allocation_bytes": 1320,
+    "call_rva": "0x7543d"
+  },
+  "limits": [
+    "Host-side invalidation is not device reset or session recovery proof.",
+    "Secure erasure and allocator behavior not proven.",
+    "Complete lifecycle of nested cryptographic resources not audited.",
+    "No hardware operation performed."
+  ]
+}

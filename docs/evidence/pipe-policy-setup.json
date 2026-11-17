@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "method": "manual-static-pipe-policy-binding-and-argument-audit",
+  "dll_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "api_binding": {
+    "name": "WinUsb_SetPipePolicy",
+    "lea_rva": "0xf034b",
+    "name_rva": "0x21c898",
+    "object_slot": "0x60"
+  },
+  "checked_slot_call_rvas": [
+    "0xf07e7",
+    "0xf088e",
+    "0xf08e8",
+    "0xf14e9"
+  ],
+  "checked_argument_anchors": 6,
+  "setup_function": "0xf04f0",
+  "setup_policies": [
+    {
+      "pipe_index": 1,
+      "alternate_setting": 0,
+      "policy_id": 3,
+      "value_bytes": 4,
+      "value": 2000,
+      "call_rva": "0xf07e7"
+    },
+    {
+      "pipe_index": 0,
+      "alternate_setting": 0,
+      "policy_id": 1,
+      "value_bytes": 1,
+      "value": 1,
+      "call_rva": "0xf088e"
+    },
+    {
+      "pipe_index": 0,
+      "alternate_setting": 0,
+      "policy_id": 3,
+      "value_bytes": 4,
+      "value": 2000,
+      "call_rva": "0xf08e8"
+    }
+  ],
+  "runtime_timeout_setter": {
+    "function_rva": "0xf1400",
+    "caller_rva": "0xef67c",
+    "pipe_index": "caller supplied",
+    "policy_id": 3,
+    "value": "caller supplied DWORD"
+  },
+  "ids_4_5_6_observed_in_examined_setter_calls": false,
+  "all_indirect_aliases_and_runtime_policy_changes_audited": false,
+  "hardware_policy_state_observed": false,
+  "usb_transfer_performed": false,
+  "primary_policy_source": "https://learn.microsoft.com/en-us/windows-hardware/drivers/usbcon/winusb-functions-for-pipe-policy-modification"
+}

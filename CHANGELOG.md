@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.68.0-research — 2026-11-17
+
+- WinUsb_SetPipePolicy resolvido no slot +0x60 e chamadas iniciais delimitadas.
+- Timeout inicial de 2000 ms e terminação OUT identificados com fonte oficial da API.
+- Setter posterior de timeout localizado; políticas de leitura curta/excedentes não presumidas como observadas.
+- Somente documentação/evidência; probe e seus prazos inalterados, sem USB.
+
 ## 0.67.0-research — 2026-11-17
 
 - Caminho inferior de leitura ligado novamente a WinUsb_ReadPipe e ao retorno de bytes transferidos.

@@ -218,3 +218,5 @@ O [contrato multirregistro](docs/multirecord-copy-contract.md) distingue sobresc
 O [componente C para corpo 0x78](docs/read78-c-component.md) valida contagem/capacidade e devolve referência sem cópia; 119 testes e ASan/UBSan aprovados, ainda separado do probe.
 
 A [fronteira entre leitura e registros](docs/readpipe-record-boundary.md) distingue bytes transferidos de enquadramento e mantém a resposta única como hipótese não demonstrada.
+
+As [políticas WinUSB examinadas](docs/pipe-policy-setup.md) incluem timeout inicial e terminação OUT, com ajuste posterior possível; não estabelecem registro único por leitura.

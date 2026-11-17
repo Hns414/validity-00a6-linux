@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.63.1-research — 2026-11-17
+
+- Explicitada a condição L >= 49 + p para interpretar a diferença de ponteiros como comprimento não negativo antes do armazenamento DWORD.
+- A desigualdade de capacidade permanece condicionada; alcance de entrada inválida não demonstrado.
+
 ## 0.63.0-research — 2026-11-17
 
 - Parser de registros ligado a comprimento big-endian e fórmula L - 49 - p no ramo de aplicação protegido.

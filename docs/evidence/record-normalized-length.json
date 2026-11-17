@@ -45,7 +45,9 @@
     "later_minimum_record_payload": "L >= p + 33",
     "application_length_formula": "L - 49 - p",
     "application_type": 23,
-    "minimum_checks_before_transform_audited": false
+    "minimum_checks_before_transform_audited": false,
+    "normalized_length_store_bits": 32,
+    "nonnegative_length_requires": "L >= 49 + p; not implied by later local minimum alone"
   },
   "normalized_length_store_rva": "0x77cfb",
   "record_loop_advance": "record start + 5 + L",

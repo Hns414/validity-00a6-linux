@@ -24,13 +24,13 @@ Para o registro de aplicação **tipo 0x17**, aceito sob modo auxiliar 0xff e bi
 
 `comprimento normalizado = L - 49 - p`
 
-Essa fórmula descreve o caminho após seus passos bem-sucedidos. Não é autorização para implementar criptografia ou assumir que os campos sejam um IV/MAC sem acompanhar os helpers. Algumas verificações de tamanho aparecem depois da transformação; a segurança de chamadas com comprimentos pequenos ainda depende da auditoria desses helpers e de contratos anteriores.
+Essa é a diferença matemática entre ponteiros; o armazenamento final é DWORD. Uma interpretação como comprimento não negativo também exige `L >= 49 + p`, condição que precisa ser garantida pelos helpers ou contratos anteriores. O teste local `L >= p + 33`, sozinho, não a implica. Esta etapa não demonstra que um caso de diferença negativa consiga superar a transformação e as comparações. Não é autorização para implementar criptografia ou assumir que os campos sejam um IV/MAC sem acompanhar os helpers. Algumas verificações de tamanho aparecem depois da transformação; a segurança de chamadas com comprimentos pequenos ainda depende da auditoria desses helpers e de contratos anteriores.
 
 ## O que a fórmula permite concluir
 
 Para um único registro, ela explica a remoção de regiões do conteúdo e relaciona o comprimento normalizado com L. Com o cabeçalho de cinco bytes, o total recebido desse registro é `5 + L`.
 
-Isso ainda não demonstra que a saída caiba na capacidade original N da leitura 0x78. Se usarmos somente o teto ampliado `N + 75` localizado anteriormente, a desigualdade fornece no máximo `normalizado <= N + 21 - p`. Esse limite isolado não basta para provar `normalizado <= N + 6`, necessário à conta que desconta status e prefixo de comprimento antes da cópia de dados. Outras invariantes podem impor um limite menor; não foram demonstradas ainda.
+Isso ainda não demonstra que a saída caiba na capacidade original N da leitura 0x78. Assumindo uma diferença não negativa antes do armazenamento DWORD, se usarmos somente o teto ampliado `N + 75` localizado anteriormente, a desigualdade fornece no máximo `normalizado <= N + 21 - p`. Esse limite isolado não basta para provar `normalizado <= N + 6`, necessário à conta que desconta status e prefixo de comprimento antes da cópia de dados. Outras invariantes podem impor um limite menor; não foram demonstradas ainda.
 
 Essa é uma limitação da prova atual, não demonstração de resposta excedente real, falha explorável ou comportamento do participante.
 

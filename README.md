@@ -190,3 +190,5 @@ Os [produtores dos registros dinâmicos](docs/dynamic-record-producers.md) delim
 Os [nós condicionais de transporte](docs/conditional-transport-nodes.md) acrescentam campos aleatórios gerados no host; formatos e condições delimitados, sem captura habilitada.
 
 Um [consumidor criptográfico isolado](docs/isolated-block-consumer.md) usa os campos anteriores; seu alcance pelo fluxo de captura permanece sem demonstração.
+
+A [conclusão da requisição 9](docs/request9-completion.md) liga o parser ao callback e distingue corpo devolvido de referência interna, ainda sem semântica de imagem.

@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "method": "manual-static-request9-completion-trace-with-checked-calls",
+  "dll_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "checked_call_edges": [
+    {
+      "call_rva": "0x56bbb",
+      "target_rva": "0x5e3d0"
+    },
+    {
+      "call_rva": "0x5e3f9",
+      "target_rva": "0x7ade0"
+    },
+    {
+      "call_rva": "0x5e49d",
+      "target_rva": "0x91020"
+    },
+    {
+      "call_rva": "0x91156",
+      "target_rva": "0x91170"
+    },
+    {
+      "call_rva": "0x56c03",
+      "target_rva": "0xd53f0"
+    },
+    {
+      "call_rva": "0x56c61",
+      "target_rva": "0xd54b0"
+    },
+    {
+      "call_rva": "0x56cad",
+      "target_rva": "0xd5990"
+    }
+  ],
+  "callback_rva": "0x56ab0",
+  "body_descriptor": {
+    "length_dword_offset": 0,
+    "pointer_offset": 8
+  },
+  "nonempty_body_parser": {
+    "wrapper_rva": "0x5e3d0",
+    "supported_context_class": 1,
+    "parser_rva": "0x91020",
+    "inner_parser_rva": "0x91170",
+    "signature": "0x30000288"
+  },
+  "optional_output_descriptor_offset": "0x20",
+  "output_copy": "entire received body, after successful wrapper processing",
+  "zero_length_body": "optional output length and pointer set to zero; parser branch skipped",
+  "crypto_consumer_link_established": false,
+  "pixel_semantics_verified": false,
+  "hardware_response_observed": false,
+  "usb_transfer_performed": false
+}

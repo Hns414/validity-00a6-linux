@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.54.0-research — 2026-11-16
+
+- Conclusão da requisição 9 ligada ao parser candidato de resposta na classe 1.
+- Cópia integral opcional ao chamador distinguida da referência interna às palavras.
+- Ramo de corpo vazio delimitado; ligação criptográfica permanece pendente.
+- Sete chamadas conferidas; somente documentação/evidência, sem USB.
+
 ## 0.53.0-research — 2026-11-16
 
 - Rotina isolada ligada aos campos de chave/IV e à importação CryptDecrypt.

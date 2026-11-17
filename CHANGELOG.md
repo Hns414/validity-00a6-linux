@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.55.0-research — 2026-11-16
+
+- Consumidor posterior da resposta ligado a estado e interface do host.
+- Método indireto +0x10 resolvido estaticamente para 0xa3780.
+- Ponteiros do corpo e da referência interna distinguidos de cópias profundas.
+- Seis chamadas e associação do método conferidas; somente documentação, sem USB.
+
 ## 0.54.0-research — 2026-11-16
 
 - Conclusão da requisição 9 ligada ao parser candidato de resposta na classe 1.

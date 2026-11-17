@@ -192,3 +192,5 @@ Os [nós condicionais de transporte](docs/conditional-transport-nodes.md) acresc
 Um [consumidor criptográfico isolado](docs/isolated-block-consumer.md) usa os campos anteriores; seu alcance pelo fluxo de captura permanece sem demonstração.
 
 A [conclusão da requisição 9](docs/request9-completion.md) liga o parser ao callback e distingue corpo devolvido de referência interna, ainda sem semântica de imagem.
+
+A [entrega ao processamento do host](docs/host-processing-handoff.md) liga a resposta à interface e resolve seu método indireto, com duração dos ponteiros ainda pendente.

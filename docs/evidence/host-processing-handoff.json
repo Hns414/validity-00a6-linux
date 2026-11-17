@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "method": "manual-static-reachable-host-handoff-with-checked-calls-and-method-binding",
+  "dll_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "checked_call_edges": [
+    {
+      "call_rva": "0x47ae1",
+      "target_rva": "0x5e3d0"
+    },
+    {
+      "call_rva": "0x47b68",
+      "target_rva": "0x46fd0"
+    },
+    {
+      "call_rva": "0x47087",
+      "target_rva": "0xa35d0"
+    },
+    {
+      "call_rva": "0x470e4",
+      "target_rva": "0x5da20"
+    },
+    {
+      "call_rva": "0x47126",
+      "target_rva": "0x5b6b0"
+    },
+    {
+      "call_rva": "0x47bbf",
+      "target_rva": "0xd5410"
+    }
+  ],
+  "post_reply_function": "0x46fd0",
+  "handoff_condition": "mode WORD +0x0c in {1,3}, or helper 0x5f720 equals 1",
+  "interface": {
+    "allocation_bytes": 96,
+    "initializer_rva": "0xa35d0",
+    "method_slot_offset": 16,
+    "binding_instruction_rva": "0xa3643",
+    "method_rva": "0xa3780",
+    "indirect_call_rva": "0x47383"
+  },
+  "context_to_host_state": [
+    {
+      "context_offset": "0x88",
+      "host_offset": "0x20",
+      "kind": "DWORD"
+    },
+    {
+      "context_offset": "0x90",
+      "host_offset": "0x28",
+      "kind": "pointer"
+    },
+    {
+      "context_offset": "0x78",
+      "host_offset": "0x30",
+      "kind": "DWORD"
+    },
+    {
+      "context_offset": "0x80",
+      "host_offset": "0x38",
+      "kind": "pointer"
+    }
+  ],
+  "reply_buffers_deep_copied_at_field_assignments": false,
+  "borrowed_pointer_lifetime_fully_audited": false,
+  "crypto_consumer_link_established": false,
+  "usb_transfer_performed": false
+}

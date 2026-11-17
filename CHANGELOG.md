@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.59.0-research — 2026-11-17
+
+- Entrada do método posterior ligada à requisição interna 0x31/opcode 0x78.
+- Callback de leitura com prefixo de comprimento e cópia limitada ao corpo delimitado.
+- Novo inspetor offline retorna apenas tamanhos, com política estrita e orçamento explícito.
+- Seis testes novos; 109 aprovados sem skips. Probe ativo inalterado, sem USB.
+
 ## 0.58.0-research — 2026-11-17
 
 - Slot posterior +0x18 da interface resolvido para 0xa47c0.

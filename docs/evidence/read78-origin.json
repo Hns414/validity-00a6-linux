@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "method": "manual-static-read-request-and-completion-trace-with-checked-edges",
+  "dll_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "checked_call_edges": [
+    {
+      "call_rva": "0x4817a",
+      "target_rva": "0x53010"
+    },
+    {
+      "call_rva": "0x53134",
+      "target_rva": "0x5a820"
+    },
+    {
+      "call_rva": "0x8204f",
+      "target_rva": "0x83220"
+    },
+    {
+      "call_rva": "0x820cd",
+      "target_rva": "0x7b110"
+    },
+    {
+      "call_rva": "0x58f0e",
+      "target_rva": "0xd54b0"
+    }
+  ],
+  "internal_request": {
+    "index": "0x31",
+    "dispatch_slot_rva": "0x1164c8",
+    "handler_rva": "0x82010",
+    "wrapper_rva": "0x53010",
+    "completion_callback_rva": "0x58de0"
+  },
+  "frame": {
+    "opcode": "0x78",
+    "bytes": 5,
+    "argument": "requested DWORD length",
+    "initial_response_capacity": "requested length plus 6, DWORD store"
+  },
+  "body": {
+    "length_prefix_bytes": 4,
+    "declared_length_endianness": "little",
+    "dll_copy_length": "min(declared length, available body bytes minus 4)",
+    "destination_capacity_audited": false,
+    "temporary_body_cleared_after_processing": true
+  },
+  "processor_input": "host buffer populated through callback, under caller state conditions",
+  "index_table_capacity_audit_complete": false,
+  "hardware_response_observed": false,
+  "usb_transfer_performed": false
+}

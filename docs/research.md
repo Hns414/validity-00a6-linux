@@ -311,3 +311,5 @@ O [consumidor da região de palavras](word-region-consumer.md) fecha a ligação
 A [correção do papel de 0xa2470](word-descriptor-builder.md) mostra preparação de descritor sem leitura da região; consumo efetivo das palavras ainda não demonstrado.
 
 O [método posterior da interface](processing-method18.md) tem ramo ligado à reordenação de bytes/bits; origem integral da entrada e semântica no sensor ainda pendentes.
+
+A [origem do bloco de leitura](read78-origin.md) foi ligada ao opcode 0x78; inspetor offline e suíte com 109 testes, sem novo comando ativo.

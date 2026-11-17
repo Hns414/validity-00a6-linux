@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "component": "offline_candidate_record_envelope_summary",
+  "implementation": [
+    "src/record_envelope.c",
+    "src/record_envelope.h"
+  ],
+  "linked_to_probe": false,
+  "hardware_executed": false,
+  "cryptographically_validated": false,
+  "biometric_support": false,
+  "scope": {
+    "maximum_input_bytes": 65536,
+    "header_bytes": 5,
+    "version": [
+      3,
+      3
+    ],
+    "types": [
+      20,
+      21,
+      22,
+      23
+    ],
+    "nonempty_records_only": true,
+    "complete_input_only": true
+  },
+  "validation": {
+    "suite_tests_passed": 121,
+    "new_unittest_methods": 2,
+    "differential_synthetic_inputs": 503,
+    "native_all_maximum_envelope_truncations": true,
+    "asan_ubsan_passed": true,
+    "leak_detection_enabled": false
+  },
+  "limitations": [
+    "Does not prove response completion or association.",
+    "Does not reassemble fragmented reads.",
+    "Does not authenticate, decrypt or expose content."
+  ]
+}

@@ -226,3 +226,5 @@ O [ajuste de timeout durante a sessão](docs/runtime-pipe-timeout.md) liga o ped
 A [consulta e os caminhos de restauração do timeout](docs/timeout-query-restoration.md) foram ligados à API; um desvio de erro evita os setters explícitos, com efeitos indiretos de limpeza ainda pendentes.
 
 A [restauração adiada pela máquina de estados](docs/deferred-timeout-restoration.md) liga o laço superior ao estado 6: uma nova passagem pode tentar restaurar o timeout antes de devolver o erro guardado.
+
+O [componente C de envelopes](docs/record-envelope-c-component.md) valida buffers completos e conta registros sem conteúdo; 121 testes aprovados, ainda separado do transporte ativo.

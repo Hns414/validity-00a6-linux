@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.72.0-research — 2026-11-17
+
+- Componente original C conta e valida envelopes completos no escopo candidato estrito, sem expor conteúdo.
+- Testes nativos de limites e comparação com inspetor Python em 503 entradas sintéticas.
+- 121 testes aprovados sem skips; ASan/UBSan aprovados, com detecção de leaks desativada.
+- Separado do probe; sem remontagem, autenticação, semântica biométrica ou USB.
+
 ## 0.71.0-research — 2026-11-17
 
 - Laço superior ligado à tentativa adiada de restauração no estado 6.

@@ -39,3 +39,5 @@ A política 1 identificada no pipe de índice 0 controla terminação de **escri
 Nenhuma política ou timeout do probe foi alterado. O Linux usa um transporte diferente, e os limites de prazo/cancelamento precisam continuar explícitos nesse transporte; não copiar números da DLL como garantia de comportamento equivalente.
 
 Próximo passo: seguir o ajuste de timeout até os chamadores superiores e separar prazo de operação, tamanho recebido e critério de fim de resposta. Mudança documental, sem repetir a suíte: base de **119 testes aprovados na v0.66**. Sem USB, captura ou teste com dedo.
+
+Continuação: [chamadores do ajuste de timeout](runtime-pipe-timeout.md), com pedido interno e caminho temporário de 8000 ms.

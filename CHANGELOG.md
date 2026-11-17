@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.69.0-research — 2026-11-17
+
+- Pedido interno de ajuste de timeout ligado ao setter WinUSB; distinguido de opcode USB.
+- Caminho de 8000 ms e reaplicação condicional de valor guardado documentados.
+- Wrapper de dois pipes delimitado, sem presumir rollback ou restauração em todas as saídas.
+- Somente documentação/evidência; probe inalterado, sem USB.
+
 ## 0.68.0-research — 2026-11-17
 
 - WinUsb_SetPipePolicy resolvido no slot +0x60 e chamadas iniciais delimitadas.

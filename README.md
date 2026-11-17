@@ -220,3 +220,5 @@ O [componente C para corpo 0x78](docs/read78-c-component.md) valida contagem/cap
 A [fronteira entre leitura e registros](docs/readpipe-record-boundary.md) distingue bytes transferidos de enquadramento e mantém a resposta única como hipótese não demonstrada.
 
 As [políticas WinUSB examinadas](docs/pipe-policy-setup.md) incluem timeout inicial e terminação OUT, com ajuste posterior possível; não estabelecem registro único por leitura.
+
+O [ajuste de timeout durante a sessão](docs/runtime-pipe-timeout.md) liga o pedido interno ao setter e delimita um caminho de 8000 ms, sem garantir restauração em todas as saídas ou fim de resposta.

@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "analysis": "runtime_pipe_timeout",
+  "source_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "method": "static_manual_with_private_byte_checks",
+  "hardware_executed": false,
+  "biometric_support": false,
+  "verified_direct_calls": [
+    {
+      "call_rva": "0x63b1e",
+      "target_rva": "0xe7430"
+    },
+    {
+      "call_rva": "0x63b5d",
+      "target_rva": "0xe7430"
+    },
+    {
+      "call_rva": "0xe7481",
+      "target_rva": "0xee0a0"
+    },
+    {
+      "call_rva": "0xef67c",
+      "target_rva": "0xf1400"
+    },
+    {
+      "call_rva": "0x7a05c",
+      "target_rva": "0xe7370"
+    },
+    {
+      "call_rva": "0x7a0a6",
+      "target_rva": "0xe7430"
+    },
+    {
+      "call_rva": "0x7a636",
+      "target_rva": "0xe7430"
+    }
+  ],
+  "verified_argument_anchor_rvas": [
+    "0xee120",
+    "0xee12b",
+    "0xee13e",
+    "0xef66c",
+    "0xef675",
+    "0x7a043",
+    "0x7a093",
+    "0x7a099",
+    "0x7a622",
+    "0x7a629",
+    "0x63b0c",
+    "0x63b4e"
+  ],
+  "internal_request": {
+    "code": "0x938ae054",
+    "input_bytes": 8,
+    "fields": [
+      "pipe_index_u32",
+      "timeout_ms_u32"
+    ],
+    "dispatcher_case_rva": "0xef62d"
+  },
+  "state_path": {
+    "setter_call_rva": "0x7a0a6",
+    "pipe_index": 1,
+    "requested_timeout_ms": 8000,
+    "saved_value_field": "aux+0x518",
+    "reapply_call_rva": "0x7a636",
+    "all_exit_restoration_proven": false
+  },
+  "limits": [
+    "Static paths only; no Windows execution observed.",
+    "Timeout is not a response-framing rule.",
+    "Endpoint mapping remains conditional on matching descriptor order."
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "analysis": "timeout_query_and_restore_paths",
+  "source_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "method": "static_manual_with_private_byte_checks",
+  "hardware_executed": false,
+  "biometric_support": false,
+  "api": {
+    "name": "WinUsb_GetPipePolicy",
+    "name_rva": "0x21c8b0",
+    "object_slot": "0x68",
+    "call_rva": "0xf165c",
+    "policy_id": 3,
+    "value_capacity_bytes": 4
+  },
+  "internal_request": {
+    "code": "0x938ae050",
+    "input_bytes": 4,
+    "output_bytes": 4,
+    "case_rva": "0xef5c3",
+    "helper_rva": "0xf1540"
+  },
+  "verified_calls": [
+    {
+      "call_rva": "0xe73c0",
+      "target_rva": "0xee160"
+    },
+    {
+      "call_rva": "0xe73f8",
+      "target_rva": "0xee160"
+    },
+    {
+      "call_rva": "0xef622",
+      "target_rva": "0xf1540"
+    },
+    {
+      "call_rva": "0x7a526",
+      "target_rva": "0xe7430"
+    },
+    {
+      "call_rva": "0x7a0e2",
+      "target_rva": "0x75600"
+    },
+    {
+      "call_rva": "0x7a729",
+      "target_rva": "0xd6160"
+    },
+    {
+      "call_rva": "0x7a74c",
+      "target_rva": "0x7af60"
+    }
+  ],
+  "verified_argument_anchor_rvas": [
+    "0xee1bc",
+    "0xee1ce",
+    "0xee1d9",
+    "0xee1ec",
+    "0xf0383",
+    "0xf1605",
+    "0xf162a",
+    "0xf1641",
+    "0xf165c",
+    "0xf168d",
+    "0x7a4f9",
+    "0x7a500",
+    "0x7a119"
+  ],
+  "restore_paths": [
+    {
+      "call_rva": "0x7a526",
+      "guard": "saved_u32 > 0"
+    },
+    {
+      "call_rva": "0x7a636",
+      "guard": "reaches this state branch"
+    }
+  ],
+  "error_path": {
+    "failed_call_rva": "0x7a0e2",
+    "state_write_rva": "0x7a119",
+    "state_value": 6,
+    "jump_rva": "0x7a120",
+    "target_rva": "0x7a6d6",
+    "bypasses_explicit_restore_sites": true
+  },
+  "limits": [
+    "No runtime policy value observed.",
+    "Indirect cleanup and subsequent state invocations may change policy; persistence is not proven.",
+    "No biometric or wire framing semantics inferred."
+  ]
+}

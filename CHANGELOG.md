@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.70.0-research — 2026-11-17
+
+- Consulta de timeout ligada a WinUsb_GetPipePolicy e ao pedido interno 0x938ae050.
+- Caminhos de restauração com condições distintas e desvio de erro delimitados.
+- Efeitos indiretos de limpeza mantidos como pendência; persistência do timeout não presumida.
+- Somente documentação/evidência; sem alteração no probe ou acesso USB.
+
 ## 0.69.0-research — 2026-11-17
 
 - Pedido interno de ajuste de timeout ligado ao setter WinUSB; distinguido de opcode USB.

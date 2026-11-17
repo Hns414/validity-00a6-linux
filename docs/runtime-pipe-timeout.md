@@ -33,3 +33,5 @@ A função **0x63a70** recebe valor para índice 0 na segunda entrada e para ín
 Os 2000 ms iniciais não são constantes de toda a sessão. O caminho de 8000 ms é uma configuração de transferência, sem demonstrar término de mensagem ou garantia de registro único. Não copiar esses prazos para o probe nem ampliar suas operações com base apenas nessa análise.
 
 Próximos pontos: auditar a consulta inferior, as saídas que deixam de reaplicar o valor e os chamadores superiores de 0x63a70. O contrato de tamanho e enquadramento da resposta continua pendente. Etapa documental; base anterior de **119 testes aprovados**, sem repetir a suíte e sem teste com dedo.
+
+A [consulta e os caminhos de restauração do timeout](timeout-query-restoration.md) foram ligados à API; um desvio de erro evita os setters explícitos, com efeitos indiretos de limpeza ainda pendentes.

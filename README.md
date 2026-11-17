@@ -222,3 +222,5 @@ A [fronteira entre leitura e registros](docs/readpipe-record-boundary.md) distin
 As [políticas WinUSB examinadas](docs/pipe-policy-setup.md) incluem timeout inicial e terminação OUT, com ajuste posterior possível; não estabelecem registro único por leitura.
 
 O [ajuste de timeout durante a sessão](docs/runtime-pipe-timeout.md) liga o pedido interno ao setter e delimita um caminho de 8000 ms, sem garantir restauração em todas as saídas ou fim de resposta.
+
+A [consulta e os caminhos de restauração do timeout](docs/timeout-query-restoration.md) foram ligados à API; um desvio de erro evita os setters explícitos, com efeitos indiretos de limpeza ainda pendentes.

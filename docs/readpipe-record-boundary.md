@@ -37,3 +37,5 @@ Não se deve escolher um único registro ignorando os demais nem concatenar cont
 O retorno inferior foi delimitado como quantidade de bytes da leitura, sem regra demonstrada de registro único. Próximo passo: auditar as políticas efetivamente instaladas e o contrato de encerramento da resposta, mantendo separados os dados observados e a política conservadora de uma implementação nova.
 
 Mudança documental, com três chamadas, três âncoras e associação de API conferidas. Base de **119 testes aprovados na v0.66**, sem repetir a suíte nesta etapa. Probe inalterado; sem USB, captura ou teste com dedo.
+
+O [tratamento de leituras truncadas](truncated-read-path.md) delimita falha da API, rejeição estrutural e saída sem cópia normalizada; não demonstra remontagem local.

@@ -339,3 +339,5 @@ A [consulta e os caminhos de restauração do timeout](timeout-query-restoration
 A [restauração adiada pela máquina de estados](deferred-timeout-restoration.md) liga o laço superior ao estado 6: uma nova passagem pode tentar restaurar o timeout antes de devolver o erro guardado.
 
 O [componente C de envelopes](record-envelope-c-component.md) valida buffers completos e conta registros sem conteúdo; 121 testes aprovados, ainda separado do transporte ativo.
+
+O [tratamento de leituras truncadas](truncated-read-path.md) delimita falha da API, rejeição estrutural e saída sem cópia normalizada; não demonstra remontagem local.

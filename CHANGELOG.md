@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.73.0-research — 2026-11-17
+
+- Rota síncrona de leitura distinguida do suporte assíncrono do helper genérico.
+- Falhas da API e truncamentos do parser ligados à saída sem cópia normalizada.
+- Ausência de remontagem local delimitada aos corpos examinados, sem inferir respostas reais completas.
+- Limpeza após erro ligada a chamada com argumento zero; sem alteração do probe ou USB.
+
 ## 0.72.0-research — 2026-11-17
 
 - Componente original C conta e valida envelopes completos no escopo candidato estrito, sem expor conteúdo.

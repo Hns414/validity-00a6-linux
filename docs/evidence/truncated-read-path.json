@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "analysis": "truncated_read_error_path",
+  "source_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "method": "static_manual_with_private_byte_checks",
+  "hardware_executed": false,
+  "biometric_support": false,
+  "verified_direct_calls": [
+    {
+      "call_rva": "0xeead9",
+      "target_rva": "0xef750"
+    },
+    {
+      "call_rva": "0xef7a3",
+      "target_rva": "0xf0f50"
+    },
+    {
+      "call_rva": "0x7b4fb",
+      "target_rva": "0x749e0"
+    },
+    {
+      "call_rva": "0x74b3f",
+      "target_rva": "0x774e0"
+    },
+    {
+      "call_rva": "0x7b51c",
+      "target_rva": "0x74bb0"
+    },
+    {
+      "call_rva": "0x74c6b",
+      "target_rva": "0x758e0"
+    }
+  ],
+  "verified_anchor_rvas": [
+    "0xef777",
+    "0xf104d",
+    "0xf107d",
+    "0xf1087",
+    "0xf108e",
+    "0xeeae2",
+    "0xeeae9",
+    "0x775f7",
+    "0x77616",
+    "0x776f2",
+    "0x77710",
+    "0x77d7d",
+    "0x74b4d",
+    "0x74b4f",
+    "0x7b4e3",
+    "0x7b515"
+  ],
+  "read_mode": {
+    "wrapper_rva": "0xef750",
+    "overlapped": "NULL in examined route",
+    "api_call_rva": "0xf104d",
+    "get_last_error_iat_rva": "0x1105d8"
+  },
+  "parser_truncation": {
+    "header_minimum_bytes": 5,
+    "header_failure_status": "0xd3",
+    "content_failure_status": "0xd3",
+    "mapped_error_status": "0xca",
+    "copy_skipped_on_parser_error": true
+  },
+  "limits": [
+    "No local refill or retry demonstrated in the examined read-normalize path.",
+    "Sentinel check can precede minimum header check; this is not a memory safety proof of the DLL.",
+    "No claim about every transport route or lower WinUSB buffering.",
+    "No real truncated sensor response observed."
+  ]
+}

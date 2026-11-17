@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "analysis": "session_entry_container_producers",
+  "source_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "method": "static_manual_with_private_byte_checks",
+  "hardware_executed": false,
+  "biometric_support": false,
+  "verified_calls": [
+    {
+      "call_rva": "0x65488",
+      "target_rva": "0x8d810"
+    },
+    {
+      "call_rva": "0x8d961",
+      "target_rva": "0x5e1b0"
+    },
+    {
+      "call_rva": "0x8da23",
+      "target_rva": "0x5e1b0"
+    },
+    {
+      "call_rva": "0x8d856",
+      "target_rva": "0xd53f0"
+    },
+    {
+      "call_rva": "0x8cab0",
+      "target_rva": "0x5e140"
+    },
+    {
+      "call_rva": "0x8caf8",
+      "target_rva": "0x8da40"
+    },
+    {
+      "call_rva": "0x8d514",
+      "target_rva": "0x8da40"
+    },
+    {
+      "call_rva": "0x71d2f",
+      "target_rva": "0xe05b0"
+    },
+    {
+      "call_rva": "0x71e00",
+      "target_rva": "0x72450"
+    },
+    {
+      "call_rva": "0x71e49",
+      "target_rva": "0xe05b0"
+    },
+    {
+      "call_rva": "0x71ec1",
+      "target_rva": "0xd54b0"
+    }
+  ],
+  "verified_anchor_rvas": [
+    "0x5e1f5",
+    "0x8d851",
+    "0x8cac3",
+    "0x8cad0",
+    "0x8cad9",
+    "0x8d9e0",
+    "0x8da1c",
+    "0x71ed3",
+    "0x71ee2",
+    "0x8da76",
+    "0x8db72"
+  ],
+  "container": {
+    "context_field": "+0x228",
+    "setter_rva": "0x5e1b0",
+    "initialization_rva": "0x8d810",
+    "allocation_bytes": 40,
+    "buffer_initializer_rva": "0x8ca30",
+    "buffer_fields": {
+      "used_bytes": "+0x18",
+      "capacity_bytes": "+0x1c",
+      "pointer": "+0x20"
+    },
+    "append_helper_rva": "0x8da40",
+    "release_rva": "0x8d990"
+  },
+  "optional_processing": {
+    "function_rva": "0x71b40",
+    "fresh_output_pointer_store_rva": "0x71ed3",
+    "output_length_store_rva": "0x71ee2",
+    "nested_semantics_fully_audited": false
+  },
+  "limits": [
+    "Container initialization does not establish populated entries.",
+    "No participant values, keys or payloads inspected or published.",
+    "Transport origin of entry contents remains unproven.",
+    "Nested transforms and complete bounds/lifetime contracts remain open."
+  ]
+}

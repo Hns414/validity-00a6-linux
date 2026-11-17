@@ -36,3 +36,5 @@ O percurso de memória acima também não constitui prova completa de limites do
 A criação do auxiliar reúne alocação, inicialização de campos e criação de hash local. Os estados iniciais ainda dependem de dados já disponíveis no contexto e de processamento adicional. Portanto, nova alocação não basta para definir uma sequência de recuperação do sensor.
 
 Próximo trabalho: rastrear o produtor de contexto +0x228 e a opção de processamento, para então localizar com precisão as operações de transporte exigidas pelo início da sessão. Probe inalterado; sem USB, captura ou teste com dedo. Etapa documental: base de **121 testes aprovados na v0.72**, sem repetir a suíte.
+
+Os [produtores do contêiner de sessão](session-entry-container.md) separam criação, preenchimento e descarte; a opção processada devolve nova saída, com origem e semântica ainda pendentes.

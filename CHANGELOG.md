@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.76.0-research — 2026-11-17
+
+- Setter e inicializador do contêiner de sessão identificados, separados do preenchimento de entradas.
+- Produtor do buffer, helper de inclusão e descarte do contêiner delimitados.
+- Processamento opcional distinguido de referência direta: devolve saída alocada.
+- Origem dos conteúdos e semântica das transformações ainda pendentes; sem USB.
+
 ## 0.75.0-research — 2026-11-17
 
 - Preparação local ligada a contadores/flags e criação de hash SHA-256 por CryptoAPI.

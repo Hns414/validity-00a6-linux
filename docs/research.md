@@ -345,3 +345,5 @@ O [tratamento de leituras truncadas](truncated-read-path.md) delimita falha da A
 O [descarte do contexto auxiliar](auxiliary-context-discard.md) liga a falha à anulação do estado local; nova alocação foi delimitada, sem demonstrar recuperação do sensor.
 
 A [preparação local do auxiliar](local-auxiliary-preparation.md) liga a criação de hash à CryptoAPI e separa seletores de busca em memória de comandos USB.
+
+Os [produtores do contêiner de sessão](session-entry-container.md) separam criação, preenchimento e descarte; a opção processada devolve nova saída, com origem e semântica ainda pendentes.

@@ -321,3 +321,5 @@ Os [chamadores da capacidade de leitura](read78-capacity-callers.md) selecionam 
 Os [limites após transporte](response-transport-bounds.md) permanecem sob auditoria; o inspetor offline aceita capacidade explícita e a suíte tem 112 testes.
 
 O [comprimento normalizado de registros](record-normalized-length.md) foi delimitado no ramo examinado; a prova do limite de destino e o contrato multirregistro continuam abertos.
+
+Os [contratos dos helpers de transformação](transform-helper-contracts.md) explicitam leituras anteriores às APIs e verificações de tamanho ainda dependentes do chamador.

@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "method": "manual-static-transform-helper-and-comparison-input-contract-audit",
+  "dll_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "checked_call_edges": [
+    {
+      "call_rva": "0x78c5f",
+      "target_rva": "0xd54b0"
+    },
+    {
+      "call_rva": "0x78cb1",
+      "target_rva": "0xdae20"
+    },
+    {
+      "call_rva": "0xdaf2a",
+      "target_rva": "0xe0ce0"
+    },
+    {
+      "call_rva": "0x75b11",
+      "target_rva": "0xdfef0"
+    },
+    {
+      "call_rva": "0x75b36",
+      "target_rva": "0xe0250"
+    },
+    {
+      "call_rva": "0x75b5d",
+      "target_rva": "0xe0250"
+    },
+    {
+      "call_rva": "0x75b81",
+      "target_rva": "0xe0330"
+    }
+  ],
+  "checked_instruction_anchors": 4,
+  "transform_helper": {
+    "rva": "0x78b50",
+    "decrypt_branch_flag_argument": 0,
+    "internal_dispatch_mode": 5,
+    "dispatcher_rva": "0xdae20",
+    "mode5_target_rva": "0xe0ce0",
+    "tail_copy_bytes": 16,
+    "tail_address_formula": "source + uint32(input_length - 16)",
+    "tail_copy_occurs_before_dispatch": true,
+    "local_minimum_length_guard_present": false
+  },
+  "comparison_helper": {
+    "rva": "0x75a90",
+    "output_bytes": 32,
+    "constructed_header_bytes": 5,
+    "content_length_source": "caller DWORD argument",
+    "increments_sequence_after_success": true,
+    "local_content_length_vs_available_buffer_validation_present": false,
+    "sequence_counter_bytes": 8,
+    "sequence_incorporation_into_calculation_demonstrated": false
+  },
+  "prospective_read78_contract": {
+    "normalization_requires": "L >= 49 + p, p in [0,15], plus transform/integrity requirements",
+    "body_minimum_requires": "L - 49 - p >= 6 for status plus counted-body prefix",
+    "destination_requires": "L - 49 - p <= destination_capacity + 6; must also inspect declared content length"
+  },
+  "shared_dispatcher_does_not_establish_call_to_isolated_consumer": true,
+  "multi_record_contract_closed": false,
+  "hardware_reachability_of_malformed_inputs_demonstrated": false,
+  "usb_transfer_performed": false
+}

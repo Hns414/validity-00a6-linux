@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.64.0-research — 2026-11-17
+
+- Helper de transformação ligado ao dispatcher de operação 5, com preservação de cauda anterior à chamada.
+- Helper do valor comparado ligado a sequência/cabeçalho/conteúdo; limites dependentes do chamador explicitados.
+- Condições conservadoras de tamanho documentadas; prova completa e multirregistro ainda pendentes.
+- Sete chamadas e quatro âncoras conferidas; somente documentação/evidência, sem USB.
+
 ## 0.63.1-research — 2026-11-17
 
 - Explicitada a condição L >= 49 + p para interpretar a diferença de ponteiros como comprimento não negativo antes do armazenamento DWORD.

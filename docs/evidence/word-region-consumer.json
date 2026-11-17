@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "method": "manual-static-word-region-consumer-trace-with-checked-calls",
+  "dll_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "checked_call_edges": [
+    {
+      "call_rva": "0xa39cf",
+      "target_rva": "0xa57b0"
+    },
+    {
+      "call_rva": "0xa5810",
+      "target_rva": "0x4ee00"
+    },
+    {
+      "call_rva": "0xa3a01",
+      "target_rva": "0xa5030"
+    },
+    {
+      "call_rva": "0xa3a2f",
+      "target_rva": "0xa5880"
+    },
+    {
+      "call_rva": "0xa5a5a",
+      "target_rva": "0x5e220"
+    },
+    {
+      "call_rva": "0x5e29a",
+      "target_rva": "0x7ade0"
+    },
+    {
+      "call_rva": "0xa5ae8",
+      "target_rva": "0xa2470"
+    },
+    {
+      "call_rva": "0xa5b4d",
+      "target_rva": "0x70db0"
+    }
+  ],
+  "layouts": {
+    "invocation_descriptor_state_pointer_offset": "0x40",
+    "processing_state_capture_state_pointer_offset": "0x160",
+    "processing_state_context_pointer_offset": "0x10",
+    "processing_state_metadata_pointer_offset": "0x170"
+  },
+  "metadata_lookup": {
+    "function_rva": "0x4ee00",
+    "key": "processing state DWORD +0",
+    "metadata_word_06_destination": "processing state DWORD +0x2e8"
+  },
+  "word_region_getter": {
+    "rva": "0x5e220",
+    "source_pointer_offset": "0x90",
+    "source_length_dword_offset": "0x88",
+    "performs_usb": false,
+    "copies_content": false
+  },
+  "next_consumer": {
+    "rva": "0xa2470",
+    "arguments": [
+      "word-region pointer",
+      "word-region byte length",
+      "processing state DWORD +0x188",
+      "metadata pointer",
+      "host output pointer at state +0x168"
+    ]
+  },
+  "later_conditional_chunk_lookup": {
+    "type": "0x2d",
+    "expected_content_bytes": 28,
+    "semantics_verified": false
+  },
+  "pixel_semantics_verified": false,
+  "usb_transfer_performed": false
+}

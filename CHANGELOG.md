@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.56.0-research — 2026-11-17
+
+- Descritor de chamada distinguido do estado de captura e do estado de processamento.
+- Getter da região de palavras ligado ao consumidor alcançável 0xa2470.
+- Lookup de metadados reutilizado e busca condicional de nó 0x2d delimitados.
+- Oito chamadas conferidas; somente documentação/evidência, sem USB.
+
 ## 0.55.0-research — 2026-11-16
 
 - Consumidor posterior da resposta ligado a estado e interface do host.

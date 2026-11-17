@@ -305,3 +305,5 @@ Um [consumidor criptográfico isolado](isolated-block-consumer.md) usa os campos
 A [conclusão da requisição 9](request9-completion.md) liga o parser ao callback e distingue corpo devolvido de referência interna, ainda sem semântica de imagem.
 
 A [entrega ao processamento do host](host-processing-handoff.md) liga a resposta à interface e resolve seu método indireto, com duração dos ponteiros ainda pendente.
+
+O [consumidor da região de palavras](word-region-consumer.md) fecha a ligação até 0xa2470 e separa os três layouts do host, sem semântica de pixels confirmada.

@@ -208,3 +208,5 @@ A [auditoria de capacidade dos índices](docs/descriptor-index-capacity.md) conf
 Os [chamadores da capacidade de leitura](docs/read78-capacity-callers.md) selecionam 4.800/32.768 bytes e reutilizam buffers; a prova do limite após transporte continua pendente.
 
 Os [limites após transporte](docs/response-transport-bounds.md) permanecem sob auditoria; o inspetor offline aceita capacidade explícita e a suíte tem 112 testes.
+
+O [comprimento normalizado de registros](docs/record-normalized-length.md) foi delimitado no ramo examinado; a prova do limite de destino e o contrato multirregistro continuam abertos.

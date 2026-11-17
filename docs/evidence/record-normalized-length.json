@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "method": "manual-static-single-protected-application-record-length-audit",
+  "dll_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "checked_call_edges": [
+    {
+      "call_rva": "0x77656",
+      "target_rva": "0x79430"
+    },
+    {
+      "call_rva": "0x777b1",
+      "target_rva": "0x78b50"
+    },
+    {
+      "call_rva": "0x77942",
+      "target_rva": "0x75a90"
+    },
+    {
+      "call_rva": "0x77999",
+      "target_rva": "0xd5530"
+    },
+    {
+      "call_rva": "0x779d5",
+      "target_rva": "0xd5430"
+    }
+  ],
+  "checked_instruction_anchors": 6,
+  "record_header": {
+    "bytes": 5,
+    "version_bytes": [
+      3,
+      3
+    ],
+    "length_offset": 3,
+    "length_bytes": 2,
+    "length_endianness": "big"
+  },
+  "protected_branch": {
+    "initial_region_bytes": 16,
+    "trailing_compared_region_bytes": 32,
+    "last_byte_p_range": [
+      0,
+      15
+    ],
+    "later_minimum_record_payload": "L >= p + 33",
+    "application_length_formula": "L - 49 - p",
+    "application_type": 23,
+    "minimum_checks_before_transform_audited": false
+  },
+  "normalized_length_store_rva": "0x77cfb",
+  "record_loop_advance": "record start + 5 + L",
+  "multi_record_copy_contract_verified": false,
+  "original_destination_capacity_bound_proven": false,
+  "usb_transfer_performed": false
+}

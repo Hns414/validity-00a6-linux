@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.63.0-research — 2026-11-17
+
+- Parser de registros ligado a comprimento big-endian e fórmula L - 49 - p no ramo de aplicação protegido.
+- Teste superior inefetivo sobre uint16 distinguido das verificações de disponibilidade.
+- Limite original do destino e contrato de múltiplos registros mantidos explicitamente pendentes.
+- Cinco chamadas e seis âncoras conferidas; somente documentação/evidência, sem USB.
+
 ## 0.62.0-research — 2026-11-17
 
 - Acréscimo condicional de 69 bytes à capacidade de recepção separado do limite inicial.

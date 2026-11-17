@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.61.0-research — 2026-11-17
+
+- Capacidade de leitura rastreada a dois chamadores com seleção de 4.800/32.768 bytes.
+- Regra de crescimento/reutilização distinguida do tamanho nominal da chamada atual.
+- Condição inferior de modo 3 para o caminho 0x78 delimitada, sem igualar modos de estruturas distintas.
+- Cinco chamadas e seis âncoras conferidas; somente documentação/evidência, sem USB.
+
 ## 0.60.0-research — 2026-11-17
 
 - Alocação do descritor delimitada a 0x4f4 bytes, com capacidade para 420 índices.

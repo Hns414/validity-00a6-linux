@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "method": "manual-static-upper-caller-capacity-and-mode-trace",
+  "dll_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "checked_call_edges": [
+    {
+      "call_rva": "0x13e45",
+      "target_rva": "0x11c0c"
+    },
+    {
+      "call_rva": "0x15d64",
+      "target_rva": "0x11c0c"
+    },
+    {
+      "call_rva": "0x11d4b",
+      "target_rva": "0x45db0"
+    },
+    {
+      "call_rva": "0x45e4f",
+      "target_rva": "0x47c00"
+    },
+    {
+      "call_rva": "0x4817a",
+      "target_rva": "0x53010"
+    }
+  ],
+  "checked_instruction_anchors": 6,
+  "observed_caller_sizes": [
+    4800,
+    32768
+  ],
+  "caller_mode_field": "+0x80 DWORD; value 3 selects 4800",
+  "capacity_path": "upper second DWORD argument -> wrapper third DWORD argument -> state +0x20",
+  "reuse_rule": "keep nonnull buffer if stored capacity is at least requested size",
+  "actual_78_request": "stored capacity, potentially larger than current nominal caller size",
+  "read78_branch_condition": "upper capture state WORD +0x0c equals 3; further state conditions apply",
+  "literal_arithmetic": [
+    {
+      "requested_bytes": 4800,
+      "initial_response_capacity": 4806,
+      "dword_overflow": false
+    },
+    {
+      "requested_bytes": 32768,
+      "initial_response_capacity": 32774,
+      "dword_overflow": false
+    }
+  ],
+  "conditional_copy_bound": "if body bytes <= requested + 4 after transport/status processing, callback copy bytes <= requested",
+  "transport_body_bound_proven_for_all_modes": false,
+  "hardware_mode_verified": false,
+  "usb_transfer_performed": false
+}

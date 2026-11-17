@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "method": "static-fixed-table-capacity-audit-with-checked-allocator-calls",
+  "dll_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "checked_call_edges": [
+    {
+      "call_rva": "0xa54bd",
+      "target_rva": "0xd53f0"
+    },
+    {
+      "call_rva": "0xa5519",
+      "target_rva": "0xd5430"
+    },
+    {
+      "call_rva": "0x47d2e",
+      "target_rva": "0xd53f0"
+    },
+    {
+      "call_rva": "0x47dcf",
+      "target_rva": "0xd53f0"
+    }
+  ],
+  "descriptor": {
+    "allocated_bytes": 1268,
+    "allocation_call_rva": "0xa54bd",
+    "index_offset": 428,
+    "entry_bytes": 2,
+    "capacity": 420
+  },
+  "fixed_metadata_audit": {
+    "table_rva": "0x115030",
+    "record_stride": 168,
+    "record_count": 29,
+    "all_dword_28_equal_3": true,
+    "count_formula": "WORD +0x32 plus WORD +0x42",
+    "minimum_count": 78,
+    "maximum_count": 144,
+    "all_fit_allocated_index_area": true,
+    "all_counts_fit_positive_int16": true,
+    "maximum_identity_index_end_exclusive": 716,
+    "candidate_examples": {
+      "0xdb": 144,
+      "0xed": 112
+    }
+  },
+  "read78_destination": {
+    "capacity_source": "caller DWORD argument stored at upper state +0x20",
+    "buffer_pointer_field": "+0x28",
+    "full_requested_length_and_response_capacity_audit_complete": false
+  },
+  "all_possible_runtime_index_writers_audited": false,
+  "hardware_selection_verified": false,
+  "usb_transfer_performed": false
+}

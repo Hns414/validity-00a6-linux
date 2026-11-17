@@ -202,3 +202,5 @@ A [correção do papel de 0xa2470](docs/word-descriptor-builder.md) mostra prepa
 O [método posterior da interface](docs/processing-method18.md) tem ramo ligado à reordenação de bytes/bits; origem integral da entrada e semântica no sensor ainda pendentes.
 
 A [origem do bloco de leitura](docs/read78-origin.md) foi ligada ao opcode 0x78; inspetor offline e suíte com 109 testes, sem novo comando ativo.
+
+A [auditoria de capacidade dos índices](docs/descriptor-index-capacity.md) confirma espaço para as 29 contagens fixadas; limites completos da leitura ainda pendentes.

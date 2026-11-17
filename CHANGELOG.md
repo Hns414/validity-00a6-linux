@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.60.0-research — 2026-11-17
+
+- Alocação do descritor delimitada a 0x4f4 bytes, com capacidade para 420 índices.
+- 29 contagens de metadados fixados auditadas: 78 a 144, compatíveis com a inicialização identidade.
+- Origem da capacidade do buffer de leitura ligada a argumento superior; limites completos pendentes.
+- Quatro chamadas conferidas; somente documentação/evidência, sem USB.
+
 ## 0.59.0-research — 2026-11-17
 
 - Entrada do método posterior ligada à requisição interna 0x31/opcode 0x78.

@@ -46,3 +46,5 @@ Portanto, a saída dessa opção não deve ser tratada como simples referência 
 ## Próximo ponto
 
 Rastrear os chamadores de 0x8ca30 e 0x8d3e0 e os helpers de processamento para identificar a origem das entradas e a fronteira real com o transporte. Os contratos de capacidade e duração precisam ser definidos antes de implementar o formato. Probe inalterado; sem USB, captura ou teste com dedo. Etapa documental: base de **121 testes aprovados na v0.72**, sem repetir a suíte.
+
+O [carregador candidato de entradas](candidate-entry-loader.md) tem um ramo ligado ao transporte, mas sua alcançabilidade no fluxo ativo ainda não foi demonstrada.

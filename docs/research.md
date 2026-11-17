@@ -347,3 +347,5 @@ O [descarte do contexto auxiliar](auxiliary-context-discard.md) liga a falha à 
 A [preparação local do auxiliar](local-auxiliary-preparation.md) liga a criação de hash à CryptoAPI e separa seletores de busca em memória de comandos USB.
 
 Os [produtores do contêiner de sessão](session-entry-container.md) separam criação, preenchimento e descarte; a opção processada devolve nova saída, com origem e semântica ainda pendentes.
+
+O [carregador candidato de entradas](candidate-entry-loader.md) tem um ramo ligado ao transporte, mas sua alcançabilidade no fluxo ativo ainda não foi demonstrada.

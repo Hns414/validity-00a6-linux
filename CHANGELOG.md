@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.77.0-research — 2026-11-17
+
+- Chamador do produtor inicial de entradas localizado; presença das entradas de sessão não presumida.
+- Carregador candidato ligado ao pedido interno 0x16 e ao handler de opcode candidato 0x40.
+- Alcançabilidade do carregador mantida como lacuna, com buscas diretas e de ponteiros delimitadas.
+- Somente documentação/evidência; nenhum comando novo no probe ou USB.
+
 ## 0.76.0-research — 2026-11-17
 
 - Setter e inicializador do contêiner de sessão identificados, separados do preenchimento de entradas.

@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "analysis": "candidate_entry_loader_transport_route",
+  "source_sha256": "6f1fd4db7057fc9b545e8e76df7f4975a6f69f22380dfb6f47bd78868a70e2a7",
+  "method": "static_manual_with_private_byte_checks",
+  "hardware_executed": false,
+  "biometric_support": false,
+  "verified_calls": [
+    {
+      "call_rva": "0x666ec",
+      "target_rva": "0x8ca30"
+    },
+    {
+      "call_rva": "0x8cccc",
+      "target_rva": "0x4f2c0"
+    },
+    {
+      "call_rva": "0x4f468",
+      "target_rva": "0x5a820"
+    },
+    {
+      "call_rva": "0x7f7ae",
+      "target_rva": "0x83220"
+    },
+    {
+      "call_rva": "0x7f866",
+      "target_rva": "0x7b110"
+    },
+    {
+      "call_rva": "0x8cf2a",
+      "target_rva": "0x8dc00"
+    },
+    {
+      "call_rva": "0x8cf58",
+      "target_rva": "0x5e140"
+    }
+  ],
+  "verified_anchor_rvas": [
+    "0x4f405",
+    "0x7f79e",
+    "0x7f7aa",
+    "0x8cf6b",
+    "0x8cf78",
+    "0x8cf85",
+    "0x666d6",
+    "0x8caf3",
+    "0x8caee"
+  ],
+  "loader": {
+    "function_rva": "0x8cb40",
+    "internal_request": "0x16",
+    "handler_table_entry_rva": "0x1163f0",
+    "handler_rva": "0x7f730",
+    "candidate_usb_opcode": "0x40",
+    "candidate_request_bytes": 13,
+    "transport_call_rva": "0x7f866",
+    "installation_fields": [
+      "container+0x1c",
+      "container+0x20",
+      "container+0x18"
+    ]
+  },
+  "reachability": {
+    "direct_calls_to_loader_found_in_private_disassembly": false,
+    "exact_absolute_loader_pointer_found": false,
+    "loader_reachable_from_active_flow_proven": false
+  },
+  "limits": [
+    "No command executed; response and firmware state unvalidated.",
+    "Alternative loader branch and complete format bounds not closed.",
+    "No guarantee that IDs 5 and 7 are populated in the participant."
+  ]
+}
